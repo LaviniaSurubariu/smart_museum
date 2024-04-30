@@ -30,6 +30,8 @@ dependencies:
   cloud_firestore: ^4.14.0
 
 
+  line_awesome_flutter: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
