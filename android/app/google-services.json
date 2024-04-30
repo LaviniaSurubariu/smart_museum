@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "490449398409",
+    "project_id": "smartmuseum-b4776",
+    "storage_bucket": "smartmuseum-b4776.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490449398409:android:63ab36a7e8365f928c7458",
+        "android_client_info": {
+          "package_name": "com.smartMuseum.smart_museum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTYqik8SAZIR7b-EY3M14t3o1hM9Ej-ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
