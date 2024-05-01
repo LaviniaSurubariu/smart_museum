@@ -13,6 +13,7 @@ _$AppUser$Impl _$$AppUser$ImplFromJson(Map<String, dynamic> json) =>
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       role: json['role'] as String,
+      pictureUrl: json['pictureUrl'] as String?,
     );
 
 Map<String, dynamic> _$$AppUser$ImplToJson(_$AppUser$Impl instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$AppUser$ImplToJson(_$AppUser$Impl instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'role': instance.role,
+      'pictureUrl': instance.pictureUrl,
     };

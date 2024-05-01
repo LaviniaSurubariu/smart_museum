@@ -25,6 +25,7 @@ mixin _$AppUser {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
+  String? get pictureUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +42,8 @@ abstract class $AppUserCopyWith<$Res> {
       String email,
       String firstName,
       String lastName,
-      String role});
+      String role,
+      String? pictureUrl});
 }
 
 /// @nodoc
@@ -62,6 +64,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? firstName = null,
     Object? lastName = null,
     Object? role = null,
+    Object? pictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -84,6 +87,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      pictureUrl: freezed == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -100,7 +107,8 @@ abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String email,
       String firstName,
       String lastName,
-      String role});
+      String role,
+      String? pictureUrl});
 }
 
 /// @nodoc
@@ -119,6 +127,7 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? role = null,
+    Object? pictureUrl = freezed,
   }) {
     return _then(_$AppUser$Impl(
       uid: null == uid
@@ -141,6 +150,10 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      pictureUrl: freezed == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -153,7 +166,8 @@ class _$AppUser$Impl implements AppUser$ {
       required this.email,
       required this.firstName,
       required this.lastName,
-      required this.role});
+      required this.role,
+      this.pictureUrl});
 
   factory _$AppUser$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppUser$ImplFromJson(json);
@@ -168,10 +182,12 @@ class _$AppUser$Impl implements AppUser$ {
   final String lastName;
   @override
   final String role;
+  @override
+  final String? pictureUrl;
 
   @override
   String toString() {
-    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, role: $role)';
+    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, role: $role, pictureUrl: $pictureUrl)';
   }
 
   @override
@@ -185,13 +201,15 @@ class _$AppUser$Impl implements AppUser$ {
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
-            (identical(other.role, role) || other.role == role));
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, uid, email, firstName, lastName, role);
+  int get hashCode => Object.hash(
+      runtimeType, uid, email, firstName, lastName, role, pictureUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -213,7 +231,8 @@ abstract class AppUser$ implements AppUser {
       required final String email,
       required final String firstName,
       required final String lastName,
-      required final String role}) = _$AppUser$Impl;
+      required final String role,
+      final String? pictureUrl}) = _$AppUser$Impl;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) =
       _$AppUser$Impl.fromJson;
@@ -228,6 +247,8 @@ abstract class AppUser$ implements AppUser {
   String get lastName;
   @override
   String get role;
+  @override
+  String? get pictureUrl;
   @override
   @JsonKey(ignore: true)
   _$$AppUser$ImplCopyWith<_$AppUser$Impl> get copyWith =>

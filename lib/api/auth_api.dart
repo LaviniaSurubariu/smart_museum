@@ -77,13 +77,13 @@ class AuthApi {
       appUser = AppUser.fromJson(doc.data()!);
     } else {
       final String email = user.email!;
-      final String displayName = email.split('@').first;
       appUser = AppUser(
         uid: user.uid,
         email: email,
-        firstName: (doc.data()!['firstName'] as String) ?? '',
-        lastName: (doc.data()!['lastName'] as String) ?? '',
-        role: (doc.data()!['role'] as String) ?? '',
+        firstName: doc.data()!['firstName'] as String ,
+        lastName: doc.data()!['lastName'] as String,
+        role: doc.data()!['role'] as String,
+        pictureUrl:user.photoURL,
       );
       await ref.set(appUser.toJson());
     }

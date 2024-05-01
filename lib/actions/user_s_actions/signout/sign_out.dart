@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../app_action.dart';
+import '../../app_action.dart';
 
 part 'sign_out.freezed.dart';
 

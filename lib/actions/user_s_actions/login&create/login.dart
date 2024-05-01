@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../models/user/app_user/app_user.dart';
-import '../app_action.dart';
+import '../../../models/user/app_user/app_user.dart';
+import '../../app_action.dart';
 
 part 'login.freezed.dart';
 
