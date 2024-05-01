@@ -17,6 +17,7 @@ import 'presentation/entry_page.dart';
 import 'presentation/hello.dart';
 import 'presentation/login_user.dart';
 import 'presentation/profile_page.dart';
+import 'presentation/update_profile.dart';
 import 'reducer/reducer.dart';
 
 Future<dynamic> main() async {
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
           '/loginUser': (BuildContext context) => const LoginUserPage(),
           '/anotherPage': (BuildContext context) => const AnotherPage(),
           '/profilePage': (BuildContext context) => const ProfilePage(),
+          '/updateProfilePage': (BuildContext context) => const UpdateProfilePage(),
         },
       ),
 

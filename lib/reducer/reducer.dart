@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/user_s_actions/change_picture/change_picture.dart';
+import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
@@ -16,6 +17,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, CreateUserSuccessful>(_createUserSuccessful).call,
     TypedReducer<AppState, SignOutSuccessful>(_signOutSuccessful).call,
     TypedReducer<AppState, ChangePictureSuccessful>(_changePictureSuccessful).call,
+    TypedReducer<AppState, DeleteUserSuccessful>(_deleteUserSuccessful).call,
   ])(state, action);
 }
 
@@ -33,4 +35,8 @@ AppState _signOutSuccessful(AppState state, SignOutSuccessful action) {
 
 AppState _changePictureSuccessful(AppState state, ChangePictureSuccessful action) {
   return state.copyWith(user: action.user);
+}
+
+AppState _deleteUserSuccessful(AppState state, DeleteUserSuccessful action) {
+  return state.copyWith(user: null);
 }

@@ -23,7 +23,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
 
   void _onResult(AppAction action) {
     if (action is CreateUserSuccessful) {
-      Navigator.pushReplacementNamed(context, '/anotherPage');
+      Navigator.pushReplacementNamed(context, '/profilePage');
     } else if (action is CreateUserError) {
       final Object error = action.error;
       if (error is FirebaseAuthException && error.code == 'email-already-in-use') {

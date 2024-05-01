@@ -10,6 +10,7 @@ class AppUser with _$AppUser {
     required String email,
     required String firstName,
     required String lastName,
+    required DateTime creationTime,
     required String role,
     String? pictureUrl,
 

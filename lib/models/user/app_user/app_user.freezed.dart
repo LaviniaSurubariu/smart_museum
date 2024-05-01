@@ -24,6 +24,7 @@ mixin _$AppUser {
   String get email => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
+  DateTime get creationTime => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
   String? get pictureUrl => throw _privateConstructorUsedError;
 
@@ -42,6 +43,7 @@ abstract class $AppUserCopyWith<$Res> {
       String email,
       String firstName,
       String lastName,
+      DateTime creationTime,
       String role,
       String? pictureUrl});
 }
@@ -63,6 +65,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? email = null,
     Object? firstName = null,
     Object? lastName = null,
+    Object? creationTime = null,
     Object? role = null,
     Object? pictureUrl = freezed,
   }) {
@@ -83,6 +86,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
+      creationTime: null == creationTime
+          ? _value.creationTime
+          : creationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -107,6 +114,7 @@ abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String email,
       String firstName,
       String lastName,
+      DateTime creationTime,
       String role,
       String? pictureUrl});
 }
@@ -126,6 +134,7 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
     Object? email = null,
     Object? firstName = null,
     Object? lastName = null,
+    Object? creationTime = null,
     Object? role = null,
     Object? pictureUrl = freezed,
   }) {
@@ -146,6 +155,10 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
+      creationTime: null == creationTime
+          ? _value.creationTime
+          : creationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -166,6 +179,7 @@ class _$AppUser$Impl implements AppUser$ {
       required this.email,
       required this.firstName,
       required this.lastName,
+      required this.creationTime,
       required this.role,
       this.pictureUrl});
 
@@ -181,13 +195,15 @@ class _$AppUser$Impl implements AppUser$ {
   @override
   final String lastName;
   @override
+  final DateTime creationTime;
+  @override
   final String role;
   @override
   final String? pictureUrl;
 
   @override
   String toString() {
-    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, role: $role, pictureUrl: $pictureUrl)';
+    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, creationTime: $creationTime, role: $role, pictureUrl: $pictureUrl)';
   }
 
   @override
@@ -201,6 +217,8 @@ class _$AppUser$Impl implements AppUser$ {
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
+            (identical(other.creationTime, creationTime) ||
+                other.creationTime == creationTime) &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.pictureUrl, pictureUrl) ||
                 other.pictureUrl == pictureUrl));
@@ -208,8 +226,8 @@ class _$AppUser$Impl implements AppUser$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, uid, email, firstName, lastName, role, pictureUrl);
+  int get hashCode => Object.hash(runtimeType, uid, email, firstName, lastName,
+      creationTime, role, pictureUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -231,6 +249,7 @@ abstract class AppUser$ implements AppUser {
       required final String email,
       required final String firstName,
       required final String lastName,
+      required final DateTime creationTime,
       required final String role,
       final String? pictureUrl}) = _$AppUser$Impl;
 
@@ -245,6 +264,8 @@ abstract class AppUser$ implements AppUser {
   String get firstName;
   @override
   String get lastName;
+  @override
+  DateTime get creationTime;
   @override
   String get role;
   @override

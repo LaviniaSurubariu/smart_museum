@@ -12,6 +12,7 @@ _$AppUser$Impl _$$AppUser$ImplFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
+      creationTime: DateTime.parse(json['creationTime'] as String),
       role: json['role'] as String,
       pictureUrl: json['pictureUrl'] as String?,
     );
@@ -22,6 +23,7 @@ Map<String, dynamic> _$$AppUser$ImplToJson(_$AppUser$Impl instance) =>
       'email': instance.email,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
+      'creationTime': instance.creationTime.toIso8601String(),
       'role': instance.role,
       'pictureUrl': instance.pictureUrl,
     };

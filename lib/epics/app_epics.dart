@@ -3,6 +3,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
+import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
@@ -21,6 +22,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
       TypedEpic<AppState, SignOutStart>(_signOutStart).call,
       TypedEpic<AppState, ChangePictureStart>(_changePictureStart).call,
+      TypedEpic<AppState, DeleteUserStart >(_deleteUserStart).call,
 
 
     ])(actions, store);
@@ -64,6 +66,15 @@ class AppEpics extends EpicClass<AppState> {
           .asyncMap((_) => authApi.changePicture(action.path))
           .map((AppUser user) => ChangePicture.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePicture.error(error, stackTrace));
+    });
+  }
+  Stream<AppAction> _deleteUserStart(Stream<DeleteUserStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((DeleteUserStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authApi.deleteUser())
+          .map((_) => const DeleteUser.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteUser.error(error, stackTrace));
     });
   }
 }

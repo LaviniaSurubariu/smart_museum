@@ -24,7 +24,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
       if (action.user.role == 'admin') {
         Navigator.pushReplacementNamed(context, '/profilePage');
       } else if (action.user.role == 'user') {
-        Navigator.pushReplacementNamed(context, '/anotherPage');
+        Navigator.pushReplacementNamed(context, '/profilePage');
       }
     } else if (action is LoginError) {
       final Object error = action.error;

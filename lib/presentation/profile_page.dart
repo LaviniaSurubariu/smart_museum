@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:smart_museum/presentation/utils/ProfileMenuWidget.dart';
+import 'package:smart_museum/presentation/utils/customAlertDialogTwoButtons.dart';
 import 'package:smart_museum/presentation/utils/customTheme.dart';
 
-import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
@@ -51,31 +50,6 @@ class ProfilePage extends StatelessWidget {
                                   ? null
                                   : const Icon(LineAwesomeIcons.user, size: 60, color: Colors.black)),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: GestureDetector(
-                            onTap: () async {
-                              final ImagePicker picker = ImagePicker();
-                              final XFile? file =
-                                  await picker.pickImage(source: ImageSource.gallery, maxHeight: 1024, maxWidth: 1024);
-
-                              if (file != null) {
-                                context.dispatch(ChangePicture(file.path));
-                              }
-                            },
-                            child: Container(
-                              width: 35,
-                              height: 35,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.grey),
-                              child: const Icon(
-                                LineAwesomeIcons.alternate_pencil,
-                                color: Colors.black,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                     const SizedBox(height: 10),
@@ -88,7 +62,9 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(
                       width: 200,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/updateProfilePage');
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.grey, side: BorderSide.none, shape: const StadiumBorder()),
                         child: const Text('Edit Profile', style: TextStyle(color: Colors.black)),
@@ -111,8 +87,27 @@ class ProfilePage extends StatelessWidget {
                       textColor: Colors.red,
                       endIcon: false,
                       onPress: () {
-                        context.dispatch(const SignOut());
-                        Navigator.pushReplacementNamed(context, '/entryPage');
+                        showDialog<CustomAlertDialogTwoButtons>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return CustomAlertDialogTwoButtons(
+                                title: 'Logout',
+                                content: 'Are you sure you want to logout?',
+                                firstButtonText: 'no',
+                                firstButtonColor: Colors.grey,
+                                iconData: LineAwesomeIcons.alternate_sign_out,
+                                iconColor: Colors.grey,
+                                onFirstButtonPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                secondButtonText: 'yes',
+                                secondButtonColor: Colors.redAccent,
+                                onSecondButtonPressed: () {
+                                  context.dispatch(const SignOut());
+                                  Navigator.pushReplacementNamed(context, '/entryPage');
+                                },
+                              );
+                            });
                       },
                     ),
                   ],
