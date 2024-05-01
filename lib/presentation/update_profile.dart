@@ -149,7 +149,8 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                               child: const Text('Save Changes', style: TextStyle(color: Colors.black)),
                             ),
                           ),
-                          const SizedBox(height: 60),
+
+                          const SizedBox(height: 120),
 
                           // -- Created Date and Delete Button
                           Row(

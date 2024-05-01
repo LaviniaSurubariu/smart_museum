@@ -109,6 +109,12 @@ class AuthApi {
     await user.delete();
   }
 
+  Future<void> changePassword(String newPassword) async {
+    final User user = _auth.currentUser!;
+    await user.updatePassword(newPassword);
+  }
+
+
   Future<List<AppUser>> getUsers(List<String> uids) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
         .collection('users') //

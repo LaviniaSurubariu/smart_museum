@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../actions/app_action.dart';
+import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -13,6 +14,7 @@ import '../models/user/app_user/app_user.dart';
 
 class AppEpics extends EpicClass<AppState> {
   AppEpics(this.authApi);
+
   final AuthApi authApi;
 
   @override
@@ -22,8 +24,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
       TypedEpic<AppState, SignOutStart>(_signOutStart).call,
       TypedEpic<AppState, ChangePictureStart>(_changePictureStart).call,
-      TypedEpic<AppState, DeleteUserStart >(_deleteUserStart).call,
-
+      TypedEpic<AppState, DeleteUserStart>(_deleteUserStart).call,
+      TypedEpic<AppState, ChangePasswordStart>(_changePasswordStart).call,
 
     ])(actions, store);
   }
@@ -43,12 +45,18 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.createUser(email: action.email, password: action.password, firstName: action.firstName, lastName: action.lastName, role: action.role))
+          .asyncMap((_) => authApi.createUser(
+              email: action.email,
+              password: action.password,
+              firstName: action.firstName,
+              lastName: action.lastName,
+              role: action.role))
           .map((AppUser user) => CreateUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
           .doOnData(action.result);
     });
   }
+
   Stream<AppAction> _signOutStart(Stream<SignOutStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((SignOutStart action) {
@@ -68,6 +76,7 @@ class AppEpics extends EpicClass<AppState> {
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePicture.error(error, stackTrace));
     });
   }
+
   Stream<AppAction> _deleteUserStart(Stream<DeleteUserStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((DeleteUserStart action) {
@@ -75,6 +84,16 @@ class AppEpics extends EpicClass<AppState> {
           .asyncMap((_) => authApi.deleteUser())
           .map((_) => const DeleteUser.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteUser.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _changePasswordStart(Stream<ChangePasswordStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((ChangePasswordStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authApi.changePassword(action.newPass))
+          .map((_) => ChangePassword.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePassword.error(error, stackTrace));
     });
   }
 }
