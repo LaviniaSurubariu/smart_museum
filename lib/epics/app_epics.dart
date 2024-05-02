@@ -92,7 +92,7 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((ChangePasswordStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => authApi.changePassword(action.newPass))
-          .map((_) => ChangePassword.successful())
+          .map((_) => const ChangePassword.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePassword.error(error, stackTrace));
     });
   }

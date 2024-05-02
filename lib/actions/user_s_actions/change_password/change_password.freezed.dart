@@ -103,7 +103,7 @@ class __$$ChangePasswordStartImplCopyWithImpl<$Res>
     Object? newPass = null,
   }) {
     return _then(_$ChangePasswordStartImpl(
-      null == newPass
+      newPass: null == newPass
           ? _value.newPass
           : newPass // ignore: cast_nullable_to_non_nullable
               as String,
@@ -114,7 +114,7 @@ class __$$ChangePasswordStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangePasswordStartImpl implements ChangePasswordStart {
-  const _$ChangePasswordStartImpl(this.newPass);
+  const _$ChangePasswordStartImpl({required this.newPass});
 
   @override
   final String newPass;
@@ -212,7 +212,7 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
 }
 
 abstract class ChangePasswordStart implements ChangePassword {
-  const factory ChangePasswordStart(final String newPass) =
+  const factory ChangePasswordStart({required final String newPass}) =
       _$ChangePasswordStartImpl;
 
   String get newPass;

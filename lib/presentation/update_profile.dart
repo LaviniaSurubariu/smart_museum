@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:smart_museum/presentation/utils/customAlertDialogOneButton.dart';
 import 'package:smart_museum/presentation/utils/customTheme.dart';
 
+import '../actions/app_action.dart';
+import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../models/user/app_user/app_user.dart';
@@ -21,6 +24,8 @@ class UpdateProfilePage extends StatefulWidget {
 
 class _UpdateProfilePageState extends State<UpdateProfilePage> {
   bool isObscure = true;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +115,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
 
                     // -- Form Fields
                     Form(
+                      key: formKey,
                       child: Column(
                         children: <Widget>[
                           TextFormField(
@@ -125,7 +131,22 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
+                            controller: passwordController,
                             obscureText: isObscure,
+                            validator: (String? value) {
+                              const Pattern pattern =
+                                  r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+                              final RegExp regex = RegExp(pattern as String);
+                              if (value!.isEmpty) {
+                                return null;
+                              } else if (!regex.hasMatch(value)) {
+                                return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
+                              }
+                              return null;
+                            },
+                            onChanged: (String value) {
+                              formKey.currentState!.validate();
+                            },
                             decoration: InputDecoration(
                               label: const Text('Password'),
                               prefixIcon: const Icon(Icons.fingerprint),
@@ -143,14 +164,20 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: () => {},
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  if (passwordController.text.isNotEmpty) {
+                                    context.dispatch(ChangePassword(newPass: passwordController.text));
+                                  }
+                                }
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.grey, side: BorderSide.none, shape: const StadiumBorder()),
                               child: const Text('Save Changes', style: TextStyle(color: Colors.black)),
                             ),
                           ),
 
-                          const SizedBox(height: 120),
+                          const SizedBox(height: 160),
 
                           // -- Created Date and Delete Button
                           Row(
@@ -214,5 +241,43 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
         );
       },
     );
+  }
+
+  void _onResult(AppAction action) {
+    if (action is ChangePasswordSuccessful) {
+      showDialog<CustomAlertDialogTwoButtons>(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomAlertDialogOneButton(
+            title: 'Password Changed',
+            content: '',
+            buttonText: 'OK',
+            buttonColor: Colors.grey,
+            iconData: LineAwesomeIcons.check_circle,
+            iconColor: Colors.green,
+            onButtonPressed: () {
+              Navigator.pop(context);
+            },
+          );
+        },
+      );
+    } else if (action is ChangePasswordError) {
+      showDialog<CustomAlertDialogTwoButtons>(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomAlertDialogOneButton(
+            title: 'An error occurred',
+            content: 'Please try again.',
+            buttonText: 'OK',
+            buttonColor: Colors.grey,
+            iconData: LineAwesomeIcons.exclamation,
+            iconColor: Colors.redAccent,
+            onButtonPressed: () {
+              Navigator.pop(context);
+            },
+          );
+        },
+      );
+    }
   }
 }

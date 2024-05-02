@@ -55,7 +55,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme:CustomTheme.themeData,
+      theme: CustomTheme.themeData,
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -83,8 +83,11 @@ class _LoginUserPageState extends State<LoginUserPage> {
                                 labelText: 'Email',
                                 icon: Icons.email,
                                 validator: (String? value) {
-                                  if (value == null || value.isEmpty || !value.contains('@')) {
-                                    return 'Please provide a valid email address.';
+                                  const Pattern pattern =
+                                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                  final RegExp regex = RegExp(pattern as String);
+                                  if (value == null || value.isEmpty || !regex.hasMatch(value)) {
+                                    return 'Provide a valid email address.';
                                   }
                                   return null;
                                 },
@@ -99,8 +102,13 @@ class _LoginUserPageState extends State<LoginUserPage> {
                                 labelText: 'Password',
                                 icon: Icons.lock,
                                 validator: (String? value) {
-                                  if (value == null || value.length < 6) {
-                                    return 'Password must be at least 6 characters long.';
+                                  const Pattern pattern =
+                                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+                                  final RegExp regex = RegExp(pattern as String);
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter password';
+                                  } else if (!regex.hasMatch(value)) {
+                                    return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
                                   }
                                   return null;
                                 },
@@ -114,7 +122,8 @@ class _LoginUserPageState extends State<LoginUserPage> {
                                     backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
-                                    context.dispatch(Login(email: email.text, password: password.text, result: _onResult));
+                                    context
+                                        .dispatch(Login(email: email.text, password: password.text, result: _onResult));
                                   }
                                 },
                                 child: const Text('Login', style: TextStyle(color: Colors.white)),

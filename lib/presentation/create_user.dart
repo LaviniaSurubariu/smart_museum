@@ -115,7 +115,10 @@ class _CreateUserPageState extends State<CreateUserPage> {
                                 labelText: 'Email',
                                 icon: Icons.email,
                                 validator: (String? value) {
-                                  if (value == null || value.isEmpty || !value.contains('@')) {
+                                  const Pattern pattern =
+                                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                  final RegExp regex = RegExp(pattern as String);
+                                  if (value == null || value.isEmpty || !regex.hasMatch(value)) {
                                     return 'Provide a valid email address.';
                                   }
                                   return null;
@@ -127,10 +130,16 @@ class _CreateUserPageState extends State<CreateUserPage> {
                                 labelText: 'Password',
                                 icon: Icons.lock,
                                 validator: (String? value) {
-                                  if (value == null || value.length < 6) {
-                                    return 'Password must be at least 6 characters.';
+                                  const Pattern pattern =
+                                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+                                  final RegExp regex = RegExp(pattern as String);
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter password';
+                                  } else if (!regex.hasMatch(value)) {
+                                    return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
+                                  } else {
+                                    return null;
                                   }
-                                  return null;
                                 },
                               ),
                               const SizedBox(height: 24.0),
