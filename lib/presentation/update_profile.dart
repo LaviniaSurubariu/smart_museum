@@ -51,14 +51,14 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                           title: 'Back?',
                           content: 'Changes that you want to make may not be saved.',
                           firstButtonText: 'no',
-                          firstButtonColor: Colors.grey,
+                          firstButtonColor: Colors.white30,
                           iconData: LineAwesomeIcons.exclamation_circle,
                           iconColor: Colors.grey,
                           onFirstButtonPressed: () {
                             Navigator.pop(context);
                           },
                           secondButtonText: 'yes',
-                          secondButtonColor: Colors.redAccent,
+                          secondButtonColor: Colors.grey,
                           onSecondButtonPressed: () {
                             Navigator.pushReplacementNamed(context, '/profilePage');
                           },
@@ -177,7 +177,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                             ),
                           ),
 
-                          const SizedBox(height: 160),
+                          const SizedBox(height: 80),
 
                           // -- Created Date and Delete Button
                           Row(
@@ -204,7 +204,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                         content:
                                             'This action cannot be undone. Are you sure you want to delete your profile?',
                                         firstButtonText: 'yes',
-                                        firstButtonColor: Colors.grey,
+                                        firstButtonColor: Colors.white30,
                                         iconData: LineAwesomeIcons.exclamation_circle,
                                         iconColor: Colors.grey,
                                         onFirstButtonPressed: () {
@@ -212,7 +212,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                           Navigator.pushReplacementNamed(context, '/entryPage');
                                         },
                                         secondButtonText: 'no',
-                                        secondButtonColor: Colors.redAccent,
+                                        secondButtonColor: Colors.grey,
                                         onSecondButtonPressed: () {
                                           Navigator.pop(context);
                                         },

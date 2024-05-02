@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:smart_museum/presentation/utils/customAlertDialogOneButton.dart';
+import 'package:smart_museum/presentation/utils/customAlertDialogTwoButtons.dart';
 import 'package:smart_museum/presentation/utils/customTextFormField.dart';
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -27,37 +30,42 @@ class _CreateUserPageState extends State<CreateUserPage> {
     } else if (action is CreateUserError) {
       final Object error = action.error;
       if (error is FirebaseAuthException && error.code == 'email-already-in-use') {
-        showDialog<void>(
+        showDialog<CustomAlertDialogTwoButtons>(
           context: context,
           builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Account already exits'),
-              content: Text('${error.message}'),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Cancel'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.pushReplacementNamed(context, '/loginUser');
-                  },
-                  child: const Text('Login'),
-                ),
-              ],
+            return CustomAlertDialogTwoButtons(
+              title: 'Account already exist',
+              content: '',
+              firstButtonText: 'Cancel',
+              firstButtonColor: Colors.white30,
+              iconData: LineAwesomeIcons.exclamation_circle,
+              iconColor: Colors.grey,
+              onFirstButtonPressed: () {
+                Navigator.pop(context);
+              },
+              secondButtonText: 'Login',
+              secondButtonColor: Colors.grey,
+              onSecondButtonPressed: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/loginUser');
+              },
             );
           },
         );
       } else {
-        showDialog<void>(
+        showDialog<CustomAlertDialogOneButton>(
           context: context,
           builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Create user error'),
-              content: Text('${action.error}'),
+            return CustomAlertDialogOneButton(
+              title: 'Error',
+              content: 'An error occurred. Please try again.',
+              buttonText: 'OK',
+              buttonColor: Colors.grey,
+              iconData: LineAwesomeIcons.exclamation_circle,
+              iconColor: Colors.grey,
+              onButtonPressed: () {
+                Navigator.pop(context);
+              },
             );
           },
         );

@@ -2,12 +2,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../app_action.dart';
 
-
 part 'change_password.freezed.dart';
 
 @freezed
 class ChangePassword with _$ChangePassword implements AppAction {
-  const factory ChangePassword(String newPass) = ChangePasswordStart;
+  const factory ChangePassword({
+    required String newPass,
+  }) = ChangePasswordStart;
 
   const factory ChangePassword.successful() = ChangePasswordSuccessful;
 

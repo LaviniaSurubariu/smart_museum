@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../actions/app_action.dart';
 
 import '../actions/user_s_actions/login&create/login.dart';
+import 'utils/customAlertDialogOneButton.dart';
 import 'utils/customTextFormFieldWithOnChange.dart';
 import 'utils/customTheme.dart';
 import 'utils/extensions.dart';
@@ -29,22 +31,36 @@ class _LoginUserPageState extends State<LoginUserPage> {
     } else if (action is LoginError) {
       final Object error = action.error;
       if (error is FirebaseAuthException && error.code == 'invalid-credential') {
-        showDialog<void>(
+        showDialog<CustomAlertDialogOneButton>(
           context: context,
           builder: (BuildContext context) {
-            return const AlertDialog(
-              title: Text('Login error'),
-              content: Text('Account not found or incorrect password.'),
+            return CustomAlertDialogOneButton(
+              title: 'Login error',
+              content: 'Account not found or incorrect password',
+              buttonText: 'OK',
+              buttonColor: Colors.grey,
+              iconData: LineAwesomeIcons.exclamation_circle,
+              iconColor: Colors.grey,
+              onButtonPressed: () {
+                Navigator.pop(context);
+              },
             );
           },
         );
       } else {
-        showDialog<void>(
+        showDialog<CustomAlertDialogOneButton>(
           context: context,
           builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Login user error'),
-              content: Text('${action.error}'),
+            return CustomAlertDialogOneButton(
+              title: 'Error',
+              content: 'An error occurred. Please try again.',
+              buttonText: 'OK',
+              buttonColor: Colors.grey,
+              iconData: LineAwesomeIcons.exclamation_circle,
+              iconColor: Colors.grey,
+              onButtonPressed: () {
+                Navigator.pop(context);
+              },
             );
           },
         );

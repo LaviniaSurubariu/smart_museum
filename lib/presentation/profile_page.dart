@@ -93,18 +93,18 @@ class ProfilePage extends StatelessWidget {
                               return CustomAlertDialogTwoButtons(
                                 title: 'Logout',
                                 content: 'Are you sure you want to logout?',
-                                firstButtonText: 'no',
-                                firstButtonColor: Colors.grey,
+                                firstButtonText: 'yes',
+                                firstButtonColor: Colors.white30,
                                 iconData: LineAwesomeIcons.alternate_sign_out,
                                 iconColor: Colors.grey,
                                 onFirstButtonPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                secondButtonText: 'yes',
-                                secondButtonColor: Colors.redAccent,
-                                onSecondButtonPressed: () {
                                   context.dispatch(const SignOut());
                                   Navigator.pushReplacementNamed(context, '/entryPage');
+                                },
+                                secondButtonText: 'no',
+                                secondButtonColor: Colors.grey,
+                                onSecondButtonPressed: () {
+                                  Navigator.pop(context);
                                 },
                               );
                             });
