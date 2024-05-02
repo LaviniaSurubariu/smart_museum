@@ -48,6 +48,7 @@ class CustomAlertDialogTwoButtons extends CustomAlertDialogOneButton {
             const SizedBox(height: 20),
             Text(
               content,
+              textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 12, color: Colors.black),
             ),
             const SizedBox(height: 20),

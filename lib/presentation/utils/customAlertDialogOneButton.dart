@@ -41,6 +41,7 @@ class CustomAlertDialogOneButton extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               content,
+              textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 14, color: Colors.black),
             ),
             const SizedBox(height: 20),
@@ -49,7 +50,6 @@ class CustomAlertDialogOneButton extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: buttonColor,
-
                 ),
                 onPressed: onButtonPressed,
                 child: Text(

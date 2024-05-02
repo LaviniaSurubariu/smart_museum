@@ -8,6 +8,7 @@ part 'change_password.freezed.dart';
 class ChangePassword with _$ChangePassword implements AppAction {
   const factory ChangePassword({
     required String newPass,
+    required ActionResult result,
   }) = ChangePasswordStart;
 
   const factory ChangePassword.successful() = ChangePasswordSuccessful;

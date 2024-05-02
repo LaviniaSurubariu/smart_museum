@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ChangePassword {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPass) $default, {
+    TResult Function(String newPass, ActionResult result) $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPass)? $default, {
+    TResult? Function(String newPass, ActionResult result)? $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPass)? $default, {
+    TResult Function(String newPass, ActionResult result)? $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -86,7 +86,7 @@ abstract class _$$ChangePasswordStartImplCopyWith<$Res> {
           $Res Function(_$ChangePasswordStartImpl) then) =
       __$$ChangePasswordStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String newPass});
+  $Res call({String newPass, ActionResult result});
 }
 
 /// @nodoc
@@ -101,12 +101,17 @@ class __$$ChangePasswordStartImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? newPass = null,
+    Object? result = null,
   }) {
     return _then(_$ChangePasswordStartImpl(
       newPass: null == newPass
           ? _value.newPass
           : newPass // ignore: cast_nullable_to_non_nullable
               as String,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
     ));
   }
 }
@@ -114,14 +119,17 @@ class __$$ChangePasswordStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangePasswordStartImpl implements ChangePasswordStart {
-  const _$ChangePasswordStartImpl({required this.newPass});
+  const _$ChangePasswordStartImpl(
+      {required this.newPass, required this.result});
 
   @override
   final String newPass;
+  @override
+  final ActionResult result;
 
   @override
   String toString() {
-    return 'ChangePassword(newPass: $newPass)';
+    return 'ChangePassword(newPass: $newPass, result: $result)';
   }
 
   @override
@@ -129,11 +137,12 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangePasswordStartImpl &&
-            (identical(other.newPass, newPass) || other.newPass == newPass));
+            (identical(other.newPass, newPass) || other.newPass == newPass) &&
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, newPass);
+  int get hashCode => Object.hash(runtimeType, newPass, result);
 
   @JsonKey(ignore: true)
   @override
@@ -145,33 +154,33 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPass) $default, {
+    TResult Function(String newPass, ActionResult result) $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(newPass);
+    return $default(newPass, result);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPass)? $default, {
+    TResult? Function(String newPass, ActionResult result)? $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(newPass);
+    return $default?.call(newPass, result);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPass)? $default, {
+    TResult Function(String newPass, ActionResult result)? $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(newPass);
+      return $default(newPass, result);
     }
     return orElse();
   }
@@ -212,10 +221,12 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
 }
 
 abstract class ChangePasswordStart implements ChangePassword {
-  const factory ChangePasswordStart({required final String newPass}) =
-      _$ChangePasswordStartImpl;
+  const factory ChangePasswordStart(
+      {required final String newPass,
+      required final ActionResult result}) = _$ChangePasswordStartImpl;
 
   String get newPass;
+  ActionResult get result;
   @JsonKey(ignore: true)
   _$$ChangePasswordStartImplCopyWith<_$ChangePasswordStartImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -262,7 +273,7 @@ class _$ChangePasswordSuccessfulImpl implements ChangePasswordSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPass) $default, {
+    TResult Function(String newPass, ActionResult result) $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -272,7 +283,7 @@ class _$ChangePasswordSuccessfulImpl implements ChangePasswordSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPass)? $default, {
+    TResult? Function(String newPass, ActionResult result)? $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -282,7 +293,7 @@ class _$ChangePasswordSuccessfulImpl implements ChangePasswordSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPass)? $default, {
+    TResult Function(String newPass, ActionResult result)? $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -404,7 +415,7 @@ class _$ChangePasswordErrorImpl implements ChangePasswordError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPass) $default, {
+    TResult Function(String newPass, ActionResult result) $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -414,7 +425,7 @@ class _$ChangePasswordErrorImpl implements ChangePasswordError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPass)? $default, {
+    TResult? Function(String newPass, ActionResult result)? $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -424,7 +435,7 @@ class _$ChangePasswordErrorImpl implements ChangePasswordError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPass)? $default, {
+    TResult Function(String newPass, ActionResult result)? $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),

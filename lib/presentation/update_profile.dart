@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:smart_museum/presentation/utils/customAlertDialogOneButton.dart';
-import 'package:smart_museum/presentation/utils/customTheme.dart';
 
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
@@ -12,7 +9,9 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
+import 'utils/customAlertDialogOneButton.dart';
 import 'utils/customAlertDialogTwoButtons.dart';
+import 'utils/customTheme.dart';
 import 'utils/extensions.dart';
 
 class UpdateProfilePage extends StatefulWidget {
@@ -76,7 +75,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                   children: <Widget>[
                     // -- IMAGE with ICON
                     Stack(
-                      children: [
+                      children: <Widget>[
                         SizedBox(
                           width: 120,
                           height: 120,
@@ -90,7 +89,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                         ),
                         Positioned(
                           bottom: 0,
-                          right: 0,
+                          right: 0, // -- Position of the edit icon
                           child: GestureDetector(
                             onTap: () async {
                               final ImagePicker picker = ImagePicker();
@@ -167,7 +166,8 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
                                   if (passwordController.text.isNotEmpty) {
-                                    context.dispatch(ChangePassword(newPass: passwordController.text));
+                                    context
+                                        .dispatch(ChangePassword(newPass: passwordController.text, result: _onResult));
                                   }
                                 }
                               },
@@ -250,7 +250,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
         builder: (BuildContext context) {
           return CustomAlertDialogOneButton(
             title: 'Password Changed',
-            content: '',
+            content: 'Successfully changed your password.',
             buttonText: 'OK',
             buttonColor: Colors.grey,
             iconData: LineAwesomeIcons.check_circle,
