@@ -114,6 +114,15 @@ class AuthApi {
     await user.updatePassword(newPassword);
   }
 
+  Future<AppUser> changeName({required String newFirstName, required String newLastName}) async {
+    final User user = _auth.currentUser!;
+
+    await _firestore //
+        .doc('users/${user.uid}')
+        .update(<String, dynamic>{'firstName': newFirstName, 'lastName': newLastName});
+
+    return _extractUser();
+  }
 
   Future<List<AppUser>> getUsers(List<String> uids) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore

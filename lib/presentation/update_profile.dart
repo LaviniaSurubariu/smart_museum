@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../actions/app_action.dart';
+import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
@@ -25,6 +26,8 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
   bool isObscure = true;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,9 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
               child: CircularProgressIndicator(),
             ),
           );
+        } else {
+          firstNameController.text = user.firstName;
+          lastNameController.text = user.lastName;
         }
         return MaterialApp(
           theme: CustomTheme.themeData,
@@ -118,13 +124,13 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                       child: Column(
                         children: <Widget>[
                           TextFormField(
-                            initialValue: user.firstName,
+                            controller: firstNameController,
                             decoration: const InputDecoration(
                                 label: Text('First Name'), prefixIcon: Icon(LineAwesomeIcons.user)),
                           ),
                           const SizedBox(height: 20),
                           TextFormField(
-                            initialValue: user.lastName,
+                            controller: lastNameController,
                             decoration: const InputDecoration(
                                 label: Text('Last Name'), prefixIcon: Icon(LineAwesomeIcons.user)),
                           ),
@@ -164,11 +170,46 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                if (formKey.currentState!.validate()) {
-                                  if (passwordController.text.isNotEmpty) {
-                                    context
-                                        .dispatch(ChangePassword(newPass: passwordController.text, result: _onResult));
+                                print(firstNameController.text);
+                                print(lastNameController.text);
+                                print(passwordController.text);
+                                print(user.firstName);
+                                print(user.lastName);
+
+                                if (passwordController.text.isNotEmpty &&
+                                    firstNameController.text.isNotEmpty &&
+                                    lastNameController.text.isNotEmpty &&
+                                    (firstNameController.text != user.firstName ||
+                                        lastNameController.text != user.lastName)) {
+                                  print("am intarit aici");
+
+                                  if (formKey.currentState!.validate()) {
+                                    context.dispatch(
+                                        ChangePassword(newPass: passwordController.text, result: _onChangeNameResult));
+                                    context.dispatch(ChangeName(
+                                        newFirstName: firstNameController.text,
+                                        newLastName: lastNameController.text,
+                                        result: _onChangeNameResult));
                                   }
+                                } else if (passwordController.text.isNotEmpty) {
+                                  if (formKey.currentState!.validate()) {
+                                    print("am intarit pass");
+
+                                    context.dispatch(ChangePassword(
+                                        newPass: passwordController.text, result: _onChangePasswordResult));
+                                  }
+                                } else if (firstNameController.text.isNotEmpty &&
+                                    lastNameController.text.isNotEmpty &&
+                                    (firstNameController.text != user.firstName ||
+                                        lastNameController.text != user.lastName)) {
+                                  print("am intarit smth");
+
+                                  context.dispatch(ChangeName(
+                                      newFirstName: firstNameController.text,
+                                      newLastName: lastNameController.text,
+                                      result: _onChangeNameResult));
+                                } else {
+                                  print("nimic");
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -243,7 +284,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
     );
   }
 
-  void _onResult(AppAction action) {
+  void _onChangePasswordResult(AppAction action) {
     if (action is ChangePasswordSuccessful) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,
@@ -262,6 +303,44 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
         },
       );
     } else if (action is ChangePasswordError) {
+      showDialog<CustomAlertDialogTwoButtons>(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomAlertDialogOneButton(
+            title: 'An error occurred',
+            content: 'Please try again.',
+            buttonText: 'OK',
+            buttonColor: Colors.grey,
+            iconData: LineAwesomeIcons.exclamation,
+            iconColor: Colors.redAccent,
+            onButtonPressed: () {
+              Navigator.pop(context);
+            },
+          );
+        },
+      );
+    }
+  }
+
+  void _onChangeNameResult(AppAction action) {
+    if (action is ChangeNameSuccessful) {
+      showDialog<CustomAlertDialogTwoButtons>(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomAlertDialogOneButton(
+            title: 'Data Changed',
+            content: 'Successfully changed your data.',
+            buttonText: 'OK',
+            buttonColor: Colors.grey,
+            iconData: LineAwesomeIcons.check_circle,
+            iconColor: Colors.green,
+            onButtonPressed: () {
+              Navigator.pop(context);
+            },
+          );
+        },
+      );
+    } else if (action is ChangeNameError) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,
         builder: (BuildContext context) {

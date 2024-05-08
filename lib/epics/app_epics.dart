@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../actions/app_action.dart';
+import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
@@ -26,6 +27,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, ChangePictureStart>(_changePictureStart).call,
       TypedEpic<AppState, DeleteUserStart>(_deleteUserStart).call,
       TypedEpic<AppState, ChangePasswordStart>(_changePasswordStart).call,
+      TypedEpic<AppState, ChangeNameStart>(_changeNameStart).call,
 
     ])(actions, store);
   }
@@ -94,6 +96,17 @@ class AppEpics extends EpicClass<AppState> {
           .asyncMap((_) => authApi.changePassword(action.newPass))
           .map((_) => const ChangePassword.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePassword.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _changeNameStart(Stream<ChangeNameStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((ChangeNameStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authApi.changeName(newFirstName: action.newFirstName, newLastName: action.newLastName))
+          .map((AppUser user) => ChangeName.successful(user))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangeName.error(error, stackTrace))
           .doOnData(action.result);
     });
   }
