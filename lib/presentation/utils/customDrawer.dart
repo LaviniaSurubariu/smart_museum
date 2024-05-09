@@ -5,7 +5,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width * 0.6,
       child: Drawer(
         child: ListView(
@@ -39,7 +39,9 @@ class CustomDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text('PROFILE'),
+              title: const Text(
+                'PROFILE',
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/profilePage');

@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:smart_museum/presentation/utils/customTheme.dart';
 
 import 'api/auth_api.dart';
 import 'epics/app_epics.dart';
@@ -18,6 +17,7 @@ import 'presentation/home_screen.dart';
 import 'presentation/login_user.dart';
 import 'presentation/profile_page.dart';
 import 'presentation/update_profile.dart';
+import 'presentation/utils/customTheme.dart';
 import 'reducer/reducer.dart';
 
 Future<dynamic> main() async {

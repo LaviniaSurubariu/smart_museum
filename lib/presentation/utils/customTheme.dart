@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static ThemeData get themeData {
@@ -7,17 +8,21 @@ class CustomTheme {
       primaryColor: Colors.white,
       hintColor: Colors.black,
       scaffoldBackgroundColor: Colors.white,
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: Colors.white,
         centerTitle: true,
-        titleTextStyle: TextStyle(
+        titleTextStyle: GoogleFonts.lora(
           color: Colors.black,
           fontSize: 24,
         ),
       ),
-      inputDecorationTheme: const InputDecorationTheme(
-        hintStyle: TextStyle(color: Colors.black),
-        prefixStyle: TextStyle(color: Colors.black),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: GoogleFonts.lora(
+          color: Colors.black,
+        ),
+        prefixStyle: GoogleFonts.lora(
+          color: Colors.black,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -34,6 +39,7 @@ class CustomTheme {
           foregroundColor: Colors.black,
         ),
       ),
+      textTheme: GoogleFonts.loraTextTheme(),
     );
   }
 }
