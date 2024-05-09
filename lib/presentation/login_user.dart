@@ -24,9 +24,9 @@ class _LoginUserPageState extends State<LoginUserPage> {
   void _onResult(AppAction action) {
     if (action is LoginSuccessful) {
       if (action.user.role == 'admin') {
-        Navigator.pushReplacementNamed(context, '/profilePage');
+        Navigator.pushReplacementNamed(context, '/homeScreenPage');
       } else if (action.user.role == 'user') {
-        Navigator.pushReplacementNamed(context, '/profilePage');
+        Navigator.pushReplacementNamed(context, '/homeScreenPage');
       }
     } else if (action is LoginError) {
       final Object error = action.error;

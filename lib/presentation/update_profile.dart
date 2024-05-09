@@ -181,7 +181,6 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                     lastNameController.text.isNotEmpty &&
                                     (firstNameController.text != user.firstName ||
                                         lastNameController.text != user.lastName)) {
-                                  print("am intarit aici");
 
                                   if (formKey.currentState!.validate()) {
                                     context.dispatch(
@@ -193,7 +192,6 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                   }
                                 } else if (passwordController.text.isNotEmpty) {
                                   if (formKey.currentState!.validate()) {
-                                    print("am intarit pass");
 
                                     context.dispatch(ChangePassword(
                                         newPass: passwordController.text, result: _onChangePasswordResult));
@@ -202,14 +200,11 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                     lastNameController.text.isNotEmpty &&
                                     (firstNameController.text != user.firstName ||
                                         lastNameController.text != user.lastName)) {
-                                  print("am intarit smth");
 
                                   context.dispatch(ChangeName(
                                       newFirstName: firstNameController.text,
                                       newLastName: lastNameController.text,
                                       result: _onChangeNameResult));
-                                } else {
-                                  print("nimic");
                                 }
                               },
                               style: ElevatedButton.styleFrom(

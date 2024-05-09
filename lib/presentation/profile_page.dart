@@ -1,19 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:smart_museum/presentation/utils/ProfileMenuWidget.dart';
-import 'package:smart_museum/presentation/utils/customAlertDialogTwoButtons.dart';
-import 'package:smart_museum/presentation/utils/customTheme.dart';
 
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
+import 'utils/ProfileMenuWidget.dart';
+import 'utils/customButtomNavigationBar.dart';
+import 'utils/customAlertDialogTwoButtons.dart';
+import 'utils/customTheme.dart';
 import 'utils/extensions.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
   Widget build(BuildContext context) {
+    int selectedIndex = 1;
+
+    void onItemTapped(int index) {
+      setState(() {
+        selectedIndex = index;
+      });
+      switch (index) {
+        case 0:
+          Navigator.pushReplacementNamed(context, '/homeScreenPage');
+
+        case 1:
+          break;
+      }
+    }
+
     return AppUserContainer(
       builder: (BuildContext context, AppUser? user) {
         if (user == null) {
@@ -28,7 +49,6 @@ class ProfilePage extends StatelessWidget {
           theme: CustomTheme.themeData,
           home: Scaffold(
             appBar: AppBar(
-              leading: IconButton(onPressed: () => {}, icon: const Icon(LineAwesomeIcons.angle_left)),
               title: const Text('Profile', style: TextStyle(color: Colors.black)),
             ),
             body: SingleChildScrollView(
@@ -77,7 +97,7 @@ class ProfilePage extends StatelessWidget {
                     /// -- MENU
                     ProfileMenuWidget(title: 'Settings', icon: LineAwesomeIcons.cog, onPress: () {}),
                     ProfileMenuWidget(title: 'Billing Details', icon: LineAwesomeIcons.wallet, onPress: () {}),
-                    ProfileMenuWidget(title: 'User Management', icon: LineAwesomeIcons.user_check, onPress: () {}),
+                    ProfileMenuWidget(title: 'Saved', icon: LineAwesomeIcons.heart, onPress: () {}),
                     const Divider(),
                     const SizedBox(height: 10),
                     ProfileMenuWidget(title: 'Information', icon: LineAwesomeIcons.info, onPress: () {}),
@@ -113,6 +133,10 @@ class ProfilePage extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            bottomNavigationBar: CustomBottomNavigationBar(
+              currentIndex: selectedIndex,
+              onTap: onItemTapped,
             ),
           ),
         );

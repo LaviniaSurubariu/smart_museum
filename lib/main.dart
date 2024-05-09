@@ -15,6 +15,7 @@ import 'presentation/another_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/hello.dart';
+import 'presentation/home_screen.dart';
 import 'presentation/login_user.dart';
 import 'presentation/profile_page.dart';
 import 'presentation/update_profile.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
           '/anotherPage': (BuildContext context) => const AnotherPage(),
           '/profilePage': (BuildContext context) => const ProfilePage(),
           '/updateProfilePage': (BuildContext context) => const UpdateProfilePage(),
+          '/homeScreenPage': (BuildContext context) => const HomeScreenPage(),
         },
       ),
 
