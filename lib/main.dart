@@ -6,15 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:smart_museum/presentation/utils/customTheme.dart';
 
 import 'api/auth_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
-import 'presentation/another_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
-import 'presentation/hello.dart';
 import 'presentation/home_screen.dart';
 import 'presentation/login_user.dart';
 import 'presentation/profile_page.dart';
@@ -50,17 +49,12 @@ class MyApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.black,
-        ),
+        theme: CustomTheme.themeData,
         home: const EntryPage(),
         routes: <String, WidgetBuilder>{
-          '/helloPage': (BuildContext context) => const HelloPage(),
           '/entryPage': (BuildContext context) => const EntryPage(),
           '/createUser': (BuildContext context) => const CreateUserPage(),
           '/loginUser': (BuildContext context) => const LoginUserPage(),
-          '/anotherPage': (BuildContext context) => const AnotherPage(),
           '/profilePage': (BuildContext context) => const ProfilePage(),
           '/updateProfilePage': (BuildContext context) => const UpdateProfilePage(),
           '/homeScreenPage': (BuildContext context) => const HomeScreenPage(),

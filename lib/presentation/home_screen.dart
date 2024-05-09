@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utils/customButtomNavigationBar.dart';
+import 'utils/customDrawer.dart';
 import 'utils/customTheme.dart';
 
 class HomeScreenPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class HomeScreenPage extends StatefulWidget {
 
 class _HomeScreenPageState extends State<HomeScreenPage> {
   int selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void onItemTapped(int index) {
     setState(() {
@@ -20,22 +22,30 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
       case 0:
         break;
       case 1:
+        break;
+      case 2:
         Navigator.pushReplacementNamed(context, '/profilePage');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: CustomTheme.themeData,
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Smart Museum'),
-          ),
-          bottomNavigationBar: CustomBottomNavigationBar(
-            currentIndex: selectedIndex,
-            onTap: onItemTapped,
-          ),
-        ));
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            _scaffoldKey.currentState?.openDrawer();
+          },
+        ),
+        title: const Text(''),
+      ),
+      drawer: const CustomDrawer(),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: onItemTapped,
+      ),
+    );
   }
 }

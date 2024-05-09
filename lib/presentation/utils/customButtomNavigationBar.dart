@@ -8,23 +8,34 @@ class CustomBottomNavigationBar extends StatelessWidget {
   });
 
   final int currentIndex;
-  final void Function (int) onTap;
+  final void Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(
+            Icons.home,
+          ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
+          icon: Icon(
+            Icons.qr_code_scanner_outlined,
+          ),
+          label: 'Scan',
+
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.person,
+          ),
           label: 'Profile',
         ),
       ],
       currentIndex: currentIndex,
-      selectedItemColor: Colors.redAccent,
+      selectedItemColor: const Color.fromRGBO(199, 142, 28, 1),
       onTap: onTap,
     );
   }

@@ -70,115 +70,112 @@ class _LoginUserPageState extends State<LoginUserPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: CustomTheme.themeData,
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: const Text('Login User'),
-        ),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: CustomScrollView(
-                    slivers: <Widget>[
-                      SliverToBoxAdapter(
-                        child: Form(
-                          key: formKey,
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const SizedBox(height: 180),
-                              CustomTextFormFieldWithOnChange(
-                                controller: email,
-                                obscureText: false,
-                                labelText: 'Email',
-                                icon: Icons.email,
-                                validator: (String? value) {
-                                  const Pattern pattern =
-                                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                                  final RegExp regex = RegExp(pattern as String);
-                                  if (value == null || value.isEmpty || !regex.hasMatch(value)) {
-                                    return 'Provide a valid email address.';
-                                  }
-                                  return null;
-                                },
-                                onChanged: (String value) {
-                                  formKey.currentState!.validate();
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              CustomTextFormFieldWithOnChange(
-                                controller: password,
-                                obscureText: true,
-                                labelText: 'Password',
-                                icon: Icons.lock,
-                                validator: (String? value) {
-                                  const Pattern pattern =
-                                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
-                                  final RegExp regex = RegExp(pattern as String);
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter password';
-                                  } else if (!regex.hasMatch(value)) {
-                                    return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
-                                  }
-                                  return null;
-                                },
-                                onChanged: (String value) {
-                                  formKey.currentState!.validate();
-                                },
-                              ),
-                              const SizedBox(height: 24),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    context
-                                        .dispatch(Login(email: email.text, password: password.text, result: _onResult));
-                                  }
-                                },
-                                child: const Text('Login', style: TextStyle(color: Colors.white)),
-                              ),
-                              const SizedBox(height: 16),
-                            ],
-                          ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const Text('Login User'),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: CustomScrollView(
+                  slivers: <Widget>[
+                    SliverToBoxAdapter(
+                      child: Form(
+                        key: formKey,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const SizedBox(height: 180),
+                            CustomTextFormFieldWithOnChange(
+                              controller: email,
+                              obscureText: false,
+                              labelText: 'Email',
+                              icon: Icons.email,
+                              validator: (String? value) {
+                                const Pattern pattern =
+                                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                final RegExp regex = RegExp(pattern as String);
+                                if (value == null || value.isEmpty || !regex.hasMatch(value)) {
+                                  return 'Provide a valid email address.';
+                                }
+                                return null;
+                              },
+                              onChanged: (String value) {
+                                formKey.currentState!.validate();
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            CustomTextFormFieldWithOnChange(
+                              controller: password,
+                              obscureText: true,
+                              labelText: 'Password',
+                              icon: Icons.lock,
+                              validator: (String? value) {
+                                const Pattern pattern =
+                                    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+                                final RegExp regex = RegExp(pattern as String);
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter password';
+                                } else if (!regex.hasMatch(value)) {
+                                  return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
+                                }
+                                return null;
+                              },
+                              onChanged: (String value) {
+                                formKey.currentState!.validate();
+                              },
+                            ),
+                            const SizedBox(height: 24),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  context
+                                      .dispatch(Login(email: email.text, password: password.text, result: _onResult));
+                                }
+                              },
+                              child: const Text('Login', style: TextStyle(color: Colors.white)),
+                            ),
+                            const SizedBox(height: 16),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Text(
-                        "Don't have an account? ",
-                        style: TextStyle(color: Colors.black38),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacementNamed(context, '/createUser');
-                        },
-                        child: const Text(
-                          'Sign up',
-                          style: TextStyle(
-                            color: Colors.black,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                          ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text(
+                      "Don't have an account? ",
+                      style: TextStyle(color: Colors.black38),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/createUser');
+                      },
+                      child: const Text(
+                        'Sign up',
+                        style: TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

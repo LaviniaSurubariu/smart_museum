@@ -75,144 +75,141 @@ class _CreateUserPageState extends State<CreateUserPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: CustomTheme.themeData,
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Sign Up')),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: CustomScrollView(
-                    slivers: <Widget>[
-                      SliverToBoxAdapter(
-                        child: Form(
-                          key: formKey,
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          child: Column(
-                            children: <Widget>[
-                              const SizedBox(height: 64),
-                              CustomTextFormField(
-                                controller: firstName,
-                                labelText: 'First Name',
-                                icon: Icons.person,
-                                validator: (String? value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your first name.';
-                                  }
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sign Up')),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: CustomScrollView(
+                  slivers: <Widget>[
+                    SliverToBoxAdapter(
+                      child: Form(
+                        key: formKey,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        child: Column(
+                          children: <Widget>[
+                            const SizedBox(height: 64),
+                            CustomTextFormField(
+                              controller: firstName,
+                              labelText: 'First Name',
+                              icon: Icons.person,
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your first name.';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            CustomTextFormField(
+                              controller: lastName,
+                              labelText: 'Last Name',
+                              icon: Icons.person,
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your last name.';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            CustomTextFormField(
+                              controller: email,
+                              labelText: 'Email',
+                              icon: Icons.email,
+                              validator: (String? value) {
+                                const Pattern pattern =
+                                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                final RegExp regex = RegExp(pattern as String);
+                                if (value == null || value.isEmpty || !regex.hasMatch(value)) {
+                                  return 'Provide a valid email address.';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            CustomTextFormField(
+                              controller: password,
+                              labelText: 'Password',
+                              icon: Icons.lock,
+                              validator: (String? value) {
+                                const Pattern pattern =
+                                    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+                                final RegExp regex = RegExp(pattern as String);
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter password';
+                                } else if (!regex.hasMatch(value)) {
+                                  return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
+                                } else {
                                   return null;
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              CustomTextFormField(
-                                controller: lastName,
-                                labelText: 'Last Name',
-                                icon: Icons.person,
-                                validator: (String? value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your last name.';
-                                  }
-                                  return null;
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              CustomTextFormField(
-                                controller: email,
-                                labelText: 'Email',
-                                icon: Icons.email,
-                                validator: (String? value) {
-                                  const Pattern pattern =
-                                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                                  final RegExp regex = RegExp(pattern as String);
-                                  if (value == null || value.isEmpty || !regex.hasMatch(value)) {
-                                    return 'Provide a valid email address.';
-                                  }
-                                  return null;
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              CustomTextFormField(
-                                controller: password,
-                                labelText: 'Password',
-                                icon: Icons.lock,
-                                validator: (String? value) {
-                                  const Pattern pattern =
-                                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
-                                  final RegExp regex = RegExp(pattern as String);
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter password';
-                                  } else if (!regex.hasMatch(value)) {
-                                    return 'Password must have at least: \n-one upper case\n-one lower case\n-one number\n-one special character.';
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              CustomTextFormField(
-                                controller: confirmPassword,
-                                labelText: 'Confirm Password',
-                                icon: Icons.lock,
-                                validator: (String? value) {
-                                  if (value == null || value != password.text) {
-                                    return 'Passwords do not match.';
-                                  }
-                                  return null;
-                                },
-                              ),
-                              const SizedBox(height: 24.0),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    context.dispatch(CreateUser(
-                                        email: email.text,
-                                        password: password.text,
-                                        firstName: firstName.text,
-                                        lastName: lastName.text,
-                                        role: 'user',
-                                        result: _onResult));
-                                  }
-                                },
-                                child: const Text('Sign up', style: TextStyle(color: Colors.white)),
-                              ),
-                            ],
-                          ),
+                                }
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            CustomTextFormField(
+                              controller: confirmPassword,
+                              labelText: 'Confirm Password',
+                              icon: Icons.lock,
+                              validator: (String? value) {
+                                if (value == null || value != password.text) {
+                                  return 'Passwords do not match.';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 24.0),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  context.dispatch(CreateUser(
+                                      email: email.text,
+                                      password: password.text,
+                                      firstName: firstName.text,
+                                      lastName: lastName.text,
+                                      role: 'user',
+                                      result: _onResult));
+                                }
+                              },
+                              child: const Text('Sign up', style: TextStyle(color: Colors.white)),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Text(
-                        'Already have an account? ',
-                        style: TextStyle(color: Colors.black38),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacementNamed(context, '/loginUser');
-                        },
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colors.black,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                          ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text(
+                      'Already have an account? ',
+                      style: TextStyle(color: Colors.black38),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/loginUser');
+                      },
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
