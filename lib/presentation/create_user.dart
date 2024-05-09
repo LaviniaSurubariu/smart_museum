@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:smart_museum/presentation/utils/customAlertDialogOneButton.dart';
-import 'package:smart_museum/presentation/utils/customAlertDialogTwoButtons.dart';
-import 'package:smart_museum/presentation/utils/customTextFormField.dart';
+
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
-import 'utils/customTheme.dart';
+import 'utils/customAlertDialogOneButton.dart';
+import 'utils/customAlertDialogTwoButtons.dart';
+import 'utils/customTextFormField.dart';
 import 'utils/extensions.dart';
 
 class CreateUserPage extends StatefulWidget {

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:smart_museum/presentation/utils/customDrawer.dart';
 
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
 import 'utils/ProfileMenuWidget.dart';
-import 'utils/customButtomNavigationBar.dart';
 import 'utils/customAlertDialogTwoButtons.dart';
-import 'utils/customTheme.dart';
+import 'utils/customButtomNavigationBar.dart';
+import 'utils/customDrawer.dart';
 import 'utils/extensions.dart';
 
 class ProfilePage extends StatefulWidget {

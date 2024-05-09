@@ -12,7 +12,6 @@ import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
 import 'utils/customAlertDialogOneButton.dart';
 import 'utils/customAlertDialogTwoButtons.dart';
-import 'utils/customTheme.dart';
 import 'utils/extensions.dart';
 
 class UpdateProfilePage extends StatefulWidget {
@@ -168,12 +167,6 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              print(firstNameController.text);
-                              print(lastNameController.text);
-                              print(passwordController.text);
-                              print(user.firstName);
-                              print(user.lastName);
-
                               if (passwordController.text.isNotEmpty &&
                                   firstNameController.text.isNotEmpty &&
                                   lastNameController.text.isNotEmpty &&
@@ -213,7 +206,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                         // -- Created Date and Delete Button
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: <Widget>[
                             Text.rich(
                               TextSpan(
                                 text: 'Created on ',
