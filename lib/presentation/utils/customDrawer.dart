@@ -11,14 +11,13 @@ class CustomDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(199, 142, 28, 1),
-              ),
+            SizedBox(
+              height: 100,
               child: Stack(
                 children: <Widget>[
+                  const SizedBox(),
                   Align(
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.centerLeft,
                     child: IconButton(
                       icon: const Icon(Icons.close),
                       onPressed: () {
