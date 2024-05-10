@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'utils/camera_service.dart';
 import 'utils/customButtomNavigationBar.dart';
 import 'utils/customDrawer.dart';
 
@@ -11,9 +12,11 @@ class HomeScreenPage extends StatefulWidget {
 
 class _HomeScreenPageState extends State<HomeScreenPage> {
   int selectedIndex = 0;
+
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void onItemTapped(int index) {
+    Future<void> onItemTapped(int index) async {
     setState(() {
       selectedIndex = index;
     });
@@ -21,11 +24,14 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
       case 0:
         break;
       case 1:
-        break;
+        selectedIndex = 0;
+        final CameraService cameraService = CameraService();
+        await cameraService.openCamera(context);
       case 2:
         Navigator.pushReplacementNamed(context, '/profilePage');
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

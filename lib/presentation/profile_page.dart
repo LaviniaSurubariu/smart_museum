@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:smart_museum/presentation/utils/camera_service.dart';
 
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/user/app_user/app_user.dart';
@@ -23,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
     int selectedIndex = 2;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-    void onItemTapped(int index) {
+    Future<void> onItemTapped(int index) async {
       setState(() {
         selectedIndex = index;
       });
@@ -32,7 +33,9 @@ class _ProfilePageState extends State<ProfilePage> {
           Navigator.pushReplacementNamed(context, '/homeScreenPage');
 
         case 1:
-          break;
+          selectedIndex = 2;
+          final CameraService cameraService = CameraService();
+          await cameraService.openCamera(context);
         case 2:
           break;
       }
