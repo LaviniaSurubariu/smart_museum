@@ -13,10 +13,11 @@ import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
-import 'presentation/home_screen.dart';
 import 'presentation/login_user.dart';
-import 'presentation/profile_page.dart';
-import 'presentation/update_profile.dart';
+import 'presentation/user_pages/home_screen.dart';
+import 'presentation/user_pages/profile_page.dart';
+import 'presentation/user_pages/qr_scan_page.dart';
+import 'presentation/user_pages/update_profile.dart';
 import 'presentation/utils/customTheme.dart';
 import 'reducer/reducer.dart';
 
@@ -41,7 +42,7 @@ Future<dynamic> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key,required this.store});
+  const MyApp({super.key, required this.store});
   final Store<AppState> store;
 
   @override
@@ -58,9 +59,9 @@ class MyApp extends StatelessWidget {
           '/profilePage': (BuildContext context) => const ProfilePage(),
           '/updateProfilePage': (BuildContext context) => const UpdateProfilePage(),
           '/homeScreenPage': (BuildContext context) => const HomeScreenPage(),
+          '/qrCodeScanScreenPage': (BuildContext context) => const QrCodePage(),
         },
       ),
-
     );
   }
 }

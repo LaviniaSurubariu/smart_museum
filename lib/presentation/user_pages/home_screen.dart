@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'utils/camera_service.dart';
-import 'utils/customButtomNavigationBar.dart';
-import 'utils/customDrawer.dart';
+
+import '../utils/customButtomNavigationBar.dart';
+import '../utils/customDrawer.dart';
+
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -25,8 +26,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
         break;
       case 1:
         selectedIndex = 0;
-        final CameraService cameraService = CameraService();
-        await cameraService.openCamera(context);
+       Navigator.pushNamed(context, '/qrCodeScanScreenPage');
       case 2:
         Navigator.pushReplacementNamed(context, '/profilePage');
     }

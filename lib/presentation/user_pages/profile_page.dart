@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:smart_museum/presentation/utils/camera_service.dart';
 
-import '../actions/user_s_actions/signout/sign_out.dart';
-import '../models/user/app_user/app_user.dart';
-import 'containers/app_user_container.dart';
-import 'utils/ProfileMenuWidget.dart';
-import 'utils/customAlertDialogTwoButtons.dart';
-import 'utils/customButtomNavigationBar.dart';
-import 'utils/customDrawer.dart';
-import 'utils/extensions.dart';
+import '../../actions/user_s_actions/signout/sign_out.dart';
+import '../../models/user/app_user/app_user.dart';
+import '../containers/app_user_container.dart';
+import '../utils/ProfileMenuWidget.dart';
+import '../utils/customAlertDialogTwoButtons.dart';
+import '../utils/customButtomNavigationBar.dart';
+import '../utils/customDrawer.dart';
+import '../utils/extensions.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -34,8 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
         case 1:
           selectedIndex = 2;
-          final CameraService cameraService = CameraService();
-          await cameraService.openCamera(context);
+          Navigator.pushNamed(context, '/qrCodeScanScreenPage');
         case 2:
           break;
       }
