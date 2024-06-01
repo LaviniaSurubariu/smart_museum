@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.1.0
 
   mobile_scanner: ^5.1.1
+  pretty_qr_code: ^3.3.0
 
 dev_dependencies:
   flutter_test:

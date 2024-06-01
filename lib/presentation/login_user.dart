@@ -23,7 +23,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
   void _onResult(AppAction action) {
     if (action is LoginSuccessful) {
       if (action.user.role == 'admin') {
-        Navigator.pushReplacementNamed(context, '/homeScreenPage');
+        Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
       } else if (action.user.role == 'user') {
         Navigator.pushReplacementNamed(context, '/homeScreenPage');
       }

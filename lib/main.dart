@@ -11,6 +11,7 @@ import 'api/auth_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
+import 'presentation/admin_pages/admin_home_screen.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/login_user.dart';
@@ -60,6 +61,8 @@ class MyApp extends StatelessWidget {
           '/updateProfilePage': (BuildContext context) => const UpdateProfilePage(),
           '/homeScreenPage': (BuildContext context) => const HomeScreenPage(),
           '/qrCodeScanScreenPage': (BuildContext context) => const QrCodePage(),
+          '/adminHomeScreenPage': (BuildContext context) => const AdminScreenPage(),
+
         },
       ),
     );
