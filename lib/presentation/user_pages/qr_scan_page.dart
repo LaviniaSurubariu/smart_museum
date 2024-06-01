@@ -28,7 +28,7 @@ class _QrCodePageState extends State<QrCodePage> {
               if (image != null) {
                 showModalBottomSheet<void>(
                   context: context,
-                  builder: (context) {
+                  builder: (BuildContext context) {
                     return SizedBox(
                       height: 120,
                       child: Center(
