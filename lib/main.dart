@@ -6,19 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'presentation/admin_pages/profile_admin_page.dart';
 
 import 'api/auth_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
+import 'presentation/admin_pages/generate_qr_code_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/login_user.dart';
+import 'presentation/update_profile.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
-import 'presentation/user_pages/update_profile.dart';
 import 'presentation/utils/customTheme.dart';
 import 'reducer/reducer.dart';
 
@@ -62,6 +64,8 @@ class MyApp extends StatelessWidget {
           '/homeScreenPage': (BuildContext context) => const HomeScreenPage(),
           '/qrCodeScanScreenPage': (BuildContext context) => const QrCodePage(),
           '/adminHomeScreenPage': (BuildContext context) => const AdminScreenPage(),
+          '/profileAdminPage': (BuildContext context) => const ProfileAdminPage(),
+          '/generateQrCodePage': (BuildContext context) => const GenerateQrCodePage(),
 
         },
       ),

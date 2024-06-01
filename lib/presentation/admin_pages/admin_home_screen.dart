@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/customAdminDrawer.dart';
 import '../utils/customButtomNavigationBarAdmin.dart';
-import '../utils/customDrawer.dart';
 
 class AdminScreenPage extends StatefulWidget {
   const AdminScreenPage({super.key});
@@ -24,10 +24,9 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
       case 0:
         break;
       case 1:
-        selectedIndex = 0;
-        Navigator.pushNamed(context, '/qrCodeScanScreenPage');
+        Navigator.pushReplacementNamed(context, '/generateQrCodePage');
       case 2:
-        Navigator.pushReplacementNamed(context, '/profilePage');
+        Navigator.pushReplacementNamed(context, '/profileAdminPage');
     }
   }
 
@@ -45,7 +44,7 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
         ),
         title: const Text(''),
       ),
-      drawer: const CustomDrawer(),
+      drawer: const CustomAdminDrawer(),
       bottomNavigationBar: CustomBottomNavigationBarAdmin(
         currentIndex: selectedIndex,
         onTap: onItemTapped,

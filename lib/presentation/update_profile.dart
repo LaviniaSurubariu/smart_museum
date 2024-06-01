@@ -3,16 +3,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-import '../../actions/app_action.dart';
-import '../../actions/user_s_actions/change_name/change_name.dart';
-import '../../actions/user_s_actions/change_password/change_password.dart';
-import '../../actions/user_s_actions/change_picture/change_picture.dart';
-import '../../actions/user_s_actions/delete_user/delete_user.dart';
-import '../../models/user/app_user/app_user.dart';
-import '../containers/app_user_container.dart';
-import '../utils/customAlertDialogOneButton.dart';
-import '../utils/customAlertDialogTwoButtons.dart';
-import '../utils/extensions.dart';
+import '../actions/app_action.dart';
+import '../actions/user_s_actions/change_name/change_name.dart';
+import '../actions/user_s_actions/change_password/change_password.dart';
+import '../actions/user_s_actions/change_picture/change_picture.dart';
+import '../actions/user_s_actions/delete_user/delete_user.dart';
+import '../models/user/app_user/app_user.dart';
+import 'containers/app_user_container.dart';
+import 'utils/customAlertDialogOneButton.dart';
+import 'utils/customAlertDialogTwoButtons.dart';
+import 'utils/extensions.dart';
 
 class UpdateProfilePage extends StatefulWidget {
   const UpdateProfilePage({super.key});
@@ -62,6 +62,9 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                         secondButtonText: 'yes',
                         secondButtonColor: Colors.grey,
                         onSecondButtonPressed: () {
+                          context.state.user?.role == 'admin'
+                              ? Navigator.pushReplacementNamed(context, '/profileAdminPage')
+                              :
                           Navigator.pushReplacementNamed(context, '/profilePage');
                         },
                       );
