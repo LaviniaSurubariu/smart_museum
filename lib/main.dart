@@ -18,6 +18,7 @@ import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
+import 'presentation/user_pages/artwork_details_page.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
           '/adminHomeScreenPage': (BuildContext context) => const AdminScreenPage(),
           '/profileAdminPage': (BuildContext context) => const ProfileAdminPage(),
           '/generateQrCodePage': (BuildContext context) => const GenerateQrCodePage(),
+          '/artworkDetailsPage': (BuildContext context) => const ArtWorkDetailsPage(),
 
         },
       ),

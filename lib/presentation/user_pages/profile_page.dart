@@ -104,8 +104,18 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(height: 10),
 
                   /// -- MENU
-                  ProfileMenuWidget(title: 'Settings', icon: LineAwesomeIcons.cog, onPress: () {}),
-                  ProfileMenuWidget(title: 'Billing Details', icon: LineAwesomeIcons.wallet, onPress: () {}),
+                  ProfileMenuWidget(
+                    title: 'Artwork',
+                    icon: LineAwesomeIcons.palette,
+                    onPress: () {
+                      Navigator.pushNamed(context, '/artworkDetailsPage');
+                    },
+                  ),
+                  ProfileMenuWidget(
+                    title: 'Billing Details',
+                    icon: LineAwesomeIcons.wallet,
+                    onPress: () {},
+                  ),
                   ProfileMenuWidget(title: 'Saved', icon: LineAwesomeIcons.heart, onPress: () {}),
                   const Divider(),
                   const SizedBox(height: 10),
