@@ -1,6 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-
 
 class ArtWorkDetailsPage extends StatefulWidget {
   const ArtWorkDetailsPage({super.key});
@@ -11,6 +12,58 @@ class ArtWorkDetailsPage extends StatefulWidget {
 
 class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
   bool isFavorited = false;
+  late AudioPlayer _audioPlayer = AudioPlayer();
+  double _currentPosition = 0;
+  double _totalDuration = 0;
+
+  String _formatDuration(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    String twoDigitMinutes = twoDigits(duration.inSeconds.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inMilliseconds.remainder(60));
+    setState(() {});
+    return '${twoDigits(duration.inMinutes)}:$twoDigitMinutes:$twoDigitSeconds';
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _audioPlayer = AudioPlayer();
+
+    _audioPlayer.setReleaseMode(ReleaseMode.stop);
+
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) async {
+        await _audioPlayer.setSource(AssetSource('audio/01.mp3'));
+        _audioPlayer.state = PlayerState.paused;
+      },
+    );
+
+    _audioPlayer.onPositionChanged.listen(
+      (Duration position) {
+        setState(
+          () {
+            _currentPosition = position.inMilliseconds.toDouble();
+          },
+        );
+      },
+    );
+
+    _audioPlayer.onDurationChanged.listen(
+      (Duration duration) {
+        setState(
+          () {
+            _totalDuration = duration.inMilliseconds.toDouble();
+          },
+        );
+      },
+    );
+    _audioPlayer.onSeekComplete.listen(
+      (event) {
+        _audioPlayer.state = PlayerState.paused;
+        _currentPosition = 0;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +129,64 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      const SizedBox(height: 6),
+                      // Text(
+                      //   _formatDuration(Duration(milliseconds: _totalDuration.toInt())),
+                      //   style: TextStyle(color: Colors.grey[600]),
+                      // ),
+                      Text(
+                        _formatDuration(Duration(milliseconds: _currentPosition.toInt())),
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                      Slider(
+                        value: _currentPosition,
+                        max: _totalDuration,
+                        activeColor: Colors.grey[600],
+                        inactiveColor: Colors.grey[400],
+                        onChanged: (double value) {
+                          setState(() => _currentPosition = value);
+                          _audioPlayer.seek(Duration(milliseconds: value.toInt()));
+                        },
+                      ),
+
+                      CircleAvatar(
+                        backgroundColor: Colors.grey[600],
+                        foregroundColor: Colors.grey[200],
+                        child: IconButton(
+                          icon: Icon(
+                              _audioPlayer.state == PlayerState.paused || _audioPlayer.state == PlayerState.stopped
+                                  ? Icons.play_arrow
+                                  : Icons.pause),
+                          onPressed: () {
+                            setState(
+                              () {
+                                if (_audioPlayer.state == PlayerState.stopped) {
+                                  _audioPlayer.state = PlayerState.playing;
+                                }
+                                if (_audioPlayer.state == PlayerState.playing) {
+                                  _audioPlayer.pause();
+                                } else if (_audioPlayer.state == PlayerState.paused) {
+                                  _audioPlayer.resume();
+                                }
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
                 RichText(
                   text: TextSpan(
                     style: Theme.of(context).textTheme.bodyMedium,

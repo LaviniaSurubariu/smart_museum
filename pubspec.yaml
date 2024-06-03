@@ -41,6 +41,8 @@ dependencies:
   mobile_scanner: ^5.1.1
   pretty_qr_code: ^3.3.0
 
+  audioplayers: ^6.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -55,4 +57,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/entry page photo.jpg
+    - assets/audio/01.mp3
 
