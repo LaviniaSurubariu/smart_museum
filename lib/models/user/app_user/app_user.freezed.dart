@@ -27,6 +27,7 @@ mixin _$AppUser {
   DateTime get creationTime => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
   String? get pictureUrl => throw _privateConstructorUsedError;
+  bool get hasSubscription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +46,8 @@ abstract class $AppUserCopyWith<$Res> {
       String lastName,
       DateTime creationTime,
       String role,
-      String? pictureUrl});
+      String? pictureUrl,
+      bool hasSubscription});
 }
 
 /// @nodoc
@@ -68,6 +70,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? creationTime = null,
     Object? role = null,
     Object? pictureUrl = freezed,
+    Object? hasSubscription = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -98,6 +101,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasSubscription: null == hasSubscription
+          ? _value.hasSubscription
+          : hasSubscription // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -116,7 +123,8 @@ abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String lastName,
       DateTime creationTime,
       String role,
-      String? pictureUrl});
+      String? pictureUrl,
+      bool hasSubscription});
 }
 
 /// @nodoc
@@ -137,6 +145,7 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
     Object? creationTime = null,
     Object? role = null,
     Object? pictureUrl = freezed,
+    Object? hasSubscription = null,
   }) {
     return _then(_$AppUser$Impl(
       uid: null == uid
@@ -167,6 +176,10 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasSubscription: null == hasSubscription
+          ? _value.hasSubscription
+          : hasSubscription // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -181,7 +194,8 @@ class _$AppUser$Impl implements AppUser$ {
       required this.lastName,
       required this.creationTime,
       required this.role,
-      this.pictureUrl});
+      this.pictureUrl,
+      required this.hasSubscription});
 
   factory _$AppUser$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppUser$ImplFromJson(json);
@@ -200,10 +214,12 @@ class _$AppUser$Impl implements AppUser$ {
   final String role;
   @override
   final String? pictureUrl;
+  @override
+  final bool hasSubscription;
 
   @override
   String toString() {
-    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, creationTime: $creationTime, role: $role, pictureUrl: $pictureUrl)';
+    return 'AppUser(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, creationTime: $creationTime, role: $role, pictureUrl: $pictureUrl, hasSubscription: $hasSubscription)';
   }
 
   @override
@@ -221,13 +237,15 @@ class _$AppUser$Impl implements AppUser$ {
                 other.creationTime == creationTime) &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.pictureUrl, pictureUrl) ||
-                other.pictureUrl == pictureUrl));
+                other.pictureUrl == pictureUrl) &&
+            (identical(other.hasSubscription, hasSubscription) ||
+                other.hasSubscription == hasSubscription));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uid, email, firstName, lastName,
-      creationTime, role, pictureUrl);
+      creationTime, role, pictureUrl, hasSubscription);
 
   @JsonKey(ignore: true)
   @override
@@ -251,7 +269,8 @@ abstract class AppUser$ implements AppUser {
       required final String lastName,
       required final DateTime creationTime,
       required final String role,
-      final String? pictureUrl}) = _$AppUser$Impl;
+      final String? pictureUrl,
+      required final bool hasSubscription}) = _$AppUser$Impl;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) =
       _$AppUser$Impl.fromJson;
@@ -270,6 +289,8 @@ abstract class AppUser$ implements AppUser {
   String get role;
   @override
   String? get pictureUrl;
+  @override
+  bool get hasSubscription;
   @override
   @JsonKey(ignore: true)
   _$$AppUser$ImplCopyWith<_$AppUser$Impl> get copyWith =>

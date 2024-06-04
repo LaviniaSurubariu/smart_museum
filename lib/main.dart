@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'presentation/admin_pages/profile_admin_page.dart';
 
-import 'api/auth_api.dart';
+import 'api/user_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
 import 'presentation/admin_pages/generate_qr_code_page.dart';
+import 'presentation/admin_pages/profile_admin_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/login_user.dart';

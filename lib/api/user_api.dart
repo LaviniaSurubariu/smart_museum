@@ -66,9 +66,16 @@ class AuthApi {
       lastName: lastName,
       creationTime: user.metadata.creationTime!,
       role: role,
+      hasSubscription: false,
     );
+    final Map<String, dynamic> appUserJson = appUser.toJson();
+    appUserJson.remove('hasSubscription');
 
-    await _firestore.doc('users/${user.uid}').set(appUser.toJson());
+    final Timestamp now = Timestamp.now();
+    appUserJson['startSubscriptionDate'] = now;
+    appUserJson['endSubscriptionDate'] = now;
+
+    await _firestore.doc('users/${user.uid}').set(appUserJson);
 
     return _extractUser();
   }
@@ -79,7 +86,20 @@ class AuthApi {
     final DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
     AppUser appUser;
     if (doc.exists) {
-      appUser = AppUser.fromJson(doc.data()!);
+      final Map<String, dynamic> data = doc.data()!;
+      final DateTime now = DateTime.now();
+
+      if ((data['startSubscriptionDate'] as Timestamp).toDate().isBefore(now) &&
+          (data['endSubscriptionDate'] as Timestamp).toDate().isAfter(now)) {
+        data.remove('startSubscriptionDate');
+        data.remove('endSubscriptionDate');
+        data['hasSubscription'] = true;
+      } else {
+        data.remove('startSubscriptionDate');
+        data.remove('endSubscriptionDate');
+        data['hasSubscription'] = false;
+      }
+      appUser = AppUser.fromJson(data);
     } else {
       final String email = user.email!;
       appUser = AppUser(
@@ -90,10 +110,14 @@ class AuthApi {
         creationTime: user.metadata.creationTime!,
         role: doc.data()!['role'] as String,
         pictureUrl: user.photoURL,
+        hasSubscription: false,
       );
-      await ref.set(appUser.toJson());
+      final Map<String, dynamic> appUserJson = appUser.toJson();
+      appUserJson.remove('hasSubscription');
+      appUserJson['startSubscriptionDate'] = Timestamp.now();
+      appUserJson['endSubscriptionDate'] = Timestamp.now();
+      await ref.set(appUserJson);
     }
-
     return appUser;
   }
 
@@ -124,14 +148,14 @@ class AuthApi {
     return _extractUser();
   }
 
-  Future<List<AppUser>> getUsers(List<String> uids) async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
-        .collection('users') //
-        .where('uid', whereIn: uids)
-        .get();
-
-    return snapshot.docs //
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
-        .toList();
-  }
+// Future<List<AppUser>> getUsers(List<String> uids) async {
+//   final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
+//       .collection('users') //
+//       .where('uid', whereIn: uids)
+//       .get();
+//
+//   return snapshot.docs //
+//       .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
+//       .toList();
+// }
 }

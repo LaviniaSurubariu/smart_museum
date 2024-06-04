@@ -15,6 +15,7 @@ _$AppUser$Impl _$$AppUser$ImplFromJson(Map<String, dynamic> json) =>
       creationTime: DateTime.parse(json['creationTime'] as String),
       role: json['role'] as String,
       pictureUrl: json['pictureUrl'] as String?,
+      hasSubscription: json['hasSubscription'] as bool,
     );
 
 Map<String, dynamic> _$$AppUser$ImplToJson(_$AppUser$Impl instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$AppUser$ImplToJson(_$AppUser$Impl instance) =>
       'creationTime': instance.creationTime.toIso8601String(),
       'role': instance.role,
       'pictureUrl': instance.pictureUrl,
+      'hasSubscription': instance.hasSubscription,
     };

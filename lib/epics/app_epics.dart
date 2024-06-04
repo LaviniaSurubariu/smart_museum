@@ -9,7 +9,7 @@ import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
-import '../api/auth_api.dart';
+import '../api/user_api.dart';
 import '../models/app_state/app_state.dart';
 import '../models/user/app_user/app_user.dart';
 

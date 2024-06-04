@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'app_user.freezed.dart';
+
 part 'app_user.g.dart';
 
 @freezed
@@ -13,7 +14,7 @@ class AppUser with _$AppUser {
     required DateTime creationTime,
     required String role,
     String? pictureUrl,
-
+    required bool hasSubscription,
   }) = AppUser$;
 
   factory AppUser.fromJson(Map<dynamic, dynamic> json) => _$AppUserFromJson(Map<String, dynamic>.from(json));
