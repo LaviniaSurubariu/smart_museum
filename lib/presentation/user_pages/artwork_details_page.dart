@@ -1,5 +1,4 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -18,10 +17,9 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
 
   String _formatDuration(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, '0');
-    String twoDigitMinutes = twoDigits(duration.inSeconds.remainder(60));
-    String twoDigitSeconds = twoDigits(duration.inMilliseconds.remainder(60));
-    setState(() {});
-    return '${twoDigits(duration.inMinutes)}:$twoDigitMinutes:$twoDigitSeconds';
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
+    String twoDigitMilliseconds = twoDigits(duration.inMilliseconds.remainder(1000) ~/ 10);
+    return '$twoDigitSeconds:$twoDigitMilliseconds';
   }
 
   @override
@@ -140,12 +138,8 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       const SizedBox(height: 6),
-                      // Text(
-                      //   _formatDuration(Duration(milliseconds: _totalDuration.toInt())),
-                      //   style: TextStyle(color: Colors.grey[600]),
-                      // ),
                       Text(
-                        _formatDuration(Duration(milliseconds: _currentPosition.toInt())),
+                        _formatDuration(Duration(milliseconds: _totalDuration.toInt())),
                         style: TextStyle(color: Colors.grey[600]),
                       ),
                       Slider(
@@ -155,10 +149,16 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                         inactiveColor: Colors.grey[400],
                         onChanged: (double value) {
                           setState(() => _currentPosition = value);
-                          _audioPlayer.seek(Duration(milliseconds: value.toInt()));
+                          _audioPlayer.seek(Duration(milliseconds: _currentPosition.toInt()));
                         },
                       ),
-
+                      SizedBox(
+                        width: 50,
+                        child: Text(
+                          _formatDuration(Duration(milliseconds: _currentPosition.toInt())),
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                      ),
                       CircleAvatar(
                         backgroundColor: Colors.grey[600],
                         foregroundColor: Colors.grey[200],
