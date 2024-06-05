@@ -88,7 +88,7 @@ class AuthApi {
     if (doc.exists) {
       final Map<String, dynamic> data = doc.data()!;
       final DateTime now = DateTime.now();
-
+      AppUser jsonUser;
       if ((data['startSubscriptionDate'] as Timestamp).toDate().isBefore(now) &&
           (data['endSubscriptionDate'] as Timestamp).toDate().isAfter(now)) {
         data.remove('startSubscriptionDate');
@@ -99,7 +99,13 @@ class AuthApi {
         data.remove('endSubscriptionDate');
         data['hasSubscription'] = false;
       }
-      appUser = AppUser.fromJson(data);
+      jsonUser = AppUser.fromJson(data);
+      if(jsonUser.role == 'admin'){
+        appUser = jsonUser.copyWith(hasSubscription: true);
+      }
+      else {
+        appUser = jsonUser;
+      }
     } else {
       final String email = user.email!;
       appUser = AppUser(
