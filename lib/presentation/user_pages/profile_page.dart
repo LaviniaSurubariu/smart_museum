@@ -89,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                   /// -- BUTTON
                   SizedBox(
-                    width: 200,
+                    width: 210,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacementNamed(context, '/updateProfilePage');
@@ -97,6 +97,20 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey, side: BorderSide.none, shape: const StadiumBorder()),
                       child: const Text('Edit Profile', style: TextStyle(color: Colors.black)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: 210,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/subscriptionPage');
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent, side: BorderSide.none, shape: const StadiumBorder()),
+                      child: const Text('Try premium account ', style: TextStyle(color: Colors.black)),
                     ),
                   ),
                   const SizedBox(height: 30),

@@ -22,6 +22,7 @@ import 'presentation/user_pages/artwork_details_page.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
+import 'presentation/user_pages/subscription_page.dart';
 import 'presentation/utils/customTheme.dart';
 import 'reducer/reducer.dart';
 
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
           '/profileAdminPage': (BuildContext context) => const ProfileAdminPage(),
           '/generateQrCodePage': (BuildContext context) => const GenerateQrCodePage(),
           '/artworkDetailsPage': (BuildContext context) => const ArtWorkDetailsPage(),
+          '/subscriptionPage': (BuildContext context) => const SubscriptionPage(),
 
         },
       ),
