@@ -20,6 +20,7 @@ import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
 import 'presentation/user_pages/home_screen.dart';
+import 'presentation/user_pages/payment_page.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
 import 'presentation/user_pages/subscription_page.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
           '/generateQrCodePage': (BuildContext context) => const GenerateQrCodePage(),
           '/artworkDetailsPage': (BuildContext context) => const ArtWorkDetailsPage(),
           '/subscriptionPage': (BuildContext context) => const SubscriptionPage(),
+          '/paymentPage': (BuildContext context) => const PaymentPage(),
 
         },
       ),

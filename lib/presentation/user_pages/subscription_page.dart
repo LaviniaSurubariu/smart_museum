@@ -93,38 +93,43 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Expanded(
-                      child: Material(
-                        color: Colors.transparent,
-                        shadowColor: Colors.white,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(26.0)),
-                            color: Colors.grey,
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Center(
-                                    child: Text(
-                                      '1 day',
-                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                      child: GestureDetector(
+                        child: Material(
+                          color: Colors.transparent,
+                          shadowColor: Colors.white,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(26.0)),
+                              color: Colors.grey,
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(16.0),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Text(
+                                        '1 day',
+                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 8),
-                                  Center(
-                                    child: Text(
-                                      r'$ 1.99',
-                                      style: TextStyle(fontSize: 16, color: Colors.white),
+                                    SizedBox(height: 8),
+                                    Center(
+                                      child: Text(
+                                        r'$ 1.99',
+                                        style: TextStyle(fontSize: 16, color: Colors.white),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, '/paymentPage');
+                        }
                       ),
                     ),
                     const SizedBox(width: 16),
