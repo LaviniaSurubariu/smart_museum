@@ -43,6 +43,8 @@ dependencies:
 
   audioplayers: ^6.0.0
 
+  flutter_credit_card: ^4.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,4 +60,5 @@ flutter:
   assets:
     - assets/images/entry page photo.jpg
     - assets/audio/01.mp3
+    - assets/images/mastercard.png
 
