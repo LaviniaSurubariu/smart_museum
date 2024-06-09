@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:redux/redux.dart';
 
+import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
@@ -20,6 +21,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, ChangePictureSuccessful>(_changePictureSuccessful).call,
     TypedReducer<AppState, DeleteUserSuccessful>(_deleteUserSuccessful).call,
     TypedReducer<AppState, ChangeNameSuccessful>(_changeNameSuccessful).call,
+    TypedReducer<AppState, BuySubscriptionSuccessful>(_buySubscriptionSuccessful).call,
   ])(state, action);
 }
 
@@ -44,6 +46,10 @@ AppState _deleteUserSuccessful(AppState state, DeleteUserSuccessful action) {
 }
 
 AppState _changeNameSuccessful(AppState state, ChangeNameSuccessful action) {
+  return state.copyWith(user: action.user);
+}
+
+AppState _buySubscriptionSuccessful(AppState state, BuySubscriptionSuccessful action) {
   return state.copyWith(user: action.user);
 }
 

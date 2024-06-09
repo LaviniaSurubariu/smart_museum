@@ -102,6 +102,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(
                     height: 20,
                   ),
+                  if(!user.hasSubscription)
                   SizedBox(
                     width: 210,
                     child: ElevatedButton(
@@ -113,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: const Text('Try premium account ', style: TextStyle(color: Colors.black)),
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 10),
                   const Divider(),
                   const SizedBox(height: 10),
 

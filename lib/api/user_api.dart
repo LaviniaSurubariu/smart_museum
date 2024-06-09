@@ -100,10 +100,9 @@ class AuthApi {
         data['hasSubscription'] = false;
       }
       jsonUser = AppUser.fromJson(data);
-      if(jsonUser.role == 'admin'){
+      if (jsonUser.role == 'admin') {
         appUser = jsonUser.copyWith(hasSubscription: true);
-      }
-      else {
+      } else {
         appUser = jsonUser;
       }
     } else {
@@ -152,6 +151,35 @@ class AuthApi {
         .update(<String, dynamic>{'firstName': newFirstName, 'lastName': newLastName});
 
     return _extractUser();
+  }
+
+  Future<AppUser> updateSubscriptionDates({required String duration}) async {
+    final User user = _auth.currentUser!;
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.doc('users/${user.uid}');
+
+    final DateTime now = DateTime.now();
+    final DateTime endSubscriptionDate = now.add(_parseDuration(duration));
+
+    await ref.update(
+      <String, dynamic>{
+        'startSubscriptionDate': Timestamp.fromDate(now),
+        'endSubscriptionDate': Timestamp.fromDate(endSubscriptionDate),
+      },
+    );
+    return _extractUser();
+  }
+
+  Duration _parseDuration(String duration) {
+    final List<String> parts = duration.split(' ');
+    final int number = int.parse(parts[0]);
+    final String unit = parts[1];
+
+    if (unit == 'day') {
+      return Duration(days: number);
+    } else if (unit == 'month') {
+      return Duration(days: 30 * number);
+    }
+    return Duration.zero;
   }
 
 // Future<List<AppUser>> getUsers(List<String> uids) async {

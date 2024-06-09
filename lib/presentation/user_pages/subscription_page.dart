@@ -45,9 +45,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                   ),
                 ),
                 const SizedBox(height: 16),
-
                 const Text(
-                  'With a Premium account, you can enjoy a full audio experience for artworks. Transform your museum visit nto a captivating and relaxing experience with a Premium account.',
+                  'With a Premium account, you can enjoy a full audio experience for artworks. Transform your museum visit to a captivating and relaxing experience with a Premium account.',
                   style: TextStyle(
                     color: Color.fromRGBO(124, 163, 161, 1),
                   ),
@@ -111,13 +110,14 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                                     Center(
                                       child: Text(
                                         '1 day',
-                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                                        style:
+                                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                                       ),
                                     ),
                                     SizedBox(height: 8),
                                     Center(
                                       child: Text(
-                                        r'$ 1.99',
+                                        r'$ 2.49',
                                         style: TextStyle(fontSize: 16, color: Colors.white),
                                       ),
                                     ),
@@ -128,49 +128,68 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushReplacementNamed(context, '/paymentPage');
-                        }
+                          Navigator.pushReplacementNamed(
+                            context,
+                            '/paymentPage',
+                            arguments: <String, dynamic>{
+                              'duration': '1 day',
+                              'price': 2.49,
+                            },
+                          );
+                        },
                       ),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
-                      child: Material(
-                        color: Colors.transparent,
-                        shadowColor: Colors.white,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(26.0)),
-                            gradient: LinearGradient(
-                              colors: <Color>[
-                                Colors.lightBlueAccent,
-                                Colors.blueAccent,
-                              ],
-                            ),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Center(
-                                    child: Text(
-                                      '1 month',
-                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                                    ),
-                                  ),
-                                  SizedBox(height: 8),
-                                  Center(
-                                    child: Text(
-                                      r'$ 4.99',
-                                      style: TextStyle(fontSize: 16, color: Colors.white),
-                                    ),
-                                  ),
+                      child: GestureDetector(
+                        child: Material(
+                          color: Colors.transparent,
+                          shadowColor: Colors.white,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(26.0)),
+                              gradient: LinearGradient(
+                                colors: <Color>[
+                                  Colors.lightBlueAccent,
+                                  Colors.blueAccent,
                                 ],
+                              ),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(16.0),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Text(
+                                        '1 month',
+                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                                      ),
+                                    ),
+                                    SizedBox(height: 8),
+                                    Center(
+                                      child: Text(
+                                        r'$ 4.99',
+                                        style: TextStyle(fontSize: 16, color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            '/paymentPage',
+                            arguments: <String, dynamic>{
+                              'duration': '1 month',
+                              'price': 4.99,
+                            },
+                          );
+                        },
                       ),
                     ),
                   ],

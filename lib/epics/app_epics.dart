@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../actions/app_action.dart';
+import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
@@ -28,6 +29,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, DeleteUserStart>(_deleteUserStart).call,
       TypedEpic<AppState, ChangePasswordStart>(_changePasswordStart).call,
       TypedEpic<AppState, ChangeNameStart>(_changeNameStart).call,
+      TypedEpic<AppState, BuySubscriptionStart>(_buySubscriptionStart).call,
 
     ])(actions, store);
   }
@@ -47,7 +49,8 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.createUser(
+          .asyncMap((_) =>
+          authApi.createUser(
               email: action.email,
               password: action.password,
               firstName: action.firstName,
@@ -110,4 +113,16 @@ class AppEpics extends EpicClass<AppState> {
           .doOnData(action.result);
     });
   }
+  Stream<AppAction> _buySubscriptionStart(Stream<BuySubscriptionStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((BuySubscriptionStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authApi.updateSubscriptionDates(duration: action.duration))
+          .map((AppUser user) => BuySubscription.successful(user))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => BuySubscription.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+
 }
