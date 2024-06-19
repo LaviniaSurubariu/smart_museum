@@ -140,65 +140,65 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  if (  user.hasSubscription)
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        const SizedBox(height: 6),
-                        Text(
-                          _formatDuration(Duration(milliseconds: _totalDuration.toInt())),
-                          style: TextStyle(color: Colors.grey[600]),
-                        ),
-                        Slider(
-                          value: _currentPosition,
-                          max: _totalDuration,
-                          activeColor: Colors.grey[600],
-                          inactiveColor: Colors.grey[400],
-                          onChanged: (double value) {
-                            setState(() => _currentPosition = value);
-                            _audioPlayer.seek(Duration(milliseconds: _currentPosition.toInt()));
-                          },
-                        ),
-                        SizedBox(
-                          width: 50,
-                          child: Text(
-                            _formatDuration(Duration(milliseconds: _currentPosition.toInt())),
+                  if (user.hasSubscription)
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          const SizedBox(height: 6),
+                          Text(
+                            _formatDuration(Duration(milliseconds: _totalDuration.toInt())),
                             style: TextStyle(color: Colors.grey[600]),
                           ),
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey[600],
-                          foregroundColor: Colors.grey[200],
-                          child: IconButton(
-                            icon: Icon(
-                                _audioPlayer.state == PlayerState.paused || _audioPlayer.state == PlayerState.stopped
-                                    ? Icons.play_arrow
-                                    : Icons.pause),
-                            onPressed: () {
-                              setState(
-                                () {
-                                  if (_audioPlayer.state == PlayerState.stopped) {
-                                    _audioPlayer.state = PlayerState.playing;
-                                  }
-                                  if (_audioPlayer.state == PlayerState.playing) {
-                                    _audioPlayer.pause();
-                                  } else if (_audioPlayer.state == PlayerState.paused) {
-                                    _audioPlayer.resume();
-                                  }
-                                },
-                              );
+                          Slider(
+                            value: _currentPosition,
+                            max: _totalDuration,
+                            activeColor: Colors.grey[600],
+                            inactiveColor: Colors.grey[400],
+                            onChanged: (double value) {
+                              setState(() => _currentPosition = value);
+                              _audioPlayer.seek(Duration(milliseconds: _currentPosition.toInt()));
                             },
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 50,
+                            child: Text(
+                              _formatDuration(Duration(milliseconds: _currentPosition.toInt())),
+                              style: TextStyle(color: Colors.grey[600]),
+                            ),
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.grey[600],
+                            foregroundColor: Colors.grey[200],
+                            child: IconButton(
+                              icon: Icon(
+                                  _audioPlayer.state == PlayerState.paused || _audioPlayer.state == PlayerState.stopped
+                                      ? Icons.play_arrow
+                                      : Icons.pause),
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    if (_audioPlayer.state == PlayerState.stopped) {
+                                      _audioPlayer.state = PlayerState.playing;
+                                    }
+                                    if (_audioPlayer.state == PlayerState.playing) {
+                                      _audioPlayer.pause();
+                                    } else if (_audioPlayer.state == PlayerState.paused) {
+                                      _audioPlayer.resume();
+                                    }
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
                   const SizedBox(height: 16),
                   RichText(
                     text: TextSpan(
@@ -224,13 +224,24 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    'MORE ABOUT CREATOR',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'MORE ABOUT CREATOR',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
                     ),
-                  ),
+                    onTap: () {
+                      //Navigator.pushNamed(context, '/creatorDetailsPage');
+                    },
+                  )
                 ],
               ),
             ),
