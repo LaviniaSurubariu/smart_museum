@@ -35,7 +35,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ],
       currentIndex: currentIndex,
-      selectedItemColor: const Color.fromRGBO(199, 142, 28, 1),
+      selectedItemColor: const Color.fromRGBO(	112, 197, 225, 1),
       onTap: onTap,
     );
   }

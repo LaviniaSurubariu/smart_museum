@@ -66,7 +66,6 @@ class _ProfilePageState extends State<ProfilePage> {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: <Widget>[
-                  /// -- IMAGE
                   Stack(
                     children: <Widget>[
                       SizedBox(
@@ -87,7 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   Text(user.email, style: const TextStyle(color: Colors.black, fontSize: 16)),
                   const SizedBox(height: 20),
 
-                  /// -- BUTTON
                   SizedBox(
                     width: 210,
                     child: ElevatedButton(
@@ -110,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         Navigator.pushReplacementNamed(context, '/subscriptionPage');
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent, side: BorderSide.none, shape: const StadiumBorder()),
+                          backgroundColor: const Color.fromRGBO(	112, 197, 225, 1), side: BorderSide.none, shape: const StadiumBorder()),
                       child: const Text('Try premium account ', style: TextStyle(color: Colors.black)),
                     ),
                   ),

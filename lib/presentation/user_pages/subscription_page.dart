@@ -54,22 +54,22 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 ),
                 const SizedBox(height: 16),
                 const ListTile(
-                  leading: Icon(Icons.check_circle, color: Colors.lightBlueAccent),
+                  leading: Icon(Icons.check_circle, color: Color.fromRGBO(112, 197, 225, 1)),
                   title: Text('Full Audio Experience: Enjoy detailed audio guides for each artwork.',
                       style: TextStyle(fontSize: 14)),
                 ),
                 const ListTile(
-                  leading: Icon(Icons.check_circle, color: Colors.lightBlueAccent),
+                  leading: Icon(Icons.check_circle, color: Color.fromRGBO(112, 197, 225, 1)),
                   title: Text('Learn at Your Leisure: No need to read, just listen and admire the art.',
                       style: TextStyle(fontSize: 14)),
                 ),
                 const ListTile(
-                  leading: Icon(Icons.check_circle, color: Colors.lightBlueAccent),
+                  leading: Icon(Icons.check_circle, color: Color.fromRGBO(112, 197, 225, 1)),
                   title: Text('Exclusive Content: Access to stories and secrets behind your favorite artworks.',
                       style: TextStyle(fontSize: 14)),
                 ),
                 const ListTile(
-                  leading: Icon(Icons.check_circle, color: Colors.lightBlueAccent),
+                  leading: Icon(Icons.check_circle, color: Color.fromRGBO(112, 197, 225, 1)),
                   title: Text('Continue Learning: Keep listening to the audio guides even after leaving the museum.',
                       style: TextStyle(fontSize: 14)),
                 ),
@@ -99,7 +99,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                           child: Container(
                             decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(26.0)),
-                              color: Colors.grey,
+                              color: Color.fromRGBO(161, 217, 235, 1),
                             ),
                             child: const Padding(
                               padding: EdgeInsets.all(16.0),
@@ -150,8 +150,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                               borderRadius: BorderRadius.all(Radius.circular(26.0)),
                               gradient: LinearGradient(
                                 colors: <Color>[
-                                  Colors.lightBlueAccent,
-                                  Colors.blueAccent,
+                                  Color.fromRGBO(112, 197, 225, 1),
+                                  Color.fromRGBO(112, 225, 197, 1),
                                 ],
                               ),
                             ),
@@ -164,7 +164,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                                     Center(
                                       child: Text(
                                         '1 month',
-                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                                        style:
+                                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                                       ),
                                     ),
                                     SizedBox(height: 8),
