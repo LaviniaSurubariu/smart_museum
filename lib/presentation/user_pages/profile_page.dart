@@ -118,7 +118,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   const Divider(),
                   const SizedBox(height: 10),
 
-                  /// -- MENU
                   ProfileMenuWidget(
                     title: 'Artwork',
                     icon: LineAwesomeIcons.palette,
@@ -127,14 +126,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     },
                   ),
                   ProfileMenuWidget(
-                    title: 'Billing Details',
-                    icon: LineAwesomeIcons.wallet,
+                    title: 'Subscription',
+                    icon: Icons.payment,
                     onPress: () {},
                   ),
-                  ProfileMenuWidget(title: 'Saved', icon: LineAwesomeIcons.heart, onPress: () {}),
+                  ProfileMenuWidget(title: 'Aplication Feedback', icon: Icons.feedback_outlined, onPress: () {}),
                   const Divider(),
                   const SizedBox(height: 10),
-                  ProfileMenuWidget(title: 'Information', icon: LineAwesomeIcons.info, onPress: () {}),
+                  ProfileMenuWidget(title: 'Info', icon: LineAwesomeIcons.info, onPress: () {}),
                   ProfileMenuWidget(
                     title: 'Logout',
                     icon: LineAwesomeIcons.alternate_sign_out,
