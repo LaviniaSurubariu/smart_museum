@@ -130,10 +130,12 @@ class _PaymentPageState extends State<PaymentPage> {
                   ),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
                   onPressed: () {
                     context.dispatch(BuySubscription(duration: duration, result: _onBuySubscriptionResult));
                   },
-                  child: const Text('Pay'),
+                  child: const Text('Pay', style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),
