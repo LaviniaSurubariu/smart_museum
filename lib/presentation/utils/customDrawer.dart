@@ -54,6 +54,14 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/favoritesPage');
               },
+            ),ListTile(
+              title: const Text(
+                'FORUM',
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/forumPage');
+              },
             ),
           ],
         ),
