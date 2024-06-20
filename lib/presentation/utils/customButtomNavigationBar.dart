@@ -13,6 +13,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      backgroundColor: const Color.fromRGBO(	247, 245, 253,1),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
