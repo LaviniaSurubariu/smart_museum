@@ -326,7 +326,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.grey, side: BorderSide.none, shape: const StadiumBorder()),
-                        child: const Text('Add artist', style: TextStyle(color: Colors.black)),
+                        child: const Text('Add artwork', style: TextStyle(color: Colors.black)),
                       ),
                     ),
                     const SizedBox(height: 80),
