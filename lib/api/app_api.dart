@@ -6,8 +6,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/user/app_user/app_user.dart';
 
-class AuthApi {
-  const AuthApi({
+class AppApi {
+  const AppApi({
     required FirebaseAuth auth,
     required FirebaseStorage storage,
     required FirebaseFirestore firestore,
