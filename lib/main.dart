@@ -7,7 +7,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
-import 'api/user_api.dart';
+import 'api/app_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
@@ -34,7 +34,7 @@ Future<dynamic> main() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final AuthApi authApi = AuthApi(auth: auth, storage: storage, firestore: firestore);
+  final AppApi authApi = AppApi(auth: auth, storage: storage, firestore: firestore);
   final AppEpics appEpic = AppEpics(authApi);
 
   final Store<AppState> store = Store<AppState>(
