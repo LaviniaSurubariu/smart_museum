@@ -17,7 +17,7 @@ class _GenerateQrCodePageState extends State<GenerateQrCodePage> {
   @override
   Widget build(BuildContext context) {
     int selectedIndex = 1;
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     Future<void> onItemTapped(int index) async {
       setState(() {
@@ -34,12 +34,12 @@ class _GenerateQrCodePageState extends State<GenerateQrCodePage> {
     }
 
     return Scaffold(
-      key: _scaffoldKey,
+      key: scaffoldKey,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            _scaffoldKey.currentState?.openDrawer();
+            scaffoldKey.currentState?.openDrawer();
           },
         ),
         title: const Text(''),
