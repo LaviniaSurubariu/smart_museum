@@ -12,7 +12,9 @@ _$Artist$Impl _$$Artist$ImplFromJson(Map<String, dynamic> json) =>
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       pictureUrl: json['pictureUrl'] as String,
-      birthdate: DateTime.parse(json['birthdate'] as String),
+      birthdate: json['birthdate'] == null
+          ? null
+          : DateTime.parse(json['birthdate'] as String),
       deathDate: json['deathDate'] == null
           ? null
           : DateTime.parse(json['deathDate'] as String),
@@ -25,7 +27,7 @@ Map<String, dynamic> _$$Artist$ImplToJson(_$Artist$Impl instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'pictureUrl': instance.pictureUrl,
-      'birthdate': instance.birthdate.toIso8601String(),
+      'birthdate': instance.birthdate?.toIso8601String(),
       'deathDate': instance.deathDate?.toIso8601String(),
       'description': instance.description,
     };

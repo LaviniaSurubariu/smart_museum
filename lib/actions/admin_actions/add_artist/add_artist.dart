@@ -11,7 +11,7 @@ class AddArtist with _$AddArtist implements AppAction {
     required String firstName,
     required String lastName,
     required String picturePath,
-    required DateTime birthdate,
+    required DateTime? birthdate,
     required DateTime? deathDate,
     required String description,
     required ActionResult result,

@@ -1,11 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-import '../../actions/admin_actions/add_artist/add_artist.dart';
+import '../../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../../actions/app_action.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../utils/customAlertDialogOneButton.dart';
@@ -308,16 +307,21 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            context.dispatch(AddArtist(
-                              firstName: titleController.text,
-                              lastName: artistController.text,
-                              picturePath: imagePathController.text,
-                              birthdate: DateTime.parse(typeController.text),
-                              deathDate:
-                                  deathDateController.text.isNotEmpty ? DateTime.parse(deathDateController.text) : null,
-                              description: descriptionController.text,
-                              result: _onAddArtistResult,
-                            ));
+                            context.dispatch(AddArtwork(
+                                title: titleController.text,
+                                artistFirstName: selectedArtist!.firstName,
+                                artistLastName: selectedArtist!.lastName,
+                                artistUid: selectedArtist!.uid,
+                                startCreationYear: int.parse(startCreationYearController.text),
+                                endCreationYear: int.parse(endCreationYearController.text),
+                                picturePath: imagePathController.text,
+                                audioPath: audioPathController.text,
+                                type: typeController.text,
+                                style: styleController.text,
+                                provenance: provenanceController.text,
+                                originalTitle: originalTitleController.text,
+                                description: descriptionController.text,
+                                result: _onAddArtworkResult));
                           }
                         },
                         style: ElevatedButton.styleFrom(
@@ -404,18 +408,17 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
           lastName: doc['lastName'] as String? ?? '',
         );
       }).toList();
+      artistSuggestions.forEach((element) {print(element);});
       setState(() {
         artistSuggestions = artists;
       });
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      print(e);
     }
   }
 
   void showAutocomplete(BuildContext context) {
-    showDialog<String>(
+    showDialog<SimpleDialogOption>(
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
@@ -439,14 +442,14 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
     });
   }
 
-  void _onAddArtistResult(AppAction action) {
-    if (action is AddArtistSuccessful) {
+  void _onAddArtworkResult(AppAction action) {
+    if (action is AddArtworkSuccessful) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,
         builder: (BuildContext context) {
           return CustomAlertDialogOneButton(
-            title: 'Artist added',
-            content: 'Successfully added artist.',
+            title: 'Artwork added',
+            content: 'Successfully added artwork.',
             buttonText: 'OK',
             buttonColor: Colors.grey,
             iconData: LineAwesomeIcons.check_circle,
@@ -458,7 +461,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
           );
         },
       );
-    } else if (action is AddArtistError) {
+    } else if (action is AddArtworkError) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,
         builder: (BuildContext context) {

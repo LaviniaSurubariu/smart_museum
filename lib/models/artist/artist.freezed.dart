@@ -24,7 +24,7 @@ mixin _$Artist {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get pictureUrl => throw _privateConstructorUsedError;
-  DateTime get birthdate => throw _privateConstructorUsedError;
+  DateTime? get birthdate => throw _privateConstructorUsedError;
   DateTime? get deathDate => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
@@ -43,7 +43,7 @@ abstract class $ArtistCopyWith<$Res> {
       String firstName,
       String lastName,
       String pictureUrl,
-      DateTime birthdate,
+      DateTime? birthdate,
       DateTime? deathDate,
       String description});
 }
@@ -65,7 +65,7 @@ class _$ArtistCopyWithImpl<$Res, $Val extends Artist>
     Object? firstName = null,
     Object? lastName = null,
     Object? pictureUrl = null,
-    Object? birthdate = null,
+    Object? birthdate = freezed,
     Object? deathDate = freezed,
     Object? description = null,
   }) {
@@ -86,10 +86,10 @@ class _$ArtistCopyWithImpl<$Res, $Val extends Artist>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      birthdate: null == birthdate
+      birthdate: freezed == birthdate
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       deathDate: freezed == deathDate
           ? _value.deathDate
           : deathDate // ignore: cast_nullable_to_non_nullable
@@ -114,7 +114,7 @@ abstract class _$$Artist$ImplCopyWith<$Res> implements $ArtistCopyWith<$Res> {
       String firstName,
       String lastName,
       String pictureUrl,
-      DateTime birthdate,
+      DateTime? birthdate,
       DateTime? deathDate,
       String description});
 }
@@ -134,7 +134,7 @@ class __$$Artist$ImplCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? pictureUrl = null,
-    Object? birthdate = null,
+    Object? birthdate = freezed,
     Object? deathDate = freezed,
     Object? description = null,
   }) {
@@ -155,10 +155,10 @@ class __$$Artist$ImplCopyWithImpl<$Res>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      birthdate: null == birthdate
+      birthdate: freezed == birthdate
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       deathDate: freezed == deathDate
           ? _value.deathDate
           : deathDate // ignore: cast_nullable_to_non_nullable
@@ -195,7 +195,7 @@ class _$Artist$Impl implements Artist$ {
   @override
   final String pictureUrl;
   @override
-  final DateTime birthdate;
+  final DateTime? birthdate;
   @override
   final DateTime? deathDate;
   @override
@@ -251,7 +251,7 @@ abstract class Artist$ implements Artist {
       required final String firstName,
       required final String lastName,
       required final String pictureUrl,
-      required final DateTime birthdate,
+      required final DateTime? birthdate,
       required final DateTime? deathDate,
       required final String description}) = _$Artist$Impl;
 
@@ -266,7 +266,7 @@ abstract class Artist$ implements Artist {
   @override
   String get pictureUrl;
   @override
-  DateTime get birthdate;
+  DateTime? get birthdate;
   @override
   DateTime? get deathDate;
   @override

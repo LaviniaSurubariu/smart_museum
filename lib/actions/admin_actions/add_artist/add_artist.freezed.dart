@@ -22,7 +22,7 @@ mixin _$AddArtist {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)
@@ -37,7 +37,7 @@ mixin _$AddArtist {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -52,7 +52,7 @@ mixin _$AddArtist {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -113,7 +113,7 @@ abstract class _$$AddArtistStartImplCopyWith<$Res> {
       {String firstName,
       String lastName,
       String picturePath,
-      DateTime birthdate,
+      DateTime? birthdate,
       DateTime? deathDate,
       String description,
       ActionResult result});
@@ -133,7 +133,7 @@ class __$$AddArtistStartImplCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? picturePath = null,
-    Object? birthdate = null,
+    Object? birthdate = freezed,
     Object? deathDate = freezed,
     Object? description = null,
     Object? result = null,
@@ -151,10 +151,10 @@ class __$$AddArtistStartImplCopyWithImpl<$Res>
           ? _value.picturePath
           : picturePath // ignore: cast_nullable_to_non_nullable
               as String,
-      birthdate: null == birthdate
+      birthdate: freezed == birthdate
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       deathDate: freezed == deathDate
           ? _value.deathDate
           : deathDate // ignore: cast_nullable_to_non_nullable
@@ -190,7 +190,7 @@ class _$AddArtistStartImpl implements AddArtistStart {
   @override
   final String picturePath;
   @override
-  final DateTime birthdate;
+  final DateTime? birthdate;
   @override
   final DateTime? deathDate;
   @override
@@ -241,7 +241,7 @@ class _$AddArtistStartImpl implements AddArtistStart {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)
@@ -260,7 +260,7 @@ class _$AddArtistStartImpl implements AddArtistStart {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -279,7 +279,7 @@ class _$AddArtistStartImpl implements AddArtistStart {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -335,7 +335,7 @@ abstract class AddArtistStart implements AddArtist {
       {required final String firstName,
       required final String lastName,
       required final String picturePath,
-      required final DateTime birthdate,
+      required final DateTime? birthdate,
       required final DateTime? deathDate,
       required final String description,
       required final ActionResult result}) = _$AddArtistStartImpl;
@@ -343,7 +343,7 @@ abstract class AddArtistStart implements AddArtist {
   String get firstName;
   String get lastName;
   String get picturePath;
-  DateTime get birthdate;
+  DateTime? get birthdate;
   DateTime? get deathDate;
   String get description;
   ActionResult get result;
@@ -395,7 +395,7 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)
@@ -413,7 +413,7 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -431,7 +431,7 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -561,7 +561,7 @@ class _$AddArtistErrorImpl implements AddArtistError {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)
@@ -579,7 +579,7 @@ class _$AddArtistErrorImpl implements AddArtistError {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?
@@ -597,7 +597,7 @@ class _$AddArtistErrorImpl implements AddArtistError {
             String firstName,
             String lastName,
             String picturePath,
-            DateTime birthdate,
+            DateTime? birthdate,
             DateTime? deathDate,
             String description,
             ActionResult result)?

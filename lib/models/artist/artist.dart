@@ -11,7 +11,7 @@ class Artist with _$Artist {
     required String firstName,
     required String lastName,
     required String pictureUrl,
-    required DateTime birthdate,
+    required DateTime? birthdate,
     required DateTime? deathDate,
     required String description,
   }) = Artist$;

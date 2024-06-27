@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../actions/admin_actions/add_artist/add_artist.dart';
+import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -32,6 +33,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, ChangeNameStart>(_changeNameStart).call,
       TypedEpic<AppState, BuySubscriptionStart>(_buySubscriptionStart).call,
       TypedEpic<AppState, AddArtistStart>(_addArtistStart).call,
+      TypedEpic<AppState, AddArtworkStart>(_addArtworkStart).call,
     ])(actions, store);
   }
 
@@ -138,6 +140,30 @@ class AppEpics extends EpicClass<AppState> {
               description: action.description))
           .map((_) => const AddArtist.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => AddArtist.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _addArtworkStart(Stream<AddArtworkStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddArtworkStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.addArtwork(
+              title: action.title,
+              artistFirstName: action.artistFirstName,
+              artistLastName: action.artistLastName,
+              artistUid: action.artistUid,
+              startCreationYear: action.startCreationYear,
+              endCreationYear: action.endCreationYear,
+              picturePath: action.picturePath,
+              audioPath: action.audioPath,
+              type: action.type,
+              style: action.style,
+              provenance: action.provenance,
+              originalTitle: action.originalTitle,
+              description: action.description))
+          .map((_) => const AddArtwork.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddArtwork.error(error, stackTrace))
           .doOnData(action.result);
     });
   }

@@ -124,16 +124,9 @@ class _AddArtistPageState extends State<AddArtistPage> {
                     TextFormField(
                       controller: birthdateController,
                       readOnly: true,
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter a valid birthdate.';
-                        }
-                        return null;
-                      },
                       onTap: () {
                         _selectbirthDate(context);
                       },
-                      onChanged: (String value) {},
                       decoration: InputDecoration(
                         label: const Text('Birthdate'),
                         prefixIcon: const Icon(LineAwesomeIcons.calendar),
@@ -151,9 +144,6 @@ class _AddArtistPageState extends State<AddArtistPage> {
                       readOnly: true,
                       onTap: () {
                         _selectDeathDate(context);
-                      },
-                      onChanged: (String value) {
-                        formKey.currentState!.validate();
                       },
                       decoration: InputDecoration(
                         label: const Text('Death date'),
@@ -192,7 +182,7 @@ class _AddArtistPageState extends State<AddArtistPage> {
                               firstName: firstNameController.text,
                               lastName: lastNameController.text,
                               picturePath: imagePathController.text,
-                              birthdate: DateTime.parse(birthdateController.text),
+                              birthdate: birthdateController.text.isNotEmpty ? DateTime.parse(birthdateController.text) : null,
                               deathDate: deathDateController.text.isNotEmpty ? DateTime.parse(deathDateController.text) : null,
                               description: descriptionController.text,
                               result: _onAddArtistResult,

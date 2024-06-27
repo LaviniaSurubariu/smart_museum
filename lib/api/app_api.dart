@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/artist/artist.dart';
+import '../models/artwork/artwork.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppApi {
@@ -198,13 +199,13 @@ class AppApi {
     required String firstName,
     required String lastName,
     required String picturePath,
-    required DateTime birthdate,
+    required DateTime? birthdate,
     required DateTime? deathDate,
     required String description,
   }) async {
-    final CollectionReference<Map<String, dynamic>> artistsCollection = FirebaseFirestore.instance.collection('artists');
+    final CollectionReference<Map<String, dynamic>> artistsCollection =
+        FirebaseFirestore.instance.collection('artists');
     final DocumentReference<Map<String, dynamic>> newArtistRef = artistsCollection.doc();
-
 
     final Reference ref = _storage.ref('artists/${newArtistRef.id}/$firstName');
     await ref.putFile(File(picturePath));
@@ -223,5 +224,54 @@ class AppApi {
     final Map<String, dynamic> artistJson = artist.toJson();
 
     await newArtistRef.set(artistJson);
+  }
+
+  Future<void> addArtwork({
+    required String title,
+    required String artistFirstName,
+    required String? artistLastName,
+    required String artistUid,
+    required int startCreationYear,
+    required int endCreationYear,
+    required String picturePath,
+    required String audioPath,
+    required String type,
+    required String style,
+    required String provenance,
+    required String originalTitle,
+    required String description,
+  }) async {
+    final CollectionReference<Map<String, dynamic>> artworksCollection =
+        FirebaseFirestore.instance.collection('artworks');
+    final DocumentReference<Map<String, dynamic>> newArtworkRef = artworksCollection.doc();
+
+    final Reference pictureRef = _storage.ref('artworks/${newArtworkRef.id}/$title.jpg');
+    await pictureRef.putFile(File(picturePath));
+    final String pictureUrl = await pictureRef.getDownloadURL();
+
+    final Reference audioRef = _storage.ref('artworks/${newArtworkRef.id}/$title.mp3');
+    await audioRef.putFile(File(audioPath));
+    final String audioUrl = await audioRef.getDownloadURL();
+
+    final Artwork artwork = Artwork(
+      uid: newArtworkRef.id,
+      title: title,
+      artistFirstName: artistFirstName,
+      artistLastName: artistLastName,
+      artistUid: artistUid,
+      startCreationYear: startCreationYear,
+      endCreationYear: endCreationYear,
+      pictureUrl: pictureUrl,
+      audioUrl: audioUrl,
+      type: type,
+      style: style,
+      provenance: provenance,
+      originalTitle: originalTitle,
+      description: description,
+    );
+
+    final Map<String, dynamic> artworkJson = artwork.toJson();
+
+    await newArtworkRef.set(artworkJson);
   }
 }
