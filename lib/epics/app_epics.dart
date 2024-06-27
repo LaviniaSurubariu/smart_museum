@@ -10,14 +10,14 @@ import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
-import '../api/user_api.dart';
+import '../api/app_api.dart';
 import '../models/app_state/app_state.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppEpics extends EpicClass<AppState> {
-  AppEpics(this.authApi);
+  AppEpics(this.appApi);
 
-  final AuthApi authApi;
+  final AppApi appApi;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -38,7 +38,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((LoginStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.login(email: action.email, password: action.password))
+          .asyncMap((_) => appApi.login(email: action.email, password: action.password))
           .map((AppUser user) => Login.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => Login.error(error, stackTrace))
           .doOnData(action.result);
@@ -50,7 +50,7 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) =>
-          authApi.createUser(
+          appApi.createUser(
               email: action.email,
               password: action.password,
               firstName: action.firstName,
@@ -66,7 +66,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((SignOutStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.signOut())
+          .asyncMap((_) => appApi.signOut())
           .map((_) => const SignOut.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignOut.error(error, stackTrace));
     });
@@ -76,7 +76,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((ChangePictureStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.changePicture(action.path))
+          .asyncMap((_) => appApi.changePicture(action.path))
           .map((AppUser user) => ChangePicture.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePicture.error(error, stackTrace));
     });
@@ -86,7 +86,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((DeleteUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.deleteUser())
+          .asyncMap((_) => appApi.deleteUser())
           .map((_) => const DeleteUser.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteUser.error(error, stackTrace));
     });
@@ -96,7 +96,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((ChangePasswordStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.changePassword(action.newPass))
+          .asyncMap((_) => appApi.changePassword(action.newPass))
           .map((_) => const ChangePassword.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePassword.error(error, stackTrace))
           .doOnData(action.result);
@@ -107,7 +107,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((ChangeNameStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.changeName(newFirstName: action.newFirstName, newLastName: action.newLastName))
+          .asyncMap((_) => appApi.changeName(newFirstName: action.newFirstName, newLastName: action.newLastName))
           .map((AppUser user) => ChangeName.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangeName.error(error, stackTrace))
           .doOnData(action.result);
@@ -117,7 +117,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((BuySubscriptionStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authApi.updateSubscriptionDates(duration: action.duration))
+          .asyncMap((_) => appApi.updateSubscriptionDates(duration: action.duration))
           .map((AppUser user) => BuySubscription.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => BuySubscription.error(error, stackTrace))
           .doOnData(action.result);
