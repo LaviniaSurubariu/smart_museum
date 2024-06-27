@@ -11,6 +11,7 @@ import 'api/app_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state/app_state.dart';
+import 'presentation/admin_pages/add_artist_page.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
 import 'presentation/admin_pages/generate_qr_code_page.dart';
 import 'presentation/admin_pages/profile_admin_page.dart';
@@ -74,6 +75,7 @@ class MyApp extends StatelessWidget {
           '/subscriptionPage': (BuildContext context) => const SubscriptionPage(),
           '/paymentPage': (BuildContext context) => const PaymentPage(),
           '/favoritesPage': (BuildContext context) => const FavoritesPage(),
+          '/addArtistPage': (BuildContext context) => const AddArtistPage(),
         },
       ),
     );

@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
+import '../models/artist/artist.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppApi {
@@ -192,4 +193,35 @@ class AppApi {
 //       .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
 //       .toList();
 // }
+
+  Future<void> addArtist({
+    required String firstName,
+    required String lastName,
+    required String picturePath,
+    required DateTime birthdate,
+    required DateTime? deathDate,
+    required String description,
+  }) async {
+    final CollectionReference<Map<String, dynamic>> artistsCollection = FirebaseFirestore.instance.collection('artists');
+    final DocumentReference<Map<String, dynamic>> newArtistRef = artistsCollection.doc();
+
+
+    final Reference ref = _storage.ref('artists/${newArtistRef.id}/$firstName');
+    await ref.putFile(File(picturePath));
+    final String pictureUrl = await ref.getDownloadURL();
+
+    final Artist artist = Artist(
+      uid: newArtistRef.id,
+      firstName: firstName,
+      lastName: lastName,
+      pictureUrl: pictureUrl,
+      birthdate: birthdate,
+      deathDate: deathDate,
+      description: description,
+    );
+
+    final Map<String, dynamic> artistJson = artist.toJson();
+
+    await newArtistRef.set(artistJson);
+  }
 }

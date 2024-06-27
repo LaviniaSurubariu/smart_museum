@@ -1,6 +1,7 @@
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -30,7 +31,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, ChangePasswordStart>(_changePasswordStart).call,
       TypedEpic<AppState, ChangeNameStart>(_changeNameStart).call,
       TypedEpic<AppState, BuySubscriptionStart>(_buySubscriptionStart).call,
-
+      TypedEpic<AppState, AddArtistStart>(_addArtistStart).call,
     ])(actions, store);
   }
 
@@ -49,8 +50,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) =>
-          appApi.createUser(
+          .asyncMap((_) => appApi.createUser(
               email: action.email,
               password: action.password,
               firstName: action.firstName,
@@ -113,6 +113,7 @@ class AppEpics extends EpicClass<AppState> {
           .doOnData(action.result);
     });
   }
+
   Stream<AppAction> _buySubscriptionStart(Stream<BuySubscriptionStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((BuySubscriptionStart action) {
@@ -124,5 +125,20 @@ class AppEpics extends EpicClass<AppState> {
     });
   }
 
-
+  Stream<AppAction> _addArtistStart(Stream<AddArtistStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddArtistStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.addArtist(
+              firstName: action.firstName,
+              lastName: action.lastName,
+              picturePath: action.picturePath,
+              birthdate: action.birthdate,
+              deathDate: action.deathDate,
+              description: action.description))
+          .map((_) => const AddArtist.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddArtist.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
 }
