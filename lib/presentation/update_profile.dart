@@ -79,7 +79,6 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: <Widget>[
-                  // -- IMAGE with ICON
                   Stack(
                     children: <Widget>[
                       SizedBox(
