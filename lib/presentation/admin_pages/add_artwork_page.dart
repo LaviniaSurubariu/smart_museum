@@ -1,10 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../../actions/admin_actions/add_artist/add_artist.dart';
 import '../../actions/app_action.dart';
+import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../utils/customAlertDialogOneButton.dart';
 import '../utils/customAlertDialogTwoButtons.dart';
 import '../utils/extensions.dart';
@@ -30,6 +33,8 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
   final TextEditingController startCreationYearController = TextEditingController();
   final TextEditingController endCreationYearController = TextEditingController();
   final TextEditingController audioPathController = TextEditingController();
+  List<ArtistForFetch> artistSuggestions = <ArtistForFetch>[];
+  ArtistForFetch? selectedArtist;
   int? selectedYear;
 
   @override
@@ -47,6 +52,12 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
     typeController.dispose();
     deathDateController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchArtistSuggestions();
   }
 
   @override
@@ -103,18 +114,43 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                       decoration: const InputDecoration(label: Text('Title'), prefixIcon: Icon(Icons.title)),
                     ),
                     const SizedBox(height: 20),
-                    TextFormField(
-                      controller: artistController,
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter a valid artist.';
+                    Autocomplete<String>(
+                      optionsBuilder: (TextEditingValue textEditingValue) {
+                        if (textEditingValue.text.isEmpty) {
+                          return const Iterable<String>.empty();
                         }
-                        return null;
+                        return artistSuggestions
+                            .where((ArtistForFetch artist) {
+                              final String fullName = '${artist.firstName} ${artist.lastName}'.toLowerCase();
+                              return fullName.contains(textEditingValue.text.toLowerCase());
+                            })
+                            .map((ArtistForFetch artist) => '${artist.firstName} ${artist.lastName}')
+                            .toList();
                       },
-                      onChanged: (String value) {
-                        formKey.currentState!.validate();
+                      fieldViewBuilder: (BuildContext context, TextEditingController fieldTextEditingController,
+                          FocusNode fieldFocusNode, VoidCallback onFieldSubmitted) {
+                        return TextFormField(
+                          controller: artistController,
+                          focusNode: fieldFocusNode,
+                          readOnly: true,
+                          onTap: () {
+                            showAutocomplete(context);
+                          },
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Select an artist.';
+                            }
+                            return null;
+                          },
+                          onChanged: (String value) {
+                            formKey.currentState!.validate();
+                          },
+                          decoration: const InputDecoration(
+                            labelText: 'Artist',
+                            prefixIcon: Icon(Icons.person),
+                          ),
+                        );
                       },
-                      decoration: const InputDecoration(label: Text('Artist'), prefixIcon: Icon(Icons.person)),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
@@ -172,7 +208,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                       readOnly: true,
                       decoration: const InputDecoration(
                         labelText: 'Choose an audio file',
-                        prefixIcon: Icon(Icons.audiotrack),
+                        prefixIcon: Icon(Icons.audio_file_outlined),
                       ),
                       onTap: _pickAudio,
                       validator: (String? value) {
@@ -356,6 +392,51 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
     if (file != null) {
       imagePathController.text = file.path;
     }
+  }
+
+  Future<void> fetchArtistSuggestions() async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore.instance.collection('artists').get();
+      final List<ArtistForFetch> artists = snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+        return ArtistForFetch(
+          uid: doc.id,
+          firstName: doc['firstName'] as String? ?? '',
+          lastName: doc['lastName'] as String? ?? '',
+        );
+      }).toList();
+      setState(() {
+        artistSuggestions = artists;
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  void showAutocomplete(BuildContext context) {
+    showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: const Text('Select Artist'),
+          children: artistSuggestions.map((ArtistForFetch artist) {
+            return SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, artist);
+              },
+              child: Text('${artist.firstName} ${artist.lastName}'),
+            );
+          }).toList(),
+        );
+      },
+    ).then((dynamic selectedValue) {
+      if (selectedValue != null) {
+        artistController.text = '${selectedValue.firstName} ${selectedValue.lastName}';
+        selectedArtist = selectedValue as ArtistForFetch;
+        formKey.currentState!.validate();
+      }
+    });
   }
 
   void _onAddArtistResult(AppAction action) {
