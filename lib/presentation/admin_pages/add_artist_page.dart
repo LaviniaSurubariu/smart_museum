@@ -149,7 +149,6 @@ class _AddArtistPageState extends State<AddArtistPage> {
                     TextFormField(
                       controller: deathDateController,
                       readOnly: true,
-                      validator: (String? value) {},
                       onTap: () {
                         _selectDeathDate(context);
                       },
