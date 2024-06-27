@@ -57,6 +57,15 @@ class CustomAdminDrawer extends StatelessWidget {
             ),
             ListTile(
               title: const Text(
+                'ADD ARTWORK',
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/addArtworkPage');
+              },
+            ),
+            ListTile(
+              title: const Text(
                 'ADD QR CODE',
               ),
               onTap: () {
