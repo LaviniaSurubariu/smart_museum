@@ -59,6 +59,9 @@ class _GenerateQrCodePageState extends State<GenerateQrCodePage> {
                   },
                 );
               },
+              decoration: const InputDecoration(
+                hintText: 'Enter data for QR code',
+              ),
             ),
             if (qrData != null) PrettyQrView.data(data: 'https://${qrData!}'),
           ],

@@ -66,11 +66,11 @@ class CustomAdminDrawer extends StatelessWidget {
             ),
             ListTile(
               title: const Text(
-                'ADD QR CODE',
+                'GENERATE QR CODE',
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushReplacementNamed(context, '/generateQrCodePage');
+                Navigator.pushReplacementNamed(context, '/artworksWithoutQRCodePage');
               },
             ),
           ],

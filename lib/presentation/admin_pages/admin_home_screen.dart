@@ -24,7 +24,7 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
       case 0:
         break;
       case 1:
-        Navigator.pushReplacementNamed(context, '/generateQrCodePage');
+        Navigator.pushReplacementNamed(context, '/artworksWithoutQRCodePage');
       case 2:
         Navigator.pushReplacementNamed(context, '/profileAdminPage');
     }

@@ -24,8 +24,7 @@ class CustomBottomNavigationBarAdmin extends StatelessWidget {
           icon: Icon(
             Icons.qr_code,
           ),
-          label: 'Add',
-
+          label: 'Generate',
         ),
         BottomNavigationBarItem(
           icon: Icon(

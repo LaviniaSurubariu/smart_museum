@@ -15,6 +15,7 @@ import 'presentation/admin_pages/add_artist_page.dart';
 import 'presentation/admin_pages/add_artwork_page.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
 import 'presentation/admin_pages/generate_qr_code_page.dart';
+import 'presentation/admin_pages/list_of_artworks_without_qr_code_page.dart';
 import 'presentation/admin_pages/profile_admin_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
@@ -78,6 +79,7 @@ class MyApp extends StatelessWidget {
           '/favoritesPage': (BuildContext context) => const FavoritesPage(),
           '/addArtistPage': (BuildContext context) => const AddArtistPage(),
           '/addArtworkPage': (BuildContext context) => const AddArtworkPage(),
+          '/artworksWithoutQRCodePage': (BuildContext context) => const ArtworksWithoutQRCodePage(),
         },
       ),
     );

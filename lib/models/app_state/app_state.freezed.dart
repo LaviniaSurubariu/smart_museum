@@ -21,6 +21,10 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
+  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode =>
+      throw _privateConstructorUsedError;
+  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,9 +37,13 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AppUser? user});
+  $Res call(
+      {AppUser? user,
+      List<ArtworkWithoutQrCode>? artworksWithoutQrCode,
+      ArtworkWithoutQrCode? selectedArtworkWithoutQrCode});
 
   $AppUserCopyWith<$Res>? get user;
+  $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
 }
 
 /// @nodoc
@@ -52,12 +60,22 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @override
   $Res call({
     Object? user = freezed,
+    Object? artworksWithoutQrCode = freezed,
+    Object? selectedArtworkWithoutQrCode = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      artworksWithoutQrCode: freezed == artworksWithoutQrCode
+          ? _value.artworksWithoutQrCode
+          : artworksWithoutQrCode // ignore: cast_nullable_to_non_nullable
+              as List<ArtworkWithoutQrCode>?,
+      selectedArtworkWithoutQrCode: freezed == selectedArtworkWithoutQrCode
+          ? _value.selectedArtworkWithoutQrCode
+          : selectedArtworkWithoutQrCode // ignore: cast_nullable_to_non_nullable
+              as ArtworkWithoutQrCode?,
     ) as $Val);
   }
 
@@ -72,6 +90,20 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode {
+    if (_value.selectedArtworkWithoutQrCode == null) {
+      return null;
+    }
+
+    return $ArtworkWithoutQrCodeCopyWith<$Res>(
+        _value.selectedArtworkWithoutQrCode!, (value) {
+      return _then(
+          _value.copyWith(selectedArtworkWithoutQrCode: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -82,10 +114,15 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser? user});
+  $Res call(
+      {AppUser? user,
+      List<ArtworkWithoutQrCode>? artworksWithoutQrCode,
+      ArtworkWithoutQrCode? selectedArtworkWithoutQrCode});
 
   @override
   $AppUserCopyWith<$Res>? get user;
+  @override
+  $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
 }
 
 /// @nodoc
@@ -100,12 +137,22 @@ class __$$AppState$ImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
+    Object? artworksWithoutQrCode = freezed,
+    Object? selectedArtworkWithoutQrCode = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      artworksWithoutQrCode: freezed == artworksWithoutQrCode
+          ? _value._artworksWithoutQrCode
+          : artworksWithoutQrCode // ignore: cast_nullable_to_non_nullable
+              as List<ArtworkWithoutQrCode>?,
+      selectedArtworkWithoutQrCode: freezed == selectedArtworkWithoutQrCode
+          ? _value.selectedArtworkWithoutQrCode
+          : selectedArtworkWithoutQrCode // ignore: cast_nullable_to_non_nullable
+              as ArtworkWithoutQrCode?,
     ));
   }
 }
@@ -113,17 +160,34 @@ class __$$AppState$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppState$Impl implements AppState$ {
-  const _$AppState$Impl({this.user});
+  const _$AppState$Impl(
+      {this.user,
+      final List<ArtworkWithoutQrCode>? artworksWithoutQrCode,
+      this.selectedArtworkWithoutQrCode})
+      : _artworksWithoutQrCode = artworksWithoutQrCode;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppState$ImplFromJson(json);
 
   @override
   final AppUser? user;
+  final List<ArtworkWithoutQrCode>? _artworksWithoutQrCode;
+  @override
+  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode {
+    final value = _artworksWithoutQrCode;
+    if (value == null) return null;
+    if (_artworksWithoutQrCode is EqualUnmodifiableListView)
+      return _artworksWithoutQrCode;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final ArtworkWithoutQrCode? selectedArtworkWithoutQrCode;
 
   @override
   String toString() {
-    return 'AppState(user: $user)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode)';
   }
 
   @override
@@ -131,12 +195,22 @@ class _$AppState$Impl implements AppState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality()
+                .equals(other._artworksWithoutQrCode, _artworksWithoutQrCode) &&
+            (identical(other.selectedArtworkWithoutQrCode,
+                    selectedArtworkWithoutQrCode) ||
+                other.selectedArtworkWithoutQrCode ==
+                    selectedArtworkWithoutQrCode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(
+      runtimeType,
+      user,
+      const DeepCollectionEquality().hash(_artworksWithoutQrCode),
+      selectedArtworkWithoutQrCode);
 
   @JsonKey(ignore: true)
   @override
@@ -153,13 +227,21 @@ class _$AppState$Impl implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final AppUser? user}) = _$AppState$Impl;
+  const factory AppState$(
+          {final AppUser? user,
+          final List<ArtworkWithoutQrCode>? artworksWithoutQrCode,
+          final ArtworkWithoutQrCode? selectedArtworkWithoutQrCode}) =
+      _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
 
   @override
   AppUser? get user;
+  @override
+  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode;
+  @override
+  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

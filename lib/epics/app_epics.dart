@@ -3,6 +3,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
+import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -14,6 +15,7 @@ import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../api/app_api.dart';
 import '../models/app_state/app_state.dart';
+import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppEpics extends EpicClass<AppState> {
@@ -34,6 +36,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, BuySubscriptionStart>(_buySubscriptionStart).call,
       TypedEpic<AppState, AddArtistStart>(_addArtistStart).call,
       TypedEpic<AppState, AddArtworkStart>(_addArtworkStart).call,
+      TypedEpic<AppState, GetListArtworksWithoutQrCodeStart>(_getListArtworksWithoutQrCodeStart).call,
     ])(actions, store);
   }
 
@@ -164,6 +167,22 @@ class AppEpics extends EpicClass<AppState> {
               description: action.description))
           .map((_) => const AddArtwork.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => AddArtwork.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _getListArtworksWithoutQrCodeStart(
+      Stream<GetListArtworksWithoutQrCodeStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetListArtworksWithoutQrCodeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.fetchArtworksWithoutQRCode();
+          })
+          .map((List<ArtworkWithoutQrCode> artworksWithoutQrCode) =>
+              GetListArtworksWithoutQrCode.successful(artworksWithoutQrCode))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => GetListArtworksWithoutQrCode.error(error, stackTrace))
           .doOnData(action.result);
     });
   }

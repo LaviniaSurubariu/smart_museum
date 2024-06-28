@@ -29,6 +29,7 @@ mixin _$Artwork {
   int get endCreationYear => throw _privateConstructorUsedError;
   String get pictureUrl => throw _privateConstructorUsedError;
   String get audioUrl => throw _privateConstructorUsedError;
+  String? get qrCodeUrl => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get style => throw _privateConstructorUsedError;
   String get provenance => throw _privateConstructorUsedError;
@@ -55,6 +56,7 @@ abstract class $ArtworkCopyWith<$Res> {
       int endCreationYear,
       String pictureUrl,
       String audioUrl,
+      String? qrCodeUrl,
       String type,
       String style,
       String provenance,
@@ -84,6 +86,7 @@ class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork>
     Object? endCreationYear = null,
     Object? pictureUrl = null,
     Object? audioUrl = null,
+    Object? qrCodeUrl = freezed,
     Object? type = null,
     Object? style = null,
     Object? provenance = null,
@@ -127,6 +130,10 @@ class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork>
           ? _value.audioUrl
           : audioUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCodeUrl: freezed == qrCodeUrl
+          ? _value.qrCodeUrl
+          : qrCodeUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -168,6 +175,7 @@ abstract class _$$Artwork$ImplCopyWith<$Res> implements $ArtworkCopyWith<$Res> {
       int endCreationYear,
       String pictureUrl,
       String audioUrl,
+      String? qrCodeUrl,
       String type,
       String style,
       String provenance,
@@ -195,6 +203,7 @@ class __$$Artwork$ImplCopyWithImpl<$Res>
     Object? endCreationYear = null,
     Object? pictureUrl = null,
     Object? audioUrl = null,
+    Object? qrCodeUrl = freezed,
     Object? type = null,
     Object? style = null,
     Object? provenance = null,
@@ -238,6 +247,10 @@ class __$$Artwork$ImplCopyWithImpl<$Res>
           ? _value.audioUrl
           : audioUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCodeUrl: freezed == qrCodeUrl
+          ? _value.qrCodeUrl
+          : qrCodeUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -275,6 +288,7 @@ class _$Artwork$Impl implements Artwork$ {
       required this.endCreationYear,
       required this.pictureUrl,
       required this.audioUrl,
+      required this.qrCodeUrl,
       required this.type,
       required this.style,
       required this.provenance,
@@ -303,6 +317,8 @@ class _$Artwork$Impl implements Artwork$ {
   @override
   final String audioUrl;
   @override
+  final String? qrCodeUrl;
+  @override
   final String type;
   @override
   final String style;
@@ -315,7 +331,7 @@ class _$Artwork$Impl implements Artwork$ {
 
   @override
   String toString() {
-    return 'Artwork(uid: $uid, title: $title, artistFirstName: $artistFirstName, artistLastName: $artistLastName, artistUid: $artistUid, startCreationYear: $startCreationYear, endCreationYear: $endCreationYear, pictureUrl: $pictureUrl, audioUrl: $audioUrl, type: $type, style: $style, provenance: $provenance, originalTitle: $originalTitle, description: $description)';
+    return 'Artwork(uid: $uid, title: $title, artistFirstName: $artistFirstName, artistLastName: $artistLastName, artistUid: $artistUid, startCreationYear: $startCreationYear, endCreationYear: $endCreationYear, pictureUrl: $pictureUrl, audioUrl: $audioUrl, qrCodeUrl: $qrCodeUrl, type: $type, style: $style, provenance: $provenance, originalTitle: $originalTitle, description: $description)';
   }
 
   @override
@@ -339,6 +355,8 @@ class _$Artwork$Impl implements Artwork$ {
                 other.pictureUrl == pictureUrl) &&
             (identical(other.audioUrl, audioUrl) ||
                 other.audioUrl == audioUrl) &&
+            (identical(other.qrCodeUrl, qrCodeUrl) ||
+                other.qrCodeUrl == qrCodeUrl) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.style, style) || other.style == style) &&
             (identical(other.provenance, provenance) ||
@@ -362,6 +380,7 @@ class _$Artwork$Impl implements Artwork$ {
       endCreationYear,
       pictureUrl,
       audioUrl,
+      qrCodeUrl,
       type,
       style,
       provenance,
@@ -393,6 +412,7 @@ abstract class Artwork$ implements Artwork {
       required final int endCreationYear,
       required final String pictureUrl,
       required final String audioUrl,
+      required final String? qrCodeUrl,
       required final String type,
       required final String style,
       required final String provenance,
@@ -420,6 +440,8 @@ abstract class Artwork$ implements Artwork {
   String get pictureUrl;
   @override
   String get audioUrl;
+  @override
+  String? get qrCodeUrl;
   @override
   String get type;
   @override

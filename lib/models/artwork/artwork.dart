@@ -15,6 +15,7 @@ class Artwork with _$Artwork {
     required int endCreationYear,
     required String pictureUrl,
     required String audioUrl,
+    required String? qrCodeUrl,
     required String type,
     required String style,
     required String provenance,

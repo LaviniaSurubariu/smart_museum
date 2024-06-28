@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:redux/redux.dart';
 
+import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
@@ -10,6 +11,7 @@ import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/app_state/app_state.dart';
+import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 
 AppState reducer(AppState state, dynamic action) {
   log('$action');
@@ -22,6 +24,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, DeleteUserSuccessful>(_deleteUserSuccessful).call,
     TypedReducer<AppState, ChangeNameSuccessful>(_changeNameSuccessful).call,
     TypedReducer<AppState, BuySubscriptionSuccessful>(_buySubscriptionSuccessful).call,
+    TypedReducer<AppState, GetListArtworksWithoutQrCodeSuccessful>(_getListArtworksWithoutQrCodeSuccessful).call,
   ])(state, action);
 }
 
@@ -53,3 +56,8 @@ AppState _buySubscriptionSuccessful(AppState state, BuySubscriptionSuccessful ac
   return state.copyWith(user: action.user);
 }
 
+AppState _getListArtworksWithoutQrCodeSuccessful(AppState state, GetListArtworksWithoutQrCodeSuccessful action) {
+  return state.copyWith(
+    artworksWithoutQrCode: <ArtworkWithoutQrCode> [...action.artworksWithoutQrCode],
+  );
+}

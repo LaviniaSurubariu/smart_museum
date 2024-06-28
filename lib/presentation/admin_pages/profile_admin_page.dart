@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfileAdminPage> {
         case 0:
           Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
         case 1:
-          Navigator.pushReplacementNamed(context, '/generateQrCodePage');
+          Navigator.pushReplacementNamed(context, '/artworksWithoutQRCodePage');
         case 2:
           break;
       }

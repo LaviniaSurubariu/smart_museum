@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppApi {
@@ -268,10 +269,31 @@ class AppApi {
       provenance: provenance,
       originalTitle: originalTitle,
       description: description,
+      qrCodeUrl: null,
     );
 
     final Map<String, dynamic> artworkJson = artwork.toJson();
 
     await newArtworkRef.set(artworkJson);
   }
+
+  Future<List<ArtworkWithoutQrCode>> fetchArtworksWithoutQRCode() async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> querySnapshot = await FirebaseFirestore.instance
+          .collection('artworks')
+          .where('qrCodeUrl', isEqualTo: null)
+          .get();
+
+      return querySnapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+        return ArtworkWithoutQrCode(
+          id: doc.id,
+          title: doc.data()['title'] as String,
+        );
+      }).toList();
+    } catch (e) {
+      return <ArtworkWithoutQrCode>[];
+    }
+  }
+
+
 }
