@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'presentation/user_pages/artist_details_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -22,6 +21,7 @@ import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
 import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
+import 'presentation/user_pages/artist_details_page.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
 import 'presentation/user_pages/favorites_page.dart';
 import 'presentation/user_pages/home_screen.dart';
