@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$GetListArtworksWithoutQrCode {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(ActionResult result) $default, {
+    TResult Function() $default, {
     required TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)
         successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -26,7 +26,7 @@ mixin _$GetListArtworksWithoutQrCode {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(ActionResult result)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -34,7 +34,7 @@ mixin _$GetListArtworksWithoutQrCode {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(ActionResult result)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -93,8 +93,6 @@ abstract class _$$GetListArtworksWithoutQrCodeStartImplCopyWith<$Res> {
           _$GetListArtworksWithoutQrCodeStartImpl value,
           $Res Function(_$GetListArtworksWithoutQrCodeStartImpl) then) =
       __$$GetListArtworksWithoutQrCodeStartImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ActionResult result});
 }
 
 /// @nodoc
@@ -106,87 +104,62 @@ class __$$GetListArtworksWithoutQrCodeStartImplCopyWithImpl<$Res>
       _$GetListArtworksWithoutQrCodeStartImpl _value,
       $Res Function(_$GetListArtworksWithoutQrCodeStartImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? result = null,
-  }) {
-    return _then(_$GetListArtworksWithoutQrCodeStartImpl(
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as ActionResult,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GetListArtworksWithoutQrCodeStartImpl
     implements GetListArtworksWithoutQrCodeStart {
-  const _$GetListArtworksWithoutQrCodeStartImpl({required this.result});
-
-  @override
-  final ActionResult result;
+  const _$GetListArtworksWithoutQrCodeStartImpl();
 
   @override
   String toString() {
-    return 'GetListArtworksWithoutQrCode(result: $result)';
+    return 'GetListArtworksWithoutQrCode()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetListArtworksWithoutQrCodeStartImpl &&
-            (identical(other.result, result) || other.result == result));
+            other is _$GetListArtworksWithoutQrCodeStartImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, result);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetListArtworksWithoutQrCodeStartImplCopyWith<
-          _$GetListArtworksWithoutQrCodeStartImpl>
-      get copyWith => __$$GetListArtworksWithoutQrCodeStartImplCopyWithImpl<
-          _$GetListArtworksWithoutQrCodeStartImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(ActionResult result) $default, {
+    TResult Function() $default, {
     required TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)
         successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(result);
+    return $default();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(ActionResult result)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(result);
+    return $default?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(ActionResult result)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(result);
+      return $default();
     }
     return orElse();
   }
@@ -229,15 +202,8 @@ class _$GetListArtworksWithoutQrCodeStartImpl
 
 abstract class GetListArtworksWithoutQrCodeStart
     implements GetListArtworksWithoutQrCode {
-  const factory GetListArtworksWithoutQrCodeStart(
-          {required final ActionResult result}) =
+  const factory GetListArtworksWithoutQrCodeStart() =
       _$GetListArtworksWithoutQrCodeStartImpl;
-
-  ActionResult get result;
-  @JsonKey(ignore: true)
-  _$$GetListArtworksWithoutQrCodeStartImplCopyWith<
-          _$GetListArtworksWithoutQrCodeStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -321,7 +287,7 @@ class _$GetListArtworksWithoutQrCodeSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(ActionResult result) $default, {
+    TResult Function() $default, {
     required TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)
         successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -332,7 +298,7 @@ class _$GetListArtworksWithoutQrCodeSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(ActionResult result)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -343,7 +309,7 @@ class _$GetListArtworksWithoutQrCodeSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(ActionResult result)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -481,7 +447,7 @@ class _$GetListArtworksWithoutQrCodeErrorImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(ActionResult result) $default, {
+    TResult Function() $default, {
     required TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)
         successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -492,7 +458,7 @@ class _$GetListArtworksWithoutQrCodeErrorImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(ActionResult result)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -503,7 +469,7 @@ class _$GetListArtworksWithoutQrCodeErrorImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(ActionResult result)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<ArtworkWithoutQrCode> artworksWithoutQrCode)?
         successful,
     TResult Function(Object error, StackTrace stackTrace)? error,

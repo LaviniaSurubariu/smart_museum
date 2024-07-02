@@ -7,9 +7,7 @@ part 'get_list_artworks_without_qr_code.freezed.dart';
 
 @freezed
 class GetListArtworksWithoutQrCode with _$GetListArtworksWithoutQrCode implements AppAction {
-  const factory GetListArtworksWithoutQrCode({
-    required ActionResult result,
-  }) = GetListArtworksWithoutQrCodeStart;
+  const factory GetListArtworksWithoutQrCode() = GetListArtworksWithoutQrCodeStart;
 
   const factory GetListArtworksWithoutQrCode.successful(List<ArtworkWithoutQrCode> artworksWithoutQrCode) =
       GetListArtworksWithoutQrCodeSuccessful;

@@ -408,7 +408,6 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
           lastName: doc['lastName'] as String? ?? '',
         );
       }).toList();
-      artistSuggestions.forEach((element) {print(element);});
       setState(() {
         artistSuggestions = artists;
       });
@@ -418,7 +417,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
   }
 
   void showAutocomplete(BuildContext context) {
-    showDialog<SimpleDialogOption>(
+    showDialog(
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(

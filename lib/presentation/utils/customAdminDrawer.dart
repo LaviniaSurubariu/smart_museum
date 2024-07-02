@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import 'extensions.dart';
+
 class CustomAdminDrawer extends StatelessWidget {
   const CustomAdminDrawer({super.key});
 
@@ -70,6 +73,7 @@ class CustomAdminDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
+                context.dispatch(const GetListArtworksWithoutQrCode());
                 Navigator.pushReplacementNamed(context, '/artworksWithoutQRCodePage');
               },
             ),

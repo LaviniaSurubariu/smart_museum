@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../../actions/user_s_actions/signout/sign_out.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
@@ -31,6 +32,7 @@ class _ProfilePageState extends State<ProfileAdminPage> {
         case 0:
           Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
         case 1:
+          context.dispatch(const GetListArtworksWithoutQrCode());
           Navigator.pushReplacementNamed(context, '/artworksWithoutQRCodePage');
         case 2:
           break;

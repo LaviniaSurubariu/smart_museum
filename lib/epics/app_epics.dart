@@ -182,8 +182,7 @@ class AppEpics extends EpicClass<AppState> {
           .map((List<ArtworkWithoutQrCode> artworksWithoutQrCode) =>
               GetListArtworksWithoutQrCode.successful(artworksWithoutQrCode))
           .onErrorReturnWith(
-              (Object error, StackTrace stackTrace) => GetListArtworksWithoutQrCode.error(error, stackTrace))
-          .doOnData(action.result);
+              (Object error, StackTrace stackTrace) => GetListArtworksWithoutQrCode.error(error, stackTrace));
     });
   }
 }
