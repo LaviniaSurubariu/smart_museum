@@ -1,7 +1,10 @@
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+
+import '../../actions/set/set.dart';
+import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../utils/extensions.dart';
 
 class QrCodePage extends StatefulWidget {
   const QrCodePage({super.key});
@@ -11,43 +14,85 @@ class QrCodePage extends StatefulWidget {
 }
 
 class _QrCodePageState extends State<QrCodePage> {
+  late MobileScannerController cameraController;
+  String artworkId = '';
+
+  @override
+  void initState() {
+    super.initState();
+    cameraController = MobileScannerController(returnImage: true, detectionTimeoutMs: 2500);
+  }
+
+  @override
+  void dispose() {
+    cameraController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
-        children: [
+        children: <Widget>[
           MobileScanner(
-            controller: MobileScannerController(detectionSpeed: DetectionSpeed.noDuplicates, returnImage: true),
-            onDetect: (BarcodeCapture capture) {
+            controller: cameraController,
+            onDetect: (BarcodeCapture capture) async {
               final List<Barcode> barcodes = capture.barcodes;
-              final Uint8List? image = capture.image;
               for (final Barcode barcode in barcodes) {
-                print('Barcode found: ${barcode.rawValue}');
+                artworkId = barcode.rawValue!.split('https://')[1];
+                context.dispatch(FetchScannedArtwork(artworkId: artworkId));
               }
-              if (image != null) {
+              await Future<void>.delayed(const Duration(milliseconds: 500), () => null);
+              if (context.store.state.scannedArtwork != null) {
                 showModalBottomSheet<void>(
                   context: context,
                   builder: (BuildContext context) {
-                    return SizedBox(
-                      height: 120,
-                      child: Center(
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              width: 120,
-                              height: 120,
-                              child: Image.memory(image, fit: BoxFit.cover),
-                            ),
-                            Expanded(
-                              child: Center(
-                                child: Text(barcodes.first.rawValue ?? ''),
+                    return GestureDetector(
+                      child: SizedBox(
+                        height: 120,
+                        child: Center(
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                width: 120,
+                                height: 120,
+                                child: Image.network(context.store.state.scannedArtwork!.pictureUrl, fit: BoxFit.cover),
                               ),
-                            ),
-                          ],
+                              Expanded(
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          const SizedBox(height: 30),
+                                          Text(
+                                            context.store.state.scannedArtwork!.title,
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                          Text(
+                                            '${context.store.state.scannedArtwork!.artistFirstName} ${context.store.state.scannedArtwork!.artistLastName}',
+                                            style: const TextStyle(fontSize: 10),
+                                          ),
+                                        ],
+                                      ),
+                                      const Icon(Icons.arrow_forward_ios),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
+                      onTap: () {
+                        context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
+                        while(Navigator.canPop(context)) {
+                          Navigator.pop(context);
+                        }
+                        Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+                      },
                     );
                   },
                 );

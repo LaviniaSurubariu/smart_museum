@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'presentation/user_pages/artist_details_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -80,6 +81,8 @@ class MyApp extends StatelessWidget {
           '/addArtistPage': (BuildContext context) => const AddArtistPage(),
           '/addArtworkPage': (BuildContext context) => const AddArtworkPage(),
           '/artworksWithoutQRCodePage': (BuildContext context) => const ArtworksWithoutQRCodePage(),
+          '/artistDetailsPage': (BuildContext context) => const ArtistDetailsPage(),
+
         },
       ),
     );

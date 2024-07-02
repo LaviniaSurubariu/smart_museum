@@ -159,3 +159,136 @@ abstract class SetSelectedArtworkWithoutQrCode$
           _$SetSelectedArtworkWithoutQrCode$Impl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SetSelectedArtwork {
+  Artwork get selectedArtwork => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetSelectedArtworkCopyWith<SetSelectedArtwork> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSelectedArtworkCopyWith<$Res> {
+  factory $SetSelectedArtworkCopyWith(
+          SetSelectedArtwork value, $Res Function(SetSelectedArtwork) then) =
+      _$SetSelectedArtworkCopyWithImpl<$Res, SetSelectedArtwork>;
+  @useResult
+  $Res call({Artwork selectedArtwork});
+
+  $ArtworkCopyWith<$Res> get selectedArtwork;
+}
+
+/// @nodoc
+class _$SetSelectedArtworkCopyWithImpl<$Res, $Val extends SetSelectedArtwork>
+    implements $SetSelectedArtworkCopyWith<$Res> {
+  _$SetSelectedArtworkCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedArtwork = null,
+  }) {
+    return _then(_value.copyWith(
+      selectedArtwork: null == selectedArtwork
+          ? _value.selectedArtwork
+          : selectedArtwork // ignore: cast_nullable_to_non_nullable
+              as Artwork,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ArtworkCopyWith<$Res> get selectedArtwork {
+    return $ArtworkCopyWith<$Res>(_value.selectedArtwork, (value) {
+      return _then(_value.copyWith(selectedArtwork: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$SetSelectedArtwork$ImplCopyWith<$Res>
+    implements $SetSelectedArtworkCopyWith<$Res> {
+  factory _$$SetSelectedArtwork$ImplCopyWith(_$SetSelectedArtwork$Impl value,
+          $Res Function(_$SetSelectedArtwork$Impl) then) =
+      __$$SetSelectedArtwork$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Artwork selectedArtwork});
+
+  @override
+  $ArtworkCopyWith<$Res> get selectedArtwork;
+}
+
+/// @nodoc
+class __$$SetSelectedArtwork$ImplCopyWithImpl<$Res>
+    extends _$SetSelectedArtworkCopyWithImpl<$Res, _$SetSelectedArtwork$Impl>
+    implements _$$SetSelectedArtwork$ImplCopyWith<$Res> {
+  __$$SetSelectedArtwork$ImplCopyWithImpl(_$SetSelectedArtwork$Impl _value,
+      $Res Function(_$SetSelectedArtwork$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedArtwork = null,
+  }) {
+    return _then(_$SetSelectedArtwork$Impl(
+      null == selectedArtwork
+          ? _value.selectedArtwork
+          : selectedArtwork // ignore: cast_nullable_to_non_nullable
+              as Artwork,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetSelectedArtwork$Impl implements SetSelectedArtwork$ {
+  const _$SetSelectedArtwork$Impl(this.selectedArtwork);
+
+  @override
+  final Artwork selectedArtwork;
+
+  @override
+  String toString() {
+    return 'SetSelectedArtwork(selectedArtwork: $selectedArtwork)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSelectedArtwork$Impl &&
+            (identical(other.selectedArtwork, selectedArtwork) ||
+                other.selectedArtwork == selectedArtwork));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedArtwork);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSelectedArtwork$ImplCopyWith<_$SetSelectedArtwork$Impl> get copyWith =>
+      __$$SetSelectedArtwork$ImplCopyWithImpl<_$SetSelectedArtwork$Impl>(
+          this, _$identity);
+}
+
+abstract class SetSelectedArtwork$ implements SetSelectedArtwork {
+  const factory SetSelectedArtwork$(final Artwork selectedArtwork) =
+      _$SetSelectedArtwork$Impl;
+
+  @override
+  Artwork get selectedArtwork;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetSelectedArtwork$ImplCopyWith<_$SetSelectedArtwork$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

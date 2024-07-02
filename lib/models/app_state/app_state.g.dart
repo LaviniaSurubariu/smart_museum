@@ -18,6 +18,15 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ? null
           : ArtworkWithoutQrCode.fromJson(
               json['selectedArtworkWithoutQrCode'] as Map<String, dynamic>),
+      scannedArtwork: json['scannedArtwork'] == null
+          ? null
+          : Artwork.fromJson(json['scannedArtwork'] as Map<String, dynamic>),
+      selectedArtwork: json['selectedArtwork'] == null
+          ? null
+          : Artwork.fromJson(json['selectedArtwork'] as Map<String, dynamic>),
+      selectedArtist: json['selectedArtist'] == null
+          ? null
+          : Artist.fromJson(json['selectedArtist'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -25,4 +34,7 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'user': instance.user,
       'artworksWithoutQrCode': instance.artworksWithoutQrCode,
       'selectedArtworkWithoutQrCode': instance.selectedArtworkWithoutQrCode,
+      'scannedArtwork': instance.scannedArtwork,
+      'selectedArtwork': instance.selectedArtwork,
+      'selectedArtist': instance.selectedArtist,
     };

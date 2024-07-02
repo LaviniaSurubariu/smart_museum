@@ -8,6 +8,8 @@ import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
+import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
@@ -27,6 +29,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, BuySubscriptionSuccessful>(_buySubscriptionSuccessful).call,
     TypedReducer<AppState, GetListArtworksWithoutQrCodeSuccessful>(_getListArtworksWithoutQrCodeSuccessful).call,
     TypedReducer<AppState, SetSelectedArtworkWithoutQrCode>(_setSelectedArtworkWithoutQrCode).call,
+    TypedReducer<AppState, FetchScannedArtworkSuccessful>(_fetchScannedArtwork).call,
+    TypedReducer<AppState, SetSelectedArtwork>(_setSelectedArtwork).call,
+    TypedReducer<AppState, FetchSelectedArtistSuccessful>(_fetchSelectedArtist).call,
   ])(state, action);
 }
 
@@ -60,9 +65,22 @@ AppState _buySubscriptionSuccessful(AppState state, BuySubscriptionSuccessful ac
 
 AppState _getListArtworksWithoutQrCodeSuccessful(AppState state, GetListArtworksWithoutQrCodeSuccessful action) {
   return state.copyWith(
-    artworksWithoutQrCode: <ArtworkWithoutQrCode> [...action.artworksWithoutQrCode],
+    artworksWithoutQrCode: <ArtworkWithoutQrCode>[...action.artworksWithoutQrCode],
   );
 }
+
 AppState _setSelectedArtworkWithoutQrCode(AppState state, SetSelectedArtworkWithoutQrCode action) {
   return state.copyWith(selectedArtworkWithoutQrCode: action.artworkWithoutQrCode);
+}
+
+AppState _fetchScannedArtwork(AppState state, FetchScannedArtworkSuccessful action) {
+  return state.copyWith(scannedArtwork: action.scannedArtwork);
+}
+
+AppState _setSelectedArtwork(AppState state, SetSelectedArtwork action) {
+  return state.copyWith(selectedArtwork: action.selectedArtwork);
+}
+
+AppState _fetchSelectedArtist(AppState state, FetchSelectedArtistSuccessful action) {
+  return state.copyWith(selectedArtist: action.selectedArtist);
 }

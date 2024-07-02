@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../artist/artist.dart';
+import '../artwork/artwork.dart';
 import '../artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../user/app_user/app_user.dart';
 
@@ -11,6 +13,9 @@ class AppState with _$AppState {
     AppUser? user,
     List<ArtworkWithoutQrCode>? artworksWithoutQrCode,
     ArtworkWithoutQrCode? selectedArtworkWithoutQrCode,
+    Artwork? scannedArtwork,
+    Artwork? selectedArtwork,
+    Artist? selectedArtist,
 }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

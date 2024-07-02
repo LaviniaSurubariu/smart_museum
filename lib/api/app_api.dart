@@ -294,4 +294,24 @@ class AppApi {
       return <ArtworkWithoutQrCode>[];
     }
   }
+
+  Future<Artwork> fetchArtwork({
+    required String id,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> artworkRef =
+        FirebaseFirestore.instance.collection('artworks').doc(id);
+    final DocumentSnapshot<Map<String, dynamic>> doc = await artworkRef.get();
+    final Map<String, dynamic> data = doc.data()!;
+    return Artwork.fromJson(data);
+  }
+
+  Future<Artist> fetchArtist({
+    required String id,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> artistRef =
+    FirebaseFirestore.instance.collection('artists').doc(id);
+    final DocumentSnapshot<Map<String, dynamic>> doc = await artistRef.get();
+    final Map<String, dynamic> data = doc.data()!;
+    return Artist.fromJson(data);
+  }
 }

@@ -10,11 +10,15 @@ import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
+import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../api/app_api.dart';
 import '../models/app_state/app_state.dart';
+import '../models/artist/artist.dart';
+import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/user/app_user/app_user.dart';
 
@@ -37,6 +41,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, AddArtistStart>(_addArtistStart).call,
       TypedEpic<AppState, AddArtworkStart>(_addArtworkStart).call,
       TypedEpic<AppState, GetListArtworksWithoutQrCodeStart>(_getListArtworksWithoutQrCodeStart).call,
+      TypedEpic<AppState, FetchScannedArtworkStart>(_fetchScannedArtworkStart).call,
+      TypedEpic<AppState, FetchSelectedArtistStart>(_fetchSelectedArtistStart).call,
     ])(actions, store);
   }
 
@@ -185,4 +191,25 @@ class AppEpics extends EpicClass<AppState> {
               (Object error, StackTrace stackTrace) => GetListArtworksWithoutQrCode.error(error, stackTrace));
     });
   }
+
+  Stream<AppAction> _fetchScannedArtworkStart(Stream<FetchScannedArtworkStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((FetchScannedArtworkStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.fetchArtwork(id: action.artworkId))
+          .map<AppAction>((Artwork scannedArtwork) => FetchScannedArtwork.successful(scannedArtwork))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => FetchScannedArtwork.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _fetchSelectedArtistStart(Stream<FetchSelectedArtistStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((FetchSelectedArtistStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.fetchArtist(id: action.artistId))
+          .map<AppAction>((Artist selectedArtist) => FetchSelectedArtist.successful(selectedArtist))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => FetchSelectedArtist.error(error, stackTrace));
+    });
+  }
+
 }

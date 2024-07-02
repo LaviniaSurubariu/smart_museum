@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+
+import '../../models/artist/artist.dart';
+
+import '../containers/selected_artist_container.dart';
+
+class ArtistDetailsPage extends StatefulWidget {
+  const ArtistDetailsPage({super.key});
+
+  @override
+  State<ArtistDetailsPage> createState() => _ArtistDetailsPage();
+}
+
+class _ArtistDetailsPage extends State<ArtistDetailsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return SelectedArtistContainer(builder: (BuildContext context, Artist selectedArtist) {
+      return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+            },
+          ),
+          title: Text(
+            '${selectedArtist.firstName} ${selectedArtist.lastName}',
+            style: const TextStyle(fontSize: 16),
+          ),
+        ),
+        body: ListView(
+          children: <Widget>[
+            Image.network(
+              selectedArtist.pictureUrl,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              '${selectedArtist.firstName} ${selectedArtist.lastName}',
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              '${selectedArtist.birthdate?.day ?? ''}${selectedArtist.birthdate?.day != null ? '.' : ''}${selectedArtist.birthdate?.month ?? ''}${selectedArtist.birthdate?.month != null ? '.' : ''}${selectedArtist.birthdate?.year ?? ''} - ${selectedArtist.deathDate?.day ?? ''}${selectedArtist.deathDate?.day != null ? '.' : ''}${selectedArtist.deathDate?.month ?? ''}${selectedArtist.deathDate?.month != null ? '.' : ''}${selectedArtist.deathDate?.year ?? ''}',
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  RichText(
+                    text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      children: <TextSpan>[
+                        const TextSpan(text: 'Description: ', style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: '${selectedArtist.description}\n'),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+  }
+}
