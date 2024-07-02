@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/set/set.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_picture/change_picture.dart';
@@ -25,6 +26,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, ChangeNameSuccessful>(_changeNameSuccessful).call,
     TypedReducer<AppState, BuySubscriptionSuccessful>(_buySubscriptionSuccessful).call,
     TypedReducer<AppState, GetListArtworksWithoutQrCodeSuccessful>(_getListArtworksWithoutQrCodeSuccessful).call,
+    TypedReducer<AppState, SetSelectedArtworkWithoutQrCode>(_setSelectedArtworkWithoutQrCode).call,
   ])(state, action);
 }
 
@@ -60,4 +62,7 @@ AppState _getListArtworksWithoutQrCodeSuccessful(AppState state, GetListArtworks
   return state.copyWith(
     artworksWithoutQrCode: <ArtworkWithoutQrCode> [...action.artworksWithoutQrCode],
   );
+}
+AppState _setSelectedArtworkWithoutQrCode(AppState state, SetSelectedArtworkWithoutQrCode action) {
+  return state.copyWith(selectedArtworkWithoutQrCode: action.artworkWithoutQrCode);
 }

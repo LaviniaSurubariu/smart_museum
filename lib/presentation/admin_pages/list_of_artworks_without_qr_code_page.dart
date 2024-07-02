@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/set/set.dart';
 import '../../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../containers/artworks_without_qr_code_container.dart';
+import '../utils/extensions.dart';
 
 class ArtworksWithoutQRCodePage extends StatelessWidget {
   const ArtworksWithoutQRCodePage({super.key});
@@ -30,6 +32,10 @@ class ArtworksWithoutQRCodePage extends StatelessWidget {
               final ArtworkWithoutQrCode artwork = artworks[index];
               return ListTile(
                 title: Text(artwork.title),
+                onTap: () {
+                  context.dispatch(SetSelectedArtworkWithoutQrCode(artwork));
+                  Navigator.pushReplacementNamed(context, '/generateQrCodePage');
+                },
               );
             },
           );

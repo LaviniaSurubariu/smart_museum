@@ -279,10 +279,10 @@ class AppApi {
 
   Future<List<ArtworkWithoutQrCode>> fetchArtworksWithoutQRCode() async {
     try {
-      final QuerySnapshot<Map<String, dynamic>> querySnapshot = await FirebaseFirestore.instance
-          .collection('artworks')
-          .where('qrCodeUrl', isEqualTo: null)
-          .get();
+      final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+      final Query<Map<String, dynamic>> stateQuery = artworksRef.where('qrCodeUrl', isNull: true);
+
+      final QuerySnapshot<Map<String, dynamic>> querySnapshot = await stateQuery.get();
 
       return querySnapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
         return ArtworkWithoutQrCode(
@@ -294,6 +294,4 @@ class AppApi {
       return <ArtworkWithoutQrCode>[];
     }
   }
-
-
 }
