@@ -17,7 +17,7 @@ class ArtWorkDetailsPage extends StatefulWidget {
 }
 
 class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
-  bool isFavorited = false;
+  bool isFavourite = false;
   late AudioPlayer _audioPlayer = AudioPlayer();
   double _currentPosition = 0;
   double _totalDuration = 0;
@@ -134,12 +134,12 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                         ),
                         IconButton(
                           icon: Icon(
-                            isFavorited ? LineAwesomeIcons.heart_1 : LineAwesomeIcons.heart,
+                            isFavourite ? LineAwesomeIcons.heart_1 : LineAwesomeIcons.heart,
                             size: 36,
                           ),
                           onPressed: () {
                             setState(() {
-                              isFavorited = !isFavorited;
+                              isFavourite = !isFavourite;
                             });
                           },
                         ),
