@@ -31,6 +31,7 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       favourites: (json['favourites'] as List<dynamic>?)
           ?.map((e) => Favourite.fromJson(e as Map<String, dynamic>))
           .toList(),
+      routeIndex: (json['routeIndex'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -43,4 +44,5 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'selectedArtist': instance.selectedArtist,
       'isFavourite': instance.isFavourite,
       'favourites': instance.favourites,
+      'routeIndex': instance.routeIndex,
     };

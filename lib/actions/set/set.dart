@@ -16,3 +16,7 @@ class SetSelectedArtworkWithoutQrCode with _$SetSelectedArtworkWithoutQrCode imp
 class SetSelectedArtwork with _$SetSelectedArtwork implements AppAction {
   const factory SetSelectedArtwork(Artwork selectedArtwork) = SetSelectedArtwork$;
 }
+@freezed
+class SetRouteIndex with _$SetRouteIndex implements AppAction {
+  const factory SetRouteIndex(int routeIndex) = SetRouteIndex$;
+}

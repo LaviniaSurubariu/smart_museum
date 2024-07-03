@@ -55,6 +55,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
                             context.dispatch(IsArtworkFavourite(
                                 userId: context.store.state.user!.uid,
                                 artworkId: context.store.state.scannedArtwork!.uid));
+                            context.dispatch(const SetRouteIndex(1));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },
                           imageLink: favourite.artworkPictureUrl,

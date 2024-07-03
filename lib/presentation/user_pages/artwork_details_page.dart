@@ -91,7 +91,14 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
                 _audioPlayer.stop();
-                Navigator.pushReplacementNamed(context, '/qrCodeScanScreenPage');
+                switch (context.store.state.routeIndex) {
+                  case 0:
+                    Navigator.pushReplacementNamed(context, '/qrCodeScanScreenPage');
+                  case 1:
+                    Navigator.pushReplacementNamed(context, '/favouritesPage');
+                  default:
+                    Navigator.pushReplacementNamed(context, '/homeScreenPage');
+                }
               },
             ),
             title: Text(

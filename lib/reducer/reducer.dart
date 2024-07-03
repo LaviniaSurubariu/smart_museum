@@ -41,6 +41,8 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, AddFavouriteSuccessful>(_addFavouriteSuccessful).call,
     TypedReducer<AppState, RemoveFavouriteSuccessful>(_removeFavouriteSuccessful).call,
     TypedReducer<AppState, GetFavouritesSuccessful>(_getFavouritesSuccessful).call,
+    TypedReducer<AppState, SetRouteIndex>(_setRouteIndex).call,
+
   ])(state, action);
 }
 
@@ -110,4 +112,7 @@ AppState _getFavouritesSuccessful(AppState state, GetFavouritesSuccessful action
   return state.copyWith(
     favourites: <Favourite>[...action.favourites],
   );
+}
+AppState _setRouteIndex(AppState state, SetRouteIndex action) {
+  return state.copyWith(routeIndex: action.routeIndex);
 }
