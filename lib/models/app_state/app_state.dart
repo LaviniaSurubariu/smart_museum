@@ -6,6 +6,7 @@ import '../favourite/favourite.dart';
 import '../user/app_user/app_user.dart';
 
 part 'app_state.freezed.dart';
+
 part 'app_state.g.dart';
 
 @freezed
@@ -20,7 +21,8 @@ class AppState with _$AppState {
     bool? isFavourite,
     List<Favourite>? favourites,
     int? routeIndex,
-}) = AppState$;
+    List<Artwork>? artworks,
+  }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
 }

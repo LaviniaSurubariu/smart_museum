@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/get_artworks/get_artworks.dart';
+import '../../actions/set/set.dart';
 import '../utils/customButtomNavigationBar.dart';
 import '../utils/customDrawer.dart';
+import '../utils/extensions.dart';
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -67,7 +70,9 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   ],
                 ),
                 onTap: () {
-                  // Navigator.pushNamed(context, '/popularArtworksPage');
+                  context.dispatch(const GetArtworks());
+                  context.dispatch(const SetRouteIndex(2));
+                  Navigator.pushReplacementNamed(context, '/artworksPage');
                 },
               ),
               const SizedBox(

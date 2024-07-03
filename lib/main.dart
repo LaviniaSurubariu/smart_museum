@@ -23,6 +23,7 @@ import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artist_details_page.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
+import 'presentation/user_pages/artworks_page.dart';
 import 'presentation/user_pages/favourites_page.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/payment_page.dart';
@@ -54,6 +55,7 @@ Future<dynamic> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.store});
+
   final Store<AppState> store;
 
   @override
@@ -82,7 +84,7 @@ class MyApp extends StatelessWidget {
           '/addArtworkPage': (BuildContext context) => const AddArtworkPage(),
           '/artworksWithoutQRCodePage': (BuildContext context) => const ArtworksWithoutQRCodePage(),
           '/artistDetailsPage': (BuildContext context) => const ArtistDetailsPage(),
-
+          '/artworksPage': (BuildContext context) => const ArtworksPage(),
         },
       ),
     );

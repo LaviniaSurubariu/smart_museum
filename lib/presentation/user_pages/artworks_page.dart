@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
-import '../../models/favourite/favourite.dart';
-import '../containers/favourites_container.dart';
+import '../../models/artwork/artwork.dart';
+import '../containers/artworks_container.dart';
 import '../utils/ListArtworkWidget.dart';
 import '../utils/extensions.dart';
 
-class FavouritesPage extends StatefulWidget {
-  const FavouritesPage({super.key});
+class ArtworksPage extends StatefulWidget {
+  const ArtworksPage({super.key});
 
   @override
-  State<FavouritesPage> createState() => _FavouritesPageState();
+  State<ArtworksPage> createState() => _ArtworksPageState();
 }
 
-class _FavouritesPageState extends State<FavouritesPage> {
+class _ArtworksPageState extends State<ArtworksPage> {
   @override
   Widget build(BuildContext context) {
-    return FavouritesContainer(
-      builder: (BuildContext context, List<Favourite>? favourites) {
+    return ArtworksContainer(
+      builder: (BuildContext context, List<Artwork>? artworks) {
         return Scaffold(
           appBar: AppBar(
             leading: IconButton(
@@ -29,16 +29,16 @@ class _FavouritesPageState extends State<FavouritesPage> {
               },
             ),
             title: const Text(
-              'YOUR FAVOURITES',
+              'POPULAR ARTWORKS',
               style: TextStyle(fontSize: 16),
             ),
           ),
-          body: favourites == null || favourites.isEmpty
-              ? const Center(child: Text('No favourites found.'))
+          body: artworks == null || artworks.isEmpty
+              ? const Center(child: Text('No artworks found.'))
               : ListView.builder(
-                  itemCount: favourites.length,
+                  itemCount: artworks.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final Favourite favourite = favourites[index];
+                    final Artwork artwork = artworks[index];
                     return Column(
                       children: <Widget>[
                         const SizedBox(
@@ -48,21 +48,17 @@ class _FavouritesPageState extends State<FavouritesPage> {
                           height: 40,
                         ),
                         ListArtworkWidget(
-                          title: favourite.artworkTitle,
+                          title: artwork.title,
                           onPress: () {
                             context
-                              ..dispatch(FetchScannedArtwork(artworkId: favourite.artworkId))
-                              ..dispatch(IsArtworkFavourite(
-                                  userId: context.store.state.user!.uid,
-                                  artworkId: context.store.state.scannedArtwork!.uid));
-                            context.dispatch(const SetRouteIndex(1));
+                              ..dispatch(FetchScannedArtwork(artworkId: artwork.uid))
+                              ..dispatch(
+                                  IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
+                            context.dispatch(const SetRouteIndex(2));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },
-                          imageLink: favourite.artworkPictureUrl,
-                          subtitle: favourite.artistName,
-                        ),
-                        const Divider(
-                          height: 40,
+                          imageLink: artwork.pictureUrl,
+                          subtitle: '${artwork.artistFirstName} ${artwork.artistLastName}',
                         ),
                       ],
                     );

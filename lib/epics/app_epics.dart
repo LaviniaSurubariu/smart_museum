@@ -5,6 +5,7 @@ import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/app_action.dart';
+import '../actions/get_artworks/get_artworks.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -52,6 +53,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, AddFavouriteStart>(_addFavouriteStart).call,
       TypedEpic<AppState, RemoveFavouriteStart>(_removeFavouriteStart).call,
       TypedEpic<AppState, GetFavouritesStart>(_getFavouritesStart).call,
+      TypedEpic<AppState, GetArtworksStart>(_getArtworksStart).call,
     ])(actions, store);
   }
 
@@ -269,4 +271,17 @@ class AppEpics extends EpicClass<AppState> {
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetFavourites.error(error, stackTrace));
     });
   }
+
+  Stream<AppAction> _getArtworksStart(Stream<GetArtworksStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetArtworksStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getArtworks();
+          })
+          .map((List<Artwork> artworks) => GetArtworks.successful(artworks: artworks))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetArtworks.error(error, stackTrace));
+    });
+  }
+
 }

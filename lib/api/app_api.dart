@@ -363,4 +363,10 @@ class AppApi {
 
     return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Favourite.fromJson(doc.data())).toList();
   }
+
+  Future<List<Artwork>> getArtworks() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('artworks').get();
+
+    return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Artwork.fromJson(doc.data())).toList();
+  }
 }

@@ -96,6 +96,8 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                     Navigator.pushReplacementNamed(context, '/qrCodeScanScreenPage');
                   case 1:
                     Navigator.pushReplacementNamed(context, '/favouritesPage');
+                  case 2:
+                    Navigator.pushReplacementNamed(context, '/artworksPage');
                   default:
                     Navigator.pushReplacementNamed(context, '/homeScreenPage');
                 }
