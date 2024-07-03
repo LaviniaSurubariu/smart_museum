@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/user_s_actions/get_favourites/get_favourites.dart';
+import 'extensions.dart';
+
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
@@ -51,10 +54,12 @@ class CustomDrawer extends StatelessWidget {
                 'FAVOURITES',
               ),
               onTap: () {
+                context.dispatch(GetFavourites(userId: context.store.state.user!.uid));
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/favouritesPage');
               },
-            ),ListTile(
+            ),
+            ListTile(
               title: const Text(
                 'FORUM',
               ),

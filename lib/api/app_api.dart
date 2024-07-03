@@ -323,6 +323,7 @@ class AppApi {
         .get();
     return query.docs.isNotEmpty;
   }
+
   Future<void> addFavourite({
     required String userId,
     required String artworkId,
@@ -330,7 +331,7 @@ class AppApi {
     required String artworkPictureUrl,
     required String artistName,
   }) async {
-    final  DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('favourites').doc();
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('favourites').doc();
 
     final Favourite favourite = Favourite(
       uid: docRef.id,
@@ -343,6 +344,7 @@ class AppApi {
 
     await docRef.set(favourite.toJson());
   }
+
   Future<void> removeFavourite({required String userId, required String artworkId}) async {
     final QuerySnapshot<Map<String, dynamic>> query = await _firestore
         .collection('favourites')
@@ -353,5 +355,12 @@ class AppApi {
     for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in query.docs) {
       await doc.reference.delete();
     }
+  }
+
+  Future<List<Favourite>> getFavouritesForUser({required String userId}) async {
+    final QuerySnapshot<Map<String, dynamic>> query =
+        await _firestore.collection('favourites').where('userId', isEqualTo: userId).get();
+
+    return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Favourite.fromJson(doc.data())).toList();
   }
 }

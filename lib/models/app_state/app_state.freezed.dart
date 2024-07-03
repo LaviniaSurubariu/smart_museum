@@ -29,6 +29,7 @@ mixin _$AppState {
   Artwork? get selectedArtwork => throw _privateConstructorUsedError;
   Artist? get selectedArtist => throw _privateConstructorUsedError;
   bool? get isFavourite => throw _privateConstructorUsedError;
+  List<Favourite>? get favourites => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +49,8 @@ abstract class $AppStateCopyWith<$Res> {
       Artwork? scannedArtwork,
       Artwork? selectedArtwork,
       Artist? selectedArtist,
-      bool? isFavourite});
+      bool? isFavourite,
+      List<Favourite>? favourites});
 
   $AppUserCopyWith<$Res>? get user;
   $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
@@ -77,6 +79,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? selectedArtwork = freezed,
     Object? selectedArtist = freezed,
     Object? isFavourite = freezed,
+    Object? favourites = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -107,6 +110,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.isFavourite
           : isFavourite // ignore: cast_nullable_to_non_nullable
               as bool?,
+      favourites: freezed == favourites
+          ? _value.favourites
+          : favourites // ignore: cast_nullable_to_non_nullable
+              as List<Favourite>?,
     ) as $Val);
   }
 
@@ -188,7 +195,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       Artwork? scannedArtwork,
       Artwork? selectedArtwork,
       Artist? selectedArtist,
-      bool? isFavourite});
+      bool? isFavourite,
+      List<Favourite>? favourites});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -220,6 +228,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? selectedArtwork = freezed,
     Object? selectedArtist = freezed,
     Object? isFavourite = freezed,
+    Object? favourites = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -250,6 +259,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.isFavourite
           : isFavourite // ignore: cast_nullable_to_non_nullable
               as bool?,
+      favourites: freezed == favourites
+          ? _value._favourites
+          : favourites // ignore: cast_nullable_to_non_nullable
+              as List<Favourite>?,
     ));
   }
 }
@@ -264,8 +277,10 @@ class _$AppState$Impl implements AppState$ {
       this.scannedArtwork,
       this.selectedArtwork,
       this.selectedArtist,
-      this.isFavourite})
-      : _artworksWithoutQrCode = artworksWithoutQrCode;
+      this.isFavourite,
+      final List<Favourite>? favourites})
+      : _artworksWithoutQrCode = artworksWithoutQrCode,
+        _favourites = favourites;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppState$ImplFromJson(json);
@@ -293,10 +308,19 @@ class _$AppState$Impl implements AppState$ {
   final Artist? selectedArtist;
   @override
   final bool? isFavourite;
+  final List<Favourite>? _favourites;
+  @override
+  List<Favourite>? get favourites {
+    final value = _favourites;
+    if (value == null) return null;
+    if (_favourites is EqualUnmodifiableListView) return _favourites;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites)';
   }
 
   @override
@@ -318,7 +342,9 @@ class _$AppState$Impl implements AppState$ {
             (identical(other.selectedArtist, selectedArtist) ||
                 other.selectedArtist == selectedArtist) &&
             (identical(other.isFavourite, isFavourite) ||
-                other.isFavourite == isFavourite));
+                other.isFavourite == isFavourite) &&
+            const DeepCollectionEquality()
+                .equals(other._favourites, _favourites));
   }
 
   @JsonKey(ignore: true)
@@ -331,7 +357,8 @@ class _$AppState$Impl implements AppState$ {
       scannedArtwork,
       selectedArtwork,
       selectedArtist,
-      isFavourite);
+      isFavourite,
+      const DeepCollectionEquality().hash(_favourites));
 
   @JsonKey(ignore: true)
   @override
@@ -355,7 +382,8 @@ abstract class AppState$ implements AppState {
       final Artwork? scannedArtwork,
       final Artwork? selectedArtwork,
       final Artist? selectedArtist,
-      final bool? isFavourite}) = _$AppState$Impl;
+      final bool? isFavourite,
+      final List<Favourite>? favourites}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -374,6 +402,8 @@ abstract class AppState$ implements AppState {
   Artist? get selectedArtist;
   @override
   bool? get isFavourite;
+  @override
+  List<Favourite>? get favourites;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

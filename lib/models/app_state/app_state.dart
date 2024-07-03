@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../artist/artist.dart';
 import '../artwork/artwork.dart';
 import '../artwork_without_qrCode/artwork_without_qr_code.dart';
+import '../favourite/favourite.dart';
 import '../user/app_user/app_user.dart';
 
 part 'app_state.freezed.dart';
@@ -17,6 +18,7 @@ class AppState with _$AppState {
     Artwork? selectedArtwork,
     Artist? selectedArtist,
     bool? isFavourite,
+    List<Favourite>? favourites,
 }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
