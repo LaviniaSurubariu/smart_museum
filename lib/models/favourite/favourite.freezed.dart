@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'favourites.dart';
+part of 'favourite.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Favourites _$FavouritesFromJson(Map<String, dynamic> json) {
-  return Favourites$.fromJson(json);
+Favourite _$FavouriteFromJson(Map<String, dynamic> json) {
+  return Favourite$.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Favourites {
+mixin _$Favourite {
   String get uid => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   String get artworkId => throw _privateConstructorUsedError;
@@ -29,15 +29,14 @@ mixin _$Favourites {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavouritesCopyWith<Favourites> get copyWith =>
+  $FavouriteCopyWith<Favourite> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavouritesCopyWith<$Res> {
-  factory $FavouritesCopyWith(
-          Favourites value, $Res Function(Favourites) then) =
-      _$FavouritesCopyWithImpl<$Res, Favourites>;
+abstract class $FavouriteCopyWith<$Res> {
+  factory $FavouriteCopyWith(Favourite value, $Res Function(Favourite) then) =
+      _$FavouriteCopyWithImpl<$Res, Favourite>;
   @useResult
   $Res call(
       {String uid,
@@ -49,9 +48,9 @@ abstract class $FavouritesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FavouritesCopyWithImpl<$Res, $Val extends Favourites>
-    implements $FavouritesCopyWith<$Res> {
-  _$FavouritesCopyWithImpl(this._value, this._then);
+class _$FavouriteCopyWithImpl<$Res, $Val extends Favourite>
+    implements $FavouriteCopyWith<$Res> {
+  _$FavouriteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -98,11 +97,11 @@ class _$FavouritesCopyWithImpl<$Res, $Val extends Favourites>
 }
 
 /// @nodoc
-abstract class _$$Favourites$ImplCopyWith<$Res>
-    implements $FavouritesCopyWith<$Res> {
-  factory _$$Favourites$ImplCopyWith(
-          _$Favourites$Impl value, $Res Function(_$Favourites$Impl) then) =
-      __$$Favourites$ImplCopyWithImpl<$Res>;
+abstract class _$$Favourite$ImplCopyWith<$Res>
+    implements $FavouriteCopyWith<$Res> {
+  factory _$$Favourite$ImplCopyWith(
+          _$Favourite$Impl value, $Res Function(_$Favourite$Impl) then) =
+      __$$Favourite$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +114,11 @@ abstract class _$$Favourites$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$Favourites$ImplCopyWithImpl<$Res>
-    extends _$FavouritesCopyWithImpl<$Res, _$Favourites$Impl>
-    implements _$$Favourites$ImplCopyWith<$Res> {
-  __$$Favourites$ImplCopyWithImpl(
-      _$Favourites$Impl _value, $Res Function(_$Favourites$Impl) _then)
+class __$$Favourite$ImplCopyWithImpl<$Res>
+    extends _$FavouriteCopyWithImpl<$Res, _$Favourite$Impl>
+    implements _$$Favourite$ImplCopyWith<$Res> {
+  __$$Favourite$ImplCopyWithImpl(
+      _$Favourite$Impl _value, $Res Function(_$Favourite$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +131,7 @@ class __$$Favourites$ImplCopyWithImpl<$Res>
     Object? artworkPictureUrl = null,
     Object? artistName = null,
   }) {
-    return _then(_$Favourites$Impl(
+    return _then(_$Favourite$Impl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -163,8 +162,8 @@ class __$$Favourites$ImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$Favourites$Impl implements Favourites$ {
-  const _$Favourites$Impl(
+class _$Favourite$Impl implements Favourite$ {
+  const _$Favourite$Impl(
       {required this.uid,
       required this.userId,
       required this.artworkId,
@@ -172,8 +171,8 @@ class _$Favourites$Impl implements Favourites$ {
       required this.artworkPictureUrl,
       required this.artistName});
 
-  factory _$Favourites$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Favourites$ImplFromJson(json);
+  factory _$Favourite$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$Favourite$ImplFromJson(json);
 
   @override
   final String uid;
@@ -190,14 +189,14 @@ class _$Favourites$Impl implements Favourites$ {
 
   @override
   String toString() {
-    return 'Favourites(uid: $uid, userId: $userId, artworkId: $artworkId, artworkTitle: $artworkTitle, artworkPictureUrl: $artworkPictureUrl, artistName: $artistName)';
+    return 'Favourite(uid: $uid, userId: $userId, artworkId: $artworkId, artworkTitle: $artworkTitle, artworkPictureUrl: $artworkPictureUrl, artistName: $artistName)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Favourites$Impl &&
+            other is _$Favourite$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.artworkId, artworkId) ||
@@ -218,28 +217,28 @@ class _$Favourites$Impl implements Favourites$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Favourites$ImplCopyWith<_$Favourites$Impl> get copyWith =>
-      __$$Favourites$ImplCopyWithImpl<_$Favourites$Impl>(this, _$identity);
+  _$$Favourite$ImplCopyWith<_$Favourite$Impl> get copyWith =>
+      __$$Favourite$ImplCopyWithImpl<_$Favourite$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$Favourites$ImplToJson(
+    return _$$Favourite$ImplToJson(
       this,
     );
   }
 }
 
-abstract class Favourites$ implements Favourites {
-  const factory Favourites$(
+abstract class Favourite$ implements Favourite {
+  const factory Favourite$(
       {required final String uid,
       required final String userId,
       required final String artworkId,
       required final String artworkTitle,
       required final String artworkPictureUrl,
-      required final String artistName}) = _$Favourites$Impl;
+      required final String artistName}) = _$Favourite$Impl;
 
-  factory Favourites$.fromJson(Map<String, dynamic> json) =
-      _$Favourites$Impl.fromJson;
+  factory Favourite$.fromJson(Map<String, dynamic> json) =
+      _$Favourite$Impl.fromJson;
 
   @override
   String get uid;
@@ -255,6 +254,6 @@ abstract class Favourites$ implements Favourites {
   String get artistName;
   @override
   @JsonKey(ignore: true)
-  _$$Favourites$ImplCopyWith<_$Favourites$Impl> get copyWith =>
+  _$$Favourite$ImplCopyWith<_$Favourite$Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }

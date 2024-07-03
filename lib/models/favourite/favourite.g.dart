@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favourites.dart';
+part of 'favourite.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$Favourites$Impl _$$Favourites$ImplFromJson(Map<String, dynamic> json) =>
-    _$Favourites$Impl(
+_$Favourite$Impl _$$Favourite$ImplFromJson(Map<String, dynamic> json) =>
+    _$Favourite$Impl(
       uid: json['uid'] as String,
       userId: json['userId'] as String,
       artworkId: json['artworkId'] as String,
@@ -16,7 +16,7 @@ _$Favourites$Impl _$$Favourites$ImplFromJson(Map<String, dynamic> json) =>
       artistName: json['artistName'] as String,
     );
 
-Map<String, dynamic> _$$Favourites$ImplToJson(_$Favourites$Impl instance) =>
+Map<String, dynamic> _$$Favourite$ImplToJson(_$Favourite$Impl instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'userId': instance.userId,

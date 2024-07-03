@@ -7,7 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
-import '../models/favourites/favourites.dart';
+import '../models/favourite/favourite.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppApi {
@@ -332,7 +332,7 @@ class AppApi {
   }) async {
     final  DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('favourites').doc();
 
-    final Favourites favourite = Favourites(
+    final Favourite favourite = Favourite(
       uid: docRef.id,
       userId: userId,
       artworkId: artworkId,

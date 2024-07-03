@@ -1,19 +1,19 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'favourites.freezed.dart';
+part 'favourite.freezed.dart';
 
-part 'favourites.g.dart';
+part 'favourite.g.dart';
 
 @freezed
-class Favourites with _$Favourites {
-  const factory Favourites({
+class Favourite with _$Favourite {
+  const factory Favourite({
     required String uid,
     required String userId,
     required String artworkId,
     required String artworkTitle,
     required String artworkPictureUrl,
     required String artistName,
-  }) = Favourites$;
+  }) = Favourite$;
 
-  factory Favourites.fromJson(Map<dynamic, dynamic> json) => _$FavouritesFromJson(Map<String, dynamic>.from(json));
+  factory Favourite.fromJson(Map<dynamic, dynamic> json) => _$FavouriteFromJson(Map<String, dynamic>.from(json));
 }
