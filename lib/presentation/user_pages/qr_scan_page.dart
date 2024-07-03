@@ -4,6 +4,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../utils/extensions.dart';
 
 class QrCodePage extends StatefulWidget {
@@ -88,6 +89,7 @@ class _QrCodePageState extends State<QrCodePage> {
                       ),
                       onTap: () {
                         context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
+                        context.dispatch(IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
                         while(Navigator.canPop(context)) {
                           Navigator.pop(context);
                         }

@@ -2,7 +2,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../actions/user_s_actions/remove_favourite/remove_favourite.dart';
 import '../../models/artwork/artwork.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
@@ -73,6 +75,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return SelectedArtworkContainer(builder: (BuildContext context, Artwork selectedArtwork) {
+      isFavourite = context.store.state.isFavourite!;
       return AppUserContainer(builder: (BuildContext context, AppUser? user) {
         if (user == null) {
           return const Scaffold(
@@ -138,9 +141,25 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                             size: 36,
                           ),
                           onPressed: () {
-                            setState(() {
-                              isFavourite = !isFavourite;
-                            });
+                            setState(
+                              () {
+                                if (isFavourite) {
+                                  context.dispatch(
+                                    RemoveFavourite(userId: user.uid, artworkId: selectedArtwork.uid),
+                                  );
+                                } else {
+                                  context.dispatch(
+                                    AddFavourite(
+                                        userId: user.uid,
+                                        artworkId: selectedArtwork.uid,
+                                        artworkTitle: selectedArtwork.title,
+                                        artworkPictureUrl: selectedArtwork.pictureUrl,
+                                        artistName:
+                                            '${selectedArtwork.artistFirstName} ${selectedArtwork.artistLastName}'),
+                                  );
+                                }
+                              },
+                            );
                           },
                         ),
                       ],

@@ -5,6 +5,7 @@ import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/app_action.dart';
+import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
 import '../actions/user_s_actions/change_password/change_password.dart';
@@ -12,8 +13,10 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
+import '../actions/user_s_actions/remove_favourite/remove_favourite.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../api/app_api.dart';
 import '../models/app_state/app_state.dart';
@@ -43,6 +46,9 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetListArtworksWithoutQrCodeStart>(_getListArtworksWithoutQrCodeStart).call,
       TypedEpic<AppState, FetchScannedArtworkStart>(_fetchScannedArtworkStart).call,
       TypedEpic<AppState, FetchSelectedArtistStart>(_fetchSelectedArtistStart).call,
+      TypedEpic<AppState, IsArtworkFavouriteStart>(_isArtworkFavouriteStart).call,
+      TypedEpic<AppState, AddFavouriteStart>(_addFavouriteStart).call,
+      TypedEpic<AppState, RemoveFavouriteStart>(_removeFavouriteStart).call,
     ])(actions, store);
   }
 
@@ -212,4 +218,40 @@ class AppEpics extends EpicClass<AppState> {
     });
   }
 
+  Stream<AppAction> _isArtworkFavouriteStart(Stream<IsArtworkFavouriteStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((IsArtworkFavouriteStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.isArtworkFavourite(artworkId: action.artworkId, userId: action.userId))
+          .map((bool isFavourite) => IsArtworkFavourite.successful(isFavourite))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => IsArtworkFavourite.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _addFavouriteStart(Stream<AddFavouriteStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddFavouriteStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.addFavourite(
+              artworkId: action.artworkId,
+              userId: action.userId,
+              artworkTitle: action.artworkTitle,
+              artworkPictureUrl: action.artworkPictureUrl,
+              artistName: action.artistName))
+          .map((_) => const AddFavourite.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddFavourite.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _removeFavouriteStart(Stream<RemoveFavouriteStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((RemoveFavouriteStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.removeFavourite(
+                artworkId: action.artworkId,
+                userId: action.userId,
+              ))
+          .map((_) => const RemoveFavourite.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => RemoveFavourite.error(error, stackTrace));
+    });
+  }
 }

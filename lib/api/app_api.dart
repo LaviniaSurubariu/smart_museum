@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
+import '../models/favourites/favourites.dart';
 import '../models/user/app_user/app_user.dart';
 
 class AppApi {
@@ -308,10 +309,49 @@ class AppApi {
   Future<Artist> fetchArtist({
     required String id,
   }) async {
-    final DocumentReference<Map<String, dynamic>> artistRef =
-    FirebaseFirestore.instance.collection('artists').doc(id);
+    final DocumentReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists').doc(id);
     final DocumentSnapshot<Map<String, dynamic>> doc = await artistRef.get();
     final Map<String, dynamic> data = doc.data()!;
     return Artist.fromJson(data);
+  }
+
+  Future<bool> isArtworkFavourite({required String userId, required String artworkId}) async {
+    final QuerySnapshot<Map<String, dynamic>> query = await FirebaseFirestore.instance
+        .collection('favourites')
+        .where('userId', isEqualTo: userId)
+        .where('artworkId', isEqualTo: artworkId)
+        .get();
+    return query.docs.isNotEmpty;
+  }
+  Future<void> addFavourite({
+    required String userId,
+    required String artworkId,
+    required String artworkTitle,
+    required String artworkPictureUrl,
+    required String artistName,
+  }) async {
+    final  DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('favourites').doc();
+
+    final Favourites favourite = Favourites(
+      uid: docRef.id,
+      userId: userId,
+      artworkId: artworkId,
+      artworkTitle: artworkTitle,
+      artworkPictureUrl: artworkPictureUrl,
+      artistName: artistName,
+    );
+
+    await docRef.set(favourite.toJson());
+  }
+  Future<void> removeFavourite({required String userId, required String artworkId}) async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore
+        .collection('favourites')
+        .where('userId', isEqualTo: userId)
+        .where('artworkId', isEqualTo: artworkId)
+        .get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in query.docs) {
+      await doc.reference.delete();
+    }
   }
 }

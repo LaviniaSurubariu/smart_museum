@@ -27,6 +27,7 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       selectedArtist: json['selectedArtist'] == null
           ? null
           : Artist.fromJson(json['selectedArtist'] as Map<String, dynamic>),
+      isFavourite: json['isFavourite'] as bool?,
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -37,4 +38,5 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'scannedArtwork': instance.scannedArtwork,
       'selectedArtwork': instance.selectedArtwork,
       'selectedArtist': instance.selectedArtist,
+      'isFavourite': instance.isFavourite,
     };

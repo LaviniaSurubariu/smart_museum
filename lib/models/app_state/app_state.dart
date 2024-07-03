@@ -16,6 +16,7 @@ class AppState with _$AppState {
     Artwork? scannedArtwork,
     Artwork? selectedArtwork,
     Artist? selectedArtist,
+    bool? isFavourite,
 }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

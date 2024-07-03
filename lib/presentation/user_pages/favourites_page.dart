@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../utils/ListArtworkWidget.dart';
 
-class FavoritesPage extends StatefulWidget {
-  const FavoritesPage({super.key});
+class FavouritesPage extends StatefulWidget {
+  const FavouritesPage({super.key});
 
   @override
-  State<FavoritesPage> createState() => _FavoritesPageState();
+  State<FavouritesPage> createState() => _FavouritesPageState();
 }
 
-class _FavoritesPageState extends State<FavoritesPage> {
+class _FavouritesPageState extends State<FavouritesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
           },
         ),
         title: const Text(
-          'YOUR FAVORITES',
+          'YOUR FAVOURITES',
           style: TextStyle(fontSize: 16),
         ),
       ),
