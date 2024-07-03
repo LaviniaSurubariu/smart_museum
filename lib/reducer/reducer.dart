@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/set/set.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
@@ -19,6 +20,7 @@ import '../actions/user_s_actions/login&create/login.dart';
 import '../actions/user_s_actions/remove_favourite/remove_favourite.dart';
 import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/app_state/app_state.dart';
+import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/favourite/favourite.dart';
@@ -45,6 +47,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetFavouritesSuccessful>(_getFavouritesSuccessful).call,
     TypedReducer<AppState, SetRouteIndex>(_setRouteIndex).call,
     TypedReducer<AppState, GetArtworksSuccessful>(_getArtworksSuccessful).call,
+    TypedReducer<AppState, GetArtistsSuccessful>(_getArtistsSuccessful).call,
   ])(state, action);
 }
 
@@ -126,5 +129,11 @@ AppState _setRouteIndex(AppState state, SetRouteIndex action) {
 AppState _getArtworksSuccessful(AppState state, GetArtworksSuccessful action) {
   return state.copyWith(
     artworks: <Artwork>[...action.artworks],
+  );
+}
+
+AppState _getArtistsSuccessful(AppState state, GetArtistsSuccessful action) {
+  return state.copyWith(
+    artists: <Artist>[...action.artists],
   );
 }

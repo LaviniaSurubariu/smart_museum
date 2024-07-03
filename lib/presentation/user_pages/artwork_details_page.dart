@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../../actions/user_s_actions/remove_favourite/remove_favourite.dart';
@@ -272,6 +273,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                       ),
                       onTap: () {
                         context.dispatch(FetchSelectedArtist(artistId: selectedArtwork.artistUid));
+                        context.dispatch(const SetRouteIndex(3));
                         Navigator.pushNamed(context, '/artistDetailsPage');
                       },
                     )

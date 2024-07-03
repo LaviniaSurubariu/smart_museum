@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../actions/set/set.dart';
 import '../utils/customButtomNavigationBar.dart';
@@ -131,7 +132,9 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   ],
                 ),
                 onTap: () {
-                  // Navigator.pushNamed(context, '/ArtistsPage');
+                  context.dispatch(const GetArtists());
+                  context.dispatch(const SetRouteIndex(4));
+                  Navigator.pushNamed(context, '/artistsPage');
                 },
               ),
               const SizedBox(

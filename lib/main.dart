@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:smart_museum/presentation/user_pages/artists_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -85,6 +86,7 @@ class MyApp extends StatelessWidget {
           '/artworksWithoutQRCodePage': (BuildContext context) => const ArtworksWithoutQRCodePage(),
           '/artistDetailsPage': (BuildContext context) => const ArtistDetailsPage(),
           '/artworksPage': (BuildContext context) => const ArtworksPage(),
+          '/artistsPage': (BuildContext context) => const ArtistsPage(),
         },
       ),
     );

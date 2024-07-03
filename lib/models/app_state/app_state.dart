@@ -22,6 +22,7 @@ class AppState with _$AppState {
     List<Favourite>? favourites,
     int? routeIndex,
     List<Artwork>? artworks,
+    List<Artist>? artists,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

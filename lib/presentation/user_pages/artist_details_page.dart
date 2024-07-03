@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/artist/artist.dart';
 
 import '../containers/selected_artist_container.dart';
+import '../utils/extensions.dart';
 
 class ArtistDetailsPage extends StatefulWidget {
   const ArtistDetailsPage({super.key});
@@ -20,7 +21,14 @@ class _ArtistDetailsPage extends State<ArtistDetailsPage> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+              switch (context.store.state.routeIndex) {
+                case 3:
+                  Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+                case 4:
+                  Navigator.pushReplacementNamed(context, '/artistsPage');
+                default:
+                  Navigator.pushReplacementNamed(context, '/homeScreenPage');
+              }
             },
           ),
           title: Text(

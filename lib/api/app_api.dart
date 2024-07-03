@@ -369,4 +369,10 @@ class AppApi {
 
     return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Artwork.fromJson(doc.data())).toList();
   }
+
+  Future<List<Artist>> getArtists() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('artists').get();
+
+    return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Artist.fromJson(doc.data())).toList();
+  }
 }
