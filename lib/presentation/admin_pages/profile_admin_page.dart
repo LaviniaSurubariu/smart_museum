@@ -66,7 +66,6 @@ class _ProfilePageState extends State<ProfileAdminPage> {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: <Widget>[
-                  /// -- IMAGE
                   Stack(
                     children: <Widget>[
                       SizedBox(
@@ -86,8 +85,6 @@ class _ProfilePageState extends State<ProfileAdminPage> {
                   Text('${user.firstName} ${user.lastName}', style: const TextStyle(color: Colors.black, fontSize: 24)),
                   Text(user.email, style: const TextStyle(color: Colors.black, fontSize: 16)),
                   const SizedBox(height: 20),
-
-                  /// -- BUTTON
                   SizedBox(
                     width: 200,
                     child: ElevatedButton(
@@ -102,15 +99,6 @@ class _ProfilePageState extends State<ProfileAdminPage> {
                   const SizedBox(height: 30),
                   const Divider(),
                   const SizedBox(height: 10),
-
-                  /// -- MENU
-                  ProfileMenuWidget(
-                    title: 'Artwork',
-                    icon: LineAwesomeIcons.palette,
-                    onPress: () {
-                      Navigator.pushNamed(context, '/artworkDetailsPage');
-                    },
-                  ),
                   ProfileMenuWidget(title: 'Billing Details', icon: LineAwesomeIcons.wallet, onPress: () {}),
                   ProfileMenuWidget(title: 'Saved', icon: LineAwesomeIcons.heart, onPress: () {}),
                   const Divider(),

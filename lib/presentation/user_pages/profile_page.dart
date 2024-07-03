@@ -85,7 +85,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   Text('${user.firstName} ${user.lastName}', style: const TextStyle(color: Colors.black, fontSize: 24)),
                   Text(user.email, style: const TextStyle(color: Colors.black, fontSize: 16)),
                   const SizedBox(height: 20),
-
                   SizedBox(
                     width: 210,
                     child: ElevatedButton(
@@ -100,29 +99,23 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  if(!user.hasSubscription)
-                  SizedBox(
-                    width: 210,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/subscriptionPage');
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(	112, 197, 225, 1), side: BorderSide.none, shape: const StadiumBorder()),
-                      child: const Text('Try premium account ', style: TextStyle(color: Colors.black)),
+                  if (!user.hasSubscription)
+                    SizedBox(
+                      width: 210,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/subscriptionPage');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromRGBO(112, 197, 225, 1),
+                            side: BorderSide.none,
+                            shape: const StadiumBorder()),
+                        child: const Text('Try premium account ', style: TextStyle(color: Colors.black)),
+                      ),
                     ),
-                  ),
                   const SizedBox(height: 10),
                   const Divider(),
                   const SizedBox(height: 10),
-
-                  ProfileMenuWidget(
-                    title: 'Artwork',
-                    icon: LineAwesomeIcons.palette,
-                    onPress: () {
-                      Navigator.pushNamed(context, '/artworkDetailsPage');
-                    },
-                  ),
                   ProfileMenuWidget(
                     title: 'Subscription',
                     icon: Icons.payment,
