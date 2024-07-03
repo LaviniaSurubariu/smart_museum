@@ -23,7 +23,7 @@ import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artist_details_page.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
-import 'presentation/user_pages/favorites_page.dart';
+import 'presentation/user_pages/favourites_page.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/payment_page.dart';
 import 'presentation/user_pages/profile_page.dart';
@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
           '/artworkDetailsPage': (BuildContext context) => const ArtWorkDetailsPage(),
           '/subscriptionPage': (BuildContext context) => const SubscriptionPage(),
           '/paymentPage': (BuildContext context) => const PaymentPage(),
-          '/favoritesPage': (BuildContext context) => const FavoritesPage(),
+          '/favouritesPage': (BuildContext context) => const FavouritesPage(),
           '/addArtistPage': (BuildContext context) => const AddArtistPage(),
           '/addArtworkPage': (BuildContext context) => const AddArtworkPage(),
           '/artworksWithoutQRCodePage': (BuildContext context) => const ArtworksWithoutQRCodePage(),

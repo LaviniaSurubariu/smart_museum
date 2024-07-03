@@ -65,7 +65,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 ),
                 const ListTile(
                   leading: Icon(Icons.check_circle, color: Color.fromRGBO(112, 197, 225, 1)),
-                  title: Text('Exclusive Content: Access to stories and secrets behind your favorite artworks.',
+                  title: Text('Exclusive Content: Access to stories and secrets behind your favourite artworks.',
                       style: TextStyle(fontSize: 14)),
                 ),
                 const ListTile(

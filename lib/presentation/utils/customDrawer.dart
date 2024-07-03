@@ -48,11 +48,11 @@ class CustomDrawer extends StatelessWidget {
             ),
             ListTile(
               title: const Text(
-                'FAVORITES',
+                'FAVOURITES',
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushReplacementNamed(context, '/favoritesPage');
+                Navigator.pushReplacementNamed(context, '/favouritesPage');
               },
             ),ListTile(
               title: const Text(
