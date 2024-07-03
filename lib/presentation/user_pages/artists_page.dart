@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../containers/artists_container.dart';
 import '../utils/ListArtworkWidget.dart';
-import '../utils/extensions.dart';
 
 class ArtistsPage extends StatefulWidget {
   const ArtistsPage({super.key});
@@ -48,9 +50,10 @@ class _ArtistsPageState extends State<ArtistsPage> {
                         ),
                         ListArtworkWidget(
                           title: '${artist.firstName} ${artist.lastName}',
-                          onPress: () {
-                            context.dispatch(FetchSelectedArtist(artistId: artist.uid));
-                            context.dispatch(const SetRouteIndex(4));
+                          onPress: () async{
+                            final Store<AppState> store = StoreProvider.of<AppState>(context);
+                            await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
+                            await store.dispatch(const SetRouteIndex(4));
                             Navigator.pushReplacementNamed(context, '/artistDetailsPage');
                           },
                           imageLink: artist.pictureUrl,

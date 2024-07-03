@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
+import '../../models/app_state/app_state.dart';
 import '../../models/favourite/favourite.dart';
 import '../containers/favourites_container.dart';
 import '../utils/ListArtworkWidget.dart';
-import '../utils/extensions.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({super.key});
@@ -15,7 +17,7 @@ class FavouritesPage extends StatefulWidget {
   State<FavouritesPage> createState() => _FavouritesPageState();
 }
 
-class _FavouritesPageState extends State<FavouritesPage> {
+class _FavouritesPageState extends State<FavouritesPage>{
   @override
   Widget build(BuildContext context) {
     return FavouritesContainer(
@@ -49,20 +51,18 @@ class _FavouritesPageState extends State<FavouritesPage> {
                         ),
                         ListArtworkWidget(
                           title: favourite.artworkTitle,
-                          onPress: () {
-                            context
-                              ..dispatch(FetchScannedArtwork(artworkId: favourite.artworkId))
-                              ..dispatch(IsArtworkFavourite(
-                                  userId: context.store.state.user!.uid,
-                                  artworkId: context.store.state.scannedArtwork!.uid));
-                            context.dispatch(const SetRouteIndex(1));
+                          onPress: () async {
+                            final Store<AppState> store = StoreProvider.of<AppState>(context);
+                            await store.dispatch(FetchScannedArtwork(artworkId: favourite.artworkId));
+                            await store.dispatch(IsArtworkFavourite(
+                              userId: store.state.user!.uid,
+                              artworkId: store.state.scannedArtwork!.uid,
+                            ));
+                            store.dispatch(const SetRouteIndex(1));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },
                           imageLink: favourite.artworkPictureUrl,
                           subtitle: favourite.artistName,
-                        ),
-                        const Divider(
-                          height: 40,
                         ),
                       ],
                     );
