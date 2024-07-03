@@ -1,12 +1,14 @@
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../actions/add_comment/add_comment.dart';
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
+import '../actions/get_comments/get_comments.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -26,6 +28,7 @@ import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
+import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
 import '../models/user/app_user/app_user.dart';
 
@@ -56,6 +59,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetFavouritesStart>(_getFavouritesStart).call,
       TypedEpic<AppState, GetArtworksStart>(_getArtworksStart).call,
       TypedEpic<AppState, GetArtistsStart>(_getArtistsStart).call,
+      TypedEpic<AppState, GetCommentsStart>(_getCommentsStart).call,
+      TypedEpic<AppState, AddCommentStart>(_addCommentStart).call,
     ])(actions, store);
   }
 
@@ -295,6 +300,34 @@ class AppEpics extends EpicClass<AppState> {
           })
           .map((List<Artist> artists) => GetArtists.successful(artists: artists))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetArtists.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getCommentsStart(Stream<GetCommentsStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetCommentsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getComments();
+          })
+          .map((List<Comment> comments) => GetComments.successful(comments: comments))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetComments.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _addCommentStart(Stream<AddCommentStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddCommentStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.addComment(
+                text: action.text,
+                createdAt: action.createdAt,
+                idUser: action.idUser,
+                firstNameUser: action.firstNameUser,
+                lastNameUser: action.lastNameUser,
+              ))
+          .map((_) => const AddComment.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddComment.error(error, stackTrace));
     });
   }
 }

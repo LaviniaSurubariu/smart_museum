@@ -20,6 +20,7 @@ import 'presentation/admin_pages/list_of_artworks_without_qr_code_page.dart';
 import 'presentation/admin_pages/profile_admin_page.dart';
 import 'presentation/create_user.dart';
 import 'presentation/entry_page.dart';
+import 'presentation/forum_page.dart';
 import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artist_details_page.dart';
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
           '/artistDetailsPage': (BuildContext context) => const ArtistDetailsPage(),
           '/artworksPage': (BuildContext context) => const ArtworksPage(),
           '/artistsPage': (BuildContext context) => const ArtistsPage(),
+          '/forumPage': (BuildContext context) => const ForumPage(),
         },
       ),
     );

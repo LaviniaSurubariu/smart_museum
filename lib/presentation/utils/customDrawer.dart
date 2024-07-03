@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/get_comments/get_comments.dart';
 import '../../actions/user_s_actions/get_favourites/get_favourites.dart';
 import 'extensions.dart';
 
@@ -64,6 +65,7 @@ class CustomDrawer extends StatelessWidget {
                 'FORUM',
               ),
               onTap: () {
+                context.dispatch(const GetComments());
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/forumPage');
               },

@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
+import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
 import '../models/user/app_user/app_user.dart';
 
@@ -374,5 +375,33 @@ class AppApi {
     final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('artists').get();
 
     return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Artist.fromJson(doc.data())).toList();
+  }
+
+  Future<List<Comment>> getComments() async {
+    final QuerySnapshot<Map<String, dynamic>> query =
+        await _firestore.collection('comments').orderBy('createdAt', descending: true).get();
+
+    return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Comment.fromJson(doc.data())).toList();
+  }
+
+  Future<void> addComment({
+    required String text,
+    required DateTime createdAt,
+    required String idUser,
+    required String firstNameUser,
+    required String lastNameUser,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('comments').doc();
+
+    final Comment comment = Comment(
+      uid: docRef.id,
+      text: text,
+      createdAt: createdAt,
+      idUser: idUser,
+      firstNameUser: firstNameUser,
+      lastNameUser: lastNameUser,
+    );
+
+    await docRef.set(comment.toJson());
   }
 }

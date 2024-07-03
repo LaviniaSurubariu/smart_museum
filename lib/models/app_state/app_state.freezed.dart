@@ -33,6 +33,7 @@ mixin _$AppState {
   int? get routeIndex => throw _privateConstructorUsedError;
   List<Artwork>? get artworks => throw _privateConstructorUsedError;
   List<Artist>? get artists => throw _privateConstructorUsedError;
+  List<Comment>? get comments => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +57,8 @@ abstract class $AppStateCopyWith<$Res> {
       List<Favourite>? favourites,
       int? routeIndex,
       List<Artwork>? artworks,
-      List<Artist>? artists});
+      List<Artist>? artists,
+      List<Comment>? comments});
 
   $AppUserCopyWith<$Res>? get user;
   $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
@@ -89,6 +91,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? routeIndex = freezed,
     Object? artworks = freezed,
     Object? artists = freezed,
+    Object? comments = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -135,6 +138,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.artists
           : artists // ignore: cast_nullable_to_non_nullable
               as List<Artist>?,
+      comments: freezed == comments
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<Comment>?,
     ) as $Val);
   }
 
@@ -220,7 +227,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       List<Favourite>? favourites,
       int? routeIndex,
       List<Artwork>? artworks,
-      List<Artist>? artists});
+      List<Artist>? artists,
+      List<Comment>? comments});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -256,6 +264,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? routeIndex = freezed,
     Object? artworks = freezed,
     Object? artists = freezed,
+    Object? comments = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -302,6 +311,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value._artists
           : artists // ignore: cast_nullable_to_non_nullable
               as List<Artist>?,
+      comments: freezed == comments
+          ? _value._comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<Comment>?,
     ));
   }
 }
@@ -320,11 +333,13 @@ class _$AppState$Impl implements AppState$ {
       final List<Favourite>? favourites,
       this.routeIndex,
       final List<Artwork>? artworks,
-      final List<Artist>? artists})
+      final List<Artist>? artists,
+      final List<Comment>? comments})
       : _artworksWithoutQrCode = artworksWithoutQrCode,
         _favourites = favourites,
         _artworks = artworks,
-        _artists = artists;
+        _artists = artists,
+        _comments = comments;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppState$ImplFromJson(json);
@@ -384,9 +399,19 @@ class _$AppState$Impl implements AppState$ {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<Comment>? _comments;
+  @override
+  List<Comment>? get comments {
+    final value = _comments;
+    if (value == null) return null;
+    if (_comments is EqualUnmodifiableListView) return _comments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeIndex: $routeIndex, artworks: $artworks, artists: $artists)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeIndex: $routeIndex, artworks: $artworks, artists: $artists, comments: $comments)';
   }
 
   @override
@@ -414,7 +439,8 @@ class _$AppState$Impl implements AppState$ {
             (identical(other.routeIndex, routeIndex) ||
                 other.routeIndex == routeIndex) &&
             const DeepCollectionEquality().equals(other._artworks, _artworks) &&
-            const DeepCollectionEquality().equals(other._artists, _artists));
+            const DeepCollectionEquality().equals(other._artists, _artists) &&
+            const DeepCollectionEquality().equals(other._comments, _comments));
   }
 
   @JsonKey(ignore: true)
@@ -431,7 +457,8 @@ class _$AppState$Impl implements AppState$ {
       const DeepCollectionEquality().hash(_favourites),
       routeIndex,
       const DeepCollectionEquality().hash(_artworks),
-      const DeepCollectionEquality().hash(_artists));
+      const DeepCollectionEquality().hash(_artists),
+      const DeepCollectionEquality().hash(_comments));
 
   @JsonKey(ignore: true)
   @override
@@ -459,7 +486,8 @@ abstract class AppState$ implements AppState {
       final List<Favourite>? favourites,
       final int? routeIndex,
       final List<Artwork>? artworks,
-      final List<Artist>? artists}) = _$AppState$Impl;
+      final List<Artist>? artists,
+      final List<Comment>? comments}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -486,6 +514,8 @@ abstract class AppState$ implements AppState {
   List<Artwork>? get artworks;
   @override
   List<Artist>? get artists;
+  @override
+  List<Comment>? get comments;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

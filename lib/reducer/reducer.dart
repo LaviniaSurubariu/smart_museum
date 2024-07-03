@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
+import '../actions/get_comments/get_comments.dart';
 import '../actions/set/set.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
@@ -23,6 +24,7 @@ import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
+import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
 
 AppState reducer(AppState state, dynamic action) {
@@ -48,6 +50,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, SetRouteIndex>(_setRouteIndex).call,
     TypedReducer<AppState, GetArtworksSuccessful>(_getArtworksSuccessful).call,
     TypedReducer<AppState, GetArtistsSuccessful>(_getArtistsSuccessful).call,
+    TypedReducer<AppState, GetCommentsSuccessful>(_getCommentsSuccessful).call,
   ])(state, action);
 }
 
@@ -135,5 +138,11 @@ AppState _getArtworksSuccessful(AppState state, GetArtworksSuccessful action) {
 AppState _getArtistsSuccessful(AppState state, GetArtistsSuccessful action) {
   return state.copyWith(
     artists: <Artist>[...action.artists],
+  );
+}
+
+AppState _getCommentsSuccessful(AppState state, GetCommentsSuccessful action) {
+  return state.copyWith(
+    comments: <Comment>[...action.comments],
   );
 }

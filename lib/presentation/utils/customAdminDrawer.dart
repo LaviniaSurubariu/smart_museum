@@ -51,6 +51,15 @@ class CustomAdminDrawer extends StatelessWidget {
             ),
             ListTile(
               title: const Text(
+                'FORUM',
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/forumPage');
+              },
+            ),
+            ListTile(
+              title: const Text(
                 'ADD ARTIST',
               ),
               onTap: () {
