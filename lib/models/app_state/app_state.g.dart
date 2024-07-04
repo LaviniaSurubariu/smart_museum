@@ -31,7 +31,8 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       favourites: (json['favourites'] as List<dynamic>?)
           ?.map((e) => Favourite.fromJson(e as Map<String, dynamic>))
           .toList(),
-      routeIndex: (json['routeIndex'] as num?)?.toInt(),
+      routeArtworkIndex: (json['routeArtworkIndex'] as num?)?.toInt(),
+      routeArtistIndex: (json['routeArtistIndex'] as num?)?.toInt(),
       artworks: (json['artworks'] as List<dynamic>?)
           ?.map((e) => Artwork.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -53,7 +54,8 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'selectedArtist': instance.selectedArtist,
       'isFavourite': instance.isFavourite,
       'favourites': instance.favourites,
-      'routeIndex': instance.routeIndex,
+      'routeArtworkIndex': instance.routeArtworkIndex,
+      'routeArtistIndex': instance.routeArtistIndex,
       'artworks': instance.artworks,
       'artists': instance.artists,
       'comments': instance.comments,

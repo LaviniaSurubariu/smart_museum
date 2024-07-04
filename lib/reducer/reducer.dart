@@ -47,7 +47,8 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, AddFavouriteSuccessful>(_addFavouriteSuccessful).call,
     TypedReducer<AppState, RemoveFavouriteSuccessful>(_removeFavouriteSuccessful).call,
     TypedReducer<AppState, GetFavouritesSuccessful>(_getFavouritesSuccessful).call,
-    TypedReducer<AppState, SetRouteIndex>(_setRouteIndex).call,
+    TypedReducer<AppState, SetRouteArtworkIndex>(_setRouteArtworkIndex).call,
+    TypedReducer<AppState, SetRouteArtistIndex>(_setRouteArtistIndex).call,
     TypedReducer<AppState, GetArtworksSuccessful>(_getArtworksSuccessful).call,
     TypedReducer<AppState, GetArtistsSuccessful>(_getArtistsSuccessful).call,
     TypedReducer<AppState, GetCommentsSuccessful>(_getCommentsSuccessful).call,
@@ -125,8 +126,10 @@ AppState _getFavouritesSuccessful(AppState state, GetFavouritesSuccessful action
   );
 }
 
-AppState _setRouteIndex(AppState state, SetRouteIndex action) {
-  return state.copyWith(routeIndex: action.routeIndex);
+AppState _setRouteArtworkIndex(AppState state, SetRouteArtworkIndex action) {
+  return state.copyWith(routeArtworkIndex: action.routeArtworkIndex);
+}AppState _setRouteArtistIndex(AppState state, SetRouteArtistIndex action) {
+  return state.copyWith(routeArtistIndex: action.routeArtistIndex);
 }
 
 AppState _getArtworksSuccessful(AppState state, GetArtworksSuccessful action) {

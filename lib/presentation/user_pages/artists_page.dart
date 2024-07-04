@@ -53,7 +53,7 @@ class _ArtistsPageState extends State<ArtistsPage> {
                           onPress: () async{
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
                             await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
-                            await store.dispatch(const SetRouteIndex(4));
+                            await store.dispatch(const SetRouteArtistIndex(4));
                             Navigator.pushReplacementNamed(context, '/artistDetailsPage');
                           },
                           imageLink: artist.pictureUrl,

@@ -30,7 +30,8 @@ mixin _$AppState {
   Artist? get selectedArtist => throw _privateConstructorUsedError;
   bool? get isFavourite => throw _privateConstructorUsedError;
   List<Favourite>? get favourites => throw _privateConstructorUsedError;
-  int? get routeIndex => throw _privateConstructorUsedError;
+  int? get routeArtworkIndex => throw _privateConstructorUsedError;
+  int? get routeArtistIndex => throw _privateConstructorUsedError;
   List<Artwork>? get artworks => throw _privateConstructorUsedError;
   List<Artist>? get artists => throw _privateConstructorUsedError;
   List<Comment>? get comments => throw _privateConstructorUsedError;
@@ -55,7 +56,8 @@ abstract class $AppStateCopyWith<$Res> {
       Artist? selectedArtist,
       bool? isFavourite,
       List<Favourite>? favourites,
-      int? routeIndex,
+      int? routeArtworkIndex,
+      int? routeArtistIndex,
       List<Artwork>? artworks,
       List<Artist>? artists,
       List<Comment>? comments});
@@ -88,7 +90,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? selectedArtist = freezed,
     Object? isFavourite = freezed,
     Object? favourites = freezed,
-    Object? routeIndex = freezed,
+    Object? routeArtworkIndex = freezed,
+    Object? routeArtistIndex = freezed,
     Object? artworks = freezed,
     Object? artists = freezed,
     Object? comments = freezed,
@@ -126,9 +129,13 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.favourites
           : favourites // ignore: cast_nullable_to_non_nullable
               as List<Favourite>?,
-      routeIndex: freezed == routeIndex
-          ? _value.routeIndex
-          : routeIndex // ignore: cast_nullable_to_non_nullable
+      routeArtworkIndex: freezed == routeArtworkIndex
+          ? _value.routeArtworkIndex
+          : routeArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      routeArtistIndex: freezed == routeArtistIndex
+          ? _value.routeArtistIndex
+          : routeArtistIndex // ignore: cast_nullable_to_non_nullable
               as int?,
       artworks: freezed == artworks
           ? _value.artworks
@@ -225,7 +232,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       Artist? selectedArtist,
       bool? isFavourite,
       List<Favourite>? favourites,
-      int? routeIndex,
+      int? routeArtworkIndex,
+      int? routeArtistIndex,
       List<Artwork>? artworks,
       List<Artist>? artists,
       List<Comment>? comments});
@@ -261,7 +269,8 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? selectedArtist = freezed,
     Object? isFavourite = freezed,
     Object? favourites = freezed,
-    Object? routeIndex = freezed,
+    Object? routeArtworkIndex = freezed,
+    Object? routeArtistIndex = freezed,
     Object? artworks = freezed,
     Object? artists = freezed,
     Object? comments = freezed,
@@ -299,9 +308,13 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value._favourites
           : favourites // ignore: cast_nullable_to_non_nullable
               as List<Favourite>?,
-      routeIndex: freezed == routeIndex
-          ? _value.routeIndex
-          : routeIndex // ignore: cast_nullable_to_non_nullable
+      routeArtworkIndex: freezed == routeArtworkIndex
+          ? _value.routeArtworkIndex
+          : routeArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      routeArtistIndex: freezed == routeArtistIndex
+          ? _value.routeArtistIndex
+          : routeArtistIndex // ignore: cast_nullable_to_non_nullable
               as int?,
       artworks: freezed == artworks
           ? _value._artworks
@@ -331,7 +344,8 @@ class _$AppState$Impl implements AppState$ {
       this.selectedArtist,
       this.isFavourite,
       final List<Favourite>? favourites,
-      this.routeIndex,
+      this.routeArtworkIndex,
+      this.routeArtistIndex,
       final List<Artwork>? artworks,
       final List<Artist>? artists,
       final List<Comment>? comments})
@@ -378,7 +392,9 @@ class _$AppState$Impl implements AppState$ {
   }
 
   @override
-  final int? routeIndex;
+  final int? routeArtworkIndex;
+  @override
+  final int? routeArtistIndex;
   final List<Artwork>? _artworks;
   @override
   List<Artwork>? get artworks {
@@ -411,7 +427,7 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeIndex: $routeIndex, artworks: $artworks, artists: $artists, comments: $comments)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments)';
   }
 
   @override
@@ -436,8 +452,10 @@ class _$AppState$Impl implements AppState$ {
                 other.isFavourite == isFavourite) &&
             const DeepCollectionEquality()
                 .equals(other._favourites, _favourites) &&
-            (identical(other.routeIndex, routeIndex) ||
-                other.routeIndex == routeIndex) &&
+            (identical(other.routeArtworkIndex, routeArtworkIndex) ||
+                other.routeArtworkIndex == routeArtworkIndex) &&
+            (identical(other.routeArtistIndex, routeArtistIndex) ||
+                other.routeArtistIndex == routeArtistIndex) &&
             const DeepCollectionEquality().equals(other._artworks, _artworks) &&
             const DeepCollectionEquality().equals(other._artists, _artists) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
@@ -455,7 +473,8 @@ class _$AppState$Impl implements AppState$ {
       selectedArtist,
       isFavourite,
       const DeepCollectionEquality().hash(_favourites),
-      routeIndex,
+      routeArtworkIndex,
+      routeArtistIndex,
       const DeepCollectionEquality().hash(_artworks),
       const DeepCollectionEquality().hash(_artists),
       const DeepCollectionEquality().hash(_comments));
@@ -484,7 +503,8 @@ abstract class AppState$ implements AppState {
       final Artist? selectedArtist,
       final bool? isFavourite,
       final List<Favourite>? favourites,
-      final int? routeIndex,
+      final int? routeArtworkIndex,
+      final int? routeArtistIndex,
       final List<Artwork>? artworks,
       final List<Artist>? artists,
       final List<Comment>? comments}) = _$AppState$Impl;
@@ -509,7 +529,9 @@ abstract class AppState$ implements AppState {
   @override
   List<Favourite>? get favourites;
   @override
-  int? get routeIndex;
+  int? get routeArtworkIndex;
+  @override
+  int? get routeArtistIndex;
   @override
   List<Artwork>? get artworks;
   @override

@@ -58,7 +58,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
                               artworkId: favourite.artworkId,
                             ));
                             await store.dispatch(FetchScannedArtwork(artworkId: favourite.artworkId));
-                            store.dispatch(const SetRouteIndex(1));
+                            store.dispatch(const SetRouteArtworkIndex(1));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },
                           imageLink: favourite.artworkPictureUrl,

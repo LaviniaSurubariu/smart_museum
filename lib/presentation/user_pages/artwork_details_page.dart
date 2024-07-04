@@ -93,7 +93,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
                 _audioPlayer.stop();
-                switch (context.store.state.routeIndex) {
+                switch (context.store.state.routeArtworkIndex) {
                   case 0:
                     Navigator.pushReplacementNamed(context, '/qrCodeScanScreenPage');
                   case 1:
@@ -275,7 +275,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                       ),
                       onTap: () {
                         context.dispatch(FetchSelectedArtist(artistId: selectedArtwork.artistUid));
-                        context.dispatch(const SetRouteIndex(3));
+                        context.dispatch(const SetRouteArtistIndex(3));
                         Navigator.pushNamed(context, '/artistDetailsPage');
                       },
                     )

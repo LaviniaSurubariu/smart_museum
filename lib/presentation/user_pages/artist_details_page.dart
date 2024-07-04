@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../actions/set/set.dart';
 import '../../models/artist/artist.dart';
 
 import '../containers/selected_artist_container.dart';
@@ -22,9 +21,8 @@ class _ArtistDetailsPage extends State<ArtistDetailsPage> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {
-              switch (context.store.state.routeIndex) {
+              switch (context.store.state.routeArtistIndex) {
                 case 3:
-                  context.dispatch(const SetRouteIndex(1));
                   Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                 case 4:
                   Navigator.pushReplacementNamed(context, '/artistsPage');

@@ -17,6 +17,11 @@ class SetSelectedArtwork with _$SetSelectedArtwork implements AppAction {
   const factory SetSelectedArtwork(Artwork selectedArtwork) = SetSelectedArtwork$;
 }
 @freezed
-class SetRouteIndex with _$SetRouteIndex implements AppAction {
-  const factory SetRouteIndex(int routeIndex) = SetRouteIndex$;
+class SetRouteArtworkIndex with _$SetRouteArtworkIndex implements AppAction {
+  const factory SetRouteArtworkIndex(int routeArtworkIndex) = SetRouteArtworkIndex$;
+}
+
+@freezed
+class SetRouteArtistIndex with _$SetRouteArtistIndex implements AppAction {
+  const factory SetRouteArtistIndex(int routeArtistIndex) = SetRouteArtistIndex$;
 }

@@ -72,7 +72,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                 ),
                 onTap: () {
                   context.dispatch(const GetArtworks());
-                  context.dispatch(const SetRouteIndex(2));
+                  context.dispatch(const SetRouteArtworkIndex(2));
                   Navigator.pushReplacementNamed(context, '/artworksPage');
                 },
               ),
@@ -133,7 +133,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                 ),
                 onTap: () {
                   context.dispatch(const GetArtists());
-                  context.dispatch(const SetRouteIndex(4));
+                  context.dispatch(const SetRouteArtistIndex(4));
                   Navigator.pushNamed(context, '/artistsPage');
                 },
               ),

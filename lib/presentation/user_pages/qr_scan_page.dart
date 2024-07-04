@@ -90,7 +90,7 @@ class _QrCodePageState extends State<QrCodePage> {
                       onTap: () {
                         context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
                         context.dispatch(IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
-                        context.dispatch(const SetRouteIndex(0));
+                        context.dispatch(const SetRouteArtworkIndex(0));
                         while(Navigator.canPop(context)) {
                           Navigator.pop(context);
                         }
