@@ -17,7 +17,7 @@ class FavouritesPage extends StatefulWidget {
   State<FavouritesPage> createState() => _FavouritesPageState();
 }
 
-class _FavouritesPageState extends State<FavouritesPage>{
+class _FavouritesPageState extends State<FavouritesPage> {
   @override
   Widget build(BuildContext context) {
     return FavouritesContainer(
@@ -53,11 +53,11 @@ class _FavouritesPageState extends State<FavouritesPage>{
                           title: favourite.artworkTitle,
                           onPress: () async {
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
-                            await store.dispatch(FetchScannedArtwork(artworkId: favourite.artworkId));
                             await store.dispatch(IsArtworkFavourite(
                               userId: store.state.user!.uid,
-                              artworkId: store.state.scannedArtwork!.uid,
+                              artworkId: favourite.artworkId,
                             ));
+                            await store.dispatch(FetchScannedArtwork(artworkId: favourite.artworkId));
                             store.dispatch(const SetRouteIndex(1));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },

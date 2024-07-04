@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../../actions/get_comments/get_comments.dart';
 import 'extensions.dart';
 
 class CustomAdminDrawer extends StatelessWidget {
@@ -54,6 +55,7 @@ class CustomAdminDrawer extends StatelessWidget {
                 'FORUM',
               ),
               onTap: () {
+                context.dispatch(const GetComments());
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/forumPage');
               },

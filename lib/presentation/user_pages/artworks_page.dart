@@ -52,11 +52,12 @@ class _ArtworksPageState extends State<ArtworksPage> {
                         ),
                         ListArtworkWidget(
                           title: artwork.title,
-                          onPress: () async{
+                          onPress: () async {
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
-                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
                             await store.dispatch(
-                                  IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
+                                IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
+                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+
                             await store.dispatch(const SetRouteIndex(2));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },

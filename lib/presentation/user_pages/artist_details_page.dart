@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/set/set.dart';
 import '../../models/artist/artist.dart';
 
 import '../containers/selected_artist_container.dart';
@@ -23,6 +24,7 @@ class _ArtistDetailsPage extends State<ArtistDetailsPage> {
             onPressed: () {
               switch (context.store.state.routeIndex) {
                 case 3:
+                  context.dispatch(const SetRouteIndex(1));
                   Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                 case 4:
                   Navigator.pushReplacementNamed(context, '/artistsPage');

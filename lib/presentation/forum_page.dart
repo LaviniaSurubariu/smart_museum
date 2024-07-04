@@ -23,7 +23,7 @@ class _ForumPageState extends State<ForumPage> {
   final TextEditingController _messageController = TextEditingController();
 
   String _formatDate(DateTime dateTime) {
-    return '${dateTime.day}.${dateTime.month}.${dateTime.year} ${dateTime.hour}:${dateTime.minute}';
+    return '${dateTime.day}.${dateTime.month}.${dateTime.year}, ${dateTime.hour}:${dateTime.minute}';
   }
 
   @override
@@ -34,7 +34,11 @@ class _ForumPageState extends State<ForumPage> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/homeScreenPage');
+              if (context.store.state.user!.role == 'admin') {
+                Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
+              } else if (context.store.state.user!.role == 'user') {
+                Navigator.pushReplacementNamed(context, '/homeScreenPage');
+              }
             },
           ),
           title: const Text('Forum'),

@@ -5,6 +5,7 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../actions/user_s_actions/get_favourites/get_favourites.dart';
 import '../../actions/user_s_actions/remove_favourite/remove_favourite.dart';
 import '../../models/artwork/artwork.dart';
 import '../../models/user/app_user/app_user.dart';
@@ -96,6 +97,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                   case 0:
                     Navigator.pushReplacementNamed(context, '/qrCodeScanScreenPage');
                   case 1:
+                    context.dispatch(GetFavourites(userId: context.store.state.user!.uid));
                     Navigator.pushReplacementNamed(context, '/favouritesPage');
                   case 2:
                     Navigator.pushReplacementNamed(context, '/artworksPage');
