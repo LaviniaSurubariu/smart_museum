@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
+import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
@@ -52,6 +54,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetArtworksSuccessful>(_getArtworksSuccessful).call,
     TypedReducer<AppState, GetArtistsSuccessful>(_getArtistsSuccessful).call,
     TypedReducer<AppState, GetCommentsSuccessful>(_getCommentsSuccessful).call,
+    TypedReducer<AppState, UpdateArtworkImageStart>(_updateArtworkImageStart).call,
+    TypedReducer<AppState, UpdateArtworkImageSuccessful>(_updateArtworkImageSuccessful).call,
+    TypedReducer<AppState, UpdateArtworkAudioSuccessful>(_updateArtworkAudioSuccessful).call,
   ])(state, action);
 }
 
@@ -128,7 +133,9 @@ AppState _getFavouritesSuccessful(AppState state, GetFavouritesSuccessful action
 
 AppState _setRouteArtworkIndex(AppState state, SetRouteArtworkIndex action) {
   return state.copyWith(routeArtworkIndex: action.routeArtworkIndex);
-}AppState _setRouteArtistIndex(AppState state, SetRouteArtistIndex action) {
+}
+
+AppState _setRouteArtistIndex(AppState state, SetRouteArtistIndex action) {
   return state.copyWith(routeArtistIndex: action.routeArtistIndex);
 }
 
@@ -147,5 +154,23 @@ AppState _getArtistsSuccessful(AppState state, GetArtistsSuccessful action) {
 AppState _getCommentsSuccessful(AppState state, GetCommentsSuccessful action) {
   return state.copyWith(
     comments: <Comment>[...action.comments],
+  );
+}
+
+AppState _updateArtworkImageSuccessful(AppState state, UpdateArtworkImageSuccessful action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(pictureUrl: action.newPicturePath),
+  );
+}
+
+AppState _updateArtworkImageStart(AppState state, UpdateArtworkImageStart action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(pictureUrl: ''),
+  );
+}
+
+AppState _updateArtworkAudioSuccessful(AppState state, UpdateArtworkAudioSuccessful action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(audioUrl: action.newAudioPath),
   );
 }

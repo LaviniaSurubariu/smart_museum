@@ -5,6 +5,8 @@ import '../actions/add_comment/add_comment.dart';
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
+import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
 import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
@@ -61,6 +63,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetArtistsStart>(_getArtistsStart).call,
       TypedEpic<AppState, GetCommentsStart>(_getCommentsStart).call,
       TypedEpic<AppState, AddCommentStart>(_addCommentStart).call,
+      TypedEpic<AppState, UpdateArtworkImageStart>(_updateArtworkImageStart).call,
+      TypedEpic<AppState, UpdateArtworkAudioStart>(_updateArtworkAudioStart).call,
     ])(actions, store);
   }
 
@@ -328,6 +332,34 @@ class AppEpics extends EpicClass<AppState> {
               ))
           .map((_) => const AddComment.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => AddComment.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkImageStart(Stream<UpdateArtworkImageStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkImageStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkImage(
+                newPicturePath: action.newPicturePath,
+                artworkId: action.artworkId,
+                artworkTitle: action.artworkTitle,
+                oldPictureUrl: action.oldPictureUrl,
+              ))
+          .map((String newPicturePath) => UpdateArtworkImage.successful(newPicturePath))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkImage.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkAudioStart(Stream<UpdateArtworkAudioStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkAudioStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkAudio(
+                newAudioPath: action.newAudioPath,
+                artworkId: action.artworkId,
+                artworkTitle: action.artworkTitle,
+                oldAudioUrl: action.oldAudioUrl,
+              ))
+          .map((String newAudioPath) => UpdateArtworkAudio.successful(newAudioPath))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkAudio.error(error, stackTrace));
     });
   }
 }

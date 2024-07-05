@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
+import '../../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
+import '../../actions/get_artworks/get_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../../models/artwork/artwork.dart';
 import '../../models/user/app_user/app_user.dart';
@@ -163,6 +166,7 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                   icon: const Icon(Icons.arrow_back_ios_new),
                   onPressed: () {
                     _audioPlayer.stop();
+                    context.dispatch(const GetArtworks());
                     Navigator.pushReplacementNamed(context, '/artworksListAdminPage');
                   },
                 ),
@@ -198,6 +202,13 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                   setState(() {
                                     isImagePathEditing = false;
                                     isEditing = false;
+                                    if (selectedArtwork.pictureUrl != imagePathController.text) {
+                                      context.dispatch(UpdateArtworkImage(
+                                          newPicturePath: imagePathController.text,
+                                          artworkId: selectedArtwork.uid,
+                                          artworkTitle: selectedArtwork.title,
+                                          oldPictureUrl: selectedArtwork.pictureUrl));
+                                    }
                                   });
                                 }
                               } else if (!isEditing) {
@@ -231,11 +242,13 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                             },
                           ),
                         )
-                      else
+                      else if (selectedArtwork.pictureUrl.isNotEmpty)
                         Image.network(
                           selectedArtwork.pictureUrl,
                           fit: BoxFit.cover,
-                        ),
+                        )
+                      else
+                        const CircularProgressIndicator(),
                     ],
                   ),
                   const Divider(height: 16),
@@ -263,6 +276,13 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                   setState(() {
                                     isAudioPathEditing = false;
                                     isEditing = false;
+                                    if (selectedArtwork.audioUrl != audioPathController.text) {
+                                      context.dispatch(UpdateArtworkAudio(
+                                          newAudioPath: audioPathController.text,
+                                          artworkId: selectedArtwork.uid,
+                                          artworkTitle: selectedArtwork.title,
+                                          oldAudioUrl: selectedArtwork.audioUrl));
+                                    }
                                   });
                                 }
                               } else if (!isEditing) {

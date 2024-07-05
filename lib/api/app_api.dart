@@ -393,4 +393,45 @@ class AppApi {
 
     await docRef.set(comment.toJson());
   }
+
+  Future<String> updateArtworkImage(
+      {required String newPicturePath,
+      required String artworkId,
+      required String artworkTitle,
+      required String oldPictureUrl}) async {
+    if (oldPictureUrl.isNotEmpty) {
+      final Reference storageRef = FirebaseStorage.instance.refFromURL(oldPictureUrl);
+      await storageRef.delete();
+    }
+
+    final Reference pictureRef = _storage.ref().child('artworks/$artworkId/$artworkTitle.jpg');
+    await pictureRef.putFile(File(newPicturePath));
+
+    final String newPictureUrl = await pictureRef.getDownloadURL();
+
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{'pictureUrl': newPictureUrl});
+    return newPictureUrl;
+  }
+
+  Future<String> updateArtworkAudio(
+      {required String newAudioPath,
+        required String artworkId,
+        required String artworkTitle,
+        required String oldAudioUrl}) async {
+    if (oldAudioUrl.isNotEmpty) {
+      final Reference storageRef = FirebaseStorage.instance.refFromURL(oldAudioUrl);
+      await storageRef.delete();
+    }
+
+    final Reference audioRef = _storage.ref().child('artworks/$artworkId/$artworkTitle.mp3');
+    await audioRef.putFile(File(newAudioPath));
+
+    final String newAudioUrl = await audioRef.getDownloadURL();
+
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{'audioUrl': newAudioUrl});
+    return newAudioUrl;
+  }
+
 }
