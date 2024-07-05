@@ -449,4 +449,15 @@ class AppApi {
     await artworksRef.doc(artworkId).update(<Object, Object?>{'title': newTitle});
     return newTitle;
   }
+
+  Future<int> updateArtworkStartCreationYear({required int newYear, required String artworkId}) async {
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{'startCreationYear': newYear});
+    return newYear;
+  }
+  Future<int> updateArtworkEndCreationYear({required int newYear, required String artworkId}) async {
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{'endCreationYear': newYear});
+    return newYear;
+  }
 }

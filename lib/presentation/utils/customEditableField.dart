@@ -57,7 +57,6 @@ class EditableField extends StatelessWidget {
             key: formKey,
             child: TextFormField(
               controller: controller,
-              readOnly: true,
               validator: validator,
               maxLines: null,
               decoration: InputDecoration(

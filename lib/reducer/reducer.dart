@@ -6,6 +6,8 @@ import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artw
 import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
+import '../actions/admin_actions/update_artwork_start_creation_year/update_artwork_start_creation_year.dart';
+import '../actions/admin_actions/update_artwork_title/update_artwork_title.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
@@ -59,6 +61,8 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtworkImageSuccessful>(_updateArtworkImageSuccessful).call,
     TypedReducer<AppState, UpdateArtworkAudioSuccessful>(_updateArtworkAudioSuccessful).call,
     TypedReducer<AppState, UpdateArtworkArtistSuccessful>(_updateArtworkArtistSuccessful).call,
+    TypedReducer<AppState, UpdateArtworkTitleSuccessful>(_updateArtworkTitleSuccessful).call,
+    TypedReducer<AppState, UpdateArtworkStartCreationYearSuccessful>(_updateArtworkStartCreationYearSuccessful).call,
   ])(state, action);
 }
 
@@ -181,5 +185,21 @@ AppState _updateArtworkArtistSuccessful(AppState state, UpdateArtworkArtistSucce
   return state.copyWith(
     selectedArtwork: state.selectedArtwork?.copyWith(
         artistFirstName: action.artist.firstName, artistLastName: action.artist.lastName, artistUid: action.artist.uid),
+  );
+}
+
+AppState _updateArtworkTitleSuccessful(AppState state, UpdateArtworkTitleSuccessful action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(
+      title: action.newTitle,
+    ),
+  );
+}
+
+AppState _updateArtworkStartCreationYearSuccessful(AppState state, UpdateArtworkStartCreationYearSuccessful action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(
+      startCreationYear: action.newStartCreationYear,
+    ),
   );
 }

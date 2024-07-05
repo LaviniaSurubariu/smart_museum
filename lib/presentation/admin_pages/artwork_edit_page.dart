@@ -8,6 +8,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
+import '../../actions/admin_actions/update_artwork_start_creation_year/update_artwork_start_creation_year.dart';
+import '../../actions/admin_actions/update_artwork_title/update_artwork_title.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../../models/artwork/artwork.dart';
@@ -411,7 +413,10 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         if (titleFormKey.currentState!.validate()) {
                           setState(
                             () {
-                              //context.dispatch(EditTitle(titleController.text));
+                              if (selectedArtwork.title != titleController.text) {
+                                context.dispatch(
+                                    UpdateArtworkTitle(artworkId: selectedArtwork.uid, newTitle: titleController.text));
+                              }
                               isTitleEditing = false;
                               isEditing = false;
                             },
@@ -576,6 +581,12 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                     if (isStartCreationYearEditing) {
                                       if (startCreationYearFormKey.currentState!.validate()) {
                                         setState(() {
+                                          if (selectedArtwork.startCreationYear !=
+                                              int.parse(startCreationYearController.text)) {
+                                            context.dispatch(UpdateArtworkStartCreationYear(
+                                                newYear: int.parse(startCreationYearController.text),
+                                                artworkId: selectedArtwork.uid));
+                                          }
                                           isStartCreationYearEditing = false;
                                           isEditing = false;
                                         });
