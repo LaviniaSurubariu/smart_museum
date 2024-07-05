@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:smart_museum/presentation/admin_pages/artworks_list_admin_page.dart';
 import 'package:smart_museum/presentation/user_pages/artists_page.dart';
 
 import 'api/app_api.dart';
@@ -15,6 +16,7 @@ import 'models/app_state/app_state.dart';
 import 'presentation/admin_pages/add_artist_page.dart';
 import 'presentation/admin_pages/add_artwork_page.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
+import 'presentation/admin_pages/artwork_edit_page.dart';
 import 'presentation/admin_pages/generate_qr_code_page.dart';
 import 'presentation/admin_pages/list_of_artworks_without_qr_code_page.dart';
 import 'presentation/admin_pages/profile_admin_page.dart';
@@ -89,6 +91,8 @@ class MyApp extends StatelessWidget {
           '/artworksPage': (BuildContext context) => const ArtworksPage(),
           '/artistsPage': (BuildContext context) => const ArtistsPage(),
           '/forumPage': (BuildContext context) => const ForumPage(),
+          '/artworksListAdminPage': (BuildContext context) => const ArtworksListAdminPage(),
+          '/artworkEditPage': (BuildContext context) => const ArtworkEditPage(),
         },
       ),
     );
