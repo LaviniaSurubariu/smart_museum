@@ -7,9 +7,14 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
+import '../../actions/admin_actions/update_artwork_description/update_artwork_description.dart';
+import '../../actions/admin_actions/update_artwork_end_creation_year/update_artwork_end_creation_year.dart';
 import '../../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
+import '../../actions/admin_actions/update_artwork_provenance/update_artwork_provenance.dart';
 import '../../actions/admin_actions/update_artwork_start_creation_year/update_artwork_start_creation_year.dart';
+import '../../actions/admin_actions/update_artwork_style/update_artwork_style.dart';
 import '../../actions/admin_actions/update_artwork_title/update_artwork_title.dart';
+import '../../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../../models/artwork/artwork.dart';
@@ -673,6 +678,12 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                     if (isEndCreationYearEditing) {
                                       if (endCreationYearFormKey.currentState!.validate()) {
                                         setState(() {
+                                          if (selectedArtwork.endCreationYear !=
+                                              int.parse(endCreationYearController.text)) {
+                                            context.dispatch(UpdateArtworkEndCreationYear(
+                                                newYear: int.parse(endCreationYearController.text),
+                                                artworkId: selectedArtwork.uid));
+                                          }
                                           isEndCreationYearEditing = false;
                                           isEditing = false;
                                         });
@@ -746,7 +757,10 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         if (typeFormKey.currentState!.validate()) {
                           setState(
                             () {
-                              //context.dispatch(EditDescription(descriptionController.text));
+                              if (selectedArtwork.type != typeController.text) {
+                                context.dispatch(
+                                    UpdateArtworkType(newType: typeController.text, artworkId: selectedArtwork.uid));
+                              }
                               isTypeEditing = false;
                               isEditing = false;
                             },
@@ -791,7 +805,10 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         if (styleFormKey.currentState!.validate()) {
                           setState(
                             () {
-                              //context.dispatch(EditDescription(descriptionController.text));
+                              if (selectedArtwork.style != styleController.text) {
+                                context.dispatch(
+                                    UpdateArtworkStyle(newStyle: styleController.text, artworkId: selectedArtwork.uid));
+                              }
                               isStyleEditing = false;
                               isEditing = false;
                             },
@@ -836,7 +853,10 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         if (provenanceFormKey.currentState!.validate()) {
                           setState(
                             () {
-                              //context.dispatch(EditDescription(descriptionController.text));
+                              if (selectedArtwork.provenance != provenanceController.text) {
+                                context.dispatch(UpdateArtworkProvenance(
+                                    newProvenance: provenanceController.text, artworkId: selectedArtwork.uid));
+                              }
                               isProvenanceEditing = false;
                               isEditing = false;
                             },
@@ -881,7 +901,12 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         if (descriptionFormKey.currentState!.validate()) {
                           setState(
                             () {
-                              //context.dispatch(EditDescription(descriptionController.text));
+                              if (selectedArtwork.description != descriptionController.text) {
+                                context.dispatch(UpdateArtworkDescription(
+                                  artworkId: selectedArtwork.uid,
+                                  newDescription: descriptionController.text,
+                                ));
+                              }
                               isDescriptionEditing = false;
                               isEditing = false;
                             },

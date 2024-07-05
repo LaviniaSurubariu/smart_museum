@@ -7,9 +7,14 @@ import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
+import '../actions/admin_actions/update_artwork_description/update_artwork_description.dart';
+import '../actions/admin_actions/update_artwork_end_creation_year/update_artwork_end_creation_year.dart';
 import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
+import '../actions/admin_actions/update_artwork_provenance/update_artwork_provenance.dart';
 import '../actions/admin_actions/update_artwork_start_creation_year/update_artwork_start_creation_year.dart';
+import '../actions/admin_actions/update_artwork_style/update_artwork_style.dart';
 import '../actions/admin_actions/update_artwork_title/update_artwork_title.dart';
+import '../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
@@ -72,6 +77,11 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtworkArtistStart>(_updateArtworkArtistStart).call,
       TypedEpic<AppState, UpdateArtworkTitleStart>(_updateArtworkTitleStart).call,
       TypedEpic<AppState, UpdateArtworkStartCreationYearStart>(_updateArtworkStartCreationYearStart).call,
+      TypedEpic<AppState, UpdateArtworkEndCreationYearStart>(_updateArtworkEndCreationYearStart).call,
+      TypedEpic<AppState, UpdateArtworkTypeStart>(_updateArtworkTypeStart).call,
+      TypedEpic<AppState, UpdateArtworkStyleStart>(_updateArtworkStyleStart).call,
+      TypedEpic<AppState, UpdateArtworkProvenanceStart>(_updateArtworkProvenanceStart).call,
+      TypedEpic<AppState, UpdateArtworkDescriptionStart>(_updateArtworkDescriptionStart).call,
     ])(actions, store);
   }
 
@@ -396,6 +406,58 @@ class AppEpics extends EpicClass<AppState> {
           .map((int newYear) => UpdateArtworkStartCreationYear.successful(newYear))
           .onErrorReturnWith(
               (Object error, StackTrace stackTrace) => UpdateArtworkStartCreationYear.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkEndCreationYearStart(
+      Stream<UpdateArtworkEndCreationYearStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkEndCreationYearStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkEndCreationYear(newYear: action.newYear, artworkId: action.artworkId))
+          .map((int newYear) => UpdateArtworkEndCreationYear.successful(newYear))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => UpdateArtworkEndCreationYear.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkTypeStart(Stream<UpdateArtworkTypeStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkTypeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkType(newType: action.newType, artworkId: action.artworkId))
+          .map((String newType) => UpdateArtworkType.successful(newType))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkType.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkStyleStart(Stream<UpdateArtworkStyleStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkStyleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkStyle(newStyle: action.newStyle, artworkId: action.artworkId))
+          .map((String newStyle) => UpdateArtworkStyle.successful(newStyle))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkStyle.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkProvenanceStart(
+      Stream<UpdateArtworkProvenanceStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkProvenanceStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+              (_) => appApi.updateArtworkProvenance(newProvenance: action.newProvenance, artworkId: action.artworkId))
+          .map((String newProvenance) => UpdateArtworkProvenance.successful(newProvenance))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkProvenance.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtworkDescriptionStart(
+      Stream<UpdateArtworkDescriptionStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkDescriptionStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) =>
+              appApi.updateArtworkDescription(newDescription: action.newDescription, artworkId: action.artworkId))
+          .map((String newDescription) => UpdateArtworkDescription.successful(newDescription))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => UpdateArtworkDescription.error(error, stackTrace));
     });
   }
 }
