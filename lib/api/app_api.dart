@@ -187,17 +187,6 @@ class AppApi {
     return Duration.zero;
   }
 
-// Future<List<AppUser>> getUsers(List<String> uids) async {
-//   final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
-//       .collection('users') //
-//       .where('uid', whereIn: uids)
-//       .get();
-//
-//   return snapshot.docs //
-//       .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
-//       .toList();
-// }
-
   Future<void> addArtist({
     required String firstName,
     required String lastName,
