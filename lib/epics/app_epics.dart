@@ -5,6 +5,7 @@ import '../actions/add_comment/add_comment.dart';
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
 import '../actions/app_action.dart';
@@ -28,6 +29,7 @@ import '../actions/user_s_actions/signout/sign_out.dart';
 import '../api/app_api.dart';
 import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
+import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
@@ -65,6 +67,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, AddCommentStart>(_addCommentStart).call,
       TypedEpic<AppState, UpdateArtworkImageStart>(_updateArtworkImageStart).call,
       TypedEpic<AppState, UpdateArtworkAudioStart>(_updateArtworkAudioStart).call,
+      TypedEpic<AppState, UpdateArtworkArtistStart>(_updateArtworkArtistStart).call,
     ])(actions, store);
   }
 
@@ -360,6 +363,13 @@ class AppEpics extends EpicClass<AppState> {
               ))
           .map((String newAudioPath) => UpdateArtworkAudio.successful(newAudioPath))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkAudio.error(error, stackTrace));
+    });
+  }  Stream<AppAction> _updateArtworkArtistStart(Stream<UpdateArtworkArtistStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtworkArtistStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtworkArtist(artist: action.artist, artworkId: action.artworkId))
+          .map((ArtistForFetch artist) => UpdateArtworkArtist.successful(artist))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtworkArtist.error(error, stackTrace));
     });
   }
 }

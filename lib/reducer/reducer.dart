@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_image/update_artwork_image.dart';
 import '../actions/get_artists/get_artists.dart';
@@ -57,6 +58,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtworkImageStart>(_updateArtworkImageStart).call,
     TypedReducer<AppState, UpdateArtworkImageSuccessful>(_updateArtworkImageSuccessful).call,
     TypedReducer<AppState, UpdateArtworkAudioSuccessful>(_updateArtworkAudioSuccessful).call,
+    TypedReducer<AppState, UpdateArtworkArtistSuccessful>(_updateArtworkArtistSuccessful).call,
   ])(state, action);
 }
 
@@ -172,5 +174,12 @@ AppState _updateArtworkImageStart(AppState state, UpdateArtworkImageStart action
 AppState _updateArtworkAudioSuccessful(AppState state, UpdateArtworkAudioSuccessful action) {
   return state.copyWith(
     selectedArtwork: state.selectedArtwork?.copyWith(audioUrl: action.newAudioPath),
+  );
+}
+
+AppState _updateArtworkArtistSuccessful(AppState state, UpdateArtworkArtistSuccessful action) {
+  return state.copyWith(
+    selectedArtwork: state.selectedArtwork?.copyWith(
+        artistFirstName: action.artist.firstName, artistLastName: action.artist.lastName, artistUid: action.artist.uid),
   );
 }

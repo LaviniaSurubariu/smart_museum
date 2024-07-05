@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/artist/artist.dart';
+import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
@@ -416,17 +417,16 @@ class AppApi {
 
   Future<String> updateArtworkAudio(
       {required String newAudioPath,
-        required String artworkId,
-        required String artworkTitle,
-        required String oldAudioUrl}) async {
+      required String artworkId,
+      required String artworkTitle,
+      required String oldAudioUrl}) async {
     if (oldAudioUrl.isNotEmpty) {
       final Reference storageRef = FirebaseStorage.instance.refFromURL(oldAudioUrl);
       await storageRef.delete();
     }
 
-    final Reference audioRef = _storage.ref().child('artworks/$artworkId/$artworkTitle.mp3');
+    final Reference audioRef = _storage.ref('artworks/$artworkId/$artworkTitle.mp3');
     await audioRef.putFile(File(newAudioPath));
-
     final String newAudioUrl = await audioRef.getDownloadURL();
 
     final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
@@ -434,4 +434,19 @@ class AppApi {
     return newAudioUrl;
   }
 
+  Future<ArtistForFetch> updateArtworkArtist({required ArtistForFetch artist, required String artworkId}) async {
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{
+      'artistFirstName': artist.firstName,
+      'artistLastName': artist.lastName,
+      'artistUid': artist.uid
+    });
+    return artist;
+  }
+
+  Future<String> updateArtworkTitle({required String newTitle, required String artworkId}) async {
+    final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
+    await artworksRef.doc(artworkId).update(<Object, Object?>{'title': newTitle});
+    return newTitle;
+  }
 }
