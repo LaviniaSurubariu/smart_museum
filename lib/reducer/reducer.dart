@@ -57,6 +57,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetListArtworksWithoutQrCodeSuccessful>(_getListArtworksWithoutQrCodeSuccessful).call,
     TypedReducer<AppState, SetSelectedArtworkWithoutQrCode>(_setSelectedArtworkWithoutQrCode).call,
     TypedReducer<AppState, FetchScannedArtworkSuccessful>(_fetchScannedArtwork).call,
+    TypedReducer<AppState, FetchScannedArtworkStart>(_fetchScannedArtworkStart).call,
     TypedReducer<AppState, SetSelectedArtwork>(_setSelectedArtwork).call,
     TypedReducer<AppState, FetchSelectedArtistSuccessful>(_fetchSelectedArtist).call,
     TypedReducer<AppState, IsArtworkFavouriteSuccessful>(_isArtworkFavouriteSuccessful).call,
@@ -131,6 +132,10 @@ AppState _fetchScannedArtwork(AppState state, FetchScannedArtworkSuccessful acti
   return state.copyWith(
     scannedArtwork: action.scannedArtwork,
     selectedArtwork: action.scannedArtwork,
+  );
+}AppState _fetchScannedArtworkStart(AppState state, FetchScannedArtworkStart action) {
+  return state.copyWith(
+    selectedArtwork: null,
   );
 }
 
