@@ -152,7 +152,7 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
       future: _fetchArtworkFuture,
-      builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+      builder: (BuildContext context,   AsyncSnapshot<void> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
