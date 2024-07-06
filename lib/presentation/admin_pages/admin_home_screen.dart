@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../utils/customAdminDrawer.dart';
 import '../utils/customButtomNavigationBarAdmin.dart';
@@ -129,6 +130,10 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                     ),
                   ],
                 ),
+                onTap: () {
+                  context.dispatch(const GetArtists());
+                  Navigator.pushReplacementNamed(context, '/artistsListAdminPage');
+                }
               ),
               const SizedBox(
                 height: 16,

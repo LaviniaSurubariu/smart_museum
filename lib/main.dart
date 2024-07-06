@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:smart_museum/presentation/admin_pages/artist_edit_page.dart';
+import 'package:smart_museum/presentation/admin_pages/artists_list_admin_page.dart';
 import 'package:smart_museum/presentation/admin_pages/artworks_list_admin_page.dart';
 import 'package:smart_museum/presentation/user_pages/artists_page.dart';
 
@@ -93,6 +95,9 @@ class MyApp extends StatelessWidget {
           '/forumPage': (BuildContext context) => const ForumPage(),
           '/artworksListAdminPage': (BuildContext context) => const ArtworksListAdminPage(),
           '/artworkEditPage': (BuildContext context) => const ArtworkEditPage(),
+          '/artistsListAdminPage': (BuildContext context) => const ArtistsListAdminPage(),
+          '/artistEditPage': (BuildContext context) => const ArtistEditPage(),
+
         },
       ),
     );
