@@ -3,6 +3,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/admin_actions/update_artist_image/update_artist_image.dart';
 import '../../actions/get_artists/get_artists.dart';
 
 import '../../models/artist/artist.dart';
@@ -63,8 +64,10 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
         imagePathController.text = selectedArtist.pictureUrl;
         firstNameController.text = selectedArtist.firstName;
         lastNameController.text = selectedArtist.lastName;
-        birthdateController.text = DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!);
-        deathDateController.text = DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!);
+        birthdateController.text =
+            selectedArtist.birthdate != null ? DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!) : '';
+        deathDateController.text =
+            selectedArtist.deathDate != null ? DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!) : '';
 
         return AppUserContainer(
           builder: (BuildContext context, AppUser? user) {
@@ -117,11 +120,11 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                     isImagePathEditing = false;
                                     isEditing = false;
                                     if (selectedArtist.pictureUrl != imagePathController.text) {
-                                      // context.dispatch(UpdateArtworkImage(
-                                      //     newPicturePath: imagePathController.text,
-                                      //     artworkId: selectedArtwork.uid,
-                                      //     artworkTitle: selectedArtwork.title,
-                                      //     oldPictureUrl: selectedArtwork.pictureUrl));
+                                      context.dispatch(UpdateArtistImage(
+                                          newPicturePath: imagePathController.text,
+                                          artistId: selectedArtist.uid,
+                                          oldPictureUrl: selectedArtist.pictureUrl,
+                                          artistFirstName: selectedArtist.firstName));
                                     }
                                   });
                                 }
@@ -281,8 +284,9 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                   icon: const Icon(Icons.cancel_outlined),
                                   onPressed: () {
                                     setState(() {
-                                      birthdateController.text =
-                                          DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!);
+                                      birthdateController.text = selectedArtist.birthdate != null
+                                          ? DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!)
+                                          : '';
                                       isBirthdateEditing = false;
                                       isEditing = false;
                                     });
@@ -333,6 +337,7 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                               _selectBirthdate(context);
                             },
                             decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
                               label: Text('Birthdate'),
                               prefixIcon: Icon(LineAwesomeIcons.calendar),
                             ),
@@ -343,7 +348,9 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                           children: <Widget>[
                             const SizedBox(height: 10),
                             Text(
-                              DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!),
+                              selectedArtist.birthdate != null
+                                  ? DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!)
+                                  : '',
                               style: const TextStyle(
                                 fontSize: 16,
                               ),
@@ -374,8 +381,9 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                   icon: const Icon(Icons.cancel_outlined),
                                   onPressed: () {
                                     setState(() {
-                                      deathDateController.text =
-                                          DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!);
+                                      deathDateController.text = selectedArtist.deathDate != null
+                                          ? DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!)
+                                          : '';
                                       isDeathDateEditing = false;
                                       isEditing = false;
                                     });
@@ -426,6 +434,7 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                               _selectDeathDate(context);
                             },
                             decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
                               label: Text('Death Date'),
                               prefixIcon: Icon(LineAwesomeIcons.calendar),
                             ),
@@ -436,7 +445,9 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                           children: <Widget>[
                             const SizedBox(height: 10),
                             Text(
-                              DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!),
+                              selectedArtist.deathDate != null
+                                  ? DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!)
+                                  : '',
                               style: const TextStyle(
                                 fontSize: 16,
                               ),

@@ -485,4 +485,24 @@ class AppApi {
     await artworksRef.doc(artworkId).update(<Object, Object?>{'description': newDescription});
     return newDescription;
   }
+
+  Future<String> updateArtistImage(
+      {required String newPicturePath,
+      required String artistId,
+      required String artistFirstName,
+      required String oldPictureUrl}) async {
+    if (oldPictureUrl.isNotEmpty) {
+      final Reference storageRef = FirebaseStorage.instance.refFromURL(oldPictureUrl);
+      await storageRef.delete();
+    }
+
+    final Reference pictureRef = _storage.ref().child('artists/$artistId/$artistFirstName');
+    await pictureRef.putFile(File(newPicturePath));
+
+    final String newPictureUrl = await pictureRef.getDownloadURL();
+
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'pictureUrl': newPictureUrl});
+    return newPictureUrl;
+  }
 }

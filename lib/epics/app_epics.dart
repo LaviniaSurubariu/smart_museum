@@ -5,6 +5,7 @@ import '../actions/add_comment/add_comment.dart';
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artist_image/update_artist_image.dart';
 import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_description/update_artwork_description.dart';
@@ -82,6 +83,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtworkStyleStart>(_updateArtworkStyleStart).call,
       TypedEpic<AppState, UpdateArtworkProvenanceStart>(_updateArtworkProvenanceStart).call,
       TypedEpic<AppState, UpdateArtworkDescriptionStart>(_updateArtworkDescriptionStart).call,
+      TypedEpic<AppState, UpdateArtistImageStart>(_updateArtistImageStart).call,
     ])(actions, store);
   }
 
@@ -458,6 +460,19 @@ class AppEpics extends EpicClass<AppState> {
           .map((String newDescription) => UpdateArtworkDescription.successful(newDescription))
           .onErrorReturnWith(
               (Object error, StackTrace stackTrace) => UpdateArtworkDescription.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistImageStart(Stream<UpdateArtistImageStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistImageStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtistImage(
+              newPicturePath: action.newPicturePath,
+              artistId: action.artistId,
+              artistFirstName: action.artistFirstName,
+              oldPictureUrl: action.oldPictureUrl))
+          .map((String newPicturePath) => UpdateArtistImage.successful(newPicturePath))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistImage.error(error, stackTrace));
     });
   }
 }
