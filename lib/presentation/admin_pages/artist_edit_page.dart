@@ -3,7 +3,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/admin_actions/update_artist_birthdate/update_artist_birthdate.dart';
+import '../../actions/admin_actions/update_artist_death_date/update_artist_death_date.dart';
+import '../../actions/admin_actions/update_artist_description/update_artist_description.dart';
+import '../../actions/admin_actions/update_artist_first_name/update_artist_first_name.dart';
 import '../../actions/admin_actions/update_artist_image/update_artist_image.dart';
+import '../../actions/admin_actions/update_artist_last_name/update_artist_last_name.dart';
 import '../../actions/get_artists/get_artists.dart';
 
 import '../../models/artist/artist.dart';
@@ -130,7 +135,6 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                 }
                               } else if (!isEditing) {
                                 setState(() {
-                                  // _audioPlayer.stop();
                                   isImagePathEditing = true;
                                   isEditing = true;
                                 });
@@ -178,7 +182,6 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                       if (!isEditing) {
                         setState(
                           () {
-                            // _audioPlayer.stop();
                             isFirstNameEditing = true;
                             isEditing = true;
                           },
@@ -190,8 +193,8 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                         setState(
                           () {
                             if (selectedArtist.firstName != firstNameController.text) {
-                              // context.dispatch(
-                              //     UpdateArtworkTitle(artworkId: selectedArtwork.uid, newTitle: titleController.text));
+                              context.dispatch(UpdateArtistFirstName(
+                                  newFirstName: firstNameController.text, artistId: selectedArtist.uid));
                             }
                             isFirstNameEditing = false;
                             isEditing = false;
@@ -237,8 +240,8 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                         setState(
                           () {
                             if (selectedArtist.lastName != lastNameController.text) {
-                              // context.dispatch(
-                              //     UpdateArtworkTitle(artworkId: selectedArtwork.uid, newTitle: titleController.text));
+                              context.dispatch(UpdateArtistLastName(
+                                  newLastName: lastNameController.text, artistId: selectedArtist.uid));
                             }
                             isLastNameEditing = false;
                             isEditing = false;
@@ -298,11 +301,17 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                   if (isBirthdateEditing) {
                                     if (birthdateFormKey.currentState!.validate()) {
                                       setState(() {
-                                        if (DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!) !=
-                                            birthdateController.text) {
-                                          // context.dispatch(UpdateArtworkEndCreationYear(
-                                          //     newYear: int.parse(endCreationYearController.text),
-                                          //     artworkId: selectedArtwork.uid));
+                                        if (selectedArtist.birthdate != null) {
+                                          if (DateFormat('yyyy-MM-dd').format(selectedArtist.birthdate!) !=
+                                              birthdateController.text) {
+                                            context.dispatch(UpdateArtistBirthdate(
+                                                newBirthdate: DateTime.parse(birthdateController.text),
+                                                artistId: selectedArtist.uid));
+                                          }
+                                        } else {
+                                          context.dispatch(UpdateArtistBirthdate(
+                                              newBirthdate: DateTime.parse(birthdateController.text),
+                                              artistId: selectedArtist.uid));
                                         }
                                         isBirthdateEditing = false;
                                         isEditing = false;
@@ -395,11 +404,17 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                                   if (isDeathDateEditing) {
                                     if (deathDateFormKey.currentState!.validate()) {
                                       setState(() {
-                                        if (DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!) !=
-                                            deathDateController.text) {
-                                          // context.dispatch(UpdateArtworkEndCreationYear(
-                                          //     newYear: int.parse(endCreationYearController.text),
-                                          //     artworkId: selectedArtwork.uid));
+                                        if (selectedArtist.deathDate != null) {
+                                          if (DateFormat('yyyy-MM-dd').format(selectedArtist.deathDate!) !=
+                                              deathDateController.text) {
+                                            context.dispatch(UpdateArtistDeathDate(
+                                                newDeathDate: DateTime.parse(deathDateController.text),
+                                                artistId: selectedArtist.uid));
+                                          }
+                                        } else {
+                                          context.dispatch(UpdateArtistDeathDate(
+                                              newDeathDate: DateTime.parse(deathDateController.text),
+                                              artistId: selectedArtist.uid));
                                         }
                                         isDeathDateEditing = false;
                                         isEditing = false;
@@ -455,6 +470,54 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                           ],
                         ),
                     ],
+                  ),
+                  const Divider(height: 16),
+                  EditableField(
+                    formKey: descriptionFormKey,
+                    label: 'Description',
+                    controller: descriptionController,
+                    isEditing: isDescriptionEditing,
+                    onEdit: () {
+                      if (!isEditing) {
+                        setState(
+                          () {
+                            isDescriptionEditing = true;
+                            isEditing = true;
+                          },
+                        );
+                      }
+                    },
+                    onSave: () {
+                      if (descriptionFormKey.currentState!.validate()) {
+                        setState(
+                          () {
+                            if (selectedArtist.description != descriptionController.text) {
+                              context.dispatch(UpdateArtistDescription(
+                                newDescription: descriptionController.text,
+                                artistId: selectedArtist.uid,
+                              ));
+                            }
+                            isDescriptionEditing = false;
+                            isEditing = false;
+                          },
+                        );
+                      }
+                    },
+                    onCancel: () {
+                      setState(
+                        () {
+                          descriptionController.text = selectedArtist.description;
+                          isDescriptionEditing = false;
+                          isEditing = false;
+                        },
+                      );
+                    },
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter a valid description.';
+                      }
+                      return null;
+                    },
                   ),
                 ],
               ),

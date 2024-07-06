@@ -505,4 +505,34 @@ class AppApi {
     await artistRef.doc(artistId).update(<Object, Object?>{'pictureUrl': newPictureUrl});
     return newPictureUrl;
   }
+
+  Future<String> updateArtistFirstName({required String newFirstName, required String artistId}) async {
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'firstName': newFirstName});
+    return newFirstName;
+  }
+
+  Future<String> updateArtistLastName({required String newLastName, required String artistId}) async {
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'lastName': newLastName});
+    return newLastName;
+  }
+
+  Future<DateTime?> updateArtistBirthdate({required DateTime? newBirthdate, required String artistId}) async {
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'birthdate': newBirthdate});
+    return newBirthdate;
+  }
+
+  Future<DateTime?> updateArtistDeathDate({required DateTime? newDeathDate, required String artistId}) async {
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'deathDate': newDeathDate});
+    return newDeathDate;
+  }
+
+  Future<String> updateArtistDescription({required String newDescription, required String artistId}) async {
+    final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
+    await artistRef.doc(artistId).update(<Object, Object?>{'description': newDescription});
+    return newDescription;
+  }
 }

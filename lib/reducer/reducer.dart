@@ -3,7 +3,12 @@ import 'dart:developer';
 import 'package:redux/redux.dart';
 
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artist_birthdate/update_artist_birthdate.dart';
+import '../actions/admin_actions/update_artist_death_date/update_artist_death_date.dart';
+import '../actions/admin_actions/update_artist_description/update_artist_description.dart';
+import '../actions/admin_actions/update_artist_first_name/update_artist_first_name.dart';
 import '../actions/admin_actions/update_artist_image/update_artist_image.dart';
+import '../actions/admin_actions/update_artist_last_name/update_artist_last_name.dart';
 import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_description/update_artwork_description.dart';
@@ -76,6 +81,11 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtworkDescriptionSuccessful>(_updateArtworkDescriptionSuccessful).call,
     TypedReducer<AppState, UpdateArtistImageStart>(_updateArtistImageStart).call,
     TypedReducer<AppState, UpdateArtistImageSuccessful>(_updateArtistImageSuccessful).call,
+    TypedReducer<AppState, UpdateArtistFirstNameSuccessful>(_updateArtistFirstNameSuccessful).call,
+    TypedReducer<AppState, UpdateArtistLastNameSuccessful>(_updateArtistLastNameSuccessful).call,
+    TypedReducer<AppState, UpdateArtistBirthdateSuccessful>(_updateArtistBirthdateSuccessful).call,
+    TypedReducer<AppState, UpdateArtistDeathDateSuccessful>(_updateArtistDeathDateSuccessful).call,
+    TypedReducer<AppState, UpdateArtistDescriptionSuccessful>(_updateArtistDescriptionSuccessful).call,
   ])(state, action);
 }
 
@@ -266,5 +276,45 @@ AppState _updateArtistImageSuccessful(AppState state, UpdateArtistImageSuccessfu
 AppState _updateArtistImageStart(AppState state, UpdateArtistImageStart action) {
   return state.copyWith(
     selectedArtist: state.selectedArtist?.copyWith(pictureUrl: ''),
+  );
+}
+
+AppState _updateArtistFirstNameSuccessful(AppState state, UpdateArtistFirstNameSuccessful action) {
+  return state.copyWith(
+    selectedArtist: state.selectedArtist?.copyWith(
+      firstName: action.newFirstName,
+    ),
+  );
+}
+
+AppState _updateArtistLastNameSuccessful(AppState state, UpdateArtistLastNameSuccessful action) {
+  return state.copyWith(
+    selectedArtist: state.selectedArtist?.copyWith(
+      lastName: action.newLastName,
+    ),
+  );
+}
+
+AppState _updateArtistBirthdateSuccessful(AppState state, UpdateArtistBirthdateSuccessful action) {
+  return state.copyWith(
+    selectedArtist: state.selectedArtist?.copyWith(
+      birthdate: action.newBirthdate,
+    ),
+  );
+}
+
+AppState _updateArtistDeathDateSuccessful(AppState state, UpdateArtistDeathDateSuccessful action) {
+  return state.copyWith(
+    selectedArtist: state.selectedArtist?.copyWith(
+      deathDate: action.newDeathDate,
+    ),
+  );
+}
+
+AppState _updateArtistDescriptionSuccessful(AppState state, UpdateArtistDescriptionSuccessful action) {
+  return state.copyWith(
+    selectedArtist: state.selectedArtist?.copyWith(
+      description: action.newDescription,
+    ),
   );
 }

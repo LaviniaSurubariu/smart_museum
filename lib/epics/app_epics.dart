@@ -5,7 +5,12 @@ import '../actions/add_comment/add_comment.dart';
 import '../actions/admin_actions/add_artist/add_artist.dart';
 import '../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../actions/admin_actions/update_artist_birthdate/update_artist_birthdate.dart';
+import '../actions/admin_actions/update_artist_death_date/update_artist_death_date.dart';
+import '../actions/admin_actions/update_artist_description/update_artist_description.dart';
+import '../actions/admin_actions/update_artist_first_name/update_artist_first_name.dart';
 import '../actions/admin_actions/update_artist_image/update_artist_image.dart';
+import '../actions/admin_actions/update_artist_last_name/update_artist_last_name.dart';
 import '../actions/admin_actions/update_artwork_artist/update_artwork_artist.dart';
 import '../actions/admin_actions/update_artwork_audio/update_artwork_audio.dart';
 import '../actions/admin_actions/update_artwork_description/update_artwork_description.dart';
@@ -84,6 +89,11 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtworkProvenanceStart>(_updateArtworkProvenanceStart).call,
       TypedEpic<AppState, UpdateArtworkDescriptionStart>(_updateArtworkDescriptionStart).call,
       TypedEpic<AppState, UpdateArtistImageStart>(_updateArtistImageStart).call,
+      TypedEpic<AppState, UpdateArtistFirstNameStart>(_updateArtistFirstNameStart).call,
+      TypedEpic<AppState, UpdateArtistLastNameStart>(_updateArtistLastNameStart).call,
+      TypedEpic<AppState, UpdateArtistBirthdateStart>(_updateArtistBirthdateStart).call,
+      TypedEpic<AppState, UpdateArtistDeathDateStart>(_updateArtistDeathDateStart).call,
+      TypedEpic<AppState, UpdateArtistDescriptionStart>(_updateArtistDescriptionStart).call,
     ])(actions, store);
   }
 
@@ -473,6 +483,53 @@ class AppEpics extends EpicClass<AppState> {
               oldPictureUrl: action.oldPictureUrl))
           .map((String newPicturePath) => UpdateArtistImage.successful(newPicturePath))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistImage.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistFirstNameStart(Stream<UpdateArtistFirstNameStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistFirstNameStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtistFirstName(newFirstName: action.newFirstName, artistId: action.artistId))
+          .map((String newFirstName) => UpdateArtistFirstName.successful(newFirstName))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistFirstName.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistLastNameStart(Stream<UpdateArtistLastNameStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistLastNameStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtistLastName(newLastName: action.newLastName, artistId: action.artistId))
+          .map((String newLastName) => UpdateArtistLastName.successful(newLastName))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistLastName.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistBirthdateStart(Stream<UpdateArtistBirthdateStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistBirthdateStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtistBirthdate(newBirthdate: action.newBirthdate, artistId: action.artistId))
+          .map((DateTime? newBirthdate) => UpdateArtistBirthdate.successful(newBirthdate))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistBirthdate.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistDeathDateStart(Stream<UpdateArtistDeathDateStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistDeathDateStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => appApi.updateArtistDeathDate(newDeathDate: action.newDeathDate, artistId: action.artistId))
+          .map((DateTime? newDeathDate) => UpdateArtistDeathDate.successful(newDeathDate))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistDeathDate.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _updateArtistDescriptionStart(
+      Stream<UpdateArtistDescriptionStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UpdateArtistDescriptionStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+              (_) => appApi.updateArtistDescription(newDescription: action.newDescription, artistId: action.artistId))
+          .map((String newDescription) => UpdateArtistDescription.successful(newDescription))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistDescription.error(error, stackTrace));
     });
   }
 }
