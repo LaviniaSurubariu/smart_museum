@@ -520,13 +520,15 @@ class AppApi {
 
   Future<DateTime?> updateArtistBirthdate({required DateTime? newBirthdate, required String artistId}) async {
     final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
-    await artistRef.doc(artistId).update(<Object, Object?>{'birthdate': newBirthdate});
+    final String? birthdateString = newBirthdate?.toIso8601String();
+    await artistRef.doc(artistId).update(<Object, Object?>{'birthdate': birthdateString});
     return newBirthdate;
   }
 
   Future<DateTime?> updateArtistDeathDate({required DateTime? newDeathDate, required String artistId}) async {
     final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
-    await artistRef.doc(artistId).update(<Object, Object?>{'deathDate': newDeathDate});
+    final String? deathDateString = newDeathDate?.toIso8601String();
+    await artistRef.doc(artistId).update(<Object, Object?>{'deathDate': deathDateString});
     return newDeathDate;
   }
 
