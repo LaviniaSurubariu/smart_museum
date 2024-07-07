@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -8,6 +7,7 @@ import '../../actions/get_artworks/get_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../actions/user_s_actions/get_all_styles/get_all_styles.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
@@ -124,8 +124,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                 await store.dispatch(
                                     IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
                                 await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
-
-                                await store.dispatch(const SetRouteArtworkIndex(3));
+                                await store.dispatch(const SetRouteArtworkIndex(4));
                                 Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                               },
                             ),
@@ -233,7 +232,8 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   ],
                 ),
                 onTap: () {
-                  // Navigator.pushNamed(context, '/ArtMovementsPage');
+                  context.dispatch(const GetAllStyles());
+                  Navigator.pushNamed(context, '/artworksWithAllStylePage');
                 },
               ),
               const SizedBox(
@@ -272,7 +272,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                     IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
                                 await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
 
-                                await store.dispatch(const SetRouteArtworkIndex(3));
+                                await store.dispatch(const SetRouteArtworkIndex(4));
                                 Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                               },
                             ),

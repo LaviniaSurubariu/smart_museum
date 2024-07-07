@@ -16,6 +16,7 @@ class SetSelectedArtworkWithoutQrCode with _$SetSelectedArtworkWithoutQrCode imp
 class SetSelectedArtwork with _$SetSelectedArtwork implements AppAction {
   const factory SetSelectedArtwork(Artwork selectedArtwork) = SetSelectedArtwork$;
 }
+
 @freezed
 class SetRouteArtworkIndex with _$SetRouteArtworkIndex implements AppAction {
   const factory SetRouteArtworkIndex(int routeArtworkIndex) = SetRouteArtworkIndex$;
@@ -24,4 +25,9 @@ class SetRouteArtworkIndex with _$SetRouteArtworkIndex implements AppAction {
 @freezed
 class SetRouteArtistIndex with _$SetRouteArtistIndex implements AppAction {
   const factory SetRouteArtistIndex(int routeArtistIndex) = SetRouteArtistIndex$;
+}
+
+@freezed
+class SetSelectedStyle with _$SetSelectedStyle implements AppAction {
+  const factory SetSelectedStyle(String style) = SetSelectedStyle$;
 }

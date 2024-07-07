@@ -6,10 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:smart_museum/presentation/admin_pages/artist_edit_page.dart';
-import 'package:smart_museum/presentation/admin_pages/artists_list_admin_page.dart';
-import 'package:smart_museum/presentation/admin_pages/artworks_list_admin_page.dart';
-import 'package:smart_museum/presentation/user_pages/artists_page.dart';
+import 'package:smart_museum/presentation/user_pages/artworks_by_style_page.dart';
+import 'package:smart_museum/presentation/user_pages/artworks_with_all_styles_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -18,7 +16,10 @@ import 'models/app_state/app_state.dart';
 import 'presentation/admin_pages/add_artist_page.dart';
 import 'presentation/admin_pages/add_artwork_page.dart';
 import 'presentation/admin_pages/admin_home_screen.dart';
+import 'presentation/admin_pages/artist_edit_page.dart';
+import 'presentation/admin_pages/artists_list_admin_page.dart';
 import 'presentation/admin_pages/artwork_edit_page.dart';
+import 'presentation/admin_pages/artworks_list_admin_page.dart';
 import 'presentation/admin_pages/generate_qr_code_page.dart';
 import 'presentation/admin_pages/list_of_artworks_without_qr_code_page.dart';
 import 'presentation/admin_pages/profile_admin_page.dart';
@@ -28,6 +29,7 @@ import 'presentation/forum_page.dart';
 import 'presentation/login_user.dart';
 import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artist_details_page.dart';
+import 'presentation/user_pages/artists_page.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
 import 'presentation/user_pages/artworks_page.dart';
 import 'presentation/user_pages/favourites_page.dart';
@@ -97,6 +99,8 @@ class MyApp extends StatelessWidget {
           '/artworkEditPage': (BuildContext context) => const ArtworkEditPage(),
           '/artistsListAdminPage': (BuildContext context) => const ArtistsListAdminPage(),
           '/artistEditPage': (BuildContext context) => const ArtistEditPage(),
+          '/artworksWithAllStylePage': (BuildContext context) => const ArtworksWithAllStylesPage(),
+          '/artworksByStylePage': (BuildContext context) => const ArtworksByStylePage(),
 
         },
       ),

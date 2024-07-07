@@ -35,7 +35,9 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../actions/user_s_actions/get_all_styles/get_all_styles.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
+import '../actions/user_s_actions/get_by_style/get_by_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -47,6 +49,7 @@ import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_by_style/artwork_by_style.dart';
 import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../models/artwork_for_top/artwork_for_top.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
@@ -102,6 +105,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetArtworksWithStyleStart>(_getArtworksWithStyleStart).call,
       TypedEpic<AppState, GetTopArtistsStart>(_getTopArtistsStart).call,
       TypedEpic<AppState, GetTopArtworksStart>(_getTopArtworksStart).call,
+      TypedEpic<AppState, GetAllStylesStart>(_getAllStylesStart).call,
+      TypedEpic<AppState, GetByStyleStart>(_getByStyleStart).call,
     ])(actions, store);
   }
 
@@ -546,7 +551,7 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((GetArtworksWithStyleStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) {
-            return appApi.getUniqueStylesFromArtworks();
+            return appApi.getTopUniqueStylesFromArtworks();
           })
           .map((List<ArtworkForArtMovements> artworksForArtMovements) =>
               GetArtworksWithStyle.successful(artworksForArtMovements: artworksForArtMovements))
@@ -575,6 +580,30 @@ class AppEpics extends EpicClass<AppState> {
           })
           .map((List<ArtworkForTop> artworksForTop) => GetTopArtworks.successful(artworksForTop: artworksForTop))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetTopArtworks.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getAllStylesStart(Stream<GetAllStylesStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetAllStylesStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+        return appApi.getUniqueStylesFromArtworks();
+      })
+          .map((List<ArtworkForArtMovements> artworksWithAllStyles) =>
+          GetAllStyles.successful(artworksWithAllStyles: artworksWithAllStyles))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAllStyles.error(error, stackTrace));
+    });
+  }
+  Stream<AppAction> _getByStyleStart(Stream<GetByStyleStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetByStyleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+        return appApi.getArtworksByStyle(style: action.style);
+      })
+          .map((List<ArtworkByStyle> artworksByStyle) => GetByStyle.successful(artworksByStyle))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetByStyle.error(error, stackTrace));
     });
   }
 }

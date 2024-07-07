@@ -536,3 +536,121 @@ abstract class SetRouteArtistIndex$ implements SetRouteArtistIndex {
   _$$SetRouteArtistIndex$ImplCopyWith<_$SetRouteArtistIndex$Impl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SetSelectedStyle {
+  String get style => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetSelectedStyleCopyWith<SetSelectedStyle> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSelectedStyleCopyWith<$Res> {
+  factory $SetSelectedStyleCopyWith(
+          SetSelectedStyle value, $Res Function(SetSelectedStyle) then) =
+      _$SetSelectedStyleCopyWithImpl<$Res, SetSelectedStyle>;
+  @useResult
+  $Res call({String style});
+}
+
+/// @nodoc
+class _$SetSelectedStyleCopyWithImpl<$Res, $Val extends SetSelectedStyle>
+    implements $SetSelectedStyleCopyWith<$Res> {
+  _$SetSelectedStyleCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? style = null,
+  }) {
+    return _then(_value.copyWith(
+      style: null == style
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetSelectedStyle$ImplCopyWith<$Res>
+    implements $SetSelectedStyleCopyWith<$Res> {
+  factory _$$SetSelectedStyle$ImplCopyWith(_$SetSelectedStyle$Impl value,
+          $Res Function(_$SetSelectedStyle$Impl) then) =
+      __$$SetSelectedStyle$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String style});
+}
+
+/// @nodoc
+class __$$SetSelectedStyle$ImplCopyWithImpl<$Res>
+    extends _$SetSelectedStyleCopyWithImpl<$Res, _$SetSelectedStyle$Impl>
+    implements _$$SetSelectedStyle$ImplCopyWith<$Res> {
+  __$$SetSelectedStyle$ImplCopyWithImpl(_$SetSelectedStyle$Impl _value,
+      $Res Function(_$SetSelectedStyle$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? style = null,
+  }) {
+    return _then(_$SetSelectedStyle$Impl(
+      null == style
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetSelectedStyle$Impl implements SetSelectedStyle$ {
+  const _$SetSelectedStyle$Impl(this.style);
+
+  @override
+  final String style;
+
+  @override
+  String toString() {
+    return 'SetSelectedStyle(style: $style)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSelectedStyle$Impl &&
+            (identical(other.style, style) || other.style == style));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, style);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith =>
+      __$$SetSelectedStyle$ImplCopyWithImpl<_$SetSelectedStyle$Impl>(
+          this, _$identity);
+}
+
+abstract class SetSelectedStyle$ implements SetSelectedStyle {
+  const factory SetSelectedStyle$(final String style) = _$SetSelectedStyle$Impl;
+
+  @override
+  String get style;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

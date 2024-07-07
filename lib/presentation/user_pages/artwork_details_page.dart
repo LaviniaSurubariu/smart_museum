@@ -123,6 +123,8 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                               Navigator.pushReplacementNamed(context, '/favouritesPage');
                             case 2:
                               Navigator.pushReplacementNamed(context, '/artworksPage');
+                            case 3:
+                              Navigator.pushReplacementNamed(context, '/artworksByStylePage');
                             default:
                               context.dispatch(const GetTopArtworks());
                               context.dispatch(const GetTopArtists());

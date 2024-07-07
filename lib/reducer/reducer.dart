@@ -32,7 +32,9 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../actions/user_s_actions/get_all_styles/get_all_styles.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
+import '../actions/user_s_actions/get_by_style/get_by_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -42,6 +44,7 @@ import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_by_style/artwork_by_style.dart';
 import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../models/artwork_for_top/artwork_for_top.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
@@ -95,6 +98,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetArtworksWithStyleSuccessful>(_getArtworksWithStyleSuccessful).call,
     TypedReducer<AppState, GetTopArtistsSuccessful>(_getTopArtistsSuccessful).call,
     TypedReducer<AppState, GetTopArtworksSuccessful>(_getTopArtworksSuccessful).call,
+    TypedReducer<AppState, GetAllStylesSuccessful>(_getAllStylesSuccessful).call,
+    TypedReducer<AppState, GetByStyleSuccessful>(_getByStyleSuccessful).call,
+    TypedReducer<AppState, SetSelectedStyle>(_setSelectedStyle).call,
   ])(state, action);
 }
 
@@ -350,4 +356,20 @@ AppState _getTopArtworksSuccessful(AppState state, GetTopArtworksSuccessful acti
   return state.copyWith(
     topArtworks: <ArtworkForTop>[...action.artworksForTop],
   );
+}
+
+AppState _getAllStylesSuccessful(AppState state, GetAllStylesSuccessful action) {
+  return state.copyWith(
+    artworksWithAllStyles: <ArtworkForArtMovements>[...action.artworksWithAllStyles],
+  );
+}
+
+AppState _getByStyleSuccessful(AppState state, GetByStyleSuccessful action) {
+  return state.copyWith(
+    artworksByStyle: <ArtworkByStyle>[...action.artworksByStyle],
+  );
+}
+
+AppState _setSelectedStyle(AppState state, SetSelectedStyle action) {
+  return state.copyWith(selectedStyle: action.style);
 }

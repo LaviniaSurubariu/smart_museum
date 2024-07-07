@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../artist/artist.dart';
 import '../artwork/artwork.dart';
+import '../artwork_by_style/artwork_by_style.dart';
 import '../artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../artwork_for_top/artwork_for_top.dart';
 import '../artwork_without_qrCode/artwork_without_qr_code.dart';
@@ -31,6 +32,9 @@ class AppState with _$AppState {
     List<ArtworkForArtMovements>? artworksForArtMovements,
     List<Artist>? topArtists,
     List<ArtworkForTop>? topArtworks,
+    List<ArtworkForArtMovements>? artworksWithAllStyles,
+    List<ArtworkByStyle>? artworksByStyle,
+    String? selectedStyle,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
