@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 
 import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
-import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
@@ -85,7 +84,6 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   ],
                 ),
                 onTap: () {
-                  context.dispatch(const GetTopArtworks());
                   context.dispatch(const GetArtworks());
                   context.dispatch(const SetRouteArtworkIndex(2));
                   Navigator.pushReplacementNamed(context, '/artworksPage');
