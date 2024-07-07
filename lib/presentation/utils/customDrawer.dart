@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../actions/get_comments/get_comments.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../../actions/user_s_actions/get_favourites/get_favourites.dart';
+import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import 'extensions.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -39,6 +40,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
+                context.dispatch(const GetTopArtists());
                 context.dispatch(const GetArtworksWithStyle());
                 Navigator.pushReplacementNamed(context, '/homeScreenPage');
               },

@@ -4,6 +4,7 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../actions/app_action.dart';
 
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
+import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../actions/user_s_actions/login&create/login.dart';
 import 'utils/customAlertDialogOneButton.dart';
 import 'utils/customTextFormFieldWithOnChange.dart';
@@ -26,6 +27,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
       if (action.user.role == 'admin') {
         Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
       } else if (action.user.role == 'user') {
+        context.dispatch(const GetTopArtists());
         context.dispatch(const GetArtworksWithStyle());
         Navigator.pushReplacementNamed(context, '/homeScreenPage');
       }

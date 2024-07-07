@@ -47,6 +47,9 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ?.map(
               (e) => ArtworkForArtMovements.fromJson(e as Map<String, dynamic>))
           .toList(),
+      topArtists: (json['topArtists'] as List<dynamic>?)
+          ?.map((e) => Artist.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -65,4 +68,5 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'artists': instance.artists,
       'comments': instance.comments,
       'artworksForArtMovements': instance.artworksForArtMovements,
+      'topArtists': instance.topArtists,
     };

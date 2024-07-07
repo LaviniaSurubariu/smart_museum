@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
+import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../containers/artists_container.dart';
@@ -28,6 +29,7 @@ class _ArtistsPageState extends State<ArtistsPage> {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
+                context.dispatch(const GetTopArtists());
                 context.dispatch(const GetArtworksWithStyle());
                 Navigator.pushReplacementNamed(context, '/homeScreenPage');
               },

@@ -32,6 +32,7 @@ import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.da
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
+import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
@@ -90,6 +91,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtistDeathDateSuccessful>(_updateArtistDeathDateSuccessful).call,
     TypedReducer<AppState, UpdateArtistDescriptionSuccessful>(_updateArtistDescriptionSuccessful).call,
     TypedReducer<AppState, GetArtworksWithStyleSuccessful>(_getArtworksWithStyleSuccessful).call,
+    TypedReducer<AppState, GetTopArtistsSuccessful>(_getTopArtistsSuccessful).call,
   ])(state, action);
 }
 
@@ -136,7 +138,9 @@ AppState _fetchScannedArtwork(AppState state, FetchScannedArtworkSuccessful acti
     scannedArtwork: action.scannedArtwork,
     selectedArtwork: action.scannedArtwork,
   );
-}AppState _fetchScannedArtworkStart(AppState state, FetchScannedArtworkStart action) {
+}
+
+AppState _fetchScannedArtworkStart(AppState state, FetchScannedArtworkStart action) {
   return state.copyWith(
     selectedArtwork: null,
   );
@@ -330,5 +334,11 @@ AppState _updateArtistDescriptionSuccessful(AppState state, UpdateArtistDescript
 AppState _getArtworksWithStyleSuccessful(AppState state, GetArtworksWithStyleSuccessful action) {
   return state.copyWith(
     artworksForArtMovements: <ArtworkForArtMovements>[...action.artworksForArtMovements],
+  );
+}
+
+AppState _getTopArtistsSuccessful(AppState state, GetTopArtistsSuccessful action) {
+  return state.copyWith(
+    topArtists: <Artist>[...action.artists],
   );
 }

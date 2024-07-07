@@ -35,6 +35,7 @@ import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.da
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
+import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
@@ -97,6 +98,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtistDeathDateStart>(_updateArtistDeathDateStart).call,
       TypedEpic<AppState, UpdateArtistDescriptionStart>(_updateArtistDescriptionStart).call,
       TypedEpic<AppState, GetArtworksWithStyleStart>(_getArtworksWithStyleStart).call,
+      TypedEpic<AppState, GetTopArtistsStart>(_getTopArtistsStart).call,
     ])(actions, store);
   }
 
@@ -535,15 +537,29 @@ class AppEpics extends EpicClass<AppState> {
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistDescription.error(error, stackTrace));
     });
   }
+
   Stream<AppAction> _getArtworksWithStyleStart(Stream<GetArtworksWithStyleStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((GetArtworksWithStyleStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) {
-        return appApi.getUniqueStylesFromArtworks();
-      })
-          .map((List<ArtworkForArtMovements> artworksForArtMovements) => GetArtworksWithStyle.successful(artworksForArtMovements: artworksForArtMovements))
+            return appApi.getUniqueStylesFromArtworks();
+          })
+          .map((List<ArtworkForArtMovements> artworksForArtMovements) =>
+              GetArtworksWithStyle.successful(artworksForArtMovements: artworksForArtMovements))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetArtworksWithStyle.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getTopArtistsStart(Stream<GetTopArtistsStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetTopArtistsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getTopArtists();
+          })
+          .map((List<Artist> artists) => GetTopArtists.successful(artists: artists))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetTopArtists.error(error, stackTrace));
     });
   }
 }

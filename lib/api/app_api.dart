@@ -565,4 +565,17 @@ class AppApi {
 
     return uniqueStylesMap.values.toList();
   }
+
+  Future<List<Artist>> getTopArtists() async {
+    final CollectionReference<Map<String, dynamic>> artistsCollection =
+        FirebaseFirestore.instance.collection('artists');
+
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await artistsCollection.limit(5).get();
+
+    final List<Artist> artistsList = snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      return Artist.fromJson(doc.data());
+    }).toList();
+
+    return artistsList;
+  }
 }

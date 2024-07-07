@@ -7,6 +7,7 @@ import '../../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../../actions/user_s_actions/get_favourites/get_favourites.dart';
+import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../actions/user_s_actions/remove_favourite/remove_favourite.dart';
 import '../../models/artwork/artwork.dart';
 import '../../models/user/app_user/app_user.dart';
@@ -122,6 +123,7 @@ class _ArtWorkDetailsPage extends State<ArtWorkDetailsPage> {
                             case 2:
                               Navigator.pushReplacementNamed(context, '/artworksPage');
                             default:
+                              context.dispatch(const GetTopArtists());
                               context.dispatch(const GetArtworksWithStyle());
                               Navigator.pushReplacementNamed(context, '/homeScreenPage');
                           }

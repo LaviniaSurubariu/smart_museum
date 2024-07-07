@@ -7,10 +7,13 @@ import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../../models/app_state/app_state.dart';
+import '../../models/artist/artist.dart';
 import '../../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../containers/artworks_for_art_movements_container.dart';
+import '../containers/top_artists_container.dart';
 import '../utils/customButtomNavigationBar.dart';
 import '../utils/customDrawer.dart';
 import '../utils/extensions.dart';
@@ -148,55 +151,50 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               const SizedBox(
                 height: 16,
               ),
-              SizedBox(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2Frembrandt.jpg?alt=media&token=91341e79-7177-40aa-bc1c-6f23da31da13',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Rembrandt'),
-                      ],
+              TopArtistsContainer(
+                builder: (BuildContext context, List<Artist>? artists) {
+                  if (artists == null || artists.isEmpty) {
+                    return const Center(child: Text('No artists found.'));
+                  }
+                  return SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: artists.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final Artist artist = artists[index];
+                        return Row(
+                          children: <Widget>[
+                            const SizedBox(
+                              width: 16,
+                            ),
+                            GestureDetector(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 100,
+                                    child: Image.network(
+                                      artist.pictureUrl,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ),
+                                  Text('${artist.firstName} ${artist.lastName}'),
+                                ],
+                              ),
+                              onTap: ()async {
+                                final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
+                                await store.dispatch(const SetRouteArtistIndex(5));
+                                Navigator.pushReplacementNamed(context, '/artistDetailsPage');
+                              },
+                            ),
+
+                          ],
+                        );
+                      },
                     ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2FClaude%20Monet.webp?alt=media&token=e35b88d7-f40c-477f-a596-33a2d33d8137',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Claude Monet'),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2FVincent%20van%20Gogh.webp?alt=media&token=8c01e5e7-5bbd-47de-8c79-7eaaa5debf3d',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Vincent van Gogh'),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
               const Divider(
                 height: 64,
@@ -237,10 +235,10 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                       itemCount: artworksForArtMovements.length,
                       itemBuilder: (BuildContext context, int index) {
                         final ArtworkForArtMovements artwork = artworksForArtMovements[index];
-                        return Column(
+                        return Row(
                           children: <Widget>[
                             const SizedBox(
-                              width: 100,
+                              width: 16,
                             ),
                             GestureDetector(
                               child: Column(
@@ -255,7 +253,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                   Text(artwork.style),
                                 ],
                               ),
-                              onTap: () async{
+                              onTap: () async {
                                 final Store<AppState> store = StoreProvider.of<AppState>(context);
                                 await store.dispatch(
                                     IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));

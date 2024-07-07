@@ -28,6 +28,7 @@ class AppState with _$AppState {
     List<Artist>? artists,
     List<Comment>? comments,
     List<ArtworkForArtMovements>? artworksForArtMovements,
+    List<Artist>? topArtists,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
