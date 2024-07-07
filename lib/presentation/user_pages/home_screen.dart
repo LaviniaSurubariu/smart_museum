@@ -165,9 +165,6 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                         final Artist artist = artists[index];
                         return Row(
                           children: <Widget>[
-                            const SizedBox(
-                              width: 16,
-                            ),
                             GestureDetector(
                               child: Column(
                                 children: <Widget>[
@@ -181,14 +178,16 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                   Text('${artist.firstName} ${artist.lastName}'),
                                 ],
                               ),
-                              onTap: ()async {
+                              onTap: () async {
                                 final Store<AppState> store = StoreProvider.of<AppState>(context);
                                 await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
                                 await store.dispatch(const SetRouteArtistIndex(5));
                                 Navigator.pushReplacementNamed(context, '/artistDetailsPage');
                               },
                             ),
-
+                            const SizedBox(
+                              width: 16,
+                            ),
                           ],
                         );
                       },
@@ -237,9 +236,6 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                         final ArtworkForArtMovements artwork = artworksForArtMovements[index];
                         return Row(
                           children: <Widget>[
-                            const SizedBox(
-                              width: 16,
-                            ),
                             GestureDetector(
                               child: Column(
                                 children: <Widget>[
@@ -262,6 +258,9 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                 await store.dispatch(const SetRouteArtworkIndex(3));
                                 Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                               },
+                            ),
+                            const SizedBox(
+                              width: 16,
                             ),
                           ],
                         );
