@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import '../models/artist/artist.dart';
 import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -536,5 +537,32 @@ class AppApi {
     final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
     await artistRef.doc(artistId).update(<Object, Object?>{'description': newDescription});
     return newDescription;
+  }
+
+  Future<List<ArtworkForArtMovements>> getUniqueStylesFromArtworks() async {
+    final CollectionReference<Map<String, dynamic>> artworksCollection =
+        FirebaseFirestore.instance.collection('artworks');
+
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await artworksCollection.get();
+
+    final Map<String, ArtworkForArtMovements> uniqueStylesMap = {};
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
+      final Map<String, dynamic> data = doc.data();
+      final ArtworkForArtMovements artwork = ArtworkForArtMovements(
+        uid: doc.id,
+        pictureUrl: data['pictureUrl'] as String,
+        style: data['style'] as String,
+      );
+
+      if (!uniqueStylesMap.containsKey(artwork.style)) {
+        uniqueStylesMap[artwork.style] = artwork;
+        if (uniqueStylesMap.length == 5) {
+          break;
+        }
+      }
+    }
+
+    return uniqueStylesMap.values.toList();
   }
 }

@@ -1,8 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 
 import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../actions/set/set.dart';
+import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
+import '../../models/app_state/app_state.dart';
+import '../../models/artwork_for_art_movements/artwork_for_art_movements.dart';
+import '../containers/artworks_for_art_movements_container.dart';
 import '../utils/customButtomNavigationBar.dart';
 import '../utils/customDrawer.dart';
 import '../utils/extensions.dart';
@@ -217,55 +225,52 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               const SizedBox(
                 height: 16,
               ),
-              SizedBox(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artsMovements%2FImpressionism.jpg?alt=media&token=1b8d7043-006c-49e5-b597-ddabac9c1551',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Impressionism'),
-                      ],
+              ArtworksForArtMovementContainer(
+                builder: (BuildContext context, List<ArtworkForArtMovements>? artworksForArtMovements) {
+                  if (artworksForArtMovements == null || artworksForArtMovements.isEmpty) {
+                    return const Center(child: Text('No artworks found.'));
+                  }
+                  return SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: artworksForArtMovements.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final ArtworkForArtMovements artwork = artworksForArtMovements[index];
+                        return Column(
+                          children: <Widget>[
+                            const SizedBox(
+                              width: 100,
+                            ),
+                            GestureDetector(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 100,
+                                    child: Image.network(
+                                      artwork.pictureUrl,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ),
+                                  Text(artwork.style),
+                                ],
+                              ),
+                              onTap: () async{
+                                final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                await store.dispatch(
+                                    IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
+                                await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+
+                                await store.dispatch(const SetRouteArtworkIndex(3));
+                                Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+                              },
+                            ),
+                          ],
+                        );
+                      },
                     ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artsMovements%2FRenaissance.jpeg?alt=media&token=2b74261e-7f10-4b41-acd3-4d548a46ebd3',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Renaissance'),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artsMovements%2FRomanticism.webp?alt=media&token=21aa73c3-ef45-46b7-883e-5339645b4c08',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Romanticism'),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
             ],
           ),

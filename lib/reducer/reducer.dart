@@ -30,6 +30,7 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -39,6 +40,7 @@ import '../actions/user_s_actions/signout/sign_out.dart';
 import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -87,6 +89,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtistBirthdateSuccessful>(_updateArtistBirthdateSuccessful).call,
     TypedReducer<AppState, UpdateArtistDeathDateSuccessful>(_updateArtistDeathDateSuccessful).call,
     TypedReducer<AppState, UpdateArtistDescriptionSuccessful>(_updateArtistDescriptionSuccessful).call,
+    TypedReducer<AppState, GetArtworksWithStyleSuccessful>(_getArtworksWithStyleSuccessful).call,
   ])(state, action);
 }
 
@@ -321,5 +324,11 @@ AppState _updateArtistDescriptionSuccessful(AppState state, UpdateArtistDescript
     selectedArtist: state.selectedArtist?.copyWith(
       description: action.newDescription,
     ),
+  );
+}
+
+AppState _getArtworksWithStyleSuccessful(AppState state, GetArtworksWithStyleSuccessful action) {
+  return state.copyWith(
+    artworksForArtMovements: <ArtworkForArtMovements>[...action.artworksForArtMovements],
   );
 }

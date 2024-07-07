@@ -33,6 +33,7 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
@@ -44,6 +45,7 @@ import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
+import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -94,6 +96,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtistBirthdateStart>(_updateArtistBirthdateStart).call,
       TypedEpic<AppState, UpdateArtistDeathDateStart>(_updateArtistDeathDateStart).call,
       TypedEpic<AppState, UpdateArtistDescriptionStart>(_updateArtistDescriptionStart).call,
+      TypedEpic<AppState, GetArtworksWithStyleStart>(_getArtworksWithStyleStart).call,
     ])(actions, store);
   }
 
@@ -530,6 +533,17 @@ class AppEpics extends EpicClass<AppState> {
               (_) => appApi.updateArtistDescription(newDescription: action.newDescription, artistId: action.artistId))
           .map((String newDescription) => UpdateArtistDescription.successful(newDescription))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateArtistDescription.error(error, stackTrace));
+    });
+  }
+  Stream<AppAction> _getArtworksWithStyleStart(Stream<GetArtworksWithStyleStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetArtworksWithStyleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+        return appApi.getUniqueStylesFromArtworks();
+      })
+          .map((List<ArtworkForArtMovements> artworksForArtMovements) => GetArtworksWithStyle.successful(artworksForArtMovements: artworksForArtMovements))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetArtworksWithStyle.error(error, stackTrace));
     });
   }
 }

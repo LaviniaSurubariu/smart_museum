@@ -4,10 +4,12 @@ import 'package:redux/redux.dart';
 
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../containers/artists_container.dart';
 import '../utils/ListArtworkWidget.dart';
+import '../utils/extensions.dart';
 
 class ArtistsPage extends StatefulWidget {
   const ArtistsPage({super.key});
@@ -26,6 +28,7 @@ class _ArtistsPageState extends State<ArtistsPage> {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
+                context.dispatch(const GetArtworksWithStyle());
                 Navigator.pushReplacementNamed(context, '/homeScreenPage');
               },
             ),
@@ -50,7 +53,7 @@ class _ArtistsPageState extends State<ArtistsPage> {
                         ),
                         ListArtworkWidget(
                           title: '${artist.firstName} ${artist.lastName}',
-                          onPress: () async{
+                          onPress: () async {
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
                             await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
                             await store.dispatch(const SetRouteArtistIndex(4));
