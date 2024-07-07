@@ -654,3 +654,251 @@ abstract class SetSelectedStyle$ implements SetSelectedStyle {
   _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SetRouteAdminArtworkIndex {
+  int get routeAdminArtworkIndex => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetRouteAdminArtworkIndexCopyWith<SetRouteAdminArtworkIndex> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetRouteAdminArtworkIndexCopyWith<$Res> {
+  factory $SetRouteAdminArtworkIndexCopyWith(SetRouteAdminArtworkIndex value,
+          $Res Function(SetRouteAdminArtworkIndex) then) =
+      _$SetRouteAdminArtworkIndexCopyWithImpl<$Res, SetRouteAdminArtworkIndex>;
+  @useResult
+  $Res call({int routeAdminArtworkIndex});
+}
+
+/// @nodoc
+class _$SetRouteAdminArtworkIndexCopyWithImpl<$Res,
+        $Val extends SetRouteAdminArtworkIndex>
+    implements $SetRouteAdminArtworkIndexCopyWith<$Res> {
+  _$SetRouteAdminArtworkIndexCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? routeAdminArtworkIndex = null,
+  }) {
+    return _then(_value.copyWith(
+      routeAdminArtworkIndex: null == routeAdminArtworkIndex
+          ? _value.routeAdminArtworkIndex
+          : routeAdminArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res>
+    implements $SetRouteAdminArtworkIndexCopyWith<$Res> {
+  factory _$$SetRouteAdminArtworkIndex$ImplCopyWith(
+          _$SetRouteAdminArtworkIndex$Impl value,
+          $Res Function(_$SetRouteAdminArtworkIndex$Impl) then) =
+      __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int routeAdminArtworkIndex});
+}
+
+/// @nodoc
+class __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<$Res>
+    extends _$SetRouteAdminArtworkIndexCopyWithImpl<$Res,
+        _$SetRouteAdminArtworkIndex$Impl>
+    implements _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res> {
+  __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl(
+      _$SetRouteAdminArtworkIndex$Impl _value,
+      $Res Function(_$SetRouteAdminArtworkIndex$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? routeAdminArtworkIndex = null,
+  }) {
+    return _then(_$SetRouteAdminArtworkIndex$Impl(
+      null == routeAdminArtworkIndex
+          ? _value.routeAdminArtworkIndex
+          : routeAdminArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetRouteAdminArtworkIndex$Impl implements SetRouteAdminArtworkIndex$ {
+  const _$SetRouteAdminArtworkIndex$Impl(this.routeAdminArtworkIndex);
+
+  @override
+  final int routeAdminArtworkIndex;
+
+  @override
+  String toString() {
+    return 'SetRouteAdminArtworkIndex(routeAdminArtworkIndex: $routeAdminArtworkIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetRouteAdminArtworkIndex$Impl &&
+            (identical(other.routeAdminArtworkIndex, routeAdminArtworkIndex) ||
+                other.routeAdminArtworkIndex == routeAdminArtworkIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, routeAdminArtworkIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl>
+      get copyWith => __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<
+          _$SetRouteAdminArtworkIndex$Impl>(this, _$identity);
+}
+
+abstract class SetRouteAdminArtworkIndex$ implements SetRouteAdminArtworkIndex {
+  const factory SetRouteAdminArtworkIndex$(final int routeAdminArtworkIndex) =
+      _$SetRouteAdminArtworkIndex$Impl;
+
+  @override
+  int get routeAdminArtworkIndex;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$SetRouteAdminArtistIndex {
+  int get routeAdminArtistIndex => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetRouteAdminArtistIndexCopyWith<SetRouteAdminArtistIndex> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetRouteAdminArtistIndexCopyWith<$Res> {
+  factory $SetRouteAdminArtistIndexCopyWith(SetRouteAdminArtistIndex value,
+          $Res Function(SetRouteAdminArtistIndex) then) =
+      _$SetRouteAdminArtistIndexCopyWithImpl<$Res, SetRouteAdminArtistIndex>;
+  @useResult
+  $Res call({int routeAdminArtistIndex});
+}
+
+/// @nodoc
+class _$SetRouteAdminArtistIndexCopyWithImpl<$Res,
+        $Val extends SetRouteAdminArtistIndex>
+    implements $SetRouteAdminArtistIndexCopyWith<$Res> {
+  _$SetRouteAdminArtistIndexCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? routeAdminArtistIndex = null,
+  }) {
+    return _then(_value.copyWith(
+      routeAdminArtistIndex: null == routeAdminArtistIndex
+          ? _value.routeAdminArtistIndex
+          : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res>
+    implements $SetRouteAdminArtistIndexCopyWith<$Res> {
+  factory _$$SetRouteAdminArtistIndex$ImplCopyWith(
+          _$SetRouteAdminArtistIndex$Impl value,
+          $Res Function(_$SetRouteAdminArtistIndex$Impl) then) =
+      __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int routeAdminArtistIndex});
+}
+
+/// @nodoc
+class __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<$Res>
+    extends _$SetRouteAdminArtistIndexCopyWithImpl<$Res,
+        _$SetRouteAdminArtistIndex$Impl>
+    implements _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res> {
+  __$$SetRouteAdminArtistIndex$ImplCopyWithImpl(
+      _$SetRouteAdminArtistIndex$Impl _value,
+      $Res Function(_$SetRouteAdminArtistIndex$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? routeAdminArtistIndex = null,
+  }) {
+    return _then(_$SetRouteAdminArtistIndex$Impl(
+      null == routeAdminArtistIndex
+          ? _value.routeAdminArtistIndex
+          : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetRouteAdminArtistIndex$Impl implements SetRouteAdminArtistIndex$ {
+  const _$SetRouteAdminArtistIndex$Impl(this.routeAdminArtistIndex);
+
+  @override
+  final int routeAdminArtistIndex;
+
+  @override
+  String toString() {
+    return 'SetRouteAdminArtistIndex(routeAdminArtistIndex: $routeAdminArtistIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetRouteAdminArtistIndex$Impl &&
+            (identical(other.routeAdminArtistIndex, routeAdminArtistIndex) ||
+                other.routeAdminArtistIndex == routeAdminArtistIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, routeAdminArtistIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl>
+      get copyWith => __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<
+          _$SetRouteAdminArtistIndex$Impl>(this, _$identity);
+}
+
+abstract class SetRouteAdminArtistIndex$ implements SetRouteAdminArtistIndex {
+  const factory SetRouteAdminArtistIndex$(final int routeAdminArtistIndex) =
+      _$SetRouteAdminArtistIndex$Impl;
+
+  @override
+  int get routeAdminArtistIndex;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl>
+      get copyWith => throw _privateConstructorUsedError;
+}

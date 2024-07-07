@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 
 import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
+import '../../actions/set/set.dart';
+import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
+import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
+import '../../models/app_state/app_state.dart';
+import '../../models/artist/artist.dart';
+import '../../models/artwork_for_top/artwork_for_top.dart';
+import '../containers/top_artists_container.dart';
+import '../containers/top_artworks_container.dart';
 import '../utils/customAdminDrawer.dart';
 import '../utils/customButtomNavigationBarAdmin.dart';
 import '../utils/extensions.dart';
@@ -78,115 +88,120 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
               const SizedBox(
                 height: 16,
               ),
-              SizedBox(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/users%2FNAyQyoh9bDh2JTTJOCKW702Io8L2%2Fprofile.png?alt=media&token=c97ae17b-b938-4f33-98f9-23715af4afb6',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('The birth of Venus'),
-                      ],
+              TopArtworksContainer(
+                builder: (BuildContext context, List<ArtworkForTop>? artworks) {
+                  if (artworks == null || artworks.isEmpty) {
+                    return const Center(child: Text('No artworks found.'));
+                  }
+                  return SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: artworks.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final ArtworkForTop artwork = artworks[index];
+                        return Row(
+                          children: <Widget>[
+                            GestureDetector(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 100,
+                                    child: Image.network(
+                                      artwork.pictureUrl,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ),
+                                  Text(artwork.title),
+                                ],
+                              ),
+                              onTap: () async {
+                                final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+                                await store.dispatch(const SetRouteAdminArtworkIndex(1));
+                                Navigator.pushReplacementNamed(context, '/artworkEditPage');
+                              },
+                            ),
+                            const SizedBox(
+                              width: 16,
+                            ),
+                          ],
+                        );
+                      },
                     ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/users%2FmlYl3oG8ctP5uZsVRNG469O6qJV2%2Fprofile.png?alt=media&token=e3212f1b-d073-4d6e-8023-7ef27c3f0f25',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Girl with a Pearl Earring'),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
               const Divider(
                 height: 64,
               ),
               GestureDetector(
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'EDIT ARTISTS',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'EDIT ARTISTS',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                    ),
-                  ],
-                ),
-                onTap: () {
-                  context.dispatch(const GetArtists());
-                  Navigator.pushReplacementNamed(context, '/artistsListAdminPage');
-                }
-              ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 16,
+                      ),
+                    ],
+                  ),
+                  onTap: () {
+                    context.dispatch(const GetArtists());
+                    Navigator.pushReplacementNamed(context, '/artistsListAdminPage');
+                  }),
               const SizedBox(
                 height: 16,
               ),
-              SizedBox(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2Frembrandt.jpg?alt=media&token=91341e79-7177-40aa-bc1c-6f23da31da13',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Rembrandt'),
-                      ],
+              TopArtistsContainer(
+                builder: (BuildContext context, List<Artist>? artists) {
+                  if (artists == null || artists.isEmpty) {
+                    return const Center(child: Text('No artists found.'));
+                  }
+                  return SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: artists.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final Artist artist = artists[index];
+                        return Row(
+                          children: <Widget>[
+                            GestureDetector(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 100,
+                                    child: Image.network(
+                                      artist.pictureUrl,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ),
+                                  Text('${artist.firstName} ${artist.lastName}'),
+                                ],
+                              ),
+                              onTap: () async {
+                                final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
+                                await store.dispatch(const SetRouteAdminArtistIndex(1));
+                                Navigator.pushReplacementNamed(context, '/artistEditPage');
+                              },
+                            ),
+                            const SizedBox(
+                              width: 16,
+                            ),
+                          ],
+                        );
+                      },
                     ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2FClaude%20Monet.webp?alt=media&token=e35b88d7-f40c-477f-a596-33a2d33d8137',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Claude Monet'),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/artists%2FVincent%20van%20Gogh.webp?alt=media&token=8c01e5e7-5bbd-47de-8c79-7eaaa5debf3d',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Vincent van Gogh'),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
             ],
           ),

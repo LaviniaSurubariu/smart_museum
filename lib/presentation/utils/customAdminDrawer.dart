@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
 import '../../actions/get_comments/get_comments.dart';
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import 'extensions.dart';
 
 class CustomAdminDrawer extends StatelessWidget {
@@ -37,6 +39,8 @@ class CustomAdminDrawer extends StatelessWidget {
                 'HOME',
               ),
               onTap: () {
+                context.dispatch(const GetTopArtworks());
+                context.dispatch(const GetTopArtists());
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
               },

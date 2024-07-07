@@ -38,6 +38,8 @@ class _ForumPageState extends State<ForumPage> {
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {
               if (context.store.state.user!.role == 'admin') {
+                context.dispatch(const GetTopArtworks());
+                context.dispatch(const GetTopArtists());
                 Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
               } else if (context.store.state.user!.role == 'user') {
                 context.dispatch(const GetTopArtworks());

@@ -6,6 +6,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../../actions/admin_actions/add_artwork/add_artwork.dart';
 import '../../actions/app_action.dart';
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../utils/customAlertDialogOneButton.dart';
 import '../utils/customAlertDialogTwoButtons.dart';
@@ -81,6 +83,8 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                     secondButtonText: 'yes',
                     secondButtonColor: Colors.grey,
                     onSecondButtonPressed: () {
+                      context.dispatch(const GetTopArtworks());
+                      context.dispatch(const GetTopArtists());
                       Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
                     },
                   );
@@ -454,6 +458,8 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
             iconData: LineAwesomeIcons.check_circle,
             iconColor: Colors.green,
             onButtonPressed: () {
+              context.dispatch(const GetTopArtworks());
+              context.dispatch(const GetTopArtists());
               Navigator.pop(context);
               Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
             },

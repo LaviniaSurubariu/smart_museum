@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../containers/artworks_without_qr_code_container.dart';
@@ -16,6 +18,8 @@ class ArtworksWithoutQRCodePage extends StatelessWidget {
         title: const Text('Artworks without QR Code'),
         leading: IconButton(
             onPressed: () {
+              context.dispatch(const GetTopArtworks());
+              context.dispatch(const GetTopArtists());
               Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
             },
             icon: const Icon(LineAwesomeIcons.angle_left)),

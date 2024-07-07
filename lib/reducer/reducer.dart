@@ -101,6 +101,8 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetAllStylesSuccessful>(_getAllStylesSuccessful).call,
     TypedReducer<AppState, GetByStyleSuccessful>(_getByStyleSuccessful).call,
     TypedReducer<AppState, SetSelectedStyle>(_setSelectedStyle).call,
+    TypedReducer<AppState, SetRouteAdminArtworkIndex>(_setRouteAdminArtworkIndex).call,
+    TypedReducer<AppState, SetRouteAdminArtistIndex>(_setRouteAdminArtistIndex).call,
   ])(state, action);
 }
 
@@ -372,4 +374,12 @@ AppState _getByStyleSuccessful(AppState state, GetByStyleSuccessful action) {
 
 AppState _setSelectedStyle(AppState state, SetSelectedStyle action) {
   return state.copyWith(selectedStyle: action.style);
+}
+
+AppState _setRouteAdminArtworkIndex(AppState state, SetRouteAdminArtworkIndex action) {
+  return state.copyWith(routeAdminArtworkIndex: action.routeAdminArtworkIndex);
+}
+
+AppState _setRouteAdminArtistIndex(AppState state, SetRouteAdminArtistIndex action) {
+  return state.copyWith(routeAdminArtistIndex: action.routeAdminArtistIndex);
 }

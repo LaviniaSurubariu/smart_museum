@@ -11,6 +11,8 @@ import '../../actions/admin_actions/update_artist_image/update_artist_image.dart
 import '../../actions/admin_actions/update_artist_last_name/update_artist_last_name.dart';
 import '../../actions/get_artists/get_artists.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../models/artist/artist.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
@@ -89,7 +91,16 @@ class _ArtistEditPageState extends State<ArtistEditPage> {
                   icon: const Icon(Icons.arrow_back_ios_new),
                   onPressed: () {
                     context.dispatch(const GetArtists());
-                    Navigator.pushReplacementNamed(context, '/artistsListAdminPage');
+                    switch (context.store.state.routeAdminArtistIndex) {
+                      case 0:
+                        Navigator.pushReplacementNamed(context, '/artistsListAdminPage');
+                      case 1:
+                        context.dispatch(const GetTopArtworks());
+                        context.dispatch(const GetTopArtists());
+                        Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
+                      default:
+                        Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
+                    }
                   },
                 ),
                 title: const Text(

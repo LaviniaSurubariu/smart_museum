@@ -16,6 +16,8 @@ import '../../actions/admin_actions/update_artwork_style/update_artwork_style.da
 import '../../actions/admin_actions/update_artwork_title/update_artwork_title.dart';
 import '../../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../../actions/get_artworks/get_artworks.dart';
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
 import '../../models/artwork/artwork.dart';
 import '../../models/user/app_user/app_user.dart';
@@ -152,7 +154,7 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
       future: _fetchArtworkFuture,
-      builder: (BuildContext context,   AsyncSnapshot<void> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
@@ -190,8 +192,17 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                         icon: const Icon(Icons.arrow_back_ios_new),
                         onPressed: () {
                           _audioPlayer.stop();
-                          context.dispatch(const GetArtworks());
-                          Navigator.pushReplacementNamed(context, '/artworksListAdminPage');
+                          switch (context.store.state.routeAdminArtworkIndex) {
+                            case 0:
+                              context.dispatch(const GetArtworks());
+                              Navigator.pushReplacementNamed(context, '/artworksListAdminPage');
+                            case 1:
+                              context.dispatch(const GetTopArtworks());
+                              context.dispatch(const GetTopArtists());
+                              Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
+                            default:
+                              Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
+                          }
                         },
                       ),
                       title: Text(

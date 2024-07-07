@@ -35,6 +35,8 @@ class AppState with _$AppState {
     List<ArtworkForArtMovements>? artworksWithAllStyles,
     List<ArtworkByStyle>? artworksByStyle,
     String? selectedStyle,
+    int? routeAdminArtworkIndex,
+    int? routeAdminArtistIndex,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

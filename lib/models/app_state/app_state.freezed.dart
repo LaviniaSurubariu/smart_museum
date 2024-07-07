@@ -44,6 +44,8 @@ mixin _$AppState {
   List<ArtworkByStyle>? get artworksByStyle =>
       throw _privateConstructorUsedError;
   String? get selectedStyle => throw _privateConstructorUsedError;
+  int? get routeAdminArtworkIndex => throw _privateConstructorUsedError;
+  int? get routeAdminArtistIndex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -75,7 +77,9 @@ abstract class $AppStateCopyWith<$Res> {
       List<ArtworkForTop>? topArtworks,
       List<ArtworkForArtMovements>? artworksWithAllStyles,
       List<ArtworkByStyle>? artworksByStyle,
-      String? selectedStyle});
+      String? selectedStyle,
+      int? routeAdminArtworkIndex,
+      int? routeAdminArtistIndex});
 
   $AppUserCopyWith<$Res>? get user;
   $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
@@ -116,6 +120,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? artworksWithAllStyles = freezed,
     Object? artworksByStyle = freezed,
     Object? selectedStyle = freezed,
+    Object? routeAdminArtworkIndex = freezed,
+    Object? routeAdminArtistIndex = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -194,6 +200,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.selectedStyle
           : selectedStyle // ignore: cast_nullable_to_non_nullable
               as String?,
+      routeAdminArtworkIndex: freezed == routeAdminArtworkIndex
+          ? _value.routeAdminArtworkIndex
+          : routeAdminArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      routeAdminArtistIndex: freezed == routeAdminArtistIndex
+          ? _value.routeAdminArtistIndex
+          : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -287,7 +301,9 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       List<ArtworkForTop>? topArtworks,
       List<ArtworkForArtMovements>? artworksWithAllStyles,
       List<ArtworkByStyle>? artworksByStyle,
-      String? selectedStyle});
+      String? selectedStyle,
+      int? routeAdminArtworkIndex,
+      int? routeAdminArtistIndex});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -331,6 +347,8 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? artworksWithAllStyles = freezed,
     Object? artworksByStyle = freezed,
     Object? selectedStyle = freezed,
+    Object? routeAdminArtworkIndex = freezed,
+    Object? routeAdminArtistIndex = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -409,6 +427,14 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.selectedStyle
           : selectedStyle // ignore: cast_nullable_to_non_nullable
               as String?,
+      routeAdminArtworkIndex: freezed == routeAdminArtworkIndex
+          ? _value.routeAdminArtworkIndex
+          : routeAdminArtworkIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      routeAdminArtistIndex: freezed == routeAdminArtistIndex
+          ? _value.routeAdminArtistIndex
+          : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -435,7 +461,9 @@ class _$AppState$Impl implements AppState$ {
       final List<ArtworkForTop>? topArtworks,
       final List<ArtworkForArtMovements>? artworksWithAllStyles,
       final List<ArtworkByStyle>? artworksByStyle,
-      this.selectedStyle})
+      this.selectedStyle,
+      this.routeAdminArtworkIndex,
+      this.routeAdminArtistIndex})
       : _artworksWithoutQrCode = artworksWithoutQrCode,
         _favourites = favourites,
         _artworks = artworks,
@@ -571,10 +599,14 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   final String? selectedStyle;
+  @override
+  final int? routeAdminArtworkIndex;
+  @override
+  final int? routeAdminArtistIndex;
 
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle, routeAdminArtworkIndex: $routeAdminArtworkIndex, routeAdminArtistIndex: $routeAdminArtistIndex)';
   }
 
   @override
@@ -617,7 +649,11 @@ class _$AppState$Impl implements AppState$ {
             const DeepCollectionEquality()
                 .equals(other._artworksByStyle, _artworksByStyle) &&
             (identical(other.selectedStyle, selectedStyle) ||
-                other.selectedStyle == selectedStyle));
+                other.selectedStyle == selectedStyle) &&
+            (identical(other.routeAdminArtworkIndex, routeAdminArtworkIndex) ||
+                other.routeAdminArtworkIndex == routeAdminArtworkIndex) &&
+            (identical(other.routeAdminArtistIndex, routeAdminArtistIndex) ||
+                other.routeAdminArtistIndex == routeAdminArtistIndex));
   }
 
   @JsonKey(ignore: true)
@@ -642,7 +678,9 @@ class _$AppState$Impl implements AppState$ {
         const DeepCollectionEquality().hash(_topArtworks),
         const DeepCollectionEquality().hash(_artworksWithAllStyles),
         const DeepCollectionEquality().hash(_artworksByStyle),
-        selectedStyle
+        selectedStyle,
+        routeAdminArtworkIndex,
+        routeAdminArtistIndex
       ]);
 
   @JsonKey(ignore: true)
@@ -679,7 +717,9 @@ abstract class AppState$ implements AppState {
       final List<ArtworkForTop>? topArtworks,
       final List<ArtworkForArtMovements>? artworksWithAllStyles,
       final List<ArtworkByStyle>? artworksByStyle,
-      final String? selectedStyle}) = _$AppState$Impl;
+      final String? selectedStyle,
+      final int? routeAdminArtworkIndex,
+      final int? routeAdminArtistIndex}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -722,6 +762,10 @@ abstract class AppState$ implements AppState {
   List<ArtworkByStyle>? get artworksByStyle;
   @override
   String? get selectedStyle;
+  @override
+  int? get routeAdminArtworkIndex;
+  @override
+  int? get routeAdminArtistIndex;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

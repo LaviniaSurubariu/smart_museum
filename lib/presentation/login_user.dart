@@ -26,6 +26,8 @@ class _LoginUserPageState extends State<LoginUserPage> {
   void _onResult(AppAction action) {
     if (action is LoginSuccessful) {
       if (action.user.role == 'admin') {
+        context.dispatch(const GetTopArtworks());
+        context.dispatch(const GetTopArtists());
         Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
       } else if (action.user.role == 'user') {
         context.dispatch(const GetTopArtworks());

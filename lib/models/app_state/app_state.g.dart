@@ -61,6 +61,8 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => ArtworkByStyle.fromJson(e as Map<String, dynamic>))
           .toList(),
       selectedStyle: json['selectedStyle'] as String?,
+      routeAdminArtworkIndex: (json['routeAdminArtworkIndex'] as num?)?.toInt(),
+      routeAdminArtistIndex: (json['routeAdminArtistIndex'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -84,4 +86,6 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'artworksWithAllStyles': instance.artworksWithAllStyles,
       'artworksByStyle': instance.artworksByStyle,
       'selectedStyle': instance.selectedStyle,
+      'routeAdminArtworkIndex': instance.routeAdminArtworkIndex,
+      'routeAdminArtistIndex': instance.routeAdminArtistIndex,
     };

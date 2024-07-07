@@ -31,3 +31,13 @@ class SetRouteArtistIndex with _$SetRouteArtistIndex implements AppAction {
 class SetSelectedStyle with _$SetSelectedStyle implements AppAction {
   const factory SetSelectedStyle(String style) = SetSelectedStyle$;
 }
+
+@freezed
+class SetRouteAdminArtworkIndex with _$SetRouteAdminArtworkIndex implements AppAction {
+  const factory SetRouteAdminArtworkIndex(int routeAdminArtworkIndex) = SetRouteAdminArtworkIndex$;
+}
+
+@freezed
+class SetRouteAdminArtistIndex with _$SetRouteAdminArtistIndex implements AppAction {
+  const factory SetRouteAdminArtistIndex(int routeAdminArtistIndex) = SetRouteAdminArtistIndex$;
+}

@@ -95,7 +95,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               TopArtworksContainer(
                 builder: (BuildContext context, List<ArtworkForTop>? artworks) {
                   if (artworks == null || artworks.isEmpty) {
-                    return const Center(child: Text('No artists found.'));
+                    return const Center(child: Text('No artworks found.'));
                   }
                   return SizedBox(
                     height: 120,
