@@ -686,4 +686,29 @@ class AppApi {
         .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => ArtworkByStyle.fromJson(doc.data()))
         .toList();
   }
+
+  Future<int> getNumberOfRegisteredUsers() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('users').get();
+    return query.docs.length;
+  }
+
+  Future<int> getNumberOfAddedArtworks() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('artworks').get();
+    return query.docs.length;
+  }
+
+  Future<int> getNumberOfAddedArtists() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('artists').get();
+    return query.docs.length;
+  }
+
+  Future<int> getNumberOfFavouritesArtworks() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('favourites').get();
+    return query.docs.length;
+  }
+
+  Future<int> getNumberOfMessages() async {
+    final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('comments').get();
+    return query.docs.length;
+  }
 }

@@ -41,6 +41,11 @@ mixin _$AppState {
   String? get selectedStyle => throw _privateConstructorUsedError;
   int? get routeAdminArtworkIndex => throw _privateConstructorUsedError;
   int? get routeAdminArtistIndex => throw _privateConstructorUsedError;
+  int? get numberOfRegisteredUsers => throw _privateConstructorUsedError;
+  int? get numberOfAddedArtworks => throw _privateConstructorUsedError;
+  int? get numberOfAddedArtists => throw _privateConstructorUsedError;
+  int? get numberOfFavouritesArtworks => throw _privateConstructorUsedError;
+  int? get numberOfMessages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,7 +77,12 @@ abstract class $AppStateCopyWith<$Res> {
       List<ArtworkByStyle>? artworksByStyle,
       String? selectedStyle,
       int? routeAdminArtworkIndex,
-      int? routeAdminArtistIndex});
+      int? routeAdminArtistIndex,
+      int? numberOfRegisteredUsers,
+      int? numberOfAddedArtworks,
+      int? numberOfAddedArtists,
+      int? numberOfFavouritesArtworks,
+      int? numberOfMessages});
 
   $AppUserCopyWith<$Res>? get user;
   $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
@@ -114,6 +124,11 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? selectedStyle = freezed,
     Object? routeAdminArtworkIndex = freezed,
     Object? routeAdminArtistIndex = freezed,
+    Object? numberOfRegisteredUsers = freezed,
+    Object? numberOfAddedArtworks = freezed,
+    Object? numberOfAddedArtists = freezed,
+    Object? numberOfFavouritesArtworks = freezed,
+    Object? numberOfMessages = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -199,6 +214,26 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       routeAdminArtistIndex: freezed == routeAdminArtistIndex
           ? _value.routeAdminArtistIndex
           : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfRegisteredUsers: freezed == numberOfRegisteredUsers
+          ? _value.numberOfRegisteredUsers
+          : numberOfRegisteredUsers // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfAddedArtworks: freezed == numberOfAddedArtworks
+          ? _value.numberOfAddedArtworks
+          : numberOfAddedArtworks // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfAddedArtists: freezed == numberOfAddedArtists
+          ? _value.numberOfAddedArtists
+          : numberOfAddedArtists // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfFavouritesArtworks: freezed == numberOfFavouritesArtworks
+          ? _value.numberOfFavouritesArtworks
+          : numberOfFavouritesArtworks // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfMessages: freezed == numberOfMessages
+          ? _value.numberOfMessages
+          : numberOfMessages // ignore: cast_nullable_to_non_nullable
               as int?,
     ) as $Val);
   }
@@ -291,7 +326,12 @@ abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res>
       List<ArtworkByStyle>? artworksByStyle,
       String? selectedStyle,
       int? routeAdminArtworkIndex,
-      int? routeAdminArtistIndex});
+      int? routeAdminArtistIndex,
+      int? numberOfRegisteredUsers,
+      int? numberOfAddedArtworks,
+      int? numberOfAddedArtists,
+      int? numberOfFavouritesArtworks,
+      int? numberOfMessages});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -334,6 +374,11 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
     Object? selectedStyle = freezed,
     Object? routeAdminArtworkIndex = freezed,
     Object? routeAdminArtistIndex = freezed,
+    Object? numberOfRegisteredUsers = freezed,
+    Object? numberOfAddedArtworks = freezed,
+    Object? numberOfAddedArtists = freezed,
+    Object? numberOfFavouritesArtworks = freezed,
+    Object? numberOfMessages = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -420,6 +465,26 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
           ? _value.routeAdminArtistIndex
           : routeAdminArtistIndex // ignore: cast_nullable_to_non_nullable
               as int?,
+      numberOfRegisteredUsers: freezed == numberOfRegisteredUsers
+          ? _value.numberOfRegisteredUsers
+          : numberOfRegisteredUsers // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfAddedArtworks: freezed == numberOfAddedArtworks
+          ? _value.numberOfAddedArtworks
+          : numberOfAddedArtworks // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfAddedArtists: freezed == numberOfAddedArtists
+          ? _value.numberOfAddedArtists
+          : numberOfAddedArtists // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfFavouritesArtworks: freezed == numberOfFavouritesArtworks
+          ? _value.numberOfFavouritesArtworks
+          : numberOfFavouritesArtworks // ignore: cast_nullable_to_non_nullable
+              as int?,
+      numberOfMessages: freezed == numberOfMessages
+          ? _value.numberOfMessages
+          : numberOfMessages // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -448,7 +513,12 @@ class _$AppState$Impl implements AppState$ {
       final List<ArtworkByStyle>? artworksByStyle,
       this.selectedStyle,
       this.routeAdminArtworkIndex,
-      this.routeAdminArtistIndex})
+      this.routeAdminArtistIndex,
+      this.numberOfRegisteredUsers,
+      this.numberOfAddedArtworks,
+      this.numberOfAddedArtists,
+      this.numberOfFavouritesArtworks,
+      this.numberOfMessages})
       : _artworksWithoutQrCode = artworksWithoutQrCode,
         _favourites = favourites,
         _artworks = artworks,
@@ -584,10 +654,20 @@ class _$AppState$Impl implements AppState$ {
   final int? routeAdminArtworkIndex;
   @override
   final int? routeAdminArtistIndex;
+  @override
+  final int? numberOfRegisteredUsers;
+  @override
+  final int? numberOfAddedArtworks;
+  @override
+  final int? numberOfAddedArtists;
+  @override
+  final int? numberOfFavouritesArtworks;
+  @override
+  final int? numberOfMessages;
 
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle, routeAdminArtworkIndex: $routeAdminArtworkIndex, routeAdminArtistIndex: $routeAdminArtistIndex)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle, routeAdminArtworkIndex: $routeAdminArtworkIndex, routeAdminArtistIndex: $routeAdminArtistIndex, numberOfRegisteredUsers: $numberOfRegisteredUsers, numberOfAddedArtworks: $numberOfAddedArtworks, numberOfAddedArtists: $numberOfAddedArtists, numberOfFavouritesArtworks: $numberOfFavouritesArtworks, numberOfMessages: $numberOfMessages)';
   }
 
   @override
@@ -618,7 +698,16 @@ class _$AppState$Impl implements AppState$ {
             (identical(other.routeAdminArtworkIndex, routeAdminArtworkIndex) ||
                 other.routeAdminArtworkIndex == routeAdminArtworkIndex) &&
             (identical(other.routeAdminArtistIndex, routeAdminArtistIndex) ||
-                other.routeAdminArtistIndex == routeAdminArtistIndex));
+                other.routeAdminArtistIndex == routeAdminArtistIndex) &&
+            (identical(other.numberOfRegisteredUsers, numberOfRegisteredUsers) ||
+                other.numberOfRegisteredUsers == numberOfRegisteredUsers) &&
+            (identical(other.numberOfAddedArtworks, numberOfAddedArtworks) ||
+                other.numberOfAddedArtworks == numberOfAddedArtworks) &&
+            (identical(other.numberOfAddedArtists, numberOfAddedArtists) ||
+                other.numberOfAddedArtists == numberOfAddedArtists) &&
+            (identical(other.numberOfFavouritesArtworks, numberOfFavouritesArtworks) ||
+                other.numberOfFavouritesArtworks == numberOfFavouritesArtworks) &&
+            (identical(other.numberOfMessages, numberOfMessages) || other.numberOfMessages == numberOfMessages));
   }
 
   @JsonKey(ignore: true)
@@ -645,7 +734,12 @@ class _$AppState$Impl implements AppState$ {
         const DeepCollectionEquality().hash(_artworksByStyle),
         selectedStyle,
         routeAdminArtworkIndex,
-        routeAdminArtistIndex
+        routeAdminArtistIndex,
+        numberOfRegisteredUsers,
+        numberOfAddedArtworks,
+        numberOfAddedArtists,
+        numberOfFavouritesArtworks,
+        numberOfMessages
       ]);
 
   @JsonKey(ignore: true)
@@ -684,7 +778,12 @@ abstract class AppState$ implements AppState {
       final List<ArtworkByStyle>? artworksByStyle,
       final String? selectedStyle,
       final int? routeAdminArtworkIndex,
-      final int? routeAdminArtistIndex}) = _$AppState$Impl;
+      final int? routeAdminArtistIndex,
+      final int? numberOfRegisteredUsers,
+      final int? numberOfAddedArtworks,
+      final int? numberOfAddedArtists,
+      final int? numberOfFavouritesArtworks,
+      final int? numberOfMessages}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
 
@@ -730,6 +829,16 @@ abstract class AppState$ implements AppState {
   int? get routeAdminArtworkIndex;
   @override
   int? get routeAdminArtistIndex;
+  @override
+  int? get numberOfRegisteredUsers;
+  @override
+  int? get numberOfAddedArtworks;
+  @override
+  int? get numberOfAddedArtists;
+  @override
+  int? get numberOfFavouritesArtworks;
+  @override
+  int? get numberOfMessages;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;

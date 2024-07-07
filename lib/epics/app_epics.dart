@@ -25,6 +25,11 @@ import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_number_of_added_artists/get_number_of_added_artists.dart';
+import '../actions/get_number_of_added_artworks/get_number_of_added_artworks.dart';
+import '../actions/get_number_of_favourites_artworks/get_number_of_favourites_artworks.dart';
+import '../actions/get_number_of_messages/get_number_of_messages.dart';
+import '../actions/get_number_of_registered_users/get_number_of_registered_users.dart';
 import '../actions/get_top_artists/get_top_artists.dart';
 import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
@@ -107,6 +112,11 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetTopArtworksStart>(_getTopArtworksStart).call,
       TypedEpic<AppState, GetAllStylesStart>(_getAllStylesStart).call,
       TypedEpic<AppState, GetByStyleStart>(_getByStyleStart).call,
+      TypedEpic<AppState, GetNumberOfRegisteredUsersStart>(_getNumberOfRegisteredUsers).call,
+      TypedEpic<AppState, GetNumberOfAddedArtworksStart>(_getNumberOfAddedArtworksStart).call,
+      TypedEpic<AppState, GetNumberOfAddedArtistsStart>(_getNumberOfAddedArtistsStart).call,
+      TypedEpic<AppState, GetNumberOfFavouritesArtworksStart>(_getNumberOfFavouritesArtworksStart).call,
+      TypedEpic<AppState, GetNumberOfMessagesStart>(_getNumberOfMessagesStart).call,
     ])(actions, store);
   }
 
@@ -605,6 +615,73 @@ class AppEpics extends EpicClass<AppState> {
           })
           .map((List<ArtworkByStyle> artworksByStyle) => GetByStyle.successful(artworksByStyle))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetByStyle.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getNumberOfRegisteredUsers(
+      Stream<GetNumberOfRegisteredUsersStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetNumberOfRegisteredUsersStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getNumberOfRegisteredUsers();
+          })
+          .map((int numberOfRegisteredUsers) => GetNumberOfRegisteredUsers.successful(numberOfRegisteredUsers))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => GetNumberOfRegisteredUsers.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getNumberOfAddedArtworksStart(
+      Stream<GetNumberOfAddedArtworksStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetNumberOfAddedArtworksStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getNumberOfAddedArtworks();
+          })
+          .map((int numberOfAddedArtworks) => GetNumberOfAddedArtworks.successful(numberOfAddedArtworks))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => GetNumberOfAddedArtworks.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getNumberOfAddedArtistsStart(
+      Stream<GetNumberOfAddedArtistsStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetNumberOfAddedArtistsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getNumberOfAddedArtists();
+          })
+          .map((int numberOfAddedArtists) => GetNumberOfAddedArtists.successful(numberOfAddedArtists))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetNumberOfAddedArtists.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getNumberOfFavouritesArtworksStart(
+      Stream<GetNumberOfFavouritesArtworksStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetNumberOfFavouritesArtworksStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getNumberOfFavouritesArtworks();
+          })
+          .map((int numberOfFavouritesArtworks) => GetNumberOfFavouritesArtworks.successful(numberOfFavouritesArtworks))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => GetNumberOfFavouritesArtworks.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getNumberOfMessagesStart(Stream<GetNumberOfMessagesStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetNumberOfMessagesStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getNumberOfMessages();
+          })
+          .map((int numberOfMessages) => GetNumberOfMessages.successful(numberOfMessages))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetNumberOfMessages.error(error, stackTrace));
     });
   }
 }

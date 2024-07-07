@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:smart_museum/presentation/admin_pages/admin_info_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -101,6 +102,7 @@ class MyApp extends StatelessWidget {
           '/artistEditPage': (BuildContext context) => const ArtistEditPage(),
           '/artworksWithAllStylePage': (BuildContext context) => const ArtworksWithAllStylesPage(),
           '/artworksByStylePage': (BuildContext context) => const ArtworksByStylePage(),
+          '/adminInfoPage': (BuildContext context) => const AdminInfoPage(),
         },
       ),
     );

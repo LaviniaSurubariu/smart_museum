@@ -22,6 +22,11 @@ import '../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_number_of_added_artists/get_number_of_added_artists.dart';
+import '../actions/get_number_of_added_artworks/get_number_of_added_artworks.dart';
+import '../actions/get_number_of_favourites_artworks/get_number_of_favourites_artworks.dart';
+import '../actions/get_number_of_messages/get_number_of_messages.dart';
+import '../actions/get_number_of_registered_users/get_number_of_registered_users.dart';
 import '../actions/get_top_artists/get_top_artists.dart';
 import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/set/set.dart';
@@ -103,6 +108,11 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, SetSelectedStyle>(_setSelectedStyle).call,
     TypedReducer<AppState, SetRouteAdminArtworkIndex>(_setRouteAdminArtworkIndex).call,
     TypedReducer<AppState, SetRouteAdminArtistIndex>(_setRouteAdminArtistIndex).call,
+    TypedReducer<AppState, GetNumberOfRegisteredUsersSuccessful>(_getNumberOfRegisteredUsersSuccessful).call,
+    TypedReducer<AppState, GetNumberOfAddedArtworksSuccessful>(_getNumberOfAddedArtworksSuccessful).call,
+    TypedReducer<AppState, GetNumberOfAddedArtistsSuccessful>(_getNumberOfAddedArtistsSuccessful).call,
+    TypedReducer<AppState, GetNumberOfFavouritesArtworksSuccessful>(_getNumberOfFavouritesArtworksSuccessful).call,
+    TypedReducer<AppState, GetNumberOfMessagesSuccessful>(_getNumberOfMessagesSuccessful).call,
   ])(state, action);
 }
 
@@ -382,4 +392,24 @@ AppState _setRouteAdminArtworkIndex(AppState state, SetRouteAdminArtworkIndex ac
 
 AppState _setRouteAdminArtistIndex(AppState state, SetRouteAdminArtistIndex action) {
   return state.copyWith(routeAdminArtistIndex: action.routeAdminArtistIndex);
+}
+
+AppState _getNumberOfRegisteredUsersSuccessful(AppState state, GetNumberOfRegisteredUsersSuccessful action) {
+  return state.copyWith(numberOfRegisteredUsers: action.numberOfRegisteredUsers);
+}
+
+AppState _getNumberOfAddedArtworksSuccessful(AppState state, GetNumberOfAddedArtworksSuccessful action) {
+  return state.copyWith(numberOfAddedArtworks: action.numberOfAddedArtworks);
+}
+
+AppState _getNumberOfAddedArtistsSuccessful(AppState state, GetNumberOfAddedArtistsSuccessful action) {
+  return state.copyWith(numberOfAddedArtists: action.numberOfAddedArtists);
+}
+
+AppState _getNumberOfFavouritesArtworksSuccessful(AppState state, GetNumberOfFavouritesArtworksSuccessful action) {
+  return state.copyWith(numberOfFavouritesArtworks: action.numberOfFavouritesArtworks);
+}
+
+AppState _getNumberOfMessagesSuccessful(AppState state, GetNumberOfMessagesSuccessful action) {
+  return state.copyWith(numberOfMessages: action.numberOfMessages);
 }

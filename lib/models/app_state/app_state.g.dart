@@ -45,6 +45,11 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) => _$AppStat
       selectedStyle: json['selectedStyle'] as String?,
       routeAdminArtworkIndex: (json['routeAdminArtworkIndex'] as num?)?.toInt(),
       routeAdminArtistIndex: (json['routeAdminArtistIndex'] as num?)?.toInt(),
+      numberOfRegisteredUsers: (json['numberOfRegisteredUsers'] as num?)?.toInt(),
+      numberOfAddedArtworks: (json['numberOfAddedArtworks'] as num?)?.toInt(),
+      numberOfAddedArtists: (json['numberOfAddedArtists'] as num?)?.toInt(),
+      numberOfFavouritesArtworks: (json['numberOfFavouritesArtworks'] as num?)?.toInt(),
+      numberOfMessages: (json['numberOfMessages'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) => <String, dynamic>{
@@ -69,4 +74,9 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) => <String
       'selectedStyle': instance.selectedStyle,
       'routeAdminArtworkIndex': instance.routeAdminArtworkIndex,
       'routeAdminArtistIndex': instance.routeAdminArtistIndex,
+      'numberOfRegisteredUsers': instance.numberOfRegisteredUsers,
+      'numberOfAddedArtworks': instance.numberOfAddedArtworks,
+      'numberOfAddedArtists': instance.numberOfAddedArtists,
+      'numberOfFavouritesArtworks': instance.numberOfFavouritesArtworks,
+      'numberOfMessages': instance.numberOfMessages,
     };
