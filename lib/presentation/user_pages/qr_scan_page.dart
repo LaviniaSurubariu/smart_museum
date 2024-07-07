@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -32,6 +31,7 @@ class _QrCodePageState extends State<QrCodePage> {
     cameraController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,9 +92,10 @@ class _QrCodePageState extends State<QrCodePage> {
                       ),
                       onTap: () {
                         context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
-                        context.dispatch(IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
+                        context.dispatch(IsArtworkFavourite(
+                            userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
                         context.dispatch(const SetRouteArtworkIndex(0));
-                        while(Navigator.canPop(context)) {
+                        while (Navigator.canPop(context)) {
                           Navigator.pop(context);
                         }
                         Navigator.pushReplacementNamed(context, '/artworkDetailsPage');

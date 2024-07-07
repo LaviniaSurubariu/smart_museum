@@ -64,14 +64,12 @@ mixin _$GetArtists {
 
 /// @nodoc
 abstract class $GetArtistsCopyWith<$Res> {
-  factory $GetArtistsCopyWith(
-          GetArtists value, $Res Function(GetArtists) then) =
+  factory $GetArtistsCopyWith(GetArtists value, $Res Function(GetArtists) then) =
       _$GetArtistsCopyWithImpl<$Res, GetArtists>;
 }
 
 /// @nodoc
-class _$GetArtistsCopyWithImpl<$Res, $Val extends GetArtists>
-    implements $GetArtistsCopyWith<$Res> {
+class _$GetArtistsCopyWithImpl<$Res, $Val extends GetArtists> implements $GetArtistsCopyWith<$Res> {
   _$GetArtistsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetArtistsCopyWithImpl<$Res, $Val extends GetArtists>
 
 /// @nodoc
 abstract class _$$GetArtistsStartImplCopyWith<$Res> {
-  factory _$$GetArtistsStartImplCopyWith(_$GetArtistsStartImpl value,
-          $Res Function(_$GetArtistsStartImpl) then) =
+  factory _$$GetArtistsStartImplCopyWith(_$GetArtistsStartImpl value, $Res Function(_$GetArtistsStartImpl) then) =
       __$$GetArtistsStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetArtistsStartImplCopyWithImpl<$Res>
-    extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsStartImpl>
+class __$$GetArtistsStartImplCopyWithImpl<$Res> extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsStartImpl>
     implements _$$GetArtistsStartImplCopyWith<$Res> {
-  __$$GetArtistsStartImplCopyWithImpl(
-      _$GetArtistsStartImpl _value, $Res Function(_$GetArtistsStartImpl) _then)
+  __$$GetArtistsStartImplCopyWithImpl(_$GetArtistsStartImpl _value, $Res Function(_$GetArtistsStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetArtistsStartImpl implements GetArtistsStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetArtistsStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetArtistsStartImpl);
   }
 
   @override
@@ -190,19 +184,18 @@ abstract class GetArtistsStart implements GetArtists {
 
 /// @nodoc
 abstract class _$$GetArtistsSuccessfulImplCopyWith<$Res> {
-  factory _$$GetArtistsSuccessfulImplCopyWith(_$GetArtistsSuccessfulImpl value,
-          $Res Function(_$GetArtistsSuccessfulImpl) then) =
+  factory _$$GetArtistsSuccessfulImplCopyWith(
+          _$GetArtistsSuccessfulImpl value, $Res Function(_$GetArtistsSuccessfulImpl) then) =
       __$$GetArtistsSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Artist> artists});
 }
 
 /// @nodoc
-class __$$GetArtistsSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsSuccessfulImpl>
+class __$$GetArtistsSuccessfulImplCopyWithImpl<$Res> extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsSuccessfulImpl>
     implements _$$GetArtistsSuccessfulImplCopyWith<$Res> {
-  __$$GetArtistsSuccessfulImplCopyWithImpl(_$GetArtistsSuccessfulImpl _value,
-      $Res Function(_$GetArtistsSuccessfulImpl) _then)
+  __$$GetArtistsSuccessfulImplCopyWithImpl(
+      _$GetArtistsSuccessfulImpl _value, $Res Function(_$GetArtistsSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -222,8 +215,7 @@ class __$$GetArtistsSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetArtistsSuccessfulImpl implements GetArtistsSuccessful {
-  const _$GetArtistsSuccessfulImpl({required final List<Artist> artists})
-      : _artists = artists;
+  const _$GetArtistsSuccessfulImpl({required final List<Artist> artists}) : _artists = artists;
 
   final List<Artist> _artists;
   @override
@@ -247,16 +239,13 @@ class _$GetArtistsSuccessfulImpl implements GetArtistsSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_artists));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artists));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetArtistsSuccessfulImplCopyWith<_$GetArtistsSuccessfulImpl>
-      get copyWith =>
-          __$$GetArtistsSuccessfulImplCopyWithImpl<_$GetArtistsSuccessfulImpl>(
-              this, _$identity);
+  _$$GetArtistsSuccessfulImplCopyWith<_$GetArtistsSuccessfulImpl> get copyWith =>
+      __$$GetArtistsSuccessfulImplCopyWithImpl<_$GetArtistsSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -328,30 +317,25 @@ class _$GetArtistsSuccessfulImpl implements GetArtistsSuccessful {
 }
 
 abstract class GetArtistsSuccessful implements GetArtists {
-  const factory GetArtistsSuccessful({required final List<Artist> artists}) =
-      _$GetArtistsSuccessfulImpl;
+  const factory GetArtistsSuccessful({required final List<Artist> artists}) = _$GetArtistsSuccessfulImpl;
 
   List<Artist> get artists;
   @JsonKey(ignore: true)
-  _$$GetArtistsSuccessfulImplCopyWith<_$GetArtistsSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetArtistsSuccessfulImplCopyWith<_$GetArtistsSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetArtistsErrorImplCopyWith<$Res> {
-  factory _$$GetArtistsErrorImplCopyWith(_$GetArtistsErrorImpl value,
-          $Res Function(_$GetArtistsErrorImpl) then) =
+  factory _$$GetArtistsErrorImplCopyWith(_$GetArtistsErrorImpl value, $Res Function(_$GetArtistsErrorImpl) then) =
       __$$GetArtistsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetArtistsErrorImplCopyWithImpl<$Res>
-    extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsErrorImpl>
+class __$$GetArtistsErrorImplCopyWithImpl<$Res> extends _$GetArtistsCopyWithImpl<$Res, _$GetArtistsErrorImpl>
     implements _$$GetArtistsErrorImplCopyWith<$Res> {
-  __$$GetArtistsErrorImplCopyWithImpl(
-      _$GetArtistsErrorImpl _value, $Res Function(_$GetArtistsErrorImpl) _then)
+  __$$GetArtistsErrorImplCopyWithImpl(_$GetArtistsErrorImpl _value, $Res Function(_$GetArtistsErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -391,20 +375,17 @@ class _$GetArtistsErrorImpl implements GetArtistsError {
         (other.runtimeType == runtimeType &&
             other is _$GetArtistsErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetArtistsErrorImplCopyWith<_$GetArtistsErrorImpl> get copyWith =>
-      __$$GetArtistsErrorImplCopyWithImpl<_$GetArtistsErrorImpl>(
-          this, _$identity);
+      __$$GetArtistsErrorImplCopyWithImpl<_$GetArtistsErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -476,12 +457,10 @@ class _$GetArtistsErrorImpl implements GetArtistsError {
 }
 
 abstract class GetArtistsError implements GetArtists, ErrorAction {
-  const factory GetArtistsError(
-      final Object error, final StackTrace stackTrace) = _$GetArtistsErrorImpl;
+  const factory GetArtistsError(final Object error, final StackTrace stackTrace) = _$GetArtistsErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetArtistsErrorImplCopyWith<_$GetArtistsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetArtistsErrorImplCopyWith<_$GetArtistsErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -186,8 +186,10 @@ class _AddArtistPageState extends State<AddArtistPage> {
                               firstName: firstNameController.text,
                               lastName: lastNameController.text,
                               picturePath: imagePathController.text,
-                              birthdate: birthdateController.text.isNotEmpty ? DateTime.parse(birthdateController.text) : null,
-                              deathDate: deathDateController.text.isNotEmpty ? DateTime.parse(deathDateController.text) : null,
+                              birthdate:
+                                  birthdateController.text.isNotEmpty ? DateTime.parse(birthdateController.text) : null,
+                              deathDate:
+                                  deathDateController.text.isNotEmpty ? DateTime.parse(deathDateController.text) : null,
                               description: descriptionController.text,
                               result: _onAddArtistResult,
                             ));
@@ -234,6 +236,7 @@ class _AddArtistPageState extends State<AddArtistPage> {
       deathDateController.text = formattedDate;
     }
   }
+
   void _onAddArtistResult(AppAction action) {
     if (action is AddArtistSuccessful) {
       showDialog<CustomAlertDialogTwoButtons>(

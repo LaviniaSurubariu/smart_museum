@@ -64,14 +64,12 @@ mixin _$GetTopArtworks {
 
 /// @nodoc
 abstract class $GetTopArtworksCopyWith<$Res> {
-  factory $GetTopArtworksCopyWith(
-          GetTopArtworks value, $Res Function(GetTopArtworks) then) =
+  factory $GetTopArtworksCopyWith(GetTopArtworks value, $Res Function(GetTopArtworks) then) =
       _$GetTopArtworksCopyWithImpl<$Res, GetTopArtworks>;
 }
 
 /// @nodoc
-class _$GetTopArtworksCopyWithImpl<$Res, $Val extends GetTopArtworks>
-    implements $GetTopArtworksCopyWith<$Res> {
+class _$GetTopArtworksCopyWithImpl<$Res, $Val extends GetTopArtworks> implements $GetTopArtworksCopyWith<$Res> {
   _$GetTopArtworksCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$GetTopArtworksCopyWithImpl<$Res, $Val extends GetTopArtworks>
 
 /// @nodoc
 abstract class _$$GetTopArtworksStartImplCopyWith<$Res> {
-  factory _$$GetTopArtworksStartImplCopyWith(_$GetTopArtworksStartImpl value,
-          $Res Function(_$GetTopArtworksStartImpl) then) =
+  factory _$$GetTopArtworksStartImplCopyWith(
+          _$GetTopArtworksStartImpl value, $Res Function(_$GetTopArtworksStartImpl) then) =
       __$$GetTopArtworksStartImplCopyWithImpl<$Res>;
 }
 
@@ -91,8 +89,8 @@ abstract class _$$GetTopArtworksStartImplCopyWith<$Res> {
 class __$$GetTopArtworksStartImplCopyWithImpl<$Res>
     extends _$GetTopArtworksCopyWithImpl<$Res, _$GetTopArtworksStartImpl>
     implements _$$GetTopArtworksStartImplCopyWith<$Res> {
-  __$$GetTopArtworksStartImplCopyWithImpl(_$GetTopArtworksStartImpl _value,
-      $Res Function(_$GetTopArtworksStartImpl) _then)
+  __$$GetTopArtworksStartImplCopyWithImpl(
+      _$GetTopArtworksStartImpl _value, $Res Function(_$GetTopArtworksStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,9 +106,7 @@ class _$GetTopArtworksStartImpl implements GetTopArtworksStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetTopArtworksStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetTopArtworksStartImpl);
   }
 
   @override
@@ -192,8 +188,7 @@ abstract class GetTopArtworksStart implements GetTopArtworks {
 /// @nodoc
 abstract class _$$GetTopArtworksSuccessfulImplCopyWith<$Res> {
   factory _$$GetTopArtworksSuccessfulImplCopyWith(
-          _$GetTopArtworksSuccessfulImpl value,
-          $Res Function(_$GetTopArtworksSuccessfulImpl) then) =
+          _$GetTopArtworksSuccessfulImpl value, $Res Function(_$GetTopArtworksSuccessfulImpl) then) =
       __$$GetTopArtworksSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ArtworkForTop> artworksForTop});
@@ -204,8 +199,7 @@ class __$$GetTopArtworksSuccessfulImplCopyWithImpl<$Res>
     extends _$GetTopArtworksCopyWithImpl<$Res, _$GetTopArtworksSuccessfulImpl>
     implements _$$GetTopArtworksSuccessfulImplCopyWith<$Res> {
   __$$GetTopArtworksSuccessfulImplCopyWithImpl(
-      _$GetTopArtworksSuccessfulImpl _value,
-      $Res Function(_$GetTopArtworksSuccessfulImpl) _then)
+      _$GetTopArtworksSuccessfulImpl _value, $Res Function(_$GetTopArtworksSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -225,8 +219,7 @@ class __$$GetTopArtworksSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetTopArtworksSuccessfulImpl implements GetTopArtworksSuccessful {
-  const _$GetTopArtworksSuccessfulImpl(
-      {required final List<ArtworkForTop> artworksForTop})
+  const _$GetTopArtworksSuccessfulImpl({required final List<ArtworkForTop> artworksForTop})
       : _artworksForTop = artworksForTop;
 
   final List<ArtworkForTop> _artworksForTop;
@@ -247,20 +240,17 @@ class _$GetTopArtworksSuccessfulImpl implements GetTopArtworksSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetTopArtworksSuccessfulImpl &&
-            const DeepCollectionEquality()
-                .equals(other._artworksForTop, _artworksForTop));
+            const DeepCollectionEquality().equals(other._artworksForTop, _artworksForTop));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_artworksForTop));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworksForTop));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetTopArtworksSuccessfulImplCopyWith<_$GetTopArtworksSuccessfulImpl>
-      get copyWith => __$$GetTopArtworksSuccessfulImplCopyWithImpl<
-          _$GetTopArtworksSuccessfulImpl>(this, _$identity);
+  _$$GetTopArtworksSuccessfulImplCopyWith<_$GetTopArtworksSuccessfulImpl> get copyWith =>
+      __$$GetTopArtworksSuccessfulImplCopyWithImpl<_$GetTopArtworksSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -332,20 +322,19 @@ class _$GetTopArtworksSuccessfulImpl implements GetTopArtworksSuccessful {
 }
 
 abstract class GetTopArtworksSuccessful implements GetTopArtworks {
-  const factory GetTopArtworksSuccessful(
-          {required final List<ArtworkForTop> artworksForTop}) =
+  const factory GetTopArtworksSuccessful({required final List<ArtworkForTop> artworksForTop}) =
       _$GetTopArtworksSuccessfulImpl;
 
   List<ArtworkForTop> get artworksForTop;
   @JsonKey(ignore: true)
-  _$$GetTopArtworksSuccessfulImplCopyWith<_$GetTopArtworksSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetTopArtworksSuccessfulImplCopyWith<_$GetTopArtworksSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetTopArtworksErrorImplCopyWith<$Res> {
-  factory _$$GetTopArtworksErrorImplCopyWith(_$GetTopArtworksErrorImpl value,
-          $Res Function(_$GetTopArtworksErrorImpl) then) =
+  factory _$$GetTopArtworksErrorImplCopyWith(
+          _$GetTopArtworksErrorImpl value, $Res Function(_$GetTopArtworksErrorImpl) then) =
       __$$GetTopArtworksErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -355,8 +344,8 @@ abstract class _$$GetTopArtworksErrorImplCopyWith<$Res> {
 class __$$GetTopArtworksErrorImplCopyWithImpl<$Res>
     extends _$GetTopArtworksCopyWithImpl<$Res, _$GetTopArtworksErrorImpl>
     implements _$$GetTopArtworksErrorImplCopyWith<$Res> {
-  __$$GetTopArtworksErrorImplCopyWithImpl(_$GetTopArtworksErrorImpl _value,
-      $Res Function(_$GetTopArtworksErrorImpl) _then)
+  __$$GetTopArtworksErrorImplCopyWithImpl(
+      _$GetTopArtworksErrorImpl _value, $Res Function(_$GetTopArtworksErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -396,20 +385,17 @@ class _$GetTopArtworksErrorImpl implements GetTopArtworksError {
         (other.runtimeType == runtimeType &&
             other is _$GetTopArtworksErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTopArtworksErrorImplCopyWith<_$GetTopArtworksErrorImpl> get copyWith =>
-      __$$GetTopArtworksErrorImplCopyWithImpl<_$GetTopArtworksErrorImpl>(
-          this, _$identity);
+      __$$GetTopArtworksErrorImplCopyWithImpl<_$GetTopArtworksErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -481,13 +467,10 @@ class _$GetTopArtworksErrorImpl implements GetTopArtworksError {
 }
 
 abstract class GetTopArtworksError implements GetTopArtworks, ErrorAction {
-  const factory GetTopArtworksError(
-          final Object error, final StackTrace stackTrace) =
-      _$GetTopArtworksErrorImpl;
+  const factory GetTopArtworksError(final Object error, final StackTrace stackTrace) = _$GetTopArtworksErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetTopArtworksErrorImplCopyWith<_$GetTopArtworksErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetTopArtworksErrorImplCopyWith<_$GetTopArtworksErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

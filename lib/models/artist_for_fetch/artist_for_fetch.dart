@@ -1,5 +1,4 @@
 class ArtistForFetch {
-
   ArtistForFetch({
     required this.uid,
     required this.firstName,

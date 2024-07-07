@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key,
+  const CustomTextFormField({
+    super.key,
     required this.controller,
     required this.labelText,
     required this.icon,
@@ -17,7 +18,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      obscureText: labelText == 'Password' || labelText=='Confirm Password' ? true : false,
+      obscureText: labelText == 'Password' || labelText == 'Confirm Password' ? true : false,
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(icon),

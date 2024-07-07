@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-
-
 class ProfileMenuWidget extends StatelessWidget {
   const ProfileMenuWidget({
     super.key,
@@ -21,7 +19,6 @@ class ProfileMenuWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     const Color iconColor = Colors.black12;
 
     return ListTile(
@@ -36,14 +33,16 @@ class ProfileMenuWidget extends StatelessWidget {
         child: Icon(icon, color: Colors.black),
       ),
       title: Text(title, style: TextStyle(color: textColor ?? Colors.black)),
-      trailing: endIcon? Container(
-          width: 30,
-          height: 30,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            color: Colors.grey.withOpacity(0.1),
-          ),
-          child: const Icon(LineAwesomeIcons.angle_right, size: 18.0, color: Colors.grey)) : null,
+      trailing: endIcon
+          ? Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                color: Colors.grey.withOpacity(0.1),
+              ),
+              child: const Icon(LineAwesomeIcons.angle_right, size: 18.0, color: Colors.grey))
+          : null,
     );
   }
 }

@@ -588,20 +588,21 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((GetAllStylesStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) {
-        return appApi.getUniqueStylesFromArtworks();
-      })
+            return appApi.getUniqueStylesFromArtworks();
+          })
           .map((List<ArtworkForArtMovements> artworksWithAllStyles) =>
-          GetAllStyles.successful(artworksWithAllStyles: artworksWithAllStyles))
+              GetAllStyles.successful(artworksWithAllStyles: artworksWithAllStyles))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAllStyles.error(error, stackTrace));
     });
   }
+
   Stream<AppAction> _getByStyleStart(Stream<GetByStyleStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((GetByStyleStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) {
-        return appApi.getArtworksByStyle(style: action.style);
-      })
+            return appApi.getArtworksByStyle(style: action.style);
+          })
           .map((List<ArtworkByStyle> artworksByStyle) => GetByStyle.successful(artworksByStyle))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetByStyle.error(error, stackTrace));
     });

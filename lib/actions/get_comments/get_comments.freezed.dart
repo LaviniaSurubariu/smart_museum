@@ -64,14 +64,12 @@ mixin _$GetComments {
 
 /// @nodoc
 abstract class $GetCommentsCopyWith<$Res> {
-  factory $GetCommentsCopyWith(
-          GetComments value, $Res Function(GetComments) then) =
+  factory $GetCommentsCopyWith(GetComments value, $Res Function(GetComments) then) =
       _$GetCommentsCopyWithImpl<$Res, GetComments>;
 }
 
 /// @nodoc
-class _$GetCommentsCopyWithImpl<$Res, $Val extends GetComments>
-    implements $GetCommentsCopyWith<$Res> {
+class _$GetCommentsCopyWithImpl<$Res, $Val extends GetComments> implements $GetCommentsCopyWith<$Res> {
   _$GetCommentsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetCommentsCopyWithImpl<$Res, $Val extends GetComments>
 
 /// @nodoc
 abstract class _$$GetCommentsStartImplCopyWith<$Res> {
-  factory _$$GetCommentsStartImplCopyWith(_$GetCommentsStartImpl value,
-          $Res Function(_$GetCommentsStartImpl) then) =
+  factory _$$GetCommentsStartImplCopyWith(_$GetCommentsStartImpl value, $Res Function(_$GetCommentsStartImpl) then) =
       __$$GetCommentsStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetCommentsStartImplCopyWithImpl<$Res>
-    extends _$GetCommentsCopyWithImpl<$Res, _$GetCommentsStartImpl>
+class __$$GetCommentsStartImplCopyWithImpl<$Res> extends _$GetCommentsCopyWithImpl<$Res, _$GetCommentsStartImpl>
     implements _$$GetCommentsStartImplCopyWith<$Res> {
-  __$$GetCommentsStartImplCopyWithImpl(_$GetCommentsStartImpl _value,
-      $Res Function(_$GetCommentsStartImpl) _then)
+  __$$GetCommentsStartImplCopyWithImpl(_$GetCommentsStartImpl _value, $Res Function(_$GetCommentsStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetCommentsStartImpl implements GetCommentsStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetCommentsStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetCommentsStartImpl);
   }
 
   @override
@@ -191,8 +185,7 @@ abstract class GetCommentsStart implements GetComments {
 /// @nodoc
 abstract class _$$GetCommentsSuccessfulImplCopyWith<$Res> {
   factory _$$GetCommentsSuccessfulImplCopyWith(
-          _$GetCommentsSuccessfulImpl value,
-          $Res Function(_$GetCommentsSuccessfulImpl) then) =
+          _$GetCommentsSuccessfulImpl value, $Res Function(_$GetCommentsSuccessfulImpl) then) =
       __$$GetCommentsSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Comment> comments});
@@ -202,8 +195,8 @@ abstract class _$$GetCommentsSuccessfulImplCopyWith<$Res> {
 class __$$GetCommentsSuccessfulImplCopyWithImpl<$Res>
     extends _$GetCommentsCopyWithImpl<$Res, _$GetCommentsSuccessfulImpl>
     implements _$$GetCommentsSuccessfulImplCopyWith<$Res> {
-  __$$GetCommentsSuccessfulImplCopyWithImpl(_$GetCommentsSuccessfulImpl _value,
-      $Res Function(_$GetCommentsSuccessfulImpl) _then)
+  __$$GetCommentsSuccessfulImplCopyWithImpl(
+      _$GetCommentsSuccessfulImpl _value, $Res Function(_$GetCommentsSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -223,8 +216,7 @@ class __$$GetCommentsSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetCommentsSuccessfulImpl implements GetCommentsSuccessful {
-  const _$GetCommentsSuccessfulImpl({required final List<Comment> comments})
-      : _comments = comments;
+  const _$GetCommentsSuccessfulImpl({required final List<Comment> comments}) : _comments = comments;
 
   final List<Comment> _comments;
   @override
@@ -248,15 +240,13 @@ class _$GetCommentsSuccessfulImpl implements GetCommentsSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCommentsSuccessfulImplCopyWith<_$GetCommentsSuccessfulImpl>
-      get copyWith => __$$GetCommentsSuccessfulImplCopyWithImpl<
-          _$GetCommentsSuccessfulImpl>(this, _$identity);
+  _$$GetCommentsSuccessfulImplCopyWith<_$GetCommentsSuccessfulImpl> get copyWith =>
+      __$$GetCommentsSuccessfulImplCopyWithImpl<_$GetCommentsSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -328,30 +318,25 @@ class _$GetCommentsSuccessfulImpl implements GetCommentsSuccessful {
 }
 
 abstract class GetCommentsSuccessful implements GetComments {
-  const factory GetCommentsSuccessful({required final List<Comment> comments}) =
-      _$GetCommentsSuccessfulImpl;
+  const factory GetCommentsSuccessful({required final List<Comment> comments}) = _$GetCommentsSuccessfulImpl;
 
   List<Comment> get comments;
   @JsonKey(ignore: true)
-  _$$GetCommentsSuccessfulImplCopyWith<_$GetCommentsSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetCommentsSuccessfulImplCopyWith<_$GetCommentsSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetCommentsErrorImplCopyWith<$Res> {
-  factory _$$GetCommentsErrorImplCopyWith(_$GetCommentsErrorImpl value,
-          $Res Function(_$GetCommentsErrorImpl) then) =
+  factory _$$GetCommentsErrorImplCopyWith(_$GetCommentsErrorImpl value, $Res Function(_$GetCommentsErrorImpl) then) =
       __$$GetCommentsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetCommentsErrorImplCopyWithImpl<$Res>
-    extends _$GetCommentsCopyWithImpl<$Res, _$GetCommentsErrorImpl>
+class __$$GetCommentsErrorImplCopyWithImpl<$Res> extends _$GetCommentsCopyWithImpl<$Res, _$GetCommentsErrorImpl>
     implements _$$GetCommentsErrorImplCopyWith<$Res> {
-  __$$GetCommentsErrorImplCopyWithImpl(_$GetCommentsErrorImpl _value,
-      $Res Function(_$GetCommentsErrorImpl) _then)
+  __$$GetCommentsErrorImplCopyWithImpl(_$GetCommentsErrorImpl _value, $Res Function(_$GetCommentsErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -391,20 +376,17 @@ class _$GetCommentsErrorImpl implements GetCommentsError {
         (other.runtimeType == runtimeType &&
             other is _$GetCommentsErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetCommentsErrorImplCopyWith<_$GetCommentsErrorImpl> get copyWith =>
-      __$$GetCommentsErrorImplCopyWithImpl<_$GetCommentsErrorImpl>(
-          this, _$identity);
+      __$$GetCommentsErrorImplCopyWithImpl<_$GetCommentsErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -476,12 +458,10 @@ class _$GetCommentsErrorImpl implements GetCommentsError {
 }
 
 abstract class GetCommentsError implements GetComments, ErrorAction {
-  const factory GetCommentsError(
-      final Object error, final StackTrace stackTrace) = _$GetCommentsErrorImpl;
+  const factory GetCommentsError(final Object error, final StackTrace stackTrace) = _$GetCommentsErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetCommentsErrorImplCopyWith<_$GetCommentsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetCommentsErrorImplCopyWith<_$GetCommentsErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

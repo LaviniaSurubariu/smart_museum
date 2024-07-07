@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../app_action.dart';
 
-
 part 'delete_user.freezed.dart';
 
 @freezed

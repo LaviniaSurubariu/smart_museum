@@ -6,10 +6,11 @@ part 'update_artist_image.freezed.dart';
 
 @freezed
 class UpdateArtistImage with _$UpdateArtistImage implements AppAction {
-  const factory UpdateArtistImage({required String newPicturePath,
-    required String artistId,
-    required String artistFirstName,
-    required String oldPictureUrl}) = UpdateArtistImageStart;
+  const factory UpdateArtistImage(
+      {required String newPicturePath,
+      required String artistId,
+      required String artistFirstName,
+      required String oldPictureUrl}) = UpdateArtistImageStart;
 
   const factory UpdateArtistImage.successful(String newPictureUrl) = UpdateArtistImageSuccessful;
 

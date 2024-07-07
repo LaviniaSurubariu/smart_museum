@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'custom_text_form_field.dart';
 
 class CustomTextFormFieldWithOnChange extends CustomTextFormField {
-
-  const CustomTextFormFieldWithOnChange({super.key, 
+  const CustomTextFormFieldWithOnChange({
+    super.key,
     required super.controller,
     required super.labelText,
     required super.icon,
     required super.validator,
-    required this.onChanged, required bool obscureText,
+    required this.onChanged,
+    required bool obscureText,
   });
   final ValueChanged<String> onChanged;
 

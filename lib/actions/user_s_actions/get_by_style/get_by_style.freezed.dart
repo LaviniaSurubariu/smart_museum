@@ -64,14 +64,12 @@ mixin _$GetByStyle {
 
 /// @nodoc
 abstract class $GetByStyleCopyWith<$Res> {
-  factory $GetByStyleCopyWith(
-          GetByStyle value, $Res Function(GetByStyle) then) =
+  factory $GetByStyleCopyWith(GetByStyle value, $Res Function(GetByStyle) then) =
       _$GetByStyleCopyWithImpl<$Res, GetByStyle>;
 }
 
 /// @nodoc
-class _$GetByStyleCopyWithImpl<$Res, $Val extends GetByStyle>
-    implements $GetByStyleCopyWith<$Res> {
+class _$GetByStyleCopyWithImpl<$Res, $Val extends GetByStyle> implements $GetByStyleCopyWith<$Res> {
   _$GetByStyleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,19 +80,16 @@ class _$GetByStyleCopyWithImpl<$Res, $Val extends GetByStyle>
 
 /// @nodoc
 abstract class _$$GetByStyleStartImplCopyWith<$Res> {
-  factory _$$GetByStyleStartImplCopyWith(_$GetByStyleStartImpl value,
-          $Res Function(_$GetByStyleStartImpl) then) =
+  factory _$$GetByStyleStartImplCopyWith(_$GetByStyleStartImpl value, $Res Function(_$GetByStyleStartImpl) then) =
       __$$GetByStyleStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String style});
 }
 
 /// @nodoc
-class __$$GetByStyleStartImplCopyWithImpl<$Res>
-    extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleStartImpl>
+class __$$GetByStyleStartImplCopyWithImpl<$Res> extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleStartImpl>
     implements _$$GetByStyleStartImplCopyWith<$Res> {
-  __$$GetByStyleStartImplCopyWithImpl(
-      _$GetByStyleStartImpl _value, $Res Function(_$GetByStyleStartImpl) _then)
+  __$$GetByStyleStartImplCopyWithImpl(_$GetByStyleStartImpl _value, $Res Function(_$GetByStyleStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,8 +134,7 @@ class _$GetByStyleStartImpl implements GetByStyleStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetByStyleStartImplCopyWith<_$GetByStyleStartImpl> get copyWith =>
-      __$$GetByStyleStartImplCopyWithImpl<_$GetByStyleStartImpl>(
-          this, _$identity);
+      __$$GetByStyleStartImplCopyWithImpl<_$GetByStyleStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,30 +206,27 @@ class _$GetByStyleStartImpl implements GetByStyleStart {
 }
 
 abstract class GetByStyleStart implements GetByStyle {
-  const factory GetByStyleStart({required final String style}) =
-      _$GetByStyleStartImpl;
+  const factory GetByStyleStart({required final String style}) = _$GetByStyleStartImpl;
 
   String get style;
   @JsonKey(ignore: true)
-  _$$GetByStyleStartImplCopyWith<_$GetByStyleStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetByStyleStartImplCopyWith<_$GetByStyleStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetByStyleSuccessfulImplCopyWith<$Res> {
-  factory _$$GetByStyleSuccessfulImplCopyWith(_$GetByStyleSuccessfulImpl value,
-          $Res Function(_$GetByStyleSuccessfulImpl) then) =
+  factory _$$GetByStyleSuccessfulImplCopyWith(
+          _$GetByStyleSuccessfulImpl value, $Res Function(_$GetByStyleSuccessfulImpl) then) =
       __$$GetByStyleSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ArtworkByStyle> artworksByStyle});
 }
 
 /// @nodoc
-class __$$GetByStyleSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleSuccessfulImpl>
+class __$$GetByStyleSuccessfulImplCopyWithImpl<$Res> extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleSuccessfulImpl>
     implements _$$GetByStyleSuccessfulImplCopyWith<$Res> {
-  __$$GetByStyleSuccessfulImplCopyWithImpl(_$GetByStyleSuccessfulImpl _value,
-      $Res Function(_$GetByStyleSuccessfulImpl) _then)
+  __$$GetByStyleSuccessfulImplCopyWithImpl(
+      _$GetByStyleSuccessfulImpl _value, $Res Function(_$GetByStyleSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -255,8 +246,7 @@ class __$$GetByStyleSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetByStyleSuccessfulImpl implements GetByStyleSuccessful {
-  const _$GetByStyleSuccessfulImpl(final List<ArtworkByStyle> artworksByStyle)
-      : _artworksByStyle = artworksByStyle;
+  const _$GetByStyleSuccessfulImpl(final List<ArtworkByStyle> artworksByStyle) : _artworksByStyle = artworksByStyle;
 
   final List<ArtworkByStyle> _artworksByStyle;
   @override
@@ -276,21 +266,17 @@ class _$GetByStyleSuccessfulImpl implements GetByStyleSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetByStyleSuccessfulImpl &&
-            const DeepCollectionEquality()
-                .equals(other._artworksByStyle, _artworksByStyle));
+            const DeepCollectionEquality().equals(other._artworksByStyle, _artworksByStyle));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_artworksByStyle));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworksByStyle));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetByStyleSuccessfulImplCopyWith<_$GetByStyleSuccessfulImpl>
-      get copyWith =>
-          __$$GetByStyleSuccessfulImplCopyWithImpl<_$GetByStyleSuccessfulImpl>(
-              this, _$identity);
+  _$$GetByStyleSuccessfulImplCopyWith<_$GetByStyleSuccessfulImpl> get copyWith =>
+      __$$GetByStyleSuccessfulImplCopyWithImpl<_$GetByStyleSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -362,30 +348,25 @@ class _$GetByStyleSuccessfulImpl implements GetByStyleSuccessful {
 }
 
 abstract class GetByStyleSuccessful implements GetByStyle {
-  const factory GetByStyleSuccessful(
-      final List<ArtworkByStyle> artworksByStyle) = _$GetByStyleSuccessfulImpl;
+  const factory GetByStyleSuccessful(final List<ArtworkByStyle> artworksByStyle) = _$GetByStyleSuccessfulImpl;
 
   List<ArtworkByStyle> get artworksByStyle;
   @JsonKey(ignore: true)
-  _$$GetByStyleSuccessfulImplCopyWith<_$GetByStyleSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetByStyleSuccessfulImplCopyWith<_$GetByStyleSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetByStyleErrorImplCopyWith<$Res> {
-  factory _$$GetByStyleErrorImplCopyWith(_$GetByStyleErrorImpl value,
-          $Res Function(_$GetByStyleErrorImpl) then) =
+  factory _$$GetByStyleErrorImplCopyWith(_$GetByStyleErrorImpl value, $Res Function(_$GetByStyleErrorImpl) then) =
       __$$GetByStyleErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetByStyleErrorImplCopyWithImpl<$Res>
-    extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleErrorImpl>
+class __$$GetByStyleErrorImplCopyWithImpl<$Res> extends _$GetByStyleCopyWithImpl<$Res, _$GetByStyleErrorImpl>
     implements _$$GetByStyleErrorImplCopyWith<$Res> {
-  __$$GetByStyleErrorImplCopyWithImpl(
-      _$GetByStyleErrorImpl _value, $Res Function(_$GetByStyleErrorImpl) _then)
+  __$$GetByStyleErrorImplCopyWithImpl(_$GetByStyleErrorImpl _value, $Res Function(_$GetByStyleErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -425,20 +406,17 @@ class _$GetByStyleErrorImpl implements GetByStyleError {
         (other.runtimeType == runtimeType &&
             other is _$GetByStyleErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetByStyleErrorImplCopyWith<_$GetByStyleErrorImpl> get copyWith =>
-      __$$GetByStyleErrorImplCopyWithImpl<_$GetByStyleErrorImpl>(
-          this, _$identity);
+      __$$GetByStyleErrorImplCopyWithImpl<_$GetByStyleErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -510,12 +488,10 @@ class _$GetByStyleErrorImpl implements GetByStyleError {
 }
 
 abstract class GetByStyleError implements GetByStyle, ErrorAction {
-  const factory GetByStyleError(
-      final Object error, final StackTrace stackTrace) = _$GetByStyleErrorImpl;
+  const factory GetByStyleError(final Object error, final StackTrace stackTrace) = _$GetByStyleErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetByStyleErrorImplCopyWith<_$GetByStyleErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetByStyleErrorImplCopyWith<_$GetByStyleErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

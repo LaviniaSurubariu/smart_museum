@@ -64,14 +64,12 @@ mixin _$GetArtworks {
 
 /// @nodoc
 abstract class $GetArtworksCopyWith<$Res> {
-  factory $GetArtworksCopyWith(
-          GetArtworks value, $Res Function(GetArtworks) then) =
+  factory $GetArtworksCopyWith(GetArtworks value, $Res Function(GetArtworks) then) =
       _$GetArtworksCopyWithImpl<$Res, GetArtworks>;
 }
 
 /// @nodoc
-class _$GetArtworksCopyWithImpl<$Res, $Val extends GetArtworks>
-    implements $GetArtworksCopyWith<$Res> {
+class _$GetArtworksCopyWithImpl<$Res, $Val extends GetArtworks> implements $GetArtworksCopyWith<$Res> {
   _$GetArtworksCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetArtworksCopyWithImpl<$Res, $Val extends GetArtworks>
 
 /// @nodoc
 abstract class _$$GetArtworksStartImplCopyWith<$Res> {
-  factory _$$GetArtworksStartImplCopyWith(_$GetArtworksStartImpl value,
-          $Res Function(_$GetArtworksStartImpl) then) =
+  factory _$$GetArtworksStartImplCopyWith(_$GetArtworksStartImpl value, $Res Function(_$GetArtworksStartImpl) then) =
       __$$GetArtworksStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetArtworksStartImplCopyWithImpl<$Res>
-    extends _$GetArtworksCopyWithImpl<$Res, _$GetArtworksStartImpl>
+class __$$GetArtworksStartImplCopyWithImpl<$Res> extends _$GetArtworksCopyWithImpl<$Res, _$GetArtworksStartImpl>
     implements _$$GetArtworksStartImplCopyWith<$Res> {
-  __$$GetArtworksStartImplCopyWithImpl(_$GetArtworksStartImpl _value,
-      $Res Function(_$GetArtworksStartImpl) _then)
+  __$$GetArtworksStartImplCopyWithImpl(_$GetArtworksStartImpl _value, $Res Function(_$GetArtworksStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetArtworksStartImpl implements GetArtworksStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetArtworksStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetArtworksStartImpl);
   }
 
   @override
@@ -191,8 +185,7 @@ abstract class GetArtworksStart implements GetArtworks {
 /// @nodoc
 abstract class _$$GetArtworksSuccessfulImplCopyWith<$Res> {
   factory _$$GetArtworksSuccessfulImplCopyWith(
-          _$GetArtworksSuccessfulImpl value,
-          $Res Function(_$GetArtworksSuccessfulImpl) then) =
+          _$GetArtworksSuccessfulImpl value, $Res Function(_$GetArtworksSuccessfulImpl) then) =
       __$$GetArtworksSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Artwork> artworks});
@@ -202,8 +195,8 @@ abstract class _$$GetArtworksSuccessfulImplCopyWith<$Res> {
 class __$$GetArtworksSuccessfulImplCopyWithImpl<$Res>
     extends _$GetArtworksCopyWithImpl<$Res, _$GetArtworksSuccessfulImpl>
     implements _$$GetArtworksSuccessfulImplCopyWith<$Res> {
-  __$$GetArtworksSuccessfulImplCopyWithImpl(_$GetArtworksSuccessfulImpl _value,
-      $Res Function(_$GetArtworksSuccessfulImpl) _then)
+  __$$GetArtworksSuccessfulImplCopyWithImpl(
+      _$GetArtworksSuccessfulImpl _value, $Res Function(_$GetArtworksSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -223,8 +216,7 @@ class __$$GetArtworksSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetArtworksSuccessfulImpl implements GetArtworksSuccessful {
-  const _$GetArtworksSuccessfulImpl({required final List<Artwork> artworks})
-      : _artworks = artworks;
+  const _$GetArtworksSuccessfulImpl({required final List<Artwork> artworks}) : _artworks = artworks;
 
   final List<Artwork> _artworks;
   @override
@@ -248,15 +240,13 @@ class _$GetArtworksSuccessfulImpl implements GetArtworksSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworks));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworks));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetArtworksSuccessfulImplCopyWith<_$GetArtworksSuccessfulImpl>
-      get copyWith => __$$GetArtworksSuccessfulImplCopyWithImpl<
-          _$GetArtworksSuccessfulImpl>(this, _$identity);
+  _$$GetArtworksSuccessfulImplCopyWith<_$GetArtworksSuccessfulImpl> get copyWith =>
+      __$$GetArtworksSuccessfulImplCopyWithImpl<_$GetArtworksSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -328,30 +318,25 @@ class _$GetArtworksSuccessfulImpl implements GetArtworksSuccessful {
 }
 
 abstract class GetArtworksSuccessful implements GetArtworks {
-  const factory GetArtworksSuccessful({required final List<Artwork> artworks}) =
-      _$GetArtworksSuccessfulImpl;
+  const factory GetArtworksSuccessful({required final List<Artwork> artworks}) = _$GetArtworksSuccessfulImpl;
 
   List<Artwork> get artworks;
   @JsonKey(ignore: true)
-  _$$GetArtworksSuccessfulImplCopyWith<_$GetArtworksSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetArtworksSuccessfulImplCopyWith<_$GetArtworksSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetArtworksErrorImplCopyWith<$Res> {
-  factory _$$GetArtworksErrorImplCopyWith(_$GetArtworksErrorImpl value,
-          $Res Function(_$GetArtworksErrorImpl) then) =
+  factory _$$GetArtworksErrorImplCopyWith(_$GetArtworksErrorImpl value, $Res Function(_$GetArtworksErrorImpl) then) =
       __$$GetArtworksErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetArtworksErrorImplCopyWithImpl<$Res>
-    extends _$GetArtworksCopyWithImpl<$Res, _$GetArtworksErrorImpl>
+class __$$GetArtworksErrorImplCopyWithImpl<$Res> extends _$GetArtworksCopyWithImpl<$Res, _$GetArtworksErrorImpl>
     implements _$$GetArtworksErrorImplCopyWith<$Res> {
-  __$$GetArtworksErrorImplCopyWithImpl(_$GetArtworksErrorImpl _value,
-      $Res Function(_$GetArtworksErrorImpl) _then)
+  __$$GetArtworksErrorImplCopyWithImpl(_$GetArtworksErrorImpl _value, $Res Function(_$GetArtworksErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -391,20 +376,17 @@ class _$GetArtworksErrorImpl implements GetArtworksError {
         (other.runtimeType == runtimeType &&
             other is _$GetArtworksErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetArtworksErrorImplCopyWith<_$GetArtworksErrorImpl> get copyWith =>
-      __$$GetArtworksErrorImplCopyWithImpl<_$GetArtworksErrorImpl>(
-          this, _$identity);
+      __$$GetArtworksErrorImplCopyWithImpl<_$GetArtworksErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -476,12 +458,10 @@ class _$GetArtworksErrorImpl implements GetArtworksError {
 }
 
 abstract class GetArtworksError implements GetArtworks, ErrorAction {
-  const factory GetArtworksError(
-      final Object error, final StackTrace stackTrace) = _$GetArtworksErrorImpl;
+  const factory GetArtworksError(final Object error, final StackTrace stackTrace) = _$GetArtworksErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetArtworksErrorImplCopyWith<_$GetArtworksErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetArtworksErrorImplCopyWith<_$GetArtworksErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

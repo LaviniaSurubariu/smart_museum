@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/favourite/favourite.dart';
 
-
 class FavouritesContainer extends StatelessWidget {
   const FavouritesContainer({super.key, required this.builder});
 

@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 
-
 class ArtworksForArtMovementContainer extends StatelessWidget {
   const ArtworksForArtMovementContainer({super.key, required this.builder});
 

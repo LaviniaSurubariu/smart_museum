@@ -16,21 +16,18 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SetSelectedArtworkWithoutQrCode {
-  ArtworkWithoutQrCode get artworkWithoutQrCode =>
-      throw _privateConstructorUsedError;
+  ArtworkWithoutQrCode get artworkWithoutQrCode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedArtworkWithoutQrCodeCopyWith<SetSelectedArtworkWithoutQrCode>
-      get copyWith => throw _privateConstructorUsedError;
+  $SetSelectedArtworkWithoutQrCodeCopyWith<SetSelectedArtworkWithoutQrCode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedArtworkWithoutQrCodeCopyWith<$Res> {
   factory $SetSelectedArtworkWithoutQrCodeCopyWith(
-          SetSelectedArtworkWithoutQrCode value,
-          $Res Function(SetSelectedArtworkWithoutQrCode) then) =
-      _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res,
-          SetSelectedArtworkWithoutQrCode>;
+          SetSelectedArtworkWithoutQrCode value, $Res Function(SetSelectedArtworkWithoutQrCode) then) =
+      _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res, SetSelectedArtworkWithoutQrCode>;
   @useResult
   $Res call({ArtworkWithoutQrCode artworkWithoutQrCode});
 
@@ -38,8 +35,7 @@ abstract class $SetSelectedArtworkWithoutQrCodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res,
-        $Val extends SetSelectedArtworkWithoutQrCode>
+class _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res, $Val extends SetSelectedArtworkWithoutQrCode>
     implements $SetSelectedArtworkWithoutQrCodeCopyWith<$Res> {
   _$SetSelectedArtworkWithoutQrCodeCopyWithImpl(this._value, this._then);
 
@@ -64,8 +60,7 @@ class _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ArtworkWithoutQrCodeCopyWith<$Res> get artworkWithoutQrCode {
-    return $ArtworkWithoutQrCodeCopyWith<$Res>(_value.artworkWithoutQrCode,
-        (value) {
+    return $ArtworkWithoutQrCodeCopyWith<$Res>(_value.artworkWithoutQrCode, (value) {
       return _then(_value.copyWith(artworkWithoutQrCode: value) as $Val);
     });
   }
@@ -75,8 +70,7 @@ class _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res,
 abstract class _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<$Res>
     implements $SetSelectedArtworkWithoutQrCodeCopyWith<$Res> {
   factory _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith(
-          _$SetSelectedArtworkWithoutQrCode$Impl value,
-          $Res Function(_$SetSelectedArtworkWithoutQrCode$Impl) then) =
+          _$SetSelectedArtworkWithoutQrCode$Impl value, $Res Function(_$SetSelectedArtworkWithoutQrCode$Impl) then) =
       __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -88,12 +82,10 @@ abstract class _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl<$Res>
-    extends _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res,
-        _$SetSelectedArtworkWithoutQrCode$Impl>
+    extends _$SetSelectedArtworkWithoutQrCodeCopyWithImpl<$Res, _$SetSelectedArtworkWithoutQrCode$Impl>
     implements _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<$Res> {
   __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl(
-      _$SetSelectedArtworkWithoutQrCode$Impl _value,
-      $Res Function(_$SetSelectedArtworkWithoutQrCode$Impl) _then)
+      _$SetSelectedArtworkWithoutQrCode$Impl _value, $Res Function(_$SetSelectedArtworkWithoutQrCode$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,8 +104,7 @@ class __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetSelectedArtworkWithoutQrCode$Impl
-    implements SetSelectedArtworkWithoutQrCode$ {
+class _$SetSelectedArtworkWithoutQrCode$Impl implements SetSelectedArtworkWithoutQrCode$ {
   const _$SetSelectedArtworkWithoutQrCode$Impl(this.artworkWithoutQrCode);
 
   @override
@@ -139,25 +130,20 @@ class _$SetSelectedArtworkWithoutQrCode$Impl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<
-          _$SetSelectedArtworkWithoutQrCode$Impl>
-      get copyWith => __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl<
-          _$SetSelectedArtworkWithoutQrCode$Impl>(this, _$identity);
+  _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<_$SetSelectedArtworkWithoutQrCode$Impl> get copyWith =>
+      __$$SetSelectedArtworkWithoutQrCode$ImplCopyWithImpl<_$SetSelectedArtworkWithoutQrCode$Impl>(this, _$identity);
 }
 
-abstract class SetSelectedArtworkWithoutQrCode$
-    implements SetSelectedArtworkWithoutQrCode {
-  const factory SetSelectedArtworkWithoutQrCode$(
-          final ArtworkWithoutQrCode artworkWithoutQrCode) =
+abstract class SetSelectedArtworkWithoutQrCode$ implements SetSelectedArtworkWithoutQrCode {
+  const factory SetSelectedArtworkWithoutQrCode$(final ArtworkWithoutQrCode artworkWithoutQrCode) =
       _$SetSelectedArtworkWithoutQrCode$Impl;
 
   @override
   ArtworkWithoutQrCode get artworkWithoutQrCode;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<
-          _$SetSelectedArtworkWithoutQrCode$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SetSelectedArtworkWithoutQrCode$ImplCopyWith<_$SetSelectedArtworkWithoutQrCode$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -165,14 +151,12 @@ mixin _$SetSelectedArtwork {
   Artwork get selectedArtwork => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedArtworkCopyWith<SetSelectedArtwork> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSelectedArtworkCopyWith<SetSelectedArtwork> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedArtworkCopyWith<$Res> {
-  factory $SetSelectedArtworkCopyWith(
-          SetSelectedArtwork value, $Res Function(SetSelectedArtwork) then) =
+  factory $SetSelectedArtworkCopyWith(SetSelectedArtwork value, $Res Function(SetSelectedArtwork) then) =
       _$SetSelectedArtworkCopyWithImpl<$Res, SetSelectedArtwork>;
   @useResult
   $Res call({Artwork selectedArtwork});
@@ -213,10 +197,9 @@ class _$SetSelectedArtworkCopyWithImpl<$Res, $Val extends SetSelectedArtwork>
 }
 
 /// @nodoc
-abstract class _$$SetSelectedArtwork$ImplCopyWith<$Res>
-    implements $SetSelectedArtworkCopyWith<$Res> {
-  factory _$$SetSelectedArtwork$ImplCopyWith(_$SetSelectedArtwork$Impl value,
-          $Res Function(_$SetSelectedArtwork$Impl) then) =
+abstract class _$$SetSelectedArtwork$ImplCopyWith<$Res> implements $SetSelectedArtworkCopyWith<$Res> {
+  factory _$$SetSelectedArtwork$ImplCopyWith(
+          _$SetSelectedArtwork$Impl value, $Res Function(_$SetSelectedArtwork$Impl) then) =
       __$$SetSelectedArtwork$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -230,8 +213,8 @@ abstract class _$$SetSelectedArtwork$ImplCopyWith<$Res>
 class __$$SetSelectedArtwork$ImplCopyWithImpl<$Res>
     extends _$SetSelectedArtworkCopyWithImpl<$Res, _$SetSelectedArtwork$Impl>
     implements _$$SetSelectedArtwork$ImplCopyWith<$Res> {
-  __$$SetSelectedArtwork$ImplCopyWithImpl(_$SetSelectedArtwork$Impl _value,
-      $Res Function(_$SetSelectedArtwork$Impl) _then)
+  __$$SetSelectedArtwork$ImplCopyWithImpl(
+      _$SetSelectedArtwork$Impl _value, $Res Function(_$SetSelectedArtwork$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -266,8 +249,7 @@ class _$SetSelectedArtwork$Impl implements SetSelectedArtwork$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SetSelectedArtwork$Impl &&
-            (identical(other.selectedArtwork, selectedArtwork) ||
-                other.selectedArtwork == selectedArtwork));
+            (identical(other.selectedArtwork, selectedArtwork) || other.selectedArtwork == selectedArtwork));
   }
 
   @override
@@ -277,20 +259,17 @@ class _$SetSelectedArtwork$Impl implements SetSelectedArtwork$ {
   @override
   @pragma('vm:prefer-inline')
   _$$SetSelectedArtwork$ImplCopyWith<_$SetSelectedArtwork$Impl> get copyWith =>
-      __$$SetSelectedArtwork$ImplCopyWithImpl<_$SetSelectedArtwork$Impl>(
-          this, _$identity);
+      __$$SetSelectedArtwork$ImplCopyWithImpl<_$SetSelectedArtwork$Impl>(this, _$identity);
 }
 
 abstract class SetSelectedArtwork$ implements SetSelectedArtwork {
-  const factory SetSelectedArtwork$(final Artwork selectedArtwork) =
-      _$SetSelectedArtwork$Impl;
+  const factory SetSelectedArtwork$(final Artwork selectedArtwork) = _$SetSelectedArtwork$Impl;
 
   @override
   Artwork get selectedArtwork;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedArtwork$ImplCopyWith<_$SetSelectedArtwork$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetSelectedArtwork$ImplCopyWith<_$SetSelectedArtwork$Impl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -298,22 +277,19 @@ mixin _$SetRouteArtworkIndex {
   int get routeArtworkIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetRouteArtworkIndexCopyWith<SetRouteArtworkIndex> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetRouteArtworkIndexCopyWith<SetRouteArtworkIndex> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetRouteArtworkIndexCopyWith<$Res> {
-  factory $SetRouteArtworkIndexCopyWith(SetRouteArtworkIndex value,
-          $Res Function(SetRouteArtworkIndex) then) =
+  factory $SetRouteArtworkIndexCopyWith(SetRouteArtworkIndex value, $Res Function(SetRouteArtworkIndex) then) =
       _$SetRouteArtworkIndexCopyWithImpl<$Res, SetRouteArtworkIndex>;
   @useResult
   $Res call({int routeArtworkIndex});
 }
 
 /// @nodoc
-class _$SetRouteArtworkIndexCopyWithImpl<$Res,
-        $Val extends SetRouteArtworkIndex>
+class _$SetRouteArtworkIndexCopyWithImpl<$Res, $Val extends SetRouteArtworkIndex>
     implements $SetRouteArtworkIndexCopyWith<$Res> {
   _$SetRouteArtworkIndexCopyWithImpl(this._value, this._then);
 
@@ -337,11 +313,9 @@ class _$SetRouteArtworkIndexCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$SetRouteArtworkIndex$ImplCopyWith<$Res>
-    implements $SetRouteArtworkIndexCopyWith<$Res> {
+abstract class _$$SetRouteArtworkIndex$ImplCopyWith<$Res> implements $SetRouteArtworkIndexCopyWith<$Res> {
   factory _$$SetRouteArtworkIndex$ImplCopyWith(
-          _$SetRouteArtworkIndex$Impl value,
-          $Res Function(_$SetRouteArtworkIndex$Impl) then) =
+          _$SetRouteArtworkIndex$Impl value, $Res Function(_$SetRouteArtworkIndex$Impl) then) =
       __$$SetRouteArtworkIndex$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -350,11 +324,10 @@ abstract class _$$SetRouteArtworkIndex$ImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SetRouteArtworkIndex$ImplCopyWithImpl<$Res>
-    extends _$SetRouteArtworkIndexCopyWithImpl<$Res,
-        _$SetRouteArtworkIndex$Impl>
+    extends _$SetRouteArtworkIndexCopyWithImpl<$Res, _$SetRouteArtworkIndex$Impl>
     implements _$$SetRouteArtworkIndex$ImplCopyWith<$Res> {
-  __$$SetRouteArtworkIndex$ImplCopyWithImpl(_$SetRouteArtworkIndex$Impl _value,
-      $Res Function(_$SetRouteArtworkIndex$Impl) _then)
+  __$$SetRouteArtworkIndex$ImplCopyWithImpl(
+      _$SetRouteArtworkIndex$Impl _value, $Res Function(_$SetRouteArtworkIndex$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -389,8 +362,7 @@ class _$SetRouteArtworkIndex$Impl implements SetRouteArtworkIndex$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SetRouteArtworkIndex$Impl &&
-            (identical(other.routeArtworkIndex, routeArtworkIndex) ||
-                other.routeArtworkIndex == routeArtworkIndex));
+            (identical(other.routeArtworkIndex, routeArtworkIndex) || other.routeArtworkIndex == routeArtworkIndex));
   }
 
   @override
@@ -399,21 +371,18 @@ class _$SetRouteArtworkIndex$Impl implements SetRouteArtworkIndex$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetRouteArtworkIndex$ImplCopyWith<_$SetRouteArtworkIndex$Impl>
-      get copyWith => __$$SetRouteArtworkIndex$ImplCopyWithImpl<
-          _$SetRouteArtworkIndex$Impl>(this, _$identity);
+  _$$SetRouteArtworkIndex$ImplCopyWith<_$SetRouteArtworkIndex$Impl> get copyWith =>
+      __$$SetRouteArtworkIndex$ImplCopyWithImpl<_$SetRouteArtworkIndex$Impl>(this, _$identity);
 }
 
 abstract class SetRouteArtworkIndex$ implements SetRouteArtworkIndex {
-  const factory SetRouteArtworkIndex$(final int routeArtworkIndex) =
-      _$SetRouteArtworkIndex$Impl;
+  const factory SetRouteArtworkIndex$(final int routeArtworkIndex) = _$SetRouteArtworkIndex$Impl;
 
   @override
   int get routeArtworkIndex;
   @override
   @JsonKey(ignore: true)
-  _$$SetRouteArtworkIndex$ImplCopyWith<_$SetRouteArtworkIndex$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SetRouteArtworkIndex$ImplCopyWith<_$SetRouteArtworkIndex$Impl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -421,14 +390,12 @@ mixin _$SetRouteArtistIndex {
   int get routeArtistIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetRouteArtistIndexCopyWith<SetRouteArtistIndex> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetRouteArtistIndexCopyWith<SetRouteArtistIndex> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetRouteArtistIndexCopyWith<$Res> {
-  factory $SetRouteArtistIndexCopyWith(
-          SetRouteArtistIndex value, $Res Function(SetRouteArtistIndex) then) =
+  factory $SetRouteArtistIndexCopyWith(SetRouteArtistIndex value, $Res Function(SetRouteArtistIndex) then) =
       _$SetRouteArtistIndexCopyWithImpl<$Res, SetRouteArtistIndex>;
   @useResult
   $Res call({int routeArtistIndex});
@@ -459,10 +426,9 @@ class _$SetRouteArtistIndexCopyWithImpl<$Res, $Val extends SetRouteArtistIndex>
 }
 
 /// @nodoc
-abstract class _$$SetRouteArtistIndex$ImplCopyWith<$Res>
-    implements $SetRouteArtistIndexCopyWith<$Res> {
-  factory _$$SetRouteArtistIndex$ImplCopyWith(_$SetRouteArtistIndex$Impl value,
-          $Res Function(_$SetRouteArtistIndex$Impl) then) =
+abstract class _$$SetRouteArtistIndex$ImplCopyWith<$Res> implements $SetRouteArtistIndexCopyWith<$Res> {
+  factory _$$SetRouteArtistIndex$ImplCopyWith(
+          _$SetRouteArtistIndex$Impl value, $Res Function(_$SetRouteArtistIndex$Impl) then) =
       __$$SetRouteArtistIndex$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -473,8 +439,8 @@ abstract class _$$SetRouteArtistIndex$ImplCopyWith<$Res>
 class __$$SetRouteArtistIndex$ImplCopyWithImpl<$Res>
     extends _$SetRouteArtistIndexCopyWithImpl<$Res, _$SetRouteArtistIndex$Impl>
     implements _$$SetRouteArtistIndex$ImplCopyWith<$Res> {
-  __$$SetRouteArtistIndex$ImplCopyWithImpl(_$SetRouteArtistIndex$Impl _value,
-      $Res Function(_$SetRouteArtistIndex$Impl) _then)
+  __$$SetRouteArtistIndex$ImplCopyWithImpl(
+      _$SetRouteArtistIndex$Impl _value, $Res Function(_$SetRouteArtistIndex$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -509,8 +475,7 @@ class _$SetRouteArtistIndex$Impl implements SetRouteArtistIndex$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SetRouteArtistIndex$Impl &&
-            (identical(other.routeArtistIndex, routeArtistIndex) ||
-                other.routeArtistIndex == routeArtistIndex));
+            (identical(other.routeArtistIndex, routeArtistIndex) || other.routeArtistIndex == routeArtistIndex));
   }
 
   @override
@@ -519,22 +484,18 @@ class _$SetRouteArtistIndex$Impl implements SetRouteArtistIndex$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetRouteArtistIndex$ImplCopyWith<_$SetRouteArtistIndex$Impl>
-      get copyWith =>
-          __$$SetRouteArtistIndex$ImplCopyWithImpl<_$SetRouteArtistIndex$Impl>(
-              this, _$identity);
+  _$$SetRouteArtistIndex$ImplCopyWith<_$SetRouteArtistIndex$Impl> get copyWith =>
+      __$$SetRouteArtistIndex$ImplCopyWithImpl<_$SetRouteArtistIndex$Impl>(this, _$identity);
 }
 
 abstract class SetRouteArtistIndex$ implements SetRouteArtistIndex {
-  const factory SetRouteArtistIndex$(final int routeArtistIndex) =
-      _$SetRouteArtistIndex$Impl;
+  const factory SetRouteArtistIndex$(final int routeArtistIndex) = _$SetRouteArtistIndex$Impl;
 
   @override
   int get routeArtistIndex;
   @override
   @JsonKey(ignore: true)
-  _$$SetRouteArtistIndex$ImplCopyWith<_$SetRouteArtistIndex$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SetRouteArtistIndex$ImplCopyWith<_$SetRouteArtistIndex$Impl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -542,22 +503,19 @@ mixin _$SetSelectedStyle {
   String get style => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedStyleCopyWith<SetSelectedStyle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSelectedStyleCopyWith<SetSelectedStyle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedStyleCopyWith<$Res> {
-  factory $SetSelectedStyleCopyWith(
-          SetSelectedStyle value, $Res Function(SetSelectedStyle) then) =
+  factory $SetSelectedStyleCopyWith(SetSelectedStyle value, $Res Function(SetSelectedStyle) then) =
       _$SetSelectedStyleCopyWithImpl<$Res, SetSelectedStyle>;
   @useResult
   $Res call({String style});
 }
 
 /// @nodoc
-class _$SetSelectedStyleCopyWithImpl<$Res, $Val extends SetSelectedStyle>
-    implements $SetSelectedStyleCopyWith<$Res> {
+class _$SetSelectedStyleCopyWithImpl<$Res, $Val extends SetSelectedStyle> implements $SetSelectedStyleCopyWith<$Res> {
   _$SetSelectedStyleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -580,10 +538,8 @@ class _$SetSelectedStyleCopyWithImpl<$Res, $Val extends SetSelectedStyle>
 }
 
 /// @nodoc
-abstract class _$$SetSelectedStyle$ImplCopyWith<$Res>
-    implements $SetSelectedStyleCopyWith<$Res> {
-  factory _$$SetSelectedStyle$ImplCopyWith(_$SetSelectedStyle$Impl value,
-          $Res Function(_$SetSelectedStyle$Impl) then) =
+abstract class _$$SetSelectedStyle$ImplCopyWith<$Res> implements $SetSelectedStyleCopyWith<$Res> {
+  factory _$$SetSelectedStyle$ImplCopyWith(_$SetSelectedStyle$Impl value, $Res Function(_$SetSelectedStyle$Impl) then) =
       __$$SetSelectedStyle$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -591,11 +547,9 @@ abstract class _$$SetSelectedStyle$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetSelectedStyle$ImplCopyWithImpl<$Res>
-    extends _$SetSelectedStyleCopyWithImpl<$Res, _$SetSelectedStyle$Impl>
+class __$$SetSelectedStyle$ImplCopyWithImpl<$Res> extends _$SetSelectedStyleCopyWithImpl<$Res, _$SetSelectedStyle$Impl>
     implements _$$SetSelectedStyle$ImplCopyWith<$Res> {
-  __$$SetSelectedStyle$ImplCopyWithImpl(_$SetSelectedStyle$Impl _value,
-      $Res Function(_$SetSelectedStyle$Impl) _then)
+  __$$SetSelectedStyle$ImplCopyWithImpl(_$SetSelectedStyle$Impl _value, $Res Function(_$SetSelectedStyle$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -640,8 +594,7 @@ class _$SetSelectedStyle$Impl implements SetSelectedStyle$ {
   @override
   @pragma('vm:prefer-inline')
   _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith =>
-      __$$SetSelectedStyle$ImplCopyWithImpl<_$SetSelectedStyle$Impl>(
-          this, _$identity);
+      __$$SetSelectedStyle$ImplCopyWithImpl<_$SetSelectedStyle$Impl>(this, _$identity);
 }
 
 abstract class SetSelectedStyle$ implements SetSelectedStyle {
@@ -651,8 +604,7 @@ abstract class SetSelectedStyle$ implements SetSelectedStyle {
   String get style;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetSelectedStyle$ImplCopyWith<_$SetSelectedStyle$Impl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -660,22 +612,20 @@ mixin _$SetRouteAdminArtworkIndex {
   int get routeAdminArtworkIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetRouteAdminArtworkIndexCopyWith<SetRouteAdminArtworkIndex> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetRouteAdminArtworkIndexCopyWith<SetRouteAdminArtworkIndex> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetRouteAdminArtworkIndexCopyWith<$Res> {
-  factory $SetRouteAdminArtworkIndexCopyWith(SetRouteAdminArtworkIndex value,
-          $Res Function(SetRouteAdminArtworkIndex) then) =
+  factory $SetRouteAdminArtworkIndexCopyWith(
+          SetRouteAdminArtworkIndex value, $Res Function(SetRouteAdminArtworkIndex) then) =
       _$SetRouteAdminArtworkIndexCopyWithImpl<$Res, SetRouteAdminArtworkIndex>;
   @useResult
   $Res call({int routeAdminArtworkIndex});
 }
 
 /// @nodoc
-class _$SetRouteAdminArtworkIndexCopyWithImpl<$Res,
-        $Val extends SetRouteAdminArtworkIndex>
+class _$SetRouteAdminArtworkIndexCopyWithImpl<$Res, $Val extends SetRouteAdminArtworkIndex>
     implements $SetRouteAdminArtworkIndexCopyWith<$Res> {
   _$SetRouteAdminArtworkIndexCopyWithImpl(this._value, this._then);
 
@@ -699,11 +649,9 @@ class _$SetRouteAdminArtworkIndexCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res>
-    implements $SetRouteAdminArtworkIndexCopyWith<$Res> {
+abstract class _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res> implements $SetRouteAdminArtworkIndexCopyWith<$Res> {
   factory _$$SetRouteAdminArtworkIndex$ImplCopyWith(
-          _$SetRouteAdminArtworkIndex$Impl value,
-          $Res Function(_$SetRouteAdminArtworkIndex$Impl) then) =
+          _$SetRouteAdminArtworkIndex$Impl value, $Res Function(_$SetRouteAdminArtworkIndex$Impl) then) =
       __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -712,12 +660,10 @@ abstract class _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<$Res>
-    extends _$SetRouteAdminArtworkIndexCopyWithImpl<$Res,
-        _$SetRouteAdminArtworkIndex$Impl>
+    extends _$SetRouteAdminArtworkIndexCopyWithImpl<$Res, _$SetRouteAdminArtworkIndex$Impl>
     implements _$$SetRouteAdminArtworkIndex$ImplCopyWith<$Res> {
   __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl(
-      _$SetRouteAdminArtworkIndex$Impl _value,
-      $Res Function(_$SetRouteAdminArtworkIndex$Impl) _then)
+      _$SetRouteAdminArtworkIndex$Impl _value, $Res Function(_$SetRouteAdminArtworkIndex$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -762,21 +708,19 @@ class _$SetRouteAdminArtworkIndex$Impl implements SetRouteAdminArtworkIndex$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl>
-      get copyWith => __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<
-          _$SetRouteAdminArtworkIndex$Impl>(this, _$identity);
+  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl> get copyWith =>
+      __$$SetRouteAdminArtworkIndex$ImplCopyWithImpl<_$SetRouteAdminArtworkIndex$Impl>(this, _$identity);
 }
 
 abstract class SetRouteAdminArtworkIndex$ implements SetRouteAdminArtworkIndex {
-  const factory SetRouteAdminArtworkIndex$(final int routeAdminArtworkIndex) =
-      _$SetRouteAdminArtworkIndex$Impl;
+  const factory SetRouteAdminArtworkIndex$(final int routeAdminArtworkIndex) = _$SetRouteAdminArtworkIndex$Impl;
 
   @override
   int get routeAdminArtworkIndex;
   @override
   @JsonKey(ignore: true)
-  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SetRouteAdminArtworkIndex$ImplCopyWith<_$SetRouteAdminArtworkIndex$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -784,22 +728,20 @@ mixin _$SetRouteAdminArtistIndex {
   int get routeAdminArtistIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetRouteAdminArtistIndexCopyWith<SetRouteAdminArtistIndex> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetRouteAdminArtistIndexCopyWith<SetRouteAdminArtistIndex> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetRouteAdminArtistIndexCopyWith<$Res> {
-  factory $SetRouteAdminArtistIndexCopyWith(SetRouteAdminArtistIndex value,
-          $Res Function(SetRouteAdminArtistIndex) then) =
+  factory $SetRouteAdminArtistIndexCopyWith(
+          SetRouteAdminArtistIndex value, $Res Function(SetRouteAdminArtistIndex) then) =
       _$SetRouteAdminArtistIndexCopyWithImpl<$Res, SetRouteAdminArtistIndex>;
   @useResult
   $Res call({int routeAdminArtistIndex});
 }
 
 /// @nodoc
-class _$SetRouteAdminArtistIndexCopyWithImpl<$Res,
-        $Val extends SetRouteAdminArtistIndex>
+class _$SetRouteAdminArtistIndexCopyWithImpl<$Res, $Val extends SetRouteAdminArtistIndex>
     implements $SetRouteAdminArtistIndexCopyWith<$Res> {
   _$SetRouteAdminArtistIndexCopyWithImpl(this._value, this._then);
 
@@ -823,11 +765,9 @@ class _$SetRouteAdminArtistIndexCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res>
-    implements $SetRouteAdminArtistIndexCopyWith<$Res> {
+abstract class _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res> implements $SetRouteAdminArtistIndexCopyWith<$Res> {
   factory _$$SetRouteAdminArtistIndex$ImplCopyWith(
-          _$SetRouteAdminArtistIndex$Impl value,
-          $Res Function(_$SetRouteAdminArtistIndex$Impl) then) =
+          _$SetRouteAdminArtistIndex$Impl value, $Res Function(_$SetRouteAdminArtistIndex$Impl) then) =
       __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -836,12 +776,10 @@ abstract class _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<$Res>
-    extends _$SetRouteAdminArtistIndexCopyWithImpl<$Res,
-        _$SetRouteAdminArtistIndex$Impl>
+    extends _$SetRouteAdminArtistIndexCopyWithImpl<$Res, _$SetRouteAdminArtistIndex$Impl>
     implements _$$SetRouteAdminArtistIndex$ImplCopyWith<$Res> {
   __$$SetRouteAdminArtistIndex$ImplCopyWithImpl(
-      _$SetRouteAdminArtistIndex$Impl _value,
-      $Res Function(_$SetRouteAdminArtistIndex$Impl) _then)
+      _$SetRouteAdminArtistIndex$Impl _value, $Res Function(_$SetRouteAdminArtistIndex$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -886,19 +824,17 @@ class _$SetRouteAdminArtistIndex$Impl implements SetRouteAdminArtistIndex$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl>
-      get copyWith => __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<
-          _$SetRouteAdminArtistIndex$Impl>(this, _$identity);
+  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl> get copyWith =>
+      __$$SetRouteAdminArtistIndex$ImplCopyWithImpl<_$SetRouteAdminArtistIndex$Impl>(this, _$identity);
 }
 
 abstract class SetRouteAdminArtistIndex$ implements SetRouteAdminArtistIndex {
-  const factory SetRouteAdminArtistIndex$(final int routeAdminArtistIndex) =
-      _$SetRouteAdminArtistIndex$Impl;
+  const factory SetRouteAdminArtistIndex$(final int routeAdminArtistIndex) = _$SetRouteAdminArtistIndex$Impl;
 
   @override
   int get routeAdminArtistIndex;
   @override
   @JsonKey(ignore: true)
-  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SetRouteAdminArtistIndex$ImplCopyWith<_$SetRouteAdminArtistIndex$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

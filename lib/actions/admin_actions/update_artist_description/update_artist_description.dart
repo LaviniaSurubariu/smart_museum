@@ -6,7 +6,8 @@ part 'update_artist_description.freezed.dart';
 
 @freezed
 class UpdateArtistDescription with _$UpdateArtistDescription implements AppAction {
-  const factory UpdateArtistDescription({required String newDescription, required String artistId}) = UpdateArtistDescriptionStart;
+  const factory UpdateArtistDescription({required String newDescription, required String artistId}) =
+      UpdateArtistDescriptionStart;
 
   const factory UpdateArtistDescription.successful(String newDescription) = UpdateArtistDescriptionSuccessful;
 

@@ -42,32 +42,32 @@ class _ArtistsListAdminPageState extends State<ArtistsListAdminPage> {
           body: artists == null || artists.isEmpty
               ? const Center(child: Text('No artists found.'))
               : ListView.builder(
-            itemCount: artists.length,
-            itemBuilder: (BuildContext context, int index) {
-              final Artist artist = artists[index];
-              return Column(
-                children: <Widget>[
-                  const SizedBox(
-                    height: 18,
-                  ),
-                  const Divider(
-                    height: 40,
-                  ),
-                  ListArtworkWidget(
-                    title: '${artist.firstName} ${artist.lastName}',
-                    onPress: () async {
-                      final Store<AppState> store = StoreProvider.of<AppState>(context);
-                      await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
-                      await store.dispatch(const SetRouteAdminArtistIndex(0));
-                      Navigator.pushReplacementNamed(context, '/artistEditPage');
-                    },
-                    imageLink: artist.pictureUrl,
-                    subtitle: '',
-                  ),
-                ],
-              );
-            },
-          ),
+                  itemCount: artists.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final Artist artist = artists[index];
+                    return Column(
+                      children: <Widget>[
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        const Divider(
+                          height: 40,
+                        ),
+                        ListArtworkWidget(
+                          title: '${artist.firstName} ${artist.lastName}',
+                          onPress: () async {
+                            final Store<AppState> store = StoreProvider.of<AppState>(context);
+                            await store.dispatch(FetchSelectedArtist(artistId: artist.uid));
+                            await store.dispatch(const SetRouteAdminArtistIndex(0));
+                            Navigator.pushReplacementNamed(context, '/artistEditPage');
+                          },
+                          imageLink: artist.pictureUrl,
+                          subtitle: '',
+                        ),
+                      ],
+                    );
+                  },
+                ),
         );
       },
     );

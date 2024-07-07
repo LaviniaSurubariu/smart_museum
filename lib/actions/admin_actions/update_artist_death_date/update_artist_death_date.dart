@@ -6,7 +6,8 @@ part 'update_artist_death_date.freezed.dart';
 
 @freezed
 class UpdateArtistDeathDate with _$UpdateArtistDeathDate implements AppAction {
-  const factory UpdateArtistDeathDate({required DateTime? newDeathDate, required String artistId}) = UpdateArtistDeathDateStart;
+  const factory UpdateArtistDeathDate({required DateTime? newDeathDate, required String artistId}) =
+      UpdateArtistDeathDateStart;
 
   const factory UpdateArtistDeathDate.successful(DateTime? newDeathDate) = UpdateArtistDeathDateSuccessful;
 

@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/user/app_user/app_user.dart';
 
-
 class AppUserContainer extends StatelessWidget {
   const AppUserContainer({super.key, required this.builder});
 

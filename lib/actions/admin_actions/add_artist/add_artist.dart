@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../app_action.dart';
 
-
 part 'add_artist.freezed.dart';
 
 @freezed
@@ -15,7 +14,7 @@ class AddArtist with _$AddArtist implements AppAction {
     required DateTime? deathDate,
     required String description,
     required ActionResult result,
-}) = AddArtistStart;
+  }) = AddArtistStart;
 
   const factory AddArtist.successful() = AddArtistSuccessful;
 

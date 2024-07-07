@@ -7,9 +7,8 @@ part 'update_artwork_artist.freezed.dart';
 
 @freezed
 class UpdateArtworkArtist with _$UpdateArtworkArtist implements AppAction {
-  const factory UpdateArtworkArtist(
-      {required ArtistForFetch artist,
-      required String artworkId}) = UpdateArtworkArtistStart;
+  const factory UpdateArtworkArtist({required ArtistForFetch artist, required String artworkId}) =
+      UpdateArtworkArtistStart;
 
   const factory UpdateArtworkArtist.successful(ArtistForFetch artist) = UpdateArtworkArtistSuccessful;
 

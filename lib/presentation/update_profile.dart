@@ -64,8 +64,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                         onSecondButtonPressed: () {
                           context.state.user?.role == 'admin'
                               ? Navigator.pushReplacementNamed(context, '/profileAdminPage')
-                              :
-                          Navigator.pushReplacementNamed(context, '/profilePage');
+                              : Navigator.pushReplacementNamed(context, '/profilePage');
                         },
                       );
                     },

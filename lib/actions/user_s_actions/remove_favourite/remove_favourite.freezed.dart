@@ -64,14 +64,12 @@ mixin _$RemoveFavourite {
 
 /// @nodoc
 abstract class $RemoveFavouriteCopyWith<$Res> {
-  factory $RemoveFavouriteCopyWith(
-          RemoveFavourite value, $Res Function(RemoveFavourite) then) =
+  factory $RemoveFavouriteCopyWith(RemoveFavourite value, $Res Function(RemoveFavourite) then) =
       _$RemoveFavouriteCopyWithImpl<$Res, RemoveFavourite>;
 }
 
 /// @nodoc
-class _$RemoveFavouriteCopyWithImpl<$Res, $Val extends RemoveFavourite>
-    implements $RemoveFavouriteCopyWith<$Res> {
+class _$RemoveFavouriteCopyWithImpl<$Res, $Val extends RemoveFavourite> implements $RemoveFavouriteCopyWith<$Res> {
   _$RemoveFavouriteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$RemoveFavouriteCopyWithImpl<$Res, $Val extends RemoveFavourite>
 
 /// @nodoc
 abstract class _$$RemoveFavouriteStartImplCopyWith<$Res> {
-  factory _$$RemoveFavouriteStartImplCopyWith(_$RemoveFavouriteStartImpl value,
-          $Res Function(_$RemoveFavouriteStartImpl) then) =
+  factory _$$RemoveFavouriteStartImplCopyWith(
+          _$RemoveFavouriteStartImpl value, $Res Function(_$RemoveFavouriteStartImpl) then) =
       __$$RemoveFavouriteStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId, String artworkId});
@@ -93,8 +91,8 @@ abstract class _$$RemoveFavouriteStartImplCopyWith<$Res> {
 class __$$RemoveFavouriteStartImplCopyWithImpl<$Res>
     extends _$RemoveFavouriteCopyWithImpl<$Res, _$RemoveFavouriteStartImpl>
     implements _$$RemoveFavouriteStartImplCopyWith<$Res> {
-  __$$RemoveFavouriteStartImplCopyWithImpl(_$RemoveFavouriteStartImpl _value,
-      $Res Function(_$RemoveFavouriteStartImpl) _then)
+  __$$RemoveFavouriteStartImplCopyWithImpl(
+      _$RemoveFavouriteStartImpl _value, $Res Function(_$RemoveFavouriteStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,8 +117,7 @@ class __$$RemoveFavouriteStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RemoveFavouriteStartImpl implements RemoveFavouriteStart {
-  const _$RemoveFavouriteStartImpl(
-      {required this.userId, required this.artworkId});
+  const _$RemoveFavouriteStartImpl({required this.userId, required this.artworkId});
 
   @override
   final String userId;
@@ -138,8 +135,7 @@ class _$RemoveFavouriteStartImpl implements RemoveFavouriteStart {
         (other.runtimeType == runtimeType &&
             other is _$RemoveFavouriteStartImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
   }
 
   @override
@@ -148,10 +144,8 @@ class _$RemoveFavouriteStartImpl implements RemoveFavouriteStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveFavouriteStartImplCopyWith<_$RemoveFavouriteStartImpl>
-      get copyWith =>
-          __$$RemoveFavouriteStartImplCopyWithImpl<_$RemoveFavouriteStartImpl>(
-              this, _$identity);
+  _$$RemoveFavouriteStartImplCopyWith<_$RemoveFavouriteStartImpl> get copyWith =>
+      __$$RemoveFavouriteStartImplCopyWithImpl<_$RemoveFavouriteStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,22 +217,19 @@ class _$RemoveFavouriteStartImpl implements RemoveFavouriteStart {
 }
 
 abstract class RemoveFavouriteStart implements RemoveFavourite {
-  const factory RemoveFavouriteStart(
-      {required final String userId,
-      required final String artworkId}) = _$RemoveFavouriteStartImpl;
+  const factory RemoveFavouriteStart({required final String userId, required final String artworkId}) =
+      _$RemoveFavouriteStartImpl;
 
   String get userId;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$RemoveFavouriteStartImplCopyWith<_$RemoveFavouriteStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$RemoveFavouriteStartImplCopyWith<_$RemoveFavouriteStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveFavouriteSuccessfulImplCopyWith<$Res> {
   factory _$$RemoveFavouriteSuccessfulImplCopyWith(
-          _$RemoveFavouriteSuccessfulImpl value,
-          $Res Function(_$RemoveFavouriteSuccessfulImpl) then) =
+          _$RemoveFavouriteSuccessfulImpl value, $Res Function(_$RemoveFavouriteSuccessfulImpl) then) =
       __$$RemoveFavouriteSuccessfulImplCopyWithImpl<$Res>;
 }
 
@@ -247,8 +238,7 @@ class __$$RemoveFavouriteSuccessfulImplCopyWithImpl<$Res>
     extends _$RemoveFavouriteCopyWithImpl<$Res, _$RemoveFavouriteSuccessfulImpl>
     implements _$$RemoveFavouriteSuccessfulImplCopyWith<$Res> {
   __$$RemoveFavouriteSuccessfulImplCopyWithImpl(
-      _$RemoveFavouriteSuccessfulImpl _value,
-      $Res Function(_$RemoveFavouriteSuccessfulImpl) _then)
+      _$RemoveFavouriteSuccessfulImpl _value, $Res Function(_$RemoveFavouriteSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -264,9 +254,7 @@ class _$RemoveFavouriteSuccessfulImpl implements RemoveFavouriteSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RemoveFavouriteSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$RemoveFavouriteSuccessfulImpl);
   }
 
   @override
@@ -347,8 +335,8 @@ abstract class RemoveFavouriteSuccessful implements RemoveFavourite {
 
 /// @nodoc
 abstract class _$$RemoveFavouriteErrorImplCopyWith<$Res> {
-  factory _$$RemoveFavouriteErrorImplCopyWith(_$RemoveFavouriteErrorImpl value,
-          $Res Function(_$RemoveFavouriteErrorImpl) then) =
+  factory _$$RemoveFavouriteErrorImplCopyWith(
+          _$RemoveFavouriteErrorImpl value, $Res Function(_$RemoveFavouriteErrorImpl) then) =
       __$$RemoveFavouriteErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -358,8 +346,8 @@ abstract class _$$RemoveFavouriteErrorImplCopyWith<$Res> {
 class __$$RemoveFavouriteErrorImplCopyWithImpl<$Res>
     extends _$RemoveFavouriteCopyWithImpl<$Res, _$RemoveFavouriteErrorImpl>
     implements _$$RemoveFavouriteErrorImplCopyWith<$Res> {
-  __$$RemoveFavouriteErrorImplCopyWithImpl(_$RemoveFavouriteErrorImpl _value,
-      $Res Function(_$RemoveFavouriteErrorImpl) _then)
+  __$$RemoveFavouriteErrorImplCopyWithImpl(
+      _$RemoveFavouriteErrorImpl _value, $Res Function(_$RemoveFavouriteErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -399,21 +387,17 @@ class _$RemoveFavouriteErrorImpl implements RemoveFavouriteError {
         (other.runtimeType == runtimeType &&
             other is _$RemoveFavouriteErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveFavouriteErrorImplCopyWith<_$RemoveFavouriteErrorImpl>
-      get copyWith =>
-          __$$RemoveFavouriteErrorImplCopyWithImpl<_$RemoveFavouriteErrorImpl>(
-              this, _$identity);
+  _$$RemoveFavouriteErrorImplCopyWith<_$RemoveFavouriteErrorImpl> get copyWith =>
+      __$$RemoveFavouriteErrorImplCopyWithImpl<_$RemoveFavouriteErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -485,13 +469,10 @@ class _$RemoveFavouriteErrorImpl implements RemoveFavouriteError {
 }
 
 abstract class RemoveFavouriteError implements RemoveFavourite, ErrorAction {
-  const factory RemoveFavouriteError(
-          final Object error, final StackTrace stackTrace) =
-      _$RemoveFavouriteErrorImpl;
+  const factory RemoveFavouriteError(final Object error, final StackTrace stackTrace) = _$RemoveFavouriteErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$RemoveFavouriteErrorImplCopyWith<_$RemoveFavouriteErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$RemoveFavouriteErrorImplCopyWith<_$RemoveFavouriteErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

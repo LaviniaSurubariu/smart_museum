@@ -12,5 +12,6 @@ class ArtworkForTop with _$ArtworkForTop {
     required String title,
   }) = ArtworkForTop$;
 
-  factory ArtworkForTop.fromJson(Map<dynamic, dynamic> json) => _$ArtworkForTopFromJson(Map<String, dynamic>.from(json));
+  factory ArtworkForTop.fromJson(Map<dynamic, dynamic> json) =>
+      _$ArtworkForTopFromJson(Map<String, dynamic>.from(json));
 }

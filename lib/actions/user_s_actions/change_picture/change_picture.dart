@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../models/user/app_user/app_user.dart';
 import '../../app_action.dart';
 
-
 part 'change_picture.freezed.dart';
 
 @freezed

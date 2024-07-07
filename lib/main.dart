@@ -101,7 +101,6 @@ class MyApp extends StatelessWidget {
           '/artistEditPage': (BuildContext context) => const ArtistEditPage(),
           '/artworksWithAllStylePage': (BuildContext context) => const ArtworksWithAllStylesPage(),
           '/artworksByStylePage': (BuildContext context) => const ArtworksByStylePage(),
-
         },
       ),
     );

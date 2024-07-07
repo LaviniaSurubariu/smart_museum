@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 
-
 class TopArtistsContainer extends StatelessWidget {
   const TopArtistsContainer({super.key, required this.builder});
 

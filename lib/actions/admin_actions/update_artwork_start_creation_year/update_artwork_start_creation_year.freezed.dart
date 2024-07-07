@@ -41,24 +41,21 @@ mixin _$UpdateArtworkStartCreationYear {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value) $default, {
-    required TResult Function(UpdateArtworkStartCreationYearSuccessful value)
-        successful,
+    required TResult Function(UpdateArtworkStartCreationYearSuccessful value) successful,
     required TResult Function(UpdateArtworkStartCreationYearError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult? Function(UpdateArtworkStartCreationYearError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult Function(UpdateArtworkStartCreationYearError value)? error,
     required TResult orElse(),
   }) =>
@@ -68,15 +65,12 @@ mixin _$UpdateArtworkStartCreationYear {
 /// @nodoc
 abstract class $UpdateArtworkStartCreationYearCopyWith<$Res> {
   factory $UpdateArtworkStartCreationYearCopyWith(
-          UpdateArtworkStartCreationYear value,
-          $Res Function(UpdateArtworkStartCreationYear) then) =
-      _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
-          UpdateArtworkStartCreationYear>;
+          UpdateArtworkStartCreationYear value, $Res Function(UpdateArtworkStartCreationYear) then) =
+      _$UpdateArtworkStartCreationYearCopyWithImpl<$Res, UpdateArtworkStartCreationYear>;
 }
 
 /// @nodoc
-class _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
-        $Val extends UpdateArtworkStartCreationYear>
+class _$UpdateArtworkStartCreationYearCopyWithImpl<$Res, $Val extends UpdateArtworkStartCreationYear>
     implements $UpdateArtworkStartCreationYearCopyWith<$Res> {
   _$UpdateArtworkStartCreationYearCopyWithImpl(this._value, this._then);
 
@@ -88,8 +82,7 @@ class _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$UpdateArtworkStartCreationYearStartImplCopyWith<$Res> {
-  factory _$$UpdateArtworkStartCreationYearStartImplCopyWith(
-          _$UpdateArtworkStartCreationYearStartImpl value,
+  factory _$$UpdateArtworkStartCreationYearStartImplCopyWith(_$UpdateArtworkStartCreationYearStartImpl value,
           $Res Function(_$UpdateArtworkStartCreationYearStartImpl) then) =
       __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl<$Res>;
   @useResult
@@ -98,12 +91,10 @@ abstract class _$$UpdateArtworkStartCreationYearStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
-        _$UpdateArtworkStartCreationYearStartImpl>
+    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res, _$UpdateArtworkStartCreationYearStartImpl>
     implements _$$UpdateArtworkStartCreationYearStartImplCopyWith<$Res> {
   __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl(
-      _$UpdateArtworkStartCreationYearStartImpl _value,
-      $Res Function(_$UpdateArtworkStartCreationYearStartImpl) _then)
+      _$UpdateArtworkStartCreationYearStartImpl _value, $Res Function(_$UpdateArtworkStartCreationYearStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,10 +118,8 @@ class __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkStartCreationYearStartImpl
-    implements UpdateArtworkStartCreationYearStart {
-  const _$UpdateArtworkStartCreationYearStartImpl(
-      {required this.newYear, required this.artworkId});
+class _$UpdateArtworkStartCreationYearStartImpl implements UpdateArtworkStartCreationYearStart {
+  const _$UpdateArtworkStartCreationYearStartImpl({required this.newYear, required this.artworkId});
 
   @override
   final int newYear;
@@ -148,8 +137,7 @@ class _$UpdateArtworkStartCreationYearStartImpl
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkStartCreationYearStartImpl &&
             (identical(other.newYear, newYear) || other.newYear == newYear) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
   }
 
   @override
@@ -158,10 +146,9 @@ class _$UpdateArtworkStartCreationYearStartImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStartCreationYearStartImplCopyWith<
-          _$UpdateArtworkStartCreationYearStartImpl>
-      get copyWith => __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl<
-          _$UpdateArtworkStartCreationYearStartImpl>(this, _$identity);
+  _$$UpdateArtworkStartCreationYearStartImplCopyWith<_$UpdateArtworkStartCreationYearStartImpl> get copyWith =>
+      __$$UpdateArtworkStartCreationYearStartImplCopyWithImpl<_$UpdateArtworkStartCreationYearStartImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -201,8 +188,7 @@ class _$UpdateArtworkStartCreationYearStartImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value) $default, {
-    required TResult Function(UpdateArtworkStartCreationYearSuccessful value)
-        successful,
+    required TResult Function(UpdateArtworkStartCreationYearSuccessful value) successful,
     required TResult Function(UpdateArtworkStartCreationYearError value) error,
   }) {
     return $default(this);
@@ -212,8 +198,7 @@ class _$UpdateArtworkStartCreationYearStartImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult? Function(UpdateArtworkStartCreationYearError value)? error,
   }) {
     return $default?.call(this);
@@ -223,8 +208,7 @@ class _$UpdateArtworkStartCreationYearStartImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult Function(UpdateArtworkStartCreationYearError value)? error,
     required TResult orElse(),
   }) {
@@ -235,24 +219,20 @@ class _$UpdateArtworkStartCreationYearStartImpl
   }
 }
 
-abstract class UpdateArtworkStartCreationYearStart
-    implements UpdateArtworkStartCreationYear {
-  const factory UpdateArtworkStartCreationYearStart(
-          {required final int newYear, required final String artworkId}) =
+abstract class UpdateArtworkStartCreationYearStart implements UpdateArtworkStartCreationYear {
+  const factory UpdateArtworkStartCreationYearStart({required final int newYear, required final String artworkId}) =
       _$UpdateArtworkStartCreationYearStartImpl;
 
   int get newYear;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStartCreationYearStartImplCopyWith<
-          _$UpdateArtworkStartCreationYearStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkStartCreationYearStartImplCopyWith<_$UpdateArtworkStartCreationYearStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<$Res> {
-  factory _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith(
-          _$UpdateArtworkStartCreationYearSuccessfulImpl value,
+  factory _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith(_$UpdateArtworkStartCreationYearSuccessfulImpl value,
           $Res Function(_$UpdateArtworkStartCreationYearSuccessfulImpl) then) =
       __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl<$Res>;
   @useResult
@@ -261,11 +241,9 @@ abstract class _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
-        _$UpdateArtworkStartCreationYearSuccessfulImpl>
+    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res, _$UpdateArtworkStartCreationYearSuccessfulImpl>
     implements _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<$Res> {
-  __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkStartCreationYearSuccessfulImpl _value,
+  __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl(_$UpdateArtworkStartCreationYearSuccessfulImpl _value,
       $Res Function(_$UpdateArtworkStartCreationYearSuccessfulImpl) _then)
       : super(_value, _then);
 
@@ -285,10 +263,8 @@ class __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkStartCreationYearSuccessfulImpl
-    implements UpdateArtworkStartCreationYearSuccessful {
-  const _$UpdateArtworkStartCreationYearSuccessfulImpl(
-      this.newStartCreationYear);
+class _$UpdateArtworkStartCreationYearSuccessfulImpl implements UpdateArtworkStartCreationYearSuccessful {
+  const _$UpdateArtworkStartCreationYearSuccessfulImpl(this.newStartCreationYear);
 
   @override
   final int newStartCreationYear;
@@ -313,11 +289,10 @@ class _$UpdateArtworkStartCreationYearSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<
-          _$UpdateArtworkStartCreationYearSuccessfulImpl>
+  _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<_$UpdateArtworkStartCreationYearSuccessfulImpl>
       get copyWith =>
-          __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl<
-              _$UpdateArtworkStartCreationYearSuccessfulImpl>(this, _$identity);
+          __$$UpdateArtworkStartCreationYearSuccessfulImplCopyWithImpl<_$UpdateArtworkStartCreationYearSuccessfulImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -357,8 +332,7 @@ class _$UpdateArtworkStartCreationYearSuccessfulImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value) $default, {
-    required TResult Function(UpdateArtworkStartCreationYearSuccessful value)
-        successful,
+    required TResult Function(UpdateArtworkStartCreationYearSuccessful value) successful,
     required TResult Function(UpdateArtworkStartCreationYearError value) error,
   }) {
     return successful(this);
@@ -368,8 +342,7 @@ class _$UpdateArtworkStartCreationYearSuccessfulImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult? Function(UpdateArtworkStartCreationYearError value)? error,
   }) {
     return successful?.call(this);
@@ -379,8 +352,7 @@ class _$UpdateArtworkStartCreationYearSuccessfulImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult Function(UpdateArtworkStartCreationYearError value)? error,
     required TResult orElse(),
   }) {
@@ -391,23 +363,19 @@ class _$UpdateArtworkStartCreationYearSuccessfulImpl
   }
 }
 
-abstract class UpdateArtworkStartCreationYearSuccessful
-    implements UpdateArtworkStartCreationYear {
-  const factory UpdateArtworkStartCreationYearSuccessful(
-          final int newStartCreationYear) =
+abstract class UpdateArtworkStartCreationYearSuccessful implements UpdateArtworkStartCreationYear {
+  const factory UpdateArtworkStartCreationYearSuccessful(final int newStartCreationYear) =
       _$UpdateArtworkStartCreationYearSuccessfulImpl;
 
   int get newStartCreationYear;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<
-          _$UpdateArtworkStartCreationYearSuccessfulImpl>
+  _$$UpdateArtworkStartCreationYearSuccessfulImplCopyWith<_$UpdateArtworkStartCreationYearSuccessfulImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkStartCreationYearErrorImplCopyWith<$Res> {
-  factory _$$UpdateArtworkStartCreationYearErrorImplCopyWith(
-          _$UpdateArtworkStartCreationYearErrorImpl value,
+  factory _$$UpdateArtworkStartCreationYearErrorImplCopyWith(_$UpdateArtworkStartCreationYearErrorImpl value,
           $Res Function(_$UpdateArtworkStartCreationYearErrorImpl) then) =
       __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl<$Res>;
   @useResult
@@ -416,12 +384,10 @@ abstract class _$$UpdateArtworkStartCreationYearErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res,
-        _$UpdateArtworkStartCreationYearErrorImpl>
+    extends _$UpdateArtworkStartCreationYearCopyWithImpl<$Res, _$UpdateArtworkStartCreationYearErrorImpl>
     implements _$$UpdateArtworkStartCreationYearErrorImplCopyWith<$Res> {
   __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl(
-      _$UpdateArtworkStartCreationYearErrorImpl _value,
-      $Res Function(_$UpdateArtworkStartCreationYearErrorImpl) _then)
+      _$UpdateArtworkStartCreationYearErrorImpl _value, $Res Function(_$UpdateArtworkStartCreationYearErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -442,8 +408,7 @@ class __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkStartCreationYearErrorImpl
-    implements UpdateArtworkStartCreationYearError {
+class _$UpdateArtworkStartCreationYearErrorImpl implements UpdateArtworkStartCreationYearError {
   const _$UpdateArtworkStartCreationYearErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -462,21 +427,18 @@ class _$UpdateArtworkStartCreationYearErrorImpl
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkStartCreationYearErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStartCreationYearErrorImplCopyWith<
-          _$UpdateArtworkStartCreationYearErrorImpl>
-      get copyWith => __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl<
-          _$UpdateArtworkStartCreationYearErrorImpl>(this, _$identity);
+  _$$UpdateArtworkStartCreationYearErrorImplCopyWith<_$UpdateArtworkStartCreationYearErrorImpl> get copyWith =>
+      __$$UpdateArtworkStartCreationYearErrorImplCopyWithImpl<_$UpdateArtworkStartCreationYearErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -516,8 +478,7 @@ class _$UpdateArtworkStartCreationYearErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value) $default, {
-    required TResult Function(UpdateArtworkStartCreationYearSuccessful value)
-        successful,
+    required TResult Function(UpdateArtworkStartCreationYearSuccessful value) successful,
     required TResult Function(UpdateArtworkStartCreationYearError value) error,
   }) {
     return error(this);
@@ -527,8 +488,7 @@ class _$UpdateArtworkStartCreationYearErrorImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult? Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult? Function(UpdateArtworkStartCreationYearError value)? error,
   }) {
     return error?.call(this);
@@ -538,8 +498,7 @@ class _$UpdateArtworkStartCreationYearErrorImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(UpdateArtworkStartCreationYearStart value)? $default, {
-    TResult Function(UpdateArtworkStartCreationYearSuccessful value)?
-        successful,
+    TResult Function(UpdateArtworkStartCreationYearSuccessful value)? successful,
     TResult Function(UpdateArtworkStartCreationYearError value)? error,
     required TResult orElse(),
   }) {
@@ -550,16 +509,13 @@ class _$UpdateArtworkStartCreationYearErrorImpl
   }
 }
 
-abstract class UpdateArtworkStartCreationYearError
-    implements UpdateArtworkStartCreationYear, ErrorAction {
-  const factory UpdateArtworkStartCreationYearError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkStartCreationYearError implements UpdateArtworkStartCreationYear, ErrorAction {
+  const factory UpdateArtworkStartCreationYearError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkStartCreationYearErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStartCreationYearErrorImplCopyWith<
-          _$UpdateArtworkStartCreationYearErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkStartCreationYearErrorImplCopyWith<_$UpdateArtworkStartCreationYearErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

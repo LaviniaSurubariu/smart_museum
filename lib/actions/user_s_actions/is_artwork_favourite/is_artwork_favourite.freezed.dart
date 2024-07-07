@@ -64,8 +64,7 @@ mixin _$IsArtworkFavourite {
 
 /// @nodoc
 abstract class $IsArtworkFavouriteCopyWith<$Res> {
-  factory $IsArtworkFavouriteCopyWith(
-          IsArtworkFavourite value, $Res Function(IsArtworkFavourite) then) =
+  factory $IsArtworkFavouriteCopyWith(IsArtworkFavourite value, $Res Function(IsArtworkFavourite) then) =
       _$IsArtworkFavouriteCopyWithImpl<$Res, IsArtworkFavourite>;
 }
 
@@ -83,8 +82,7 @@ class _$IsArtworkFavouriteCopyWithImpl<$Res, $Val extends IsArtworkFavourite>
 /// @nodoc
 abstract class _$$IsArtworkFavouriteStartImplCopyWith<$Res> {
   factory _$$IsArtworkFavouriteStartImplCopyWith(
-          _$IsArtworkFavouriteStartImpl value,
-          $Res Function(_$IsArtworkFavouriteStartImpl) then) =
+          _$IsArtworkFavouriteStartImpl value, $Res Function(_$IsArtworkFavouriteStartImpl) then) =
       __$$IsArtworkFavouriteStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId, String artworkId});
@@ -92,12 +90,10 @@ abstract class _$$IsArtworkFavouriteStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$IsArtworkFavouriteStartImplCopyWithImpl<$Res>
-    extends _$IsArtworkFavouriteCopyWithImpl<$Res,
-        _$IsArtworkFavouriteStartImpl>
+    extends _$IsArtworkFavouriteCopyWithImpl<$Res, _$IsArtworkFavouriteStartImpl>
     implements _$$IsArtworkFavouriteStartImplCopyWith<$Res> {
   __$$IsArtworkFavouriteStartImplCopyWithImpl(
-      _$IsArtworkFavouriteStartImpl _value,
-      $Res Function(_$IsArtworkFavouriteStartImpl) _then)
+      _$IsArtworkFavouriteStartImpl _value, $Res Function(_$IsArtworkFavouriteStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,8 +118,7 @@ class __$$IsArtworkFavouriteStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$IsArtworkFavouriteStartImpl implements IsArtworkFavouriteStart {
-  const _$IsArtworkFavouriteStartImpl(
-      {required this.userId, required this.artworkId});
+  const _$IsArtworkFavouriteStartImpl({required this.userId, required this.artworkId});
 
   @override
   final String userId;
@@ -141,8 +136,7 @@ class _$IsArtworkFavouriteStartImpl implements IsArtworkFavouriteStart {
         (other.runtimeType == runtimeType &&
             other is _$IsArtworkFavouriteStartImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
   }
 
   @override
@@ -151,9 +145,8 @@ class _$IsArtworkFavouriteStartImpl implements IsArtworkFavouriteStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsArtworkFavouriteStartImplCopyWith<_$IsArtworkFavouriteStartImpl>
-      get copyWith => __$$IsArtworkFavouriteStartImplCopyWithImpl<
-          _$IsArtworkFavouriteStartImpl>(this, _$identity);
+  _$$IsArtworkFavouriteStartImplCopyWith<_$IsArtworkFavouriteStartImpl> get copyWith =>
+      __$$IsArtworkFavouriteStartImplCopyWithImpl<_$IsArtworkFavouriteStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -225,22 +218,20 @@ class _$IsArtworkFavouriteStartImpl implements IsArtworkFavouriteStart {
 }
 
 abstract class IsArtworkFavouriteStart implements IsArtworkFavourite {
-  const factory IsArtworkFavouriteStart(
-      {required final String userId,
-      required final String artworkId}) = _$IsArtworkFavouriteStartImpl;
+  const factory IsArtworkFavouriteStart({required final String userId, required final String artworkId}) =
+      _$IsArtworkFavouriteStartImpl;
 
   String get userId;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$IsArtworkFavouriteStartImplCopyWith<_$IsArtworkFavouriteStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$IsArtworkFavouriteStartImplCopyWith<_$IsArtworkFavouriteStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$IsArtworkFavouriteSuccessfulImplCopyWith<$Res> {
   factory _$$IsArtworkFavouriteSuccessfulImplCopyWith(
-          _$IsArtworkFavouriteSuccessfulImpl value,
-          $Res Function(_$IsArtworkFavouriteSuccessfulImpl) then) =
+          _$IsArtworkFavouriteSuccessfulImpl value, $Res Function(_$IsArtworkFavouriteSuccessfulImpl) then) =
       __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isFavourite});
@@ -248,12 +239,10 @@ abstract class _$$IsArtworkFavouriteSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl<$Res>
-    extends _$IsArtworkFavouriteCopyWithImpl<$Res,
-        _$IsArtworkFavouriteSuccessfulImpl>
+    extends _$IsArtworkFavouriteCopyWithImpl<$Res, _$IsArtworkFavouriteSuccessfulImpl>
     implements _$$IsArtworkFavouriteSuccessfulImplCopyWith<$Res> {
   __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl(
-      _$IsArtworkFavouriteSuccessfulImpl _value,
-      $Res Function(_$IsArtworkFavouriteSuccessfulImpl) _then)
+      _$IsArtworkFavouriteSuccessfulImpl _value, $Res Function(_$IsArtworkFavouriteSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -272,8 +261,7 @@ class __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$IsArtworkFavouriteSuccessfulImpl
-    implements IsArtworkFavouriteSuccessful {
+class _$IsArtworkFavouriteSuccessfulImpl implements IsArtworkFavouriteSuccessful {
   const _$IsArtworkFavouriteSuccessfulImpl(this.isFavourite);
 
   @override
@@ -289,8 +277,7 @@ class _$IsArtworkFavouriteSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsArtworkFavouriteSuccessfulImpl &&
-            (identical(other.isFavourite, isFavourite) ||
-                other.isFavourite == isFavourite));
+            (identical(other.isFavourite, isFavourite) || other.isFavourite == isFavourite));
   }
 
   @override
@@ -299,10 +286,8 @@ class _$IsArtworkFavouriteSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsArtworkFavouriteSuccessfulImplCopyWith<
-          _$IsArtworkFavouriteSuccessfulImpl>
-      get copyWith => __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl<
-          _$IsArtworkFavouriteSuccessfulImpl>(this, _$identity);
+  _$$IsArtworkFavouriteSuccessfulImplCopyWith<_$IsArtworkFavouriteSuccessfulImpl> get copyWith =>
+      __$$IsArtworkFavouriteSuccessfulImplCopyWithImpl<_$IsArtworkFavouriteSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -374,21 +359,18 @@ class _$IsArtworkFavouriteSuccessfulImpl
 }
 
 abstract class IsArtworkFavouriteSuccessful implements IsArtworkFavourite {
-  const factory IsArtworkFavouriteSuccessful(final bool isFavourite) =
-      _$IsArtworkFavouriteSuccessfulImpl;
+  const factory IsArtworkFavouriteSuccessful(final bool isFavourite) = _$IsArtworkFavouriteSuccessfulImpl;
 
   bool get isFavourite;
   @JsonKey(ignore: true)
-  _$$IsArtworkFavouriteSuccessfulImplCopyWith<
-          _$IsArtworkFavouriteSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$IsArtworkFavouriteSuccessfulImplCopyWith<_$IsArtworkFavouriteSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$IsArtworkFavouriteErrorImplCopyWith<$Res> {
   factory _$$IsArtworkFavouriteErrorImplCopyWith(
-          _$IsArtworkFavouriteErrorImpl value,
-          $Res Function(_$IsArtworkFavouriteErrorImpl) then) =
+          _$IsArtworkFavouriteErrorImpl value, $Res Function(_$IsArtworkFavouriteErrorImpl) then) =
       __$$IsArtworkFavouriteErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -396,12 +378,10 @@ abstract class _$$IsArtworkFavouriteErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$IsArtworkFavouriteErrorImplCopyWithImpl<$Res>
-    extends _$IsArtworkFavouriteCopyWithImpl<$Res,
-        _$IsArtworkFavouriteErrorImpl>
+    extends _$IsArtworkFavouriteCopyWithImpl<$Res, _$IsArtworkFavouriteErrorImpl>
     implements _$$IsArtworkFavouriteErrorImplCopyWith<$Res> {
   __$$IsArtworkFavouriteErrorImplCopyWithImpl(
-      _$IsArtworkFavouriteErrorImpl _value,
-      $Res Function(_$IsArtworkFavouriteErrorImpl) _then)
+      _$IsArtworkFavouriteErrorImpl _value, $Res Function(_$IsArtworkFavouriteErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -441,20 +421,17 @@ class _$IsArtworkFavouriteErrorImpl implements IsArtworkFavouriteError {
         (other.runtimeType == runtimeType &&
             other is _$IsArtworkFavouriteErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IsArtworkFavouriteErrorImplCopyWith<_$IsArtworkFavouriteErrorImpl>
-      get copyWith => __$$IsArtworkFavouriteErrorImplCopyWithImpl<
-          _$IsArtworkFavouriteErrorImpl>(this, _$identity);
+  _$$IsArtworkFavouriteErrorImplCopyWith<_$IsArtworkFavouriteErrorImpl> get copyWith =>
+      __$$IsArtworkFavouriteErrorImplCopyWithImpl<_$IsArtworkFavouriteErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -525,15 +502,13 @@ class _$IsArtworkFavouriteErrorImpl implements IsArtworkFavouriteError {
   }
 }
 
-abstract class IsArtworkFavouriteError
-    implements IsArtworkFavourite, ErrorAction {
-  const factory IsArtworkFavouriteError(
-          final Object error, final StackTrace stackTrace) =
+abstract class IsArtworkFavouriteError implements IsArtworkFavourite, ErrorAction {
+  const factory IsArtworkFavouriteError(final Object error, final StackTrace stackTrace) =
       _$IsArtworkFavouriteErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$IsArtworkFavouriteErrorImplCopyWith<_$IsArtworkFavouriteErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$IsArtworkFavouriteErrorImplCopyWith<_$IsArtworkFavouriteErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

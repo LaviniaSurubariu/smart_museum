@@ -5,7 +5,7 @@ part 'artwork_without_qr_code.freezed.dart';
 part 'artwork_without_qr_code.g.dart';
 
 @freezed
-  class ArtworkWithoutQrCode with _$ArtworkWithoutQrCode {
+class ArtworkWithoutQrCode with _$ArtworkWithoutQrCode {
   const factory ArtworkWithoutQrCode({
     required String id,
     required String title,

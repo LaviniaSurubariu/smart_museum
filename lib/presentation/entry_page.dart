@@ -35,7 +35,8 @@ class EntryPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black54, minimumSize: const Size(double.infinity, 50)),
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/loginUser');
                 },

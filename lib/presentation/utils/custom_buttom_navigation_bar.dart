@@ -13,7 +13,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: const Color.fromRGBO(	247, 245, 253,1),
+      backgroundColor: const Color.fromRGBO(247, 245, 253, 1),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
@@ -26,7 +26,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
             Icons.qr_code_scanner_outlined,
           ),
           label: 'Scan',
-
         ),
         BottomNavigationBarItem(
           icon: Icon(
@@ -36,7 +35,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ],
       currentIndex: currentIndex,
-      selectedItemColor: const Color.fromRGBO(	112, 197, 225, 1),
+      selectedItemColor: const Color.fromRGBO(112, 197, 225, 1),
       onTap: onTap,
     );
   }

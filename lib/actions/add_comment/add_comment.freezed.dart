@@ -18,8 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AddComment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -27,8 +26,7 @@ mixin _$AddComment {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult? Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -36,8 +34,7 @@ mixin _$AddComment {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -70,14 +67,12 @@ mixin _$AddComment {
 
 /// @nodoc
 abstract class $AddCommentCopyWith<$Res> {
-  factory $AddCommentCopyWith(
-          AddComment value, $Res Function(AddComment) then) =
+  factory $AddCommentCopyWith(AddComment value, $Res Function(AddComment) then) =
       _$AddCommentCopyWithImpl<$Res, AddComment>;
 }
 
 /// @nodoc
-class _$AddCommentCopyWithImpl<$Res, $Val extends AddComment>
-    implements $AddCommentCopyWith<$Res> {
+class _$AddCommentCopyWithImpl<$Res, $Val extends AddComment> implements $AddCommentCopyWith<$Res> {
   _$AddCommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -88,24 +83,16 @@ class _$AddCommentCopyWithImpl<$Res, $Val extends AddComment>
 
 /// @nodoc
 abstract class _$$AddCommentStartImplCopyWith<$Res> {
-  factory _$$AddCommentStartImplCopyWith(_$AddCommentStartImpl value,
-          $Res Function(_$AddCommentStartImpl) then) =
+  factory _$$AddCommentStartImplCopyWith(_$AddCommentStartImpl value, $Res Function(_$AddCommentStartImpl) then) =
       __$$AddCommentStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String text,
-      DateTime createdAt,
-      String idUser,
-      String firstNameUser,
-      String lastNameUser});
+  $Res call({String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser});
 }
 
 /// @nodoc
-class __$$AddCommentStartImplCopyWithImpl<$Res>
-    extends _$AddCommentCopyWithImpl<$Res, _$AddCommentStartImpl>
+class __$$AddCommentStartImplCopyWithImpl<$Res> extends _$AddCommentCopyWithImpl<$Res, _$AddCommentStartImpl>
     implements _$$AddCommentStartImplCopyWith<$Res> {
-  __$$AddCommentStartImplCopyWithImpl(
-      _$AddCommentStartImpl _value, $Res Function(_$AddCommentStartImpl) _then)
+  __$$AddCommentStartImplCopyWithImpl(_$AddCommentStartImpl _value, $Res Function(_$AddCommentStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -174,31 +161,25 @@ class _$AddCommentStartImpl implements AddCommentStart {
         (other.runtimeType == runtimeType &&
             other is _$AddCommentStartImpl &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
             (identical(other.idUser, idUser) || other.idUser == idUser) &&
-            (identical(other.firstNameUser, firstNameUser) ||
-                other.firstNameUser == firstNameUser) &&
-            (identical(other.lastNameUser, lastNameUser) ||
-                other.lastNameUser == lastNameUser));
+            (identical(other.firstNameUser, firstNameUser) || other.firstNameUser == firstNameUser) &&
+            (identical(other.lastNameUser, lastNameUser) || other.lastNameUser == lastNameUser));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, text, createdAt, idUser, firstNameUser, lastNameUser);
+  int get hashCode => Object.hash(runtimeType, text, createdAt, idUser, firstNameUser, lastNameUser);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddCommentStartImplCopyWith<_$AddCommentStartImpl> get copyWith =>
-      __$$AddCommentStartImplCopyWithImpl<_$AddCommentStartImpl>(
-          this, _$identity);
+      __$$AddCommentStartImplCopyWithImpl<_$AddCommentStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -209,8 +190,7 @@ class _$AddCommentStartImpl implements AddCommentStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult? Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -221,8 +201,7 @@ class _$AddCommentStartImpl implements AddCommentStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -283,23 +262,21 @@ abstract class AddCommentStart implements AddComment {
   String get firstNameUser;
   String get lastNameUser;
   @JsonKey(ignore: true)
-  _$$AddCommentStartImplCopyWith<_$AddCommentStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddCommentStartImplCopyWith<_$AddCommentStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddCommentSuccessfulImplCopyWith<$Res> {
-  factory _$$AddCommentSuccessfulImplCopyWith(_$AddCommentSuccessfulImpl value,
-          $Res Function(_$AddCommentSuccessfulImpl) then) =
+  factory _$$AddCommentSuccessfulImplCopyWith(
+          _$AddCommentSuccessfulImpl value, $Res Function(_$AddCommentSuccessfulImpl) then) =
       __$$AddCommentSuccessfulImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddCommentSuccessfulImplCopyWithImpl<$Res>
-    extends _$AddCommentCopyWithImpl<$Res, _$AddCommentSuccessfulImpl>
+class __$$AddCommentSuccessfulImplCopyWithImpl<$Res> extends _$AddCommentCopyWithImpl<$Res, _$AddCommentSuccessfulImpl>
     implements _$$AddCommentSuccessfulImplCopyWith<$Res> {
-  __$$AddCommentSuccessfulImplCopyWithImpl(_$AddCommentSuccessfulImpl _value,
-      $Res Function(_$AddCommentSuccessfulImpl) _then)
+  __$$AddCommentSuccessfulImplCopyWithImpl(
+      _$AddCommentSuccessfulImpl _value, $Res Function(_$AddCommentSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -315,9 +292,7 @@ class _$AddCommentSuccessfulImpl implements AddCommentSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddCommentSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AddCommentSuccessfulImpl);
   }
 
   @override
@@ -326,8 +301,7 @@ class _$AddCommentSuccessfulImpl implements AddCommentSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -338,8 +312,7 @@ class _$AddCommentSuccessfulImpl implements AddCommentSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult? Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -350,8 +323,7 @@ class _$AddCommentSuccessfulImpl implements AddCommentSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -404,19 +376,16 @@ abstract class AddCommentSuccessful implements AddComment {
 
 /// @nodoc
 abstract class _$$AddCommentErrorImplCopyWith<$Res> {
-  factory _$$AddCommentErrorImplCopyWith(_$AddCommentErrorImpl value,
-          $Res Function(_$AddCommentErrorImpl) then) =
+  factory _$$AddCommentErrorImplCopyWith(_$AddCommentErrorImpl value, $Res Function(_$AddCommentErrorImpl) then) =
       __$$AddCommentErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddCommentErrorImplCopyWithImpl<$Res>
-    extends _$AddCommentCopyWithImpl<$Res, _$AddCommentErrorImpl>
+class __$$AddCommentErrorImplCopyWithImpl<$Res> extends _$AddCommentCopyWithImpl<$Res, _$AddCommentErrorImpl>
     implements _$$AddCommentErrorImplCopyWith<$Res> {
-  __$$AddCommentErrorImplCopyWithImpl(
-      _$AddCommentErrorImpl _value, $Res Function(_$AddCommentErrorImpl) _then)
+  __$$AddCommentErrorImplCopyWithImpl(_$AddCommentErrorImpl _value, $Res Function(_$AddCommentErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -456,26 +425,22 @@ class _$AddCommentErrorImpl implements AddCommentError {
         (other.runtimeType == runtimeType &&
             other is _$AddCommentErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddCommentErrorImplCopyWith<_$AddCommentErrorImpl> get copyWith =>
-      __$$AddCommentErrorImplCopyWithImpl<_$AddCommentErrorImpl>(
-          this, _$identity);
+      __$$AddCommentErrorImplCopyWithImpl<_$AddCommentErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -486,8 +451,7 @@ class _$AddCommentErrorImpl implements AddCommentError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult? Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -498,8 +462,7 @@ class _$AddCommentErrorImpl implements AddCommentError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String text, DateTime createdAt, String idUser,
-            String firstNameUser, String lastNameUser)?
+    TResult Function(String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -547,12 +510,10 @@ class _$AddCommentErrorImpl implements AddCommentError {
 }
 
 abstract class AddCommentError implements AddComment, ErrorAction {
-  const factory AddCommentError(
-      final Object error, final StackTrace stackTrace) = _$AddCommentErrorImpl;
+  const factory AddCommentError(final Object error, final StackTrace stackTrace) = _$AddCommentErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddCommentErrorImplCopyWith<_$AddCommentErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddCommentErrorImplCopyWith<_$AddCommentErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

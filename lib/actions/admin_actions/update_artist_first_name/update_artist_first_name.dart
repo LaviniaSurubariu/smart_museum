@@ -6,7 +6,8 @@ part 'update_artist_first_name.freezed.dart';
 
 @freezed
 class UpdateArtistFirstName with _$UpdateArtistFirstName implements AppAction {
-  const factory UpdateArtistFirstName({required String newFirstName, required String artistId}) = UpdateArtistFirstNameStart;
+  const factory UpdateArtistFirstName({required String newFirstName, required String artistId}) =
+      UpdateArtistFirstNameStart;
 
   const factory UpdateArtistFirstName.successful(String newFirstName) = UpdateArtistFirstNameSuccessful;
 

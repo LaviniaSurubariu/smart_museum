@@ -6,7 +6,8 @@ part 'update_artist_birthdate.freezed.dart';
 
 @freezed
 class UpdateArtistBirthdate with _$UpdateArtistBirthdate implements AppAction {
-  const factory UpdateArtistBirthdate({required DateTime? newBirthdate, required String artistId}) = UpdateArtistBirthdateStart;
+  const factory UpdateArtistBirthdate({required DateTime? newBirthdate, required String artistId}) =
+      UpdateArtistBirthdateStart;
 
   const factory UpdateArtistBirthdate.successful(DateTime? newBirthdate) = UpdateArtistBirthdateSuccessful;
 

@@ -21,10 +21,8 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
-  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode =>
-      throw _privateConstructorUsedError;
-  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode =>
-      throw _privateConstructorUsedError;
+  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode => throw _privateConstructorUsedError;
+  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode => throw _privateConstructorUsedError;
   Artwork? get scannedArtwork => throw _privateConstructorUsedError;
   Artwork? get selectedArtwork => throw _privateConstructorUsedError;
   Artist? get selectedArtist => throw _privateConstructorUsedError;
@@ -35,28 +33,23 @@ mixin _$AppState {
   List<Artwork>? get artworks => throw _privateConstructorUsedError;
   List<Artist>? get artists => throw _privateConstructorUsedError;
   List<Comment>? get comments => throw _privateConstructorUsedError;
-  List<ArtworkForArtMovements>? get artworksForArtMovements =>
-      throw _privateConstructorUsedError;
+  List<ArtworkForArtMovements>? get artworksForArtMovements => throw _privateConstructorUsedError;
   List<Artist>? get topArtists => throw _privateConstructorUsedError;
   List<ArtworkForTop>? get topArtworks => throw _privateConstructorUsedError;
-  List<ArtworkForArtMovements>? get artworksWithAllStyles =>
-      throw _privateConstructorUsedError;
-  List<ArtworkByStyle>? get artworksByStyle =>
-      throw _privateConstructorUsedError;
+  List<ArtworkForArtMovements>? get artworksWithAllStyles => throw _privateConstructorUsedError;
+  List<ArtworkByStyle>? get artworksByStyle => throw _privateConstructorUsedError;
   String? get selectedStyle => throw _privateConstructorUsedError;
   int? get routeAdminArtworkIndex => throw _privateConstructorUsedError;
   int? get routeAdminArtistIndex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call(
       {AppUser? user,
@@ -89,8 +82,7 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -230,10 +222,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return null;
     }
 
-    return $ArtworkWithoutQrCodeCopyWith<$Res>(
-        _value.selectedArtworkWithoutQrCode!, (value) {
-      return _then(
-          _value.copyWith(selectedArtworkWithoutQrCode: value) as $Val);
+    return $ArtworkWithoutQrCodeCopyWith<$Res>(_value.selectedArtworkWithoutQrCode!, (value) {
+      return _then(_value.copyWith(selectedArtworkWithoutQrCode: value) as $Val);
     });
   }
 
@@ -275,10 +265,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$AppState$ImplCopyWith<$Res>
-    implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$ImplCopyWith(
-          _$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
+abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$ImplCopyWith(_$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -318,12 +306,9 @@ abstract class _$$AppState$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppState$ImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
+class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
     implements _$$AppState$ImplCopyWith<$Res> {
-  __$$AppState$ImplCopyWithImpl(
-      _$AppState$Impl _value, $Res Function(_$AppState$Impl) _then)
-      : super(_value, _then);
+  __$$AppState$ImplCopyWithImpl(_$AppState$Impl _value, $Res Function(_$AppState$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -475,8 +460,7 @@ class _$AppState$Impl implements AppState$ {
         _artworksWithAllStyles = artworksWithAllStyles,
         _artworksByStyle = artworksByStyle;
 
-  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AppState$ImplFromJson(json);
+  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) => _$$AppState$ImplFromJson(json);
 
   @override
   final AppUser? user;
@@ -485,8 +469,7 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkWithoutQrCode>? get artworksWithoutQrCode {
     final value = _artworksWithoutQrCode;
     if (value == null) return null;
-    if (_artworksWithoutQrCode is EqualUnmodifiableListView)
-      return _artworksWithoutQrCode;
+    if (_artworksWithoutQrCode is EqualUnmodifiableListView) return _artworksWithoutQrCode;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -550,8 +533,7 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkForArtMovements>? get artworksForArtMovements {
     final value = _artworksForArtMovements;
     if (value == null) return null;
-    if (_artworksForArtMovements is EqualUnmodifiableListView)
-      return _artworksForArtMovements;
+    if (_artworksForArtMovements is EqualUnmodifiableListView) return _artworksForArtMovements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -581,8 +563,7 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkForArtMovements>? get artworksWithAllStyles {
     final value = _artworksWithAllStyles;
     if (value == null) return null;
-    if (_artworksWithAllStyles is EqualUnmodifiableListView)
-      return _artworksWithAllStyles;
+    if (_artworksWithAllStyles is EqualUnmodifiableListView) return _artworksWithAllStyles;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -615,41 +596,25 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
-            const DeepCollectionEquality()
-                .equals(other._artworksWithoutQrCode, _artworksWithoutQrCode) &&
-            (identical(other.selectedArtworkWithoutQrCode,
-                    selectedArtworkWithoutQrCode) ||
-                other.selectedArtworkWithoutQrCode ==
-                    selectedArtworkWithoutQrCode) &&
-            (identical(other.scannedArtwork, scannedArtwork) ||
-                other.scannedArtwork == scannedArtwork) &&
-            (identical(other.selectedArtwork, selectedArtwork) ||
-                other.selectedArtwork == selectedArtwork) &&
-            (identical(other.selectedArtist, selectedArtist) ||
-                other.selectedArtist == selectedArtist) &&
-            (identical(other.isFavourite, isFavourite) ||
-                other.isFavourite == isFavourite) &&
-            const DeepCollectionEquality()
-                .equals(other._favourites, _favourites) &&
-            (identical(other.routeArtworkIndex, routeArtworkIndex) ||
-                other.routeArtworkIndex == routeArtworkIndex) &&
-            (identical(other.routeArtistIndex, routeArtistIndex) ||
-                other.routeArtistIndex == routeArtistIndex) &&
+            const DeepCollectionEquality().equals(other._artworksWithoutQrCode, _artworksWithoutQrCode) &&
+            (identical(other.selectedArtworkWithoutQrCode, selectedArtworkWithoutQrCode) ||
+                other.selectedArtworkWithoutQrCode == selectedArtworkWithoutQrCode) &&
+            (identical(other.scannedArtwork, scannedArtwork) || other.scannedArtwork == scannedArtwork) &&
+            (identical(other.selectedArtwork, selectedArtwork) || other.selectedArtwork == selectedArtwork) &&
+            (identical(other.selectedArtist, selectedArtist) || other.selectedArtist == selectedArtist) &&
+            (identical(other.isFavourite, isFavourite) || other.isFavourite == isFavourite) &&
+            const DeepCollectionEquality().equals(other._favourites, _favourites) &&
+            (identical(other.routeArtworkIndex, routeArtworkIndex) || other.routeArtworkIndex == routeArtworkIndex) &&
+            (identical(other.routeArtistIndex, routeArtistIndex) || other.routeArtistIndex == routeArtistIndex) &&
             const DeepCollectionEquality().equals(other._artworks, _artworks) &&
             const DeepCollectionEquality().equals(other._artists, _artists) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
-            const DeepCollectionEquality().equals(
-                other._artworksForArtMovements, _artworksForArtMovements) &&
-            const DeepCollectionEquality()
-                .equals(other._topArtists, _topArtists) &&
-            const DeepCollectionEquality()
-                .equals(other._topArtworks, _topArtworks) &&
-            const DeepCollectionEquality()
-                .equals(other._artworksWithAllStyles, _artworksWithAllStyles) &&
-            const DeepCollectionEquality()
-                .equals(other._artworksByStyle, _artworksByStyle) &&
-            (identical(other.selectedStyle, selectedStyle) ||
-                other.selectedStyle == selectedStyle) &&
+            const DeepCollectionEquality().equals(other._artworksForArtMovements, _artworksForArtMovements) &&
+            const DeepCollectionEquality().equals(other._topArtists, _topArtists) &&
+            const DeepCollectionEquality().equals(other._topArtworks, _topArtworks) &&
+            const DeepCollectionEquality().equals(other._artworksWithAllStyles, _artworksWithAllStyles) &&
+            const DeepCollectionEquality().equals(other._artworksByStyle, _artworksByStyle) &&
+            (identical(other.selectedStyle, selectedStyle) || other.selectedStyle == selectedStyle) &&
             (identical(other.routeAdminArtworkIndex, routeAdminArtworkIndex) ||
                 other.routeAdminArtworkIndex == routeAdminArtworkIndex) &&
             (identical(other.routeAdminArtistIndex, routeAdminArtistIndex) ||
@@ -721,8 +686,7 @@ abstract class AppState$ implements AppState {
       final int? routeAdminArtworkIndex,
       final int? routeAdminArtistIndex}) = _$AppState$Impl;
 
-  factory AppState$.fromJson(Map<String, dynamic> json) =
-      _$AppState$Impl.fromJson;
+  factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
 
   @override
   AppUser? get user;
@@ -768,6 +732,5 @@ abstract class AppState$ implements AppState {
   int? get routeAdminArtistIndex;
   @override
   @JsonKey(ignore: true)
-  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;
 }

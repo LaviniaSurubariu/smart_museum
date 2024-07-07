@@ -18,27 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UpdateArtworkImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl) $default, {
     required TResult Function(String newPicturePath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult? Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult? Function(String newPicturePath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult Function(String newPicturePath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -70,8 +64,7 @@ mixin _$UpdateArtworkImage {
 
 /// @nodoc
 abstract class $UpdateArtworkImageCopyWith<$Res> {
-  factory $UpdateArtworkImageCopyWith(
-          UpdateArtworkImage value, $Res Function(UpdateArtworkImage) then) =
+  factory $UpdateArtworkImageCopyWith(UpdateArtworkImage value, $Res Function(UpdateArtworkImage) then) =
       _$UpdateArtworkImageCopyWithImpl<$Res, UpdateArtworkImage>;
 }
 
@@ -89,25 +82,18 @@ class _$UpdateArtworkImageCopyWithImpl<$Res, $Val extends UpdateArtworkImage>
 /// @nodoc
 abstract class _$$UpdateArtworkImageStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkImageStartImplCopyWith(
-          _$UpdateArtworkImageStartImpl value,
-          $Res Function(_$UpdateArtworkImageStartImpl) then) =
+          _$UpdateArtworkImageStartImpl value, $Res Function(_$UpdateArtworkImageStartImpl) then) =
       __$$UpdateArtworkImageStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String newPicturePath,
-      String artworkId,
-      String artworkTitle,
-      String oldPictureUrl});
+  $Res call({String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl});
 }
 
 /// @nodoc
 class __$$UpdateArtworkImageStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkImageCopyWithImpl<$Res,
-        _$UpdateArtworkImageStartImpl>
+    extends _$UpdateArtworkImageCopyWithImpl<$Res, _$UpdateArtworkImageStartImpl>
     implements _$$UpdateArtworkImageStartImplCopyWith<$Res> {
   __$$UpdateArtworkImageStartImplCopyWithImpl(
-      _$UpdateArtworkImageStartImpl _value,
-      $Res Function(_$UpdateArtworkImageStartImpl) _then)
+      _$UpdateArtworkImageStartImpl _value, $Res Function(_$UpdateArtworkImageStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,10 +129,7 @@ class __$$UpdateArtworkImageStartImplCopyWithImpl<$Res>
 
 class _$UpdateArtworkImageStartImpl implements UpdateArtworkImageStart {
   const _$UpdateArtworkImageStartImpl(
-      {required this.newPicturePath,
-      required this.artworkId,
-      required this.artworkTitle,
-      required this.oldPictureUrl});
+      {required this.newPicturePath, required this.artworkId, required this.artworkTitle, required this.oldPictureUrl});
 
   @override
   final String newPicturePath;
@@ -167,33 +150,25 @@ class _$UpdateArtworkImageStartImpl implements UpdateArtworkImageStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkImageStartImpl &&
-            (identical(other.newPicturePath, newPicturePath) ||
-                other.newPicturePath == newPicturePath) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId) &&
-            (identical(other.artworkTitle, artworkTitle) ||
-                other.artworkTitle == artworkTitle) &&
-            (identical(other.oldPictureUrl, oldPictureUrl) ||
-                other.oldPictureUrl == oldPictureUrl));
+            (identical(other.newPicturePath, newPicturePath) || other.newPicturePath == newPicturePath) &&
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId) &&
+            (identical(other.artworkTitle, artworkTitle) || other.artworkTitle == artworkTitle) &&
+            (identical(other.oldPictureUrl, oldPictureUrl) || other.oldPictureUrl == oldPictureUrl));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, newPicturePath, artworkId, artworkTitle, oldPictureUrl);
+  int get hashCode => Object.hash(runtimeType, newPicturePath, artworkId, artworkTitle, oldPictureUrl);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkImageStartImplCopyWith<_$UpdateArtworkImageStartImpl>
-      get copyWith => __$$UpdateArtworkImageStartImplCopyWithImpl<
-          _$UpdateArtworkImageStartImpl>(this, _$identity);
+  _$$UpdateArtworkImageStartImplCopyWith<_$UpdateArtworkImageStartImpl> get copyWith =>
+      __$$UpdateArtworkImageStartImplCopyWithImpl<_$UpdateArtworkImageStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl) $default, {
     required TResult Function(String newPicturePath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -203,22 +178,17 @@ class _$UpdateArtworkImageStartImpl implements UpdateArtworkImageStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult? Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult? Function(String newPicturePath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(
-        newPicturePath, artworkId, artworkTitle, oldPictureUrl);
+    return $default?.call(newPicturePath, artworkId, artworkTitle, oldPictureUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult Function(String newPicturePath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -276,15 +246,14 @@ abstract class UpdateArtworkImageStart implements UpdateArtworkImage {
   String get artworkTitle;
   String get oldPictureUrl;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkImageStartImplCopyWith<_$UpdateArtworkImageStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkImageStartImplCopyWith<_$UpdateArtworkImageStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkImageSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkImageSuccessfulImplCopyWith(
-          _$UpdateArtworkImageSuccessfulImpl value,
-          $Res Function(_$UpdateArtworkImageSuccessfulImpl) then) =
+          _$UpdateArtworkImageSuccessfulImpl value, $Res Function(_$UpdateArtworkImageSuccessfulImpl) then) =
       __$$UpdateArtworkImageSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newPicturePath});
@@ -292,12 +261,10 @@ abstract class _$$UpdateArtworkImageSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkImageSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkImageCopyWithImpl<$Res,
-        _$UpdateArtworkImageSuccessfulImpl>
+    extends _$UpdateArtworkImageCopyWithImpl<$Res, _$UpdateArtworkImageSuccessfulImpl>
     implements _$$UpdateArtworkImageSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkImageSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkImageSuccessfulImpl _value,
-      $Res Function(_$UpdateArtworkImageSuccessfulImpl) _then)
+      _$UpdateArtworkImageSuccessfulImpl _value, $Res Function(_$UpdateArtworkImageSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -316,8 +283,7 @@ class __$$UpdateArtworkImageSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkImageSuccessfulImpl
-    implements UpdateArtworkImageSuccessful {
+class _$UpdateArtworkImageSuccessfulImpl implements UpdateArtworkImageSuccessful {
   const _$UpdateArtworkImageSuccessfulImpl(this.newPicturePath);
 
   @override
@@ -333,8 +299,7 @@ class _$UpdateArtworkImageSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkImageSuccessfulImpl &&
-            (identical(other.newPicturePath, newPicturePath) ||
-                other.newPicturePath == newPicturePath));
+            (identical(other.newPicturePath, newPicturePath) || other.newPicturePath == newPicturePath));
   }
 
   @override
@@ -343,17 +308,13 @@ class _$UpdateArtworkImageSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkImageSuccessfulImplCopyWith<
-          _$UpdateArtworkImageSuccessfulImpl>
-      get copyWith => __$$UpdateArtworkImageSuccessfulImplCopyWithImpl<
-          _$UpdateArtworkImageSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkImageSuccessfulImplCopyWith<_$UpdateArtworkImageSuccessfulImpl> get copyWith =>
+      __$$UpdateArtworkImageSuccessfulImplCopyWithImpl<_$UpdateArtworkImageSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl) $default, {
     required TResult Function(String newPicturePath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -363,9 +324,7 @@ class _$UpdateArtworkImageSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult? Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult? Function(String newPicturePath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -375,9 +334,7 @@ class _$UpdateArtworkImageSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult Function(String newPicturePath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -424,21 +381,18 @@ class _$UpdateArtworkImageSuccessfulImpl
 }
 
 abstract class UpdateArtworkImageSuccessful implements UpdateArtworkImage {
-  const factory UpdateArtworkImageSuccessful(final String newPicturePath) =
-      _$UpdateArtworkImageSuccessfulImpl;
+  const factory UpdateArtworkImageSuccessful(final String newPicturePath) = _$UpdateArtworkImageSuccessfulImpl;
 
   String get newPicturePath;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkImageSuccessfulImplCopyWith<
-          _$UpdateArtworkImageSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkImageSuccessfulImplCopyWith<_$UpdateArtworkImageSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkImageErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkImageErrorImplCopyWith(
-          _$UpdateArtworkImageErrorImpl value,
-          $Res Function(_$UpdateArtworkImageErrorImpl) then) =
+          _$UpdateArtworkImageErrorImpl value, $Res Function(_$UpdateArtworkImageErrorImpl) then) =
       __$$UpdateArtworkImageErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -446,12 +400,10 @@ abstract class _$$UpdateArtworkImageErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkImageErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkImageCopyWithImpl<$Res,
-        _$UpdateArtworkImageErrorImpl>
+    extends _$UpdateArtworkImageCopyWithImpl<$Res, _$UpdateArtworkImageErrorImpl>
     implements _$$UpdateArtworkImageErrorImplCopyWith<$Res> {
   __$$UpdateArtworkImageErrorImplCopyWithImpl(
-      _$UpdateArtworkImageErrorImpl _value,
-      $Res Function(_$UpdateArtworkImageErrorImpl) _then)
+      _$UpdateArtworkImageErrorImpl _value, $Res Function(_$UpdateArtworkImageErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -491,27 +443,22 @@ class _$UpdateArtworkImageErrorImpl implements UpdateArtworkImageError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkImageErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkImageErrorImplCopyWith<_$UpdateArtworkImageErrorImpl>
-      get copyWith => __$$UpdateArtworkImageErrorImplCopyWithImpl<
-          _$UpdateArtworkImageErrorImpl>(this, _$identity);
+  _$$UpdateArtworkImageErrorImplCopyWith<_$UpdateArtworkImageErrorImpl> get copyWith =>
+      __$$UpdateArtworkImageErrorImplCopyWithImpl<_$UpdateArtworkImageErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl) $default, {
     required TResult Function(String newPicturePath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -521,9 +468,7 @@ class _$UpdateArtworkImageErrorImpl implements UpdateArtworkImageError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult? Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult? Function(String newPicturePath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -533,9 +478,7 @@ class _$UpdateArtworkImageErrorImpl implements UpdateArtworkImageError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newPicturePath, String artworkId,
-            String artworkTitle, String oldPictureUrl)?
-        $default, {
+    TResult Function(String newPicturePath, String artworkId, String artworkTitle, String oldPictureUrl)? $default, {
     TResult Function(String newPicturePath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -581,15 +524,13 @@ class _$UpdateArtworkImageErrorImpl implements UpdateArtworkImageError {
   }
 }
 
-abstract class UpdateArtworkImageError
-    implements UpdateArtworkImage, ErrorAction {
-  const factory UpdateArtworkImageError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkImageError implements UpdateArtworkImage, ErrorAction {
+  const factory UpdateArtworkImageError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkImageErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkImageErrorImplCopyWith<_$UpdateArtworkImageErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkImageErrorImplCopyWith<_$UpdateArtworkImageErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
