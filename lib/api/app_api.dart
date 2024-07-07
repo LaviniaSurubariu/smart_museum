@@ -159,6 +159,16 @@ class AppApi {
         .doc('users/${user.uid}')
         .update(<String, dynamic>{'firstName': newFirstName, 'lastName': newLastName});
 
+    final QuerySnapshot<Map<String, dynamic>> commentsSnapshot =
+        await _firestore.collection('comments').where('idUser', isEqualTo: user.uid).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in commentsSnapshot.docs) {
+      await _firestore.doc('comments/${doc.id}').update(<String, dynamic>{
+        'firstNameUser': newFirstName,
+        'lastNameUser': newLastName,
+      });
+    }
+
     return _extractUser();
   }
 
@@ -415,6 +425,16 @@ class AppApi {
 
     final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
     await artworksRef.doc(artworkId).update(<Object, Object?>{'pictureUrl': newPictureUrl});
+
+    final QuerySnapshot<Map<String, dynamic>> favouritesSnapshot =
+        await _firestore.collection('favourites').where('artworkId', isEqualTo: artworkId).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in favouritesSnapshot.docs) {
+      await _firestore.doc('favourites/${doc.id}').update(<String, dynamic>{
+        'artworkPictureUrl': newPictureUrl,
+      });
+    }
+
     return newPictureUrl;
   }
 
@@ -444,12 +464,32 @@ class AppApi {
       'artistLastName': artist.lastName,
       'artistUid': artist.uid
     });
+
+    final QuerySnapshot<Map<String, dynamic>> favouritesSnapshot =
+        await _firestore.collection('favourites').where('artworkId', isEqualTo: artworkId).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in favouritesSnapshot.docs) {
+      await _firestore.doc('favourites/${doc.id}').update(<String, dynamic>{
+        'artistName': '${artist.firstName} ${artist.lastName}',
+      });
+    }
+
     return artist;
   }
 
   Future<String> updateArtworkTitle({required String newTitle, required String artworkId}) async {
     final CollectionReference<Map<String, dynamic>> artworksRef = FirebaseFirestore.instance.collection('artworks');
     await artworksRef.doc(artworkId).update(<Object, Object?>{'title': newTitle});
+
+    final QuerySnapshot<Map<String, dynamic>> favouritesSnapshot =
+        await _firestore.collection('favourites').where('artworkId', isEqualTo: artworkId).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in favouritesSnapshot.docs) {
+      await _firestore.doc('favourites/${doc.id}').update(<String, dynamic>{
+        'artworkTitle': newTitle,
+      });
+    }
+
     return newTitle;
   }
 
@@ -512,12 +552,29 @@ class AppApi {
   Future<String> updateArtistFirstName({required String newFirstName, required String artistId}) async {
     final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
     await artistRef.doc(artistId).update(<Object, Object?>{'firstName': newFirstName});
+
+    final QuerySnapshot<Map<String, dynamic>> artworksSnapshot =
+        await _firestore.collection('artworks').where('artistUid', isEqualTo: artistId).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in artworksSnapshot.docs) {
+      await _firestore.doc('artworks/${doc.id}').update(<String, dynamic>{
+        'artistFirstName': newFirstName,
+      });
+    }
     return newFirstName;
   }
 
   Future<String> updateArtistLastName({required String newLastName, required String artistId}) async {
     final CollectionReference<Map<String, dynamic>> artistRef = FirebaseFirestore.instance.collection('artists');
     await artistRef.doc(artistId).update(<Object, Object?>{'lastName': newLastName});
+    final QuerySnapshot<Map<String, dynamic>> artworksSnapshot =
+        await _firestore.collection('artworks').where('artistUid', isEqualTo: artistId).get();
+
+    for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in artworksSnapshot.docs) {
+      await _firestore.doc('artworks/${doc.id}').update(<String, dynamic>{
+        'artistLastName': newLastName,
+      });
+    }
     return newLastName;
   }
 
@@ -583,11 +640,11 @@ class AppApi {
 
   Future<List<ArtworkForTop>> getTopArtworks() async {
     final CollectionReference<Map<String, dynamic>> artworksCollection =
-    FirebaseFirestore.instance.collection('artworks');
+        FirebaseFirestore.instance.collection('artworks');
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await artworksCollection.limit(5).get();
 
-    final List<ArtworkForTop> topArtworksList= snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+    final List<ArtworkForTop> topArtworksList = snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
       return ArtworkForTop.fromJson(doc.data());
     }).toList();
 
@@ -596,7 +653,7 @@ class AppApi {
 
   Future<List<ArtworkForArtMovements>> getUniqueStylesFromArtworks() async {
     final CollectionReference<Map<String, dynamic>> artworksCollection =
-    FirebaseFirestore.instance.collection('artworks');
+        FirebaseFirestore.instance.collection('artworks');
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await artworksCollection.get();
 
@@ -623,8 +680,10 @@ class AppApi {
 
   Future<List<ArtworkByStyle>> getArtworksByStyle({required String style}) async {
     final QuerySnapshot<Map<String, dynamic>> query =
-    await _firestore.collection('artworks').where('style', isEqualTo: style).get();
+        await _firestore.collection('artworks').where('style', isEqualTo: style).get();
 
-    return query.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => ArtworkByStyle.fromJson(doc.data())).toList();
+    return query.docs
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => ArtworkByStyle.fromJson(doc.data()))
+        .toList();
   }
 }
