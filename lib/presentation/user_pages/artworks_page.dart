@@ -11,7 +11,7 @@ import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.d
 import '../../models/app_state/app_state.dart';
 import '../../models/artwork/artwork.dart';
 import '../containers/artworks_container.dart';
-import '../utils/ListArtworkWidget.dart';
+import '../utils/list_artwork_widget.dart';
 import '../utils/extensions.dart';
 
 class ArtworksPage extends StatefulWidget {

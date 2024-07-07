@@ -10,8 +10,8 @@ import '../actions/user_s_actions/change_picture/change_picture.dart';
 import '../actions/user_s_actions/delete_user/delete_user.dart';
 import '../models/user/app_user/app_user.dart';
 import 'containers/app_user_container.dart';
-import 'utils/customAlertDialogOneButton.dart';
-import 'utils/customAlertDialogTwoButtons.dart';
+import 'utils/custom_alert_dialog_one_button.dart';
+import 'utils/custom_alert_dialog_two_buttons.dart';
 import 'utils/extensions.dart';
 
 class UpdateProfilePage extends StatefulWidget {

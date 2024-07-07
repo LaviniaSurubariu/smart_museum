@@ -5,15 +5,12 @@ import 'package:redux/redux.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/get_all_styles/get_all_styles.dart';
-
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artwork_by_style/artwork_by_style.dart';
-
 import '../containers/artworks_by_style_container.dart';
-
-import '../utils/ListArtworkWidget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class ArtworksByStylePage extends StatefulWidget {
   const ArtworksByStylePage({super.key});

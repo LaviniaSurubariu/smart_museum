@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:smart_museum/presentation/user_pages/artworks_by_style_page.dart';
-import 'package:smart_museum/presentation/user_pages/artworks_with_all_styles_page.dart';
 
 import 'api/app_api.dart';
 import 'epics/app_epics.dart';
@@ -31,14 +29,16 @@ import 'presentation/update_profile.dart';
 import 'presentation/user_pages/artist_details_page.dart';
 import 'presentation/user_pages/artists_page.dart';
 import 'presentation/user_pages/artwork_details_page.dart';
+import 'presentation/user_pages/artworks_by_style_page.dart';
 import 'presentation/user_pages/artworks_page.dart';
+import 'presentation/user_pages/artworks_with_all_styles_page.dart';
 import 'presentation/user_pages/favourites_page.dart';
 import 'presentation/user_pages/home_screen.dart';
 import 'presentation/user_pages/payment_page.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
 import 'presentation/user_pages/subscription_page.dart';
-import 'presentation/utils/customTheme.dart';
+import 'presentation/utils/custom_theme.dart';
 import 'reducer/reducer.dart';
 
 Future<dynamic> main() async {

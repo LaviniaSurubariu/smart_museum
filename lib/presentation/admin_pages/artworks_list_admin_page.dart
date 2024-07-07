@@ -9,8 +9,8 @@ import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork
 import '../../models/app_state/app_state.dart';
 import '../../models/artwork/artwork.dart';
 import '../containers/artworks_container.dart';
-import '../utils/ListArtworkWidget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class ArtworksListAdminPage extends StatefulWidget {
   const ArtworksListAdminPage({super.key});

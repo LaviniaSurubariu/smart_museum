@@ -7,8 +7,8 @@ import '../actions/get_top_artists/get_top_artists.dart';
 import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/login&create/login.dart';
-import 'utils/customAlertDialogOneButton.dart';
-import 'utils/customTextFormFieldWithOnChange.dart';
+import 'utils/custom_alert_dialog_one_button.dart';
+import 'utils/custom_text_form_field_with_on_change.dart';
 import 'utils/extensions.dart';
 
 class LoginUserPage extends StatefulWidget {

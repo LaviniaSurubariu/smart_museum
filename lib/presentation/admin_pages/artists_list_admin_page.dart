@@ -9,8 +9,8 @@ import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../containers/artists_container.dart';
-import '../utils/ListArtworkWidget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class ArtistsListAdminPage extends StatefulWidget {
   const ArtistsListAdminPage({super.key});

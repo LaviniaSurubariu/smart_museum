@@ -9,8 +9,8 @@ import '../../actions/app_action.dart';
 import '../../actions/get_top_artists/get_top_artists.dart';
 import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../models/artist_for_fetch/artist_for_fetch.dart';
-import '../utils/customAlertDialogOneButton.dart';
-import '../utils/customAlertDialogTwoButtons.dart';
+import '../utils/custom_alert_dialog_one_button.dart';
+import '../utils/custom_alert_dialog_two_buttons.dart';
 import '../utils/extensions.dart';
 
 class AddArtworkPage extends StatefulWidget {
@@ -403,21 +403,17 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
   }
 
   Future<void> fetchArtistSuggestions() async {
-    try {
-      final QuerySnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore.instance.collection('artists').get();
-      final List<ArtistForFetch> artists = snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
-        return ArtistForFetch(
-          uid: doc.id,
-          firstName: doc['firstName'] as String? ?? '',
-          lastName: doc['lastName'] as String? ?? '',
-        );
-      }).toList();
-      setState(() {
-        artistSuggestions = artists;
-      });
-    } catch (e) {
-      print(e);
-    }
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore.instance.collection('artists').get();
+    final List<ArtistForFetch> artists = snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      return ArtistForFetch(
+        uid: doc.id,
+        firstName: doc['firstName'] as String? ?? '',
+        lastName: doc['lastName'] as String? ?? '',
+      );
+    }).toList();
+    setState(() {
+      artistSuggestions = artists;
+    });
   }
 
   void showAutocomplete(BuildContext context) {

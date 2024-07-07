@@ -7,8 +7,8 @@ import '../../actions/admin_actions/add_artist/add_artist.dart';
 import '../../actions/app_action.dart';
 import '../../actions/get_top_artists/get_top_artists.dart';
 import '../../actions/get_top_artworks/get_top_artworks.dart';
-import '../utils/customAlertDialogOneButton.dart';
-import '../utils/customAlertDialogTwoButtons.dart';
+import '../utils/custom_alert_dialog_one_button.dart';
+import '../utils/custom_alert_dialog_two_buttons.dart';
 import '../utils/extensions.dart';
 
 class AddArtistPage extends StatefulWidget {

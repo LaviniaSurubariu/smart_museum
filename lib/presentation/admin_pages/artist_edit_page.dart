@@ -18,7 +18,7 @@ import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
 import '../containers/selected_artist_container.dart';
 
-import '../utils/customEditableField.dart';
+import '../utils/custom_editable_field.dart';
 import '../utils/extensions.dart';
 
 class ArtistEditPage extends StatefulWidget {

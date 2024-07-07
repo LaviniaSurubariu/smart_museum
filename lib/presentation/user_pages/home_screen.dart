@@ -16,8 +16,8 @@ import '../../models/artwork_for_top/artwork_for_top.dart';
 import '../containers/artworks_for_art_movements_container.dart';
 import '../containers/top_artists_container.dart';
 import '../containers/top_artworks_container.dart';
-import '../utils/customButtomNavigationBar.dart';
-import '../utils/customDrawer.dart';
+import '../utils/custom_buttom_navigation_bar.dart';
+import '../utils/custom_drawer.dart';
 import '../utils/extensions.dart';
 
 class HomeScreenPage extends StatefulWidget {

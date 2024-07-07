@@ -4,9 +4,9 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../actions/app_action.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
-import 'utils/customAlertDialogOneButton.dart';
-import 'utils/customAlertDialogTwoButtons.dart';
-import 'utils/customTextFormField.dart';
+import 'utils/custom_alert_dialog_one_button.dart';
+import 'utils/custom_alert_dialog_two_buttons.dart';
+import 'utils/custom_text_form_field.dart';
 import 'utils/extensions.dart';
 
 class CreateUserPage extends StatefulWidget {

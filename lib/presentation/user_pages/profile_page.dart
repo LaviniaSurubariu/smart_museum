@@ -7,11 +7,11 @@ import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_s
 import '../../actions/user_s_actions/signout/sign_out.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
-import '../utils/ProfileMenuWidget.dart';
-import '../utils/customAlertDialogTwoButtons.dart';
-import '../utils/customButtomNavigationBar.dart';
-import '../utils/customDrawer.dart';
+import '../utils/custom_alert_dialog_two_buttons.dart';
+import '../utils/custom_buttom_navigation_bar.dart';
+import '../utils/custom_drawer.dart';
 import '../utils/extensions.dart';
+import '../utils/profile_menu_widget.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'customAlertDialogOneButton.dart';
+import 'custom_alert_dialog_one_button.dart';
 
 class CustomAlertDialogTwoButtons extends CustomAlertDialogOneButton {
   const CustomAlertDialogTwoButtons({
