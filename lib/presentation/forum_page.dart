@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../actions/add_comment/add_comment.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_top_artists/get_top_artists.dart';
+import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
-import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../models/comment/comment.dart';
 import 'containers/comments_container.dart';
 import 'utils/extensions.dart';
@@ -39,6 +40,7 @@ class _ForumPageState extends State<ForumPage> {
               if (context.store.state.user!.role == 'admin') {
                 Navigator.pushReplacementNamed(context, '/adminHomeScreenPage');
               } else if (context.store.state.user!.role == 'user') {
+                context.dispatch(const GetTopArtworks());
                 context.dispatch(const GetTopArtists());
                 context.dispatch(const GetArtworksWithStyle());
                 Navigator.pushReplacementNamed(context, '/homeScreenPage');

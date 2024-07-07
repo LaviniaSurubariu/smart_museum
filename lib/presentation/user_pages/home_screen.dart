@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 
 import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
@@ -12,8 +13,10 @@ import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.d
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../../models/artwork_for_art_movements/artwork_for_art_movements.dart';
+import '../../models/artwork_for_top/artwork_for_top.dart';
 import '../containers/artworks_for_art_movements_container.dart';
 import '../containers/top_artists_container.dart';
+import '../containers/top_artworks_container.dart';
 import '../utils/customButtomNavigationBar.dart';
 import '../utils/customDrawer.dart';
 import '../utils/extensions.dart';
@@ -82,6 +85,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   ],
                 ),
                 onTap: () {
+                  context.dispatch(const GetTopArtworks());
                   context.dispatch(const GetArtworks());
                   context.dispatch(const SetRouteArtworkIndex(2));
                   Navigator.pushReplacementNamed(context, '/artworksPage');
@@ -90,37 +94,52 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               const SizedBox(
                 height: 16,
               ),
-              SizedBox(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/users%2FNAyQyoh9bDh2JTTJOCKW702Io8L2%2Fprofile.png?alt=media&token=c97ae17b-b938-4f33-98f9-23715af4afb6',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('The birth of Venus'),
-                      ],
+              TopArtworksContainer(
+                builder: (BuildContext context, List<ArtworkForTop>? artworks) {
+                  if (artworks == null || artworks.isEmpty) {
+                    return const Center(child: Text('No artists found.'));
+                  }
+                  return SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: artworks.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final ArtworkForTop artwork = artworks[index];
+                        return Row(
+                          children: <Widget>[
+                            GestureDetector(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 100,
+                                    child: Image.network(
+                                      artwork.pictureUrl,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ),
+                                  Text(artwork.title),
+                                ],
+                              ),
+                              onTap: () async {
+                                final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                await store.dispatch(
+                                    IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
+                                await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+
+                                await store.dispatch(const SetRouteArtworkIndex(3));
+                                Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+                              },
+                            ),
+                            const SizedBox(
+                              width: 16,
+                            ),
+                          ],
+                        );
+                      },
                     ),
-                    Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 100,
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/smartmuseum-b4776.appspot.com/o/users%2FmlYl3oG8ctP5uZsVRNG469O6qJV2%2Fprofile.png?alt=media&token=e3212f1b-d073-4d6e-8023-7ef27c3f0f25',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const Text('Girl with a Pearl Earring'),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
               const Divider(
                 height: 64,

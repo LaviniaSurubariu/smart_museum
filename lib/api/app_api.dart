@@ -8,6 +8,7 @@ import '../models/artist/artist.dart';
 import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
+import '../models/artwork_for_top/artwork_for_top.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -545,7 +546,7 @@ class AppApi {
 
     final QuerySnapshot<Map<String, dynamic>> snapshot = await artworksCollection.get();
 
-    final Map<String, ArtworkForArtMovements> uniqueStylesMap = {};
+    final Map<String, ArtworkForArtMovements> uniqueStylesMap = <String, ArtworkForArtMovements>{};
 
     for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
       final Map<String, dynamic> data = doc.data();
@@ -577,5 +578,18 @@ class AppApi {
     }).toList();
 
     return artistsList;
+  }
+
+  Future<List<ArtworkForTop>> getTopArtworks() async {
+    final CollectionReference<Map<String, dynamic>> artworksCollection =
+    FirebaseFirestore.instance.collection('artworks');
+
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await artworksCollection.limit(5).get();
+
+    final List<ArtworkForTop> topArtworksList= snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      return ArtworkForTop.fromJson(doc.data());
+    }).toList();
+
+    return topArtworksList;
   }
 }

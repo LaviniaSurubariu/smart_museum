@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
-import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../models/artist/artist.dart';
 
 import '../containers/selected_artist_container.dart';
@@ -29,6 +30,7 @@ class _ArtistDetailsPage extends State<ArtistDetailsPage> {
                 case 4:
                   Navigator.pushReplacementNamed(context, '/artistsPage');
                 default:
+                  context.dispatch(const GetTopArtworks());
                   context.dispatch(const GetTopArtists());
                   context.dispatch(const GetArtworksWithStyle());
                   Navigator.pushReplacementNamed(context, '/homeScreenPage');

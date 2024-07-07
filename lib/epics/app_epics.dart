@@ -25,6 +25,8 @@ import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_top_artists/get_top_artists.dart';
+import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
 import '../actions/user_s_actions/change_name/change_name.dart';
@@ -35,7 +37,6 @@ import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.da
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
-import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
@@ -47,6 +48,7 @@ import '../models/artist/artist.dart';
 import '../models/artist_for_fetch/artist_for_fetch.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
+import '../models/artwork_for_top/artwork_for_top.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -99,6 +101,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, UpdateArtistDescriptionStart>(_updateArtistDescriptionStart).call,
       TypedEpic<AppState, GetArtworksWithStyleStart>(_getArtworksWithStyleStart).call,
       TypedEpic<AppState, GetTopArtistsStart>(_getTopArtistsStart).call,
+      TypedEpic<AppState, GetTopArtworksStart>(_getTopArtworksStart).call,
     ])(actions, store);
   }
 
@@ -560,6 +563,18 @@ class AppEpics extends EpicClass<AppState> {
           })
           .map((List<Artist> artists) => GetTopArtists.successful(artists: artists))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetTopArtists.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getTopArtworksStart(Stream<GetTopArtworksStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetTopArtworksStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getTopArtworks();
+          })
+          .map((List<ArtworkForTop> artworksForTop) => GetTopArtworks.successful(artworksForTop: artworksForTop))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetTopArtworks.error(error, stackTrace));
     });
   }
 }

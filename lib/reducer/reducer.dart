@@ -22,6 +22,8 @@ import '../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_top_artists/get_top_artists.dart';
+import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/set/set.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
 import '../actions/user_s_actions/buy_subscription/buy_subscription.dart';
@@ -32,7 +34,6 @@ import '../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.da
 import '../actions/user_s_actions/fetch_selected_artist/fetch_selected_artist.dart';
 import '../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../actions/user_s_actions/get_favourites/get_favourites.dart';
-import '../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../actions/user_s_actions/login&create/create_user.dart';
 import '../actions/user_s_actions/login&create/login.dart';
@@ -42,6 +43,7 @@ import '../models/app_state/app_state.dart';
 import '../models/artist/artist.dart';
 import '../models/artwork/artwork.dart';
 import '../models/artwork_for_art_movements/artwork_for_art_movements.dart';
+import '../models/artwork_for_top/artwork_for_top.dart';
 import '../models/artwork_without_qrCode/artwork_without_qr_code.dart';
 import '../models/comment/comment.dart';
 import '../models/favourite/favourite.dart';
@@ -92,6 +94,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, UpdateArtistDescriptionSuccessful>(_updateArtistDescriptionSuccessful).call,
     TypedReducer<AppState, GetArtworksWithStyleSuccessful>(_getArtworksWithStyleSuccessful).call,
     TypedReducer<AppState, GetTopArtistsSuccessful>(_getTopArtistsSuccessful).call,
+    TypedReducer<AppState, GetTopArtworksSuccessful>(_getTopArtworksSuccessful).call,
   ])(state, action);
 }
 
@@ -340,5 +343,11 @@ AppState _getArtworksWithStyleSuccessful(AppState state, GetArtworksWithStyleSuc
 AppState _getTopArtistsSuccessful(AppState state, GetTopArtistsSuccessful action) {
   return state.copyWith(
     topArtists: <Artist>[...action.artists],
+  );
+}
+
+AppState _getTopArtworksSuccessful(AppState state, GetTopArtworksSuccessful action) {
+  return state.copyWith(
+    topArtworks: <ArtworkForTop>[...action.artworksForTop],
   );
 }

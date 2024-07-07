@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
-import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../actions/user_s_actions/signout/sign_out.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
@@ -31,6 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
       });
       switch (index) {
         case 0:
+          context.dispatch(const GetTopArtworks());
           context.dispatch(const GetTopArtists());
           context.dispatch(const GetArtworksWithStyle());
           Navigator.pushReplacementNamed(context, '/homeScreenPage');

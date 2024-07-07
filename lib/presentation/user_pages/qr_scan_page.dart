@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
-import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../utils/extensions.dart';
 
@@ -115,6 +116,7 @@ class _QrCodePageState extends State<QrCodePage> {
                   iconSize: 16.0,
                   icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
                   onPressed: () {
+                    context.dispatch(const GetTopArtworks());
                     context.dispatch(const GetTopArtists());
                     context.dispatch(const GetArtworksWithStyle());
                     Navigator.pushReplacementNamed(context, '/homeScreenPage');

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
+import '../../actions/get_top_artists/get_top_artists.dart';
+import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
-import '../../actions/user_s_actions/get_top_artists/get_top_artists.dart';
 import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.dart';
 import '../../models/app_state/app_state.dart';
 import '../../models/artwork/artwork.dart';
@@ -30,6 +31,7 @@ class _ArtworksPageState extends State<ArtworksPage> {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
+                context.dispatch(const GetTopArtworks());
                 context.dispatch(const GetTopArtists());
                 context.dispatch(const GetArtworksWithStyle());
                 Navigator.pushReplacementNamed(context, '/homeScreenPage');
