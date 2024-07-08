@@ -50,6 +50,8 @@ dependencies:
   screenshot: ^2.5.0
   image_gallery_saver: ^2.0.3
 
+  open_mail_app: ^0.4.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
