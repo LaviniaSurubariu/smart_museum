@@ -19,21 +19,25 @@ mixin _$GetArtworksWithStyle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksForArtMovements) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksForArtMovements)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -64,12 +68,14 @@ mixin _$GetArtworksWithStyle {
 
 /// @nodoc
 abstract class $GetArtworksWithStyleCopyWith<$Res> {
-  factory $GetArtworksWithStyleCopyWith(GetArtworksWithStyle value, $Res Function(GetArtworksWithStyle) then) =
+  factory $GetArtworksWithStyleCopyWith(GetArtworksWithStyle value,
+          $Res Function(GetArtworksWithStyle) then) =
       _$GetArtworksWithStyleCopyWithImpl<$Res, GetArtworksWithStyle>;
 }
 
 /// @nodoc
-class _$GetArtworksWithStyleCopyWithImpl<$Res, $Val extends GetArtworksWithStyle>
+class _$GetArtworksWithStyleCopyWithImpl<$Res,
+        $Val extends GetArtworksWithStyle>
     implements $GetArtworksWithStyleCopyWith<$Res> {
   _$GetArtworksWithStyleCopyWithImpl(this._value, this._then);
 
@@ -82,16 +88,19 @@ class _$GetArtworksWithStyleCopyWithImpl<$Res, $Val extends GetArtworksWithStyle
 /// @nodoc
 abstract class _$$GetArtworksWithStyleStartImplCopyWith<$Res> {
   factory _$$GetArtworksWithStyleStartImplCopyWith(
-          _$GetArtworksWithStyleStartImpl value, $Res Function(_$GetArtworksWithStyleStartImpl) then) =
+          _$GetArtworksWithStyleStartImpl value,
+          $Res Function(_$GetArtworksWithStyleStartImpl) then) =
       __$$GetArtworksWithStyleStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetArtworksWithStyleStartImplCopyWithImpl<$Res>
-    extends _$GetArtworksWithStyleCopyWithImpl<$Res, _$GetArtworksWithStyleStartImpl>
+    extends _$GetArtworksWithStyleCopyWithImpl<$Res,
+        _$GetArtworksWithStyleStartImpl>
     implements _$$GetArtworksWithStyleStartImplCopyWith<$Res> {
   __$$GetArtworksWithStyleStartImplCopyWithImpl(
-      _$GetArtworksWithStyleStartImpl _value, $Res Function(_$GetArtworksWithStyleStartImpl) _then)
+      _$GetArtworksWithStyleStartImpl _value,
+      $Res Function(_$GetArtworksWithStyleStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -107,7 +116,9 @@ class _$GetArtworksWithStyleStartImpl implements GetArtworksWithStyleStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetArtworksWithStyleStartImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetArtworksWithStyleStartImpl);
   }
 
   @override
@@ -117,7 +128,9 @@ class _$GetArtworksWithStyleStartImpl implements GetArtworksWithStyleStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksForArtMovements) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksForArtMovements)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -127,7 +140,8 @@ class _$GetArtworksWithStyleStartImpl implements GetArtworksWithStyleStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return $default?.call();
@@ -137,7 +151,8 @@ class _$GetArtworksWithStyleStartImpl implements GetArtworksWithStyleStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -189,7 +204,8 @@ abstract class GetArtworksWithStyleStart implements GetArtworksWithStyle {
 /// @nodoc
 abstract class _$$GetArtworksWithStyleSuccessfulImplCopyWith<$Res> {
   factory _$$GetArtworksWithStyleSuccessfulImplCopyWith(
-          _$GetArtworksWithStyleSuccessfulImpl value, $Res Function(_$GetArtworksWithStyleSuccessfulImpl) then) =
+          _$GetArtworksWithStyleSuccessfulImpl value,
+          $Res Function(_$GetArtworksWithStyleSuccessfulImpl) then) =
       __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ArtworkForArtMovements> artworksForArtMovements});
@@ -197,10 +213,12 @@ abstract class _$$GetArtworksWithStyleSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetArtworksWithStyleCopyWithImpl<$Res, _$GetArtworksWithStyleSuccessfulImpl>
+    extends _$GetArtworksWithStyleCopyWithImpl<$Res,
+        _$GetArtworksWithStyleSuccessfulImpl>
     implements _$$GetArtworksWithStyleSuccessfulImplCopyWith<$Res> {
   __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl(
-      _$GetArtworksWithStyleSuccessfulImpl _value, $Res Function(_$GetArtworksWithStyleSuccessfulImpl) _then)
+      _$GetArtworksWithStyleSuccessfulImpl _value,
+      $Res Function(_$GetArtworksWithStyleSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -219,14 +237,17 @@ class __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetArtworksWithStyleSuccessfulImpl implements GetArtworksWithStyleSuccessful {
-  const _$GetArtworksWithStyleSuccessfulImpl({required final List<ArtworkForArtMovements> artworksForArtMovements})
+class _$GetArtworksWithStyleSuccessfulImpl
+    implements GetArtworksWithStyleSuccessful {
+  const _$GetArtworksWithStyleSuccessfulImpl(
+      {required final List<ArtworkForArtMovements> artworksForArtMovements})
       : _artworksForArtMovements = artworksForArtMovements;
 
   final List<ArtworkForArtMovements> _artworksForArtMovements;
   @override
   List<ArtworkForArtMovements> get artworksForArtMovements {
-    if (_artworksForArtMovements is EqualUnmodifiableListView) return _artworksForArtMovements;
+    if (_artworksForArtMovements is EqualUnmodifiableListView)
+      return _artworksForArtMovements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_artworksForArtMovements);
   }
@@ -241,23 +262,29 @@ class _$GetArtworksWithStyleSuccessfulImpl implements GetArtworksWithStyleSucces
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetArtworksWithStyleSuccessfulImpl &&
-            const DeepCollectionEquality().equals(other._artworksForArtMovements, _artworksForArtMovements));
+            const DeepCollectionEquality().equals(
+                other._artworksForArtMovements, _artworksForArtMovements));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworksForArtMovements));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_artworksForArtMovements));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetArtworksWithStyleSuccessfulImplCopyWith<_$GetArtworksWithStyleSuccessfulImpl> get copyWith =>
-      __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl<_$GetArtworksWithStyleSuccessfulImpl>(this, _$identity);
+  _$$GetArtworksWithStyleSuccessfulImplCopyWith<
+          _$GetArtworksWithStyleSuccessfulImpl>
+      get copyWith => __$$GetArtworksWithStyleSuccessfulImplCopyWithImpl<
+          _$GetArtworksWithStyleSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksForArtMovements) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksForArtMovements)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return successful(artworksForArtMovements);
@@ -267,7 +294,8 @@ class _$GetArtworksWithStyleSuccessfulImpl implements GetArtworksWithStyleSucces
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return successful?.call(artworksForArtMovements);
@@ -277,7 +305,8 @@ class _$GetArtworksWithStyleSuccessfulImpl implements GetArtworksWithStyleSucces
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -323,19 +352,22 @@ class _$GetArtworksWithStyleSuccessfulImpl implements GetArtworksWithStyleSucces
 }
 
 abstract class GetArtworksWithStyleSuccessful implements GetArtworksWithStyle {
-  const factory GetArtworksWithStyleSuccessful({required final List<ArtworkForArtMovements> artworksForArtMovements}) =
-      _$GetArtworksWithStyleSuccessfulImpl;
+  const factory GetArtworksWithStyleSuccessful(
+      {required final List<ArtworkForArtMovements>
+          artworksForArtMovements}) = _$GetArtworksWithStyleSuccessfulImpl;
 
   List<ArtworkForArtMovements> get artworksForArtMovements;
   @JsonKey(ignore: true)
-  _$$GetArtworksWithStyleSuccessfulImplCopyWith<_$GetArtworksWithStyleSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetArtworksWithStyleSuccessfulImplCopyWith<
+          _$GetArtworksWithStyleSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetArtworksWithStyleErrorImplCopyWith<$Res> {
   factory _$$GetArtworksWithStyleErrorImplCopyWith(
-          _$GetArtworksWithStyleErrorImpl value, $Res Function(_$GetArtworksWithStyleErrorImpl) then) =
+          _$GetArtworksWithStyleErrorImpl value,
+          $Res Function(_$GetArtworksWithStyleErrorImpl) then) =
       __$$GetArtworksWithStyleErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -343,10 +375,12 @@ abstract class _$$GetArtworksWithStyleErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetArtworksWithStyleErrorImplCopyWithImpl<$Res>
-    extends _$GetArtworksWithStyleCopyWithImpl<$Res, _$GetArtworksWithStyleErrorImpl>
+    extends _$GetArtworksWithStyleCopyWithImpl<$Res,
+        _$GetArtworksWithStyleErrorImpl>
     implements _$$GetArtworksWithStyleErrorImplCopyWith<$Res> {
   __$$GetArtworksWithStyleErrorImplCopyWithImpl(
-      _$GetArtworksWithStyleErrorImpl _value, $Res Function(_$GetArtworksWithStyleErrorImpl) _then)
+      _$GetArtworksWithStyleErrorImpl _value,
+      $Res Function(_$GetArtworksWithStyleErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -386,23 +420,28 @@ class _$GetArtworksWithStyleErrorImpl implements GetArtworksWithStyleError {
         (other.runtimeType == runtimeType &&
             other is _$GetArtworksWithStyleErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetArtworksWithStyleErrorImplCopyWith<_$GetArtworksWithStyleErrorImpl> get copyWith =>
-      __$$GetArtworksWithStyleErrorImplCopyWithImpl<_$GetArtworksWithStyleErrorImpl>(this, _$identity);
+  _$$GetArtworksWithStyleErrorImplCopyWith<_$GetArtworksWithStyleErrorImpl>
+      get copyWith => __$$GetArtworksWithStyleErrorImplCopyWithImpl<
+          _$GetArtworksWithStyleErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksForArtMovements) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksForArtMovements)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -412,7 +451,8 @@ class _$GetArtworksWithStyleErrorImpl implements GetArtworksWithStyleError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return error?.call(this.error, stackTrace);
@@ -422,7 +462,8 @@ class _$GetArtworksWithStyleErrorImpl implements GetArtworksWithStyleError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksForArtMovements)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -467,13 +508,15 @@ class _$GetArtworksWithStyleErrorImpl implements GetArtworksWithStyleError {
   }
 }
 
-abstract class GetArtworksWithStyleError implements GetArtworksWithStyle, ErrorAction {
-  const factory GetArtworksWithStyleError(final Object error, final StackTrace stackTrace) =
+abstract class GetArtworksWithStyleError
+    implements GetArtworksWithStyle, ErrorAction {
+  const factory GetArtworksWithStyleError(
+          final Object error, final StackTrace stackTrace) =
       _$GetArtworksWithStyleErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetArtworksWithStyleErrorImplCopyWith<_$GetArtworksWithStyleErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetArtworksWithStyleErrorImplCopyWith<_$GetArtworksWithStyleErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,7 +6,8 @@ part of 'artwork.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$Artwork$Impl _$$Artwork$ImplFromJson(Map<String, dynamic> json) => _$Artwork$Impl(
+_$Artwork$Impl _$$Artwork$ImplFromJson(Map<String, dynamic> json) =>
+    _$Artwork$Impl(
       uid: json['uid'] as String,
       title: json['title'] as String,
       artistFirstName: json['artistFirstName'] as String,
@@ -24,7 +25,8 @@ _$Artwork$Impl _$$Artwork$ImplFromJson(Map<String, dynamic> json) => _$Artwork$I
       description: json['description'] as String,
     );
 
-Map<String, dynamic> _$$Artwork$ImplToJson(_$Artwork$Impl instance) => <String, dynamic>{
+Map<String, dynamic> _$$Artwork$ImplToJson(_$Artwork$Impl instance) =>
+    <String, dynamic>{
       'uid': instance.uid,
       'title': instance.title,
       'artistFirstName': instance.artistFirstName,

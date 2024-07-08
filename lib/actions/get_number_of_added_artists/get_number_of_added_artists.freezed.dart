@@ -41,7 +41,8 @@ mixin _$GetNumberOfAddedArtists {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtistsStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtistsSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtistsSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtistsError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,12 +65,14 @@ mixin _$GetNumberOfAddedArtists {
 
 /// @nodoc
 abstract class $GetNumberOfAddedArtistsCopyWith<$Res> {
-  factory $GetNumberOfAddedArtistsCopyWith(GetNumberOfAddedArtists value, $Res Function(GetNumberOfAddedArtists) then) =
+  factory $GetNumberOfAddedArtistsCopyWith(GetNumberOfAddedArtists value,
+          $Res Function(GetNumberOfAddedArtists) then) =
       _$GetNumberOfAddedArtistsCopyWithImpl<$Res, GetNumberOfAddedArtists>;
 }
 
 /// @nodoc
-class _$GetNumberOfAddedArtistsCopyWithImpl<$Res, $Val extends GetNumberOfAddedArtists>
+class _$GetNumberOfAddedArtistsCopyWithImpl<$Res,
+        $Val extends GetNumberOfAddedArtists>
     implements $GetNumberOfAddedArtistsCopyWith<$Res> {
   _$GetNumberOfAddedArtistsCopyWithImpl(this._value, this._then);
 
@@ -82,22 +85,26 @@ class _$GetNumberOfAddedArtistsCopyWithImpl<$Res, $Val extends GetNumberOfAddedA
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtistsStartImplCopyWith<$Res> {
   factory _$$GetNumberOfAddedArtistsStartImplCopyWith(
-          _$GetNumberOfAddedArtistsStartImpl value, $Res Function(_$GetNumberOfAddedArtistsStartImpl) then) =
+          _$GetNumberOfAddedArtistsStartImpl value,
+          $Res Function(_$GetNumberOfAddedArtistsStartImpl) then) =
       __$$GetNumberOfAddedArtistsStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetNumberOfAddedArtistsStartImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res, _$GetNumberOfAddedArtistsStartImpl>
+    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtistsStartImpl>
     implements _$$GetNumberOfAddedArtistsStartImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtistsStartImplCopyWithImpl(
-      _$GetNumberOfAddedArtistsStartImpl _value, $Res Function(_$GetNumberOfAddedArtistsStartImpl) _then)
+      _$GetNumberOfAddedArtistsStartImpl _value,
+      $Res Function(_$GetNumberOfAddedArtistsStartImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtistsStartImpl implements GetNumberOfAddedArtistsStart {
+class _$GetNumberOfAddedArtistsStartImpl
+    implements GetNumberOfAddedArtistsStart {
   const _$GetNumberOfAddedArtistsStartImpl();
 
   @override
@@ -107,7 +114,9 @@ class _$GetNumberOfAddedArtistsStartImpl implements GetNumberOfAddedArtistsStart
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetNumberOfAddedArtistsStartImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNumberOfAddedArtistsStartImpl);
   }
 
   @override
@@ -151,7 +160,8 @@ class _$GetNumberOfAddedArtistsStartImpl implements GetNumberOfAddedArtistsStart
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtistsStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtistsSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtistsSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtistsError value) error,
   }) {
     return $default(this);
@@ -183,13 +193,15 @@ class _$GetNumberOfAddedArtistsStartImpl implements GetNumberOfAddedArtistsStart
 }
 
 abstract class GetNumberOfAddedArtistsStart implements GetNumberOfAddedArtists {
-  const factory GetNumberOfAddedArtistsStart() = _$GetNumberOfAddedArtistsStartImpl;
+  const factory GetNumberOfAddedArtistsStart() =
+      _$GetNumberOfAddedArtistsStartImpl;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<$Res> {
   factory _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith(
-          _$GetNumberOfAddedArtistsSuccessfulImpl value, $Res Function(_$GetNumberOfAddedArtistsSuccessfulImpl) then) =
+          _$GetNumberOfAddedArtistsSuccessfulImpl value,
+          $Res Function(_$GetNumberOfAddedArtistsSuccessfulImpl) then) =
       __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int numberOfAddedArtists});
@@ -197,10 +209,12 @@ abstract class _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res, _$GetNumberOfAddedArtistsSuccessfulImpl>
+    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtistsSuccessfulImpl>
     implements _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl(
-      _$GetNumberOfAddedArtistsSuccessfulImpl _value, $Res Function(_$GetNumberOfAddedArtistsSuccessfulImpl) _then)
+      _$GetNumberOfAddedArtistsSuccessfulImpl _value,
+      $Res Function(_$GetNumberOfAddedArtistsSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -219,7 +233,8 @@ class __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtistsSuccessfulImpl implements GetNumberOfAddedArtistsSuccessful {
+class _$GetNumberOfAddedArtistsSuccessfulImpl
+    implements GetNumberOfAddedArtistsSuccessful {
   const _$GetNumberOfAddedArtistsSuccessfulImpl(this.numberOfAddedArtists);
 
   @override
@@ -245,8 +260,10 @@ class _$GetNumberOfAddedArtistsSuccessfulImpl implements GetNumberOfAddedArtists
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<_$GetNumberOfAddedArtistsSuccessfulImpl> get copyWith =>
-      __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl<_$GetNumberOfAddedArtistsSuccessfulImpl>(this, _$identity);
+  _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<
+          _$GetNumberOfAddedArtistsSuccessfulImpl>
+      get copyWith => __$$GetNumberOfAddedArtistsSuccessfulImplCopyWithImpl<
+          _$GetNumberOfAddedArtistsSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -286,7 +303,8 @@ class _$GetNumberOfAddedArtistsSuccessfulImpl implements GetNumberOfAddedArtists
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtistsStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtistsSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtistsSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtistsError value) error,
   }) {
     return successful(this);
@@ -317,20 +335,23 @@ class _$GetNumberOfAddedArtistsSuccessfulImpl implements GetNumberOfAddedArtists
   }
 }
 
-abstract class GetNumberOfAddedArtistsSuccessful implements GetNumberOfAddedArtists {
-  const factory GetNumberOfAddedArtistsSuccessful(final int numberOfAddedArtists) =
-      _$GetNumberOfAddedArtistsSuccessfulImpl;
+abstract class GetNumberOfAddedArtistsSuccessful
+    implements GetNumberOfAddedArtists {
+  const factory GetNumberOfAddedArtistsSuccessful(
+      final int numberOfAddedArtists) = _$GetNumberOfAddedArtistsSuccessfulImpl;
 
   int get numberOfAddedArtists;
   @JsonKey(ignore: true)
-  _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<_$GetNumberOfAddedArtistsSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfAddedArtistsSuccessfulImplCopyWith<
+          _$GetNumberOfAddedArtistsSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtistsErrorImplCopyWith<$Res> {
   factory _$$GetNumberOfAddedArtistsErrorImplCopyWith(
-          _$GetNumberOfAddedArtistsErrorImpl value, $Res Function(_$GetNumberOfAddedArtistsErrorImpl) then) =
+          _$GetNumberOfAddedArtistsErrorImpl value,
+          $Res Function(_$GetNumberOfAddedArtistsErrorImpl) then) =
       __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -338,10 +359,12 @@ abstract class _$$GetNumberOfAddedArtistsErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res, _$GetNumberOfAddedArtistsErrorImpl>
+    extends _$GetNumberOfAddedArtistsCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtistsErrorImpl>
     implements _$$GetNumberOfAddedArtistsErrorImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl(
-      _$GetNumberOfAddedArtistsErrorImpl _value, $Res Function(_$GetNumberOfAddedArtistsErrorImpl) _then)
+      _$GetNumberOfAddedArtistsErrorImpl _value,
+      $Res Function(_$GetNumberOfAddedArtistsErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -362,7 +385,8 @@ class __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtistsErrorImpl implements GetNumberOfAddedArtistsError {
+class _$GetNumberOfAddedArtistsErrorImpl
+    implements GetNumberOfAddedArtistsError {
   const _$GetNumberOfAddedArtistsErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -381,17 +405,21 @@ class _$GetNumberOfAddedArtistsErrorImpl implements GetNumberOfAddedArtistsError
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfAddedArtistsErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfAddedArtistsErrorImplCopyWith<_$GetNumberOfAddedArtistsErrorImpl> get copyWith =>
-      __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl<_$GetNumberOfAddedArtistsErrorImpl>(this, _$identity);
+  _$$GetNumberOfAddedArtistsErrorImplCopyWith<
+          _$GetNumberOfAddedArtistsErrorImpl>
+      get copyWith => __$$GetNumberOfAddedArtistsErrorImplCopyWithImpl<
+          _$GetNumberOfAddedArtistsErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -431,7 +459,8 @@ class _$GetNumberOfAddedArtistsErrorImpl implements GetNumberOfAddedArtistsError
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtistsStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtistsSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtistsSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtistsError value) error,
   }) {
     return error(this);
@@ -462,13 +491,16 @@ class _$GetNumberOfAddedArtistsErrorImpl implements GetNumberOfAddedArtistsError
   }
 }
 
-abstract class GetNumberOfAddedArtistsError implements GetNumberOfAddedArtists, ErrorAction {
-  const factory GetNumberOfAddedArtistsError(final Object error, final StackTrace stackTrace) =
+abstract class GetNumberOfAddedArtistsError
+    implements GetNumberOfAddedArtists, ErrorAction {
+  const factory GetNumberOfAddedArtistsError(
+          final Object error, final StackTrace stackTrace) =
       _$GetNumberOfAddedArtistsErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetNumberOfAddedArtistsErrorImplCopyWith<_$GetNumberOfAddedArtistsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfAddedArtistsErrorImplCopyWith<
+          _$GetNumberOfAddedArtistsErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

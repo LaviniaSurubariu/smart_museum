@@ -64,12 +64,14 @@ mixin _$UpdateArtistLastName {
 
 /// @nodoc
 abstract class $UpdateArtistLastNameCopyWith<$Res> {
-  factory $UpdateArtistLastNameCopyWith(UpdateArtistLastName value, $Res Function(UpdateArtistLastName) then) =
+  factory $UpdateArtistLastNameCopyWith(UpdateArtistLastName value,
+          $Res Function(UpdateArtistLastName) then) =
       _$UpdateArtistLastNameCopyWithImpl<$Res, UpdateArtistLastName>;
 }
 
 /// @nodoc
-class _$UpdateArtistLastNameCopyWithImpl<$Res, $Val extends UpdateArtistLastName>
+class _$UpdateArtistLastNameCopyWithImpl<$Res,
+        $Val extends UpdateArtistLastName>
     implements $UpdateArtistLastNameCopyWith<$Res> {
   _$UpdateArtistLastNameCopyWithImpl(this._value, this._then);
 
@@ -82,7 +84,8 @@ class _$UpdateArtistLastNameCopyWithImpl<$Res, $Val extends UpdateArtistLastName
 /// @nodoc
 abstract class _$$UpdateArtistLastNameStartImplCopyWith<$Res> {
   factory _$$UpdateArtistLastNameStartImplCopyWith(
-          _$UpdateArtistLastNameStartImpl value, $Res Function(_$UpdateArtistLastNameStartImpl) then) =
+          _$UpdateArtistLastNameStartImpl value,
+          $Res Function(_$UpdateArtistLastNameStartImpl) then) =
       __$$UpdateArtistLastNameStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newLastName, String artistId});
@@ -90,10 +93,12 @@ abstract class _$$UpdateArtistLastNameStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistLastNameStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtistLastNameCopyWithImpl<$Res, _$UpdateArtistLastNameStartImpl>
+    extends _$UpdateArtistLastNameCopyWithImpl<$Res,
+        _$UpdateArtistLastNameStartImpl>
     implements _$$UpdateArtistLastNameStartImplCopyWith<$Res> {
   __$$UpdateArtistLastNameStartImplCopyWithImpl(
-      _$UpdateArtistLastNameStartImpl _value, $Res Function(_$UpdateArtistLastNameStartImpl) _then)
+      _$UpdateArtistLastNameStartImpl _value,
+      $Res Function(_$UpdateArtistLastNameStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +123,8 @@ class __$$UpdateArtistLastNameStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtistLastNameStartImpl implements UpdateArtistLastNameStart {
-  const _$UpdateArtistLastNameStartImpl({required this.newLastName, required this.artistId});
+  const _$UpdateArtistLastNameStartImpl(
+      {required this.newLastName, required this.artistId});
 
   @override
   final String newLastName;
@@ -135,8 +141,10 @@ class _$UpdateArtistLastNameStartImpl implements UpdateArtistLastNameStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistLastNameStartImpl &&
-            (identical(other.newLastName, newLastName) || other.newLastName == newLastName) &&
-            (identical(other.artistId, artistId) || other.artistId == artistId));
+            (identical(other.newLastName, newLastName) ||
+                other.newLastName == newLastName) &&
+            (identical(other.artistId, artistId) ||
+                other.artistId == artistId));
   }
 
   @override
@@ -145,8 +153,9 @@ class _$UpdateArtistLastNameStartImpl implements UpdateArtistLastNameStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistLastNameStartImplCopyWith<_$UpdateArtistLastNameStartImpl> get copyWith =>
-      __$$UpdateArtistLastNameStartImplCopyWithImpl<_$UpdateArtistLastNameStartImpl>(this, _$identity);
+  _$$UpdateArtistLastNameStartImplCopyWith<_$UpdateArtistLastNameStartImpl>
+      get copyWith => __$$UpdateArtistLastNameStartImplCopyWithImpl<
+          _$UpdateArtistLastNameStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,20 +227,22 @@ class _$UpdateArtistLastNameStartImpl implements UpdateArtistLastNameStart {
 }
 
 abstract class UpdateArtistLastNameStart implements UpdateArtistLastName {
-  const factory UpdateArtistLastNameStart({required final String newLastName, required final String artistId}) =
-      _$UpdateArtistLastNameStartImpl;
+  const factory UpdateArtistLastNameStart(
+      {required final String newLastName,
+      required final String artistId}) = _$UpdateArtistLastNameStartImpl;
 
   String get newLastName;
   String get artistId;
   @JsonKey(ignore: true)
-  _$$UpdateArtistLastNameStartImplCopyWith<_$UpdateArtistLastNameStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistLastNameStartImplCopyWith<_$UpdateArtistLastNameStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistLastNameSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtistLastNameSuccessfulImplCopyWith(
-          _$UpdateArtistLastNameSuccessfulImpl value, $Res Function(_$UpdateArtistLastNameSuccessfulImpl) then) =
+          _$UpdateArtistLastNameSuccessfulImpl value,
+          $Res Function(_$UpdateArtistLastNameSuccessfulImpl) then) =
       __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newLastName});
@@ -239,10 +250,12 @@ abstract class _$$UpdateArtistLastNameSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtistLastNameCopyWithImpl<$Res, _$UpdateArtistLastNameSuccessfulImpl>
+    extends _$UpdateArtistLastNameCopyWithImpl<$Res,
+        _$UpdateArtistLastNameSuccessfulImpl>
     implements _$$UpdateArtistLastNameSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl(
-      _$UpdateArtistLastNameSuccessfulImpl _value, $Res Function(_$UpdateArtistLastNameSuccessfulImpl) _then)
+      _$UpdateArtistLastNameSuccessfulImpl _value,
+      $Res Function(_$UpdateArtistLastNameSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +274,8 @@ class __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistLastNameSuccessfulImpl implements UpdateArtistLastNameSuccessful {
+class _$UpdateArtistLastNameSuccessfulImpl
+    implements UpdateArtistLastNameSuccessful {
   const _$UpdateArtistLastNameSuccessfulImpl(this.newLastName);
 
   @override
@@ -277,7 +291,8 @@ class _$UpdateArtistLastNameSuccessfulImpl implements UpdateArtistLastNameSucces
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistLastNameSuccessfulImpl &&
-            (identical(other.newLastName, newLastName) || other.newLastName == newLastName));
+            (identical(other.newLastName, newLastName) ||
+                other.newLastName == newLastName));
   }
 
   @override
@@ -286,8 +301,10 @@ class _$UpdateArtistLastNameSuccessfulImpl implements UpdateArtistLastNameSucces
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistLastNameSuccessfulImplCopyWith<_$UpdateArtistLastNameSuccessfulImpl> get copyWith =>
-      __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl<_$UpdateArtistLastNameSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtistLastNameSuccessfulImplCopyWith<
+          _$UpdateArtistLastNameSuccessfulImpl>
+      get copyWith => __$$UpdateArtistLastNameSuccessfulImplCopyWithImpl<
+          _$UpdateArtistLastNameSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -359,18 +376,21 @@ class _$UpdateArtistLastNameSuccessfulImpl implements UpdateArtistLastNameSucces
 }
 
 abstract class UpdateArtistLastNameSuccessful implements UpdateArtistLastName {
-  const factory UpdateArtistLastNameSuccessful(final String newLastName) = _$UpdateArtistLastNameSuccessfulImpl;
+  const factory UpdateArtistLastNameSuccessful(final String newLastName) =
+      _$UpdateArtistLastNameSuccessfulImpl;
 
   String get newLastName;
   @JsonKey(ignore: true)
-  _$$UpdateArtistLastNameSuccessfulImplCopyWith<_$UpdateArtistLastNameSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistLastNameSuccessfulImplCopyWith<
+          _$UpdateArtistLastNameSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistLastNameErrorImplCopyWith<$Res> {
   factory _$$UpdateArtistLastNameErrorImplCopyWith(
-          _$UpdateArtistLastNameErrorImpl value, $Res Function(_$UpdateArtistLastNameErrorImpl) then) =
+          _$UpdateArtistLastNameErrorImpl value,
+          $Res Function(_$UpdateArtistLastNameErrorImpl) then) =
       __$$UpdateArtistLastNameErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +398,12 @@ abstract class _$$UpdateArtistLastNameErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistLastNameErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtistLastNameCopyWithImpl<$Res, _$UpdateArtistLastNameErrorImpl>
+    extends _$UpdateArtistLastNameCopyWithImpl<$Res,
+        _$UpdateArtistLastNameErrorImpl>
     implements _$$UpdateArtistLastNameErrorImplCopyWith<$Res> {
   __$$UpdateArtistLastNameErrorImplCopyWithImpl(
-      _$UpdateArtistLastNameErrorImpl _value, $Res Function(_$UpdateArtistLastNameErrorImpl) _then)
+      _$UpdateArtistLastNameErrorImpl _value,
+      $Res Function(_$UpdateArtistLastNameErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,17 +443,20 @@ class _$UpdateArtistLastNameErrorImpl implements UpdateArtistLastNameError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistLastNameErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistLastNameErrorImplCopyWith<_$UpdateArtistLastNameErrorImpl> get copyWith =>
-      __$$UpdateArtistLastNameErrorImplCopyWithImpl<_$UpdateArtistLastNameErrorImpl>(this, _$identity);
+  _$$UpdateArtistLastNameErrorImplCopyWith<_$UpdateArtistLastNameErrorImpl>
+      get copyWith => __$$UpdateArtistLastNameErrorImplCopyWithImpl<
+          _$UpdateArtistLastNameErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,13 +527,15 @@ class _$UpdateArtistLastNameErrorImpl implements UpdateArtistLastNameError {
   }
 }
 
-abstract class UpdateArtistLastNameError implements UpdateArtistLastName, ErrorAction {
-  const factory UpdateArtistLastNameError(final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtistLastNameError
+    implements UpdateArtistLastName, ErrorAction {
+  const factory UpdateArtistLastNameError(
+          final Object error, final StackTrace stackTrace) =
       _$UpdateArtistLastNameErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtistLastNameErrorImplCopyWith<_$UpdateArtistLastNameErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistLastNameErrorImplCopyWith<_$UpdateArtistLastNameErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

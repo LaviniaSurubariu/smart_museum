@@ -64,7 +64,8 @@ mixin _$UpdateArtworkStyle {
 
 /// @nodoc
 abstract class $UpdateArtworkStyleCopyWith<$Res> {
-  factory $UpdateArtworkStyleCopyWith(UpdateArtworkStyle value, $Res Function(UpdateArtworkStyle) then) =
+  factory $UpdateArtworkStyleCopyWith(
+          UpdateArtworkStyle value, $Res Function(UpdateArtworkStyle) then) =
       _$UpdateArtworkStyleCopyWithImpl<$Res, UpdateArtworkStyle>;
 }
 
@@ -82,7 +83,8 @@ class _$UpdateArtworkStyleCopyWithImpl<$Res, $Val extends UpdateArtworkStyle>
 /// @nodoc
 abstract class _$$UpdateArtworkStyleStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkStyleStartImplCopyWith(
-          _$UpdateArtworkStyleStartImpl value, $Res Function(_$UpdateArtworkStyleStartImpl) then) =
+          _$UpdateArtworkStyleStartImpl value,
+          $Res Function(_$UpdateArtworkStyleStartImpl) then) =
       __$$UpdateArtworkStyleStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newStyle, String artworkId});
@@ -90,10 +92,12 @@ abstract class _$$UpdateArtworkStyleStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStyleStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStyleCopyWithImpl<$Res, _$UpdateArtworkStyleStartImpl>
+    extends _$UpdateArtworkStyleCopyWithImpl<$Res,
+        _$UpdateArtworkStyleStartImpl>
     implements _$$UpdateArtworkStyleStartImplCopyWith<$Res> {
   __$$UpdateArtworkStyleStartImplCopyWithImpl(
-      _$UpdateArtworkStyleStartImpl _value, $Res Function(_$UpdateArtworkStyleStartImpl) _then)
+      _$UpdateArtworkStyleStartImpl _value,
+      $Res Function(_$UpdateArtworkStyleStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +122,8 @@ class __$$UpdateArtworkStyleStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtworkStyleStartImpl implements UpdateArtworkStyleStart {
-  const _$UpdateArtworkStyleStartImpl({required this.newStyle, required this.artworkId});
+  const _$UpdateArtworkStyleStartImpl(
+      {required this.newStyle, required this.artworkId});
 
   @override
   final String newStyle;
@@ -135,8 +140,10 @@ class _$UpdateArtworkStyleStartImpl implements UpdateArtworkStyleStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkStyleStartImpl &&
-            (identical(other.newStyle, newStyle) || other.newStyle == newStyle) &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
+            (identical(other.newStyle, newStyle) ||
+                other.newStyle == newStyle) &&
+            (identical(other.artworkId, artworkId) ||
+                other.artworkId == artworkId));
   }
 
   @override
@@ -145,8 +152,9 @@ class _$UpdateArtworkStyleStartImpl implements UpdateArtworkStyleStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStyleStartImplCopyWith<_$UpdateArtworkStyleStartImpl> get copyWith =>
-      __$$UpdateArtworkStyleStartImplCopyWithImpl<_$UpdateArtworkStyleStartImpl>(this, _$identity);
+  _$$UpdateArtworkStyleStartImplCopyWith<_$UpdateArtworkStyleStartImpl>
+      get copyWith => __$$UpdateArtworkStyleStartImplCopyWithImpl<
+          _$UpdateArtworkStyleStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,20 +226,22 @@ class _$UpdateArtworkStyleStartImpl implements UpdateArtworkStyleStart {
 }
 
 abstract class UpdateArtworkStyleStart implements UpdateArtworkStyle {
-  const factory UpdateArtworkStyleStart({required final String newStyle, required final String artworkId}) =
-      _$UpdateArtworkStyleStartImpl;
+  const factory UpdateArtworkStyleStart(
+      {required final String newStyle,
+      required final String artworkId}) = _$UpdateArtworkStyleStartImpl;
 
   String get newStyle;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStyleStartImplCopyWith<_$UpdateArtworkStyleStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkStyleStartImplCopyWith<_$UpdateArtworkStyleStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkStyleSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkStyleSuccessfulImplCopyWith(
-          _$UpdateArtworkStyleSuccessfulImpl value, $Res Function(_$UpdateArtworkStyleSuccessfulImpl) then) =
+          _$UpdateArtworkStyleSuccessfulImpl value,
+          $Res Function(_$UpdateArtworkStyleSuccessfulImpl) then) =
       __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newStyle});
@@ -239,10 +249,12 @@ abstract class _$$UpdateArtworkStyleSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStyleCopyWithImpl<$Res, _$UpdateArtworkStyleSuccessfulImpl>
+    extends _$UpdateArtworkStyleCopyWithImpl<$Res,
+        _$UpdateArtworkStyleSuccessfulImpl>
     implements _$$UpdateArtworkStyleSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkStyleSuccessfulImpl _value, $Res Function(_$UpdateArtworkStyleSuccessfulImpl) _then)
+      _$UpdateArtworkStyleSuccessfulImpl _value,
+      $Res Function(_$UpdateArtworkStyleSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +273,8 @@ class __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkStyleSuccessfulImpl implements UpdateArtworkStyleSuccessful {
+class _$UpdateArtworkStyleSuccessfulImpl
+    implements UpdateArtworkStyleSuccessful {
   const _$UpdateArtworkStyleSuccessfulImpl(this.newStyle);
 
   @override
@@ -277,7 +290,8 @@ class _$UpdateArtworkStyleSuccessfulImpl implements UpdateArtworkStyleSuccessful
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkStyleSuccessfulImpl &&
-            (identical(other.newStyle, newStyle) || other.newStyle == newStyle));
+            (identical(other.newStyle, newStyle) ||
+                other.newStyle == newStyle));
   }
 
   @override
@@ -286,8 +300,10 @@ class _$UpdateArtworkStyleSuccessfulImpl implements UpdateArtworkStyleSuccessful
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStyleSuccessfulImplCopyWith<_$UpdateArtworkStyleSuccessfulImpl> get copyWith =>
-      __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl<_$UpdateArtworkStyleSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkStyleSuccessfulImplCopyWith<
+          _$UpdateArtworkStyleSuccessfulImpl>
+      get copyWith => __$$UpdateArtworkStyleSuccessfulImplCopyWithImpl<
+          _$UpdateArtworkStyleSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -359,18 +375,21 @@ class _$UpdateArtworkStyleSuccessfulImpl implements UpdateArtworkStyleSuccessful
 }
 
 abstract class UpdateArtworkStyleSuccessful implements UpdateArtworkStyle {
-  const factory UpdateArtworkStyleSuccessful(final String newStyle) = _$UpdateArtworkStyleSuccessfulImpl;
+  const factory UpdateArtworkStyleSuccessful(final String newStyle) =
+      _$UpdateArtworkStyleSuccessfulImpl;
 
   String get newStyle;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStyleSuccessfulImplCopyWith<_$UpdateArtworkStyleSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkStyleSuccessfulImplCopyWith<
+          _$UpdateArtworkStyleSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkStyleErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkStyleErrorImplCopyWith(
-          _$UpdateArtworkStyleErrorImpl value, $Res Function(_$UpdateArtworkStyleErrorImpl) then) =
+          _$UpdateArtworkStyleErrorImpl value,
+          $Res Function(_$UpdateArtworkStyleErrorImpl) then) =
       __$$UpdateArtworkStyleErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +397,12 @@ abstract class _$$UpdateArtworkStyleErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkStyleErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkStyleCopyWithImpl<$Res, _$UpdateArtworkStyleErrorImpl>
+    extends _$UpdateArtworkStyleCopyWithImpl<$Res,
+        _$UpdateArtworkStyleErrorImpl>
     implements _$$UpdateArtworkStyleErrorImplCopyWith<$Res> {
   __$$UpdateArtworkStyleErrorImplCopyWithImpl(
-      _$UpdateArtworkStyleErrorImpl _value, $Res Function(_$UpdateArtworkStyleErrorImpl) _then)
+      _$UpdateArtworkStyleErrorImpl _value,
+      $Res Function(_$UpdateArtworkStyleErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,17 +442,20 @@ class _$UpdateArtworkStyleErrorImpl implements UpdateArtworkStyleError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkStyleErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkStyleErrorImplCopyWith<_$UpdateArtworkStyleErrorImpl> get copyWith =>
-      __$$UpdateArtworkStyleErrorImplCopyWithImpl<_$UpdateArtworkStyleErrorImpl>(this, _$identity);
+  _$$UpdateArtworkStyleErrorImplCopyWith<_$UpdateArtworkStyleErrorImpl>
+      get copyWith => __$$UpdateArtworkStyleErrorImplCopyWithImpl<
+          _$UpdateArtworkStyleErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,13 +526,15 @@ class _$UpdateArtworkStyleErrorImpl implements UpdateArtworkStyleError {
   }
 }
 
-abstract class UpdateArtworkStyleError implements UpdateArtworkStyle, ErrorAction {
-  const factory UpdateArtworkStyleError(final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkStyleError
+    implements UpdateArtworkStyle, ErrorAction {
+  const factory UpdateArtworkStyleError(
+          final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkStyleErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkStyleErrorImplCopyWith<_$UpdateArtworkStyleErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkStyleErrorImplCopyWith<_$UpdateArtworkStyleErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

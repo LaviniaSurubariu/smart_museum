@@ -37,6 +37,7 @@ import 'presentation/user_pages/artworks_page.dart';
 import 'presentation/user_pages/artworks_with_all_styles_page.dart';
 import 'presentation/user_pages/favourites_page.dart';
 import 'presentation/user_pages/home_screen.dart';
+import 'presentation/user_pages/info_subscription_page.dart';
 import 'presentation/user_pages/payment_page.dart';
 import 'presentation/user_pages/profile_page.dart';
 import 'presentation/user_pages/qr_scan_page.dart';
@@ -107,6 +108,7 @@ class MyApp extends StatelessWidget {
           '/adminInfoPage': (BuildContext context) => const AdminInfoPage(),
           '/appFeedbackPage': (BuildContext context) => const AppFeedbackPage(),
           '/userInfoPage': (BuildContext context) => const UserInfoPage(),
+          '/infoSubscriptionPage': (BuildContext context) => const InfoSubscriptionPage(),
         },
       ),
     );

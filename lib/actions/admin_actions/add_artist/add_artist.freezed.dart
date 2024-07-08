@@ -18,8 +18,14 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AddArtist {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -27,8 +33,14 @@ mixin _$AddArtist {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -36,8 +48,14 @@ mixin _$AddArtist {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -70,11 +88,13 @@ mixin _$AddArtist {
 
 /// @nodoc
 abstract class $AddArtistCopyWith<$Res> {
-  factory $AddArtistCopyWith(AddArtist value, $Res Function(AddArtist) then) = _$AddArtistCopyWithImpl<$Res, AddArtist>;
+  factory $AddArtistCopyWith(AddArtist value, $Res Function(AddArtist) then) =
+      _$AddArtistCopyWithImpl<$Res, AddArtist>;
 }
 
 /// @nodoc
-class _$AddArtistCopyWithImpl<$Res, $Val extends AddArtist> implements $AddArtistCopyWith<$Res> {
+class _$AddArtistCopyWithImpl<$Res, $Val extends AddArtist>
+    implements $AddArtistCopyWith<$Res> {
   _$AddArtistCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -85,7 +105,8 @@ class _$AddArtistCopyWithImpl<$Res, $Val extends AddArtist> implements $AddArtis
 
 /// @nodoc
 abstract class _$$AddArtistStartImplCopyWith<$Res> {
-  factory _$$AddArtistStartImplCopyWith(_$AddArtistStartImpl value, $Res Function(_$AddArtistStartImpl) then) =
+  factory _$$AddArtistStartImplCopyWith(_$AddArtistStartImpl value,
+          $Res Function(_$AddArtistStartImpl) then) =
       __$$AddArtistStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
@@ -99,9 +120,11 @@ abstract class _$$AddArtistStartImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AddArtistStartImplCopyWithImpl<$Res> extends _$AddArtistCopyWithImpl<$Res, _$AddArtistStartImpl>
+class __$$AddArtistStartImplCopyWithImpl<$Res>
+    extends _$AddArtistCopyWithImpl<$Res, _$AddArtistStartImpl>
     implements _$$AddArtistStartImplCopyWith<$Res> {
-  __$$AddArtistStartImplCopyWithImpl(_$AddArtistStartImpl _value, $Res Function(_$AddArtistStartImpl) _then)
+  __$$AddArtistStartImplCopyWithImpl(
+      _$AddArtistStartImpl _value, $Res Function(_$AddArtistStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -185,61 +208,89 @@ class _$AddArtistStartImpl implements AddArtistStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddArtistStartImpl &&
-            (identical(other.firstName, firstName) || other.firstName == firstName) &&
-            (identical(other.lastName, lastName) || other.lastName == lastName) &&
-            (identical(other.picturePath, picturePath) || other.picturePath == picturePath) &&
-            (identical(other.birthdate, birthdate) || other.birthdate == birthdate) &&
-            (identical(other.deathDate, deathDate) || other.deathDate == deathDate) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.picturePath, picturePath) ||
+                other.picturePath == picturePath) &&
+            (identical(other.birthdate, birthdate) ||
+                other.birthdate == birthdate) &&
+            (identical(other.deathDate, deathDate) ||
+                other.deathDate == deathDate) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, firstName, lastName, picturePath, birthdate, deathDate, description, result);
+  int get hashCode => Object.hash(runtimeType, firstName, lastName, picturePath,
+      birthdate, deathDate, description, result);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddArtistStartImplCopyWith<_$AddArtistStartImpl> get copyWith =>
-      __$$AddArtistStartImplCopyWithImpl<_$AddArtistStartImpl>(this, _$identity);
+      __$$AddArtistStartImplCopyWithImpl<_$AddArtistStartImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(firstName, lastName, picturePath, birthdate, deathDate, description, result);
+    return $default(firstName, lastName, picturePath, birthdate, deathDate,
+        description, result);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(firstName, lastName, picturePath, birthdate, deathDate, description, result);
+    return $default?.call(firstName, lastName, picturePath, birthdate,
+        deathDate, description, result);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(firstName, lastName, picturePath, birthdate, deathDate, description, result);
+      return $default(firstName, lastName, picturePath, birthdate, deathDate,
+          description, result);
     }
     return orElse();
   }
@@ -297,21 +348,23 @@ abstract class AddArtistStart implements AddArtist {
   String get description;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$AddArtistStartImplCopyWith<_$AddArtistStartImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AddArtistStartImplCopyWith<_$AddArtistStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddArtistSuccessfulImplCopyWith<$Res> {
-  factory _$$AddArtistSuccessfulImplCopyWith(
-          _$AddArtistSuccessfulImpl value, $Res Function(_$AddArtistSuccessfulImpl) then) =
+  factory _$$AddArtistSuccessfulImplCopyWith(_$AddArtistSuccessfulImpl value,
+          $Res Function(_$AddArtistSuccessfulImpl) then) =
       __$$AddArtistSuccessfulImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddArtistSuccessfulImplCopyWithImpl<$Res> extends _$AddArtistCopyWithImpl<$Res, _$AddArtistSuccessfulImpl>
+class __$$AddArtistSuccessfulImplCopyWithImpl<$Res>
+    extends _$AddArtistCopyWithImpl<$Res, _$AddArtistSuccessfulImpl>
     implements _$$AddArtistSuccessfulImplCopyWith<$Res> {
-  __$$AddArtistSuccessfulImplCopyWithImpl(
-      _$AddArtistSuccessfulImpl _value, $Res Function(_$AddArtistSuccessfulImpl) _then)
+  __$$AddArtistSuccessfulImplCopyWithImpl(_$AddArtistSuccessfulImpl _value,
+      $Res Function(_$AddArtistSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -327,7 +380,9 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AddArtistSuccessfulImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddArtistSuccessfulImpl);
   }
 
   @override
@@ -336,8 +391,14 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -348,8 +409,14 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -360,8 +427,14 @@ class _$AddArtistSuccessfulImpl implements AddArtistSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -414,16 +487,19 @@ abstract class AddArtistSuccessful implements AddArtist {
 
 /// @nodoc
 abstract class _$$AddArtistErrorImplCopyWith<$Res> {
-  factory _$$AddArtistErrorImplCopyWith(_$AddArtistErrorImpl value, $Res Function(_$AddArtistErrorImpl) then) =
+  factory _$$AddArtistErrorImplCopyWith(_$AddArtistErrorImpl value,
+          $Res Function(_$AddArtistErrorImpl) then) =
       __$$AddArtistErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddArtistErrorImplCopyWithImpl<$Res> extends _$AddArtistCopyWithImpl<$Res, _$AddArtistErrorImpl>
+class __$$AddArtistErrorImplCopyWithImpl<$Res>
+    extends _$AddArtistCopyWithImpl<$Res, _$AddArtistErrorImpl>
     implements _$$AddArtistErrorImplCopyWith<$Res> {
-  __$$AddArtistErrorImplCopyWithImpl(_$AddArtistErrorImpl _value, $Res Function(_$AddArtistErrorImpl) _then)
+  __$$AddArtistErrorImplCopyWithImpl(
+      _$AddArtistErrorImpl _value, $Res Function(_$AddArtistErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -463,23 +539,32 @@ class _$AddArtistErrorImpl implements AddArtistError {
         (other.runtimeType == runtimeType &&
             other is _$AddArtistErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddArtistErrorImplCopyWith<_$AddArtistErrorImpl> get copyWith =>
-      __$$AddArtistErrorImplCopyWithImpl<_$AddArtistErrorImpl>(this, _$identity);
+      __$$AddArtistErrorImplCopyWithImpl<_$AddArtistErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -490,8 +575,14 @@ class _$AddArtistErrorImpl implements AddArtistError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -502,8 +593,14 @@ class _$AddArtistErrorImpl implements AddArtistError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String firstName, String lastName, String picturePath, DateTime? birthdate, DateTime? deathDate,
-            String description, ActionResult result)?
+    TResult Function(
+            String firstName,
+            String lastName,
+            String picturePath,
+            DateTime? birthdate,
+            DateTime? deathDate,
+            String description,
+            ActionResult result)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -551,10 +648,12 @@ class _$AddArtistErrorImpl implements AddArtistError {
 }
 
 abstract class AddArtistError implements AddArtist, ErrorAction {
-  const factory AddArtistError(final Object error, final StackTrace stackTrace) = _$AddArtistErrorImpl;
+  const factory AddArtistError(
+      final Object error, final StackTrace stackTrace) = _$AddArtistErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddArtistErrorImplCopyWith<_$AddArtistErrorImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AddArtistErrorImplCopyWith<_$AddArtistErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../actions/get_end_subscription_date/get_end_subscription_date.dart';
+import '../../actions/get_start_subscription_date/get_start_subscription_date.dart';
 import '../../actions/get_top_artists/get_top_artists.dart';
 import '../../actions/get_top_artworks/get_top_artworks.dart';
+import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_style.dart';
 import '../../actions/user_s_actions/signout/sign_out.dart';
 import '../../models/user/app_user/app_user.dart';
@@ -109,6 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       width: 210,
                       child: ElevatedButton(
                         onPressed: () {
+                          context.dispatch(const SetRouteSubscriptionIndex(0));
                           Navigator.pushReplacementNamed(context, '/subscriptionPage');
                         },
                         style: ElevatedButton.styleFrom(
@@ -124,16 +128,26 @@ class _ProfilePageState extends State<ProfilePage> {
                   ProfileMenuWidget(
                     title: 'Subscription',
                     icon: Icons.payment,
-                    onPress: () {},
+                    onPress: () {
+                      context.dispatch(GetStartSubscriptionDate(userId: user.uid));
+                      context.dispatch(GetEndSubscriptionDate(userId: user.uid));
+                      Navigator.pushReplacementNamed(context, '/infoSubscriptionPage');
+                    },
                   ),
-                  ProfileMenuWidget(title: 'Application Feedback', icon: Icons.feedback_outlined, onPress: () {
-                    Navigator.pushReplacementNamed(context, '/appFeedbackPage');
-                  }),
+                  ProfileMenuWidget(
+                      title: 'Application Feedback',
+                      icon: Icons.feedback_outlined,
+                      onPress: () {
+                        Navigator.pushReplacementNamed(context, '/appFeedbackPage');
+                      }),
                   const Divider(),
                   const SizedBox(height: 10),
-                  ProfileMenuWidget(title: 'Info', icon: LineAwesomeIcons.info, onPress: () {
-                    Navigator.pushReplacementNamed(context, '/userInfoPage');
-                  }),
+                  ProfileMenuWidget(
+                      title: 'Info',
+                      icon: LineAwesomeIcons.info,
+                      onPress: () {
+                        Navigator.pushReplacementNamed(context, '/userInfoPage');
+                      }),
                   ProfileMenuWidget(
                     title: 'Logout',
                     icon: LineAwesomeIcons.alternate_sign_out,

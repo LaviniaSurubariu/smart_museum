@@ -41,7 +41,8 @@ mixin _$UpdateArtworkProvenance {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkProvenanceStart value) $default, {
-    required TResult Function(UpdateArtworkProvenanceSuccessful value) successful,
+    required TResult Function(UpdateArtworkProvenanceSuccessful value)
+        successful,
     required TResult Function(UpdateArtworkProvenanceError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,12 +65,14 @@ mixin _$UpdateArtworkProvenance {
 
 /// @nodoc
 abstract class $UpdateArtworkProvenanceCopyWith<$Res> {
-  factory $UpdateArtworkProvenanceCopyWith(UpdateArtworkProvenance value, $Res Function(UpdateArtworkProvenance) then) =
+  factory $UpdateArtworkProvenanceCopyWith(UpdateArtworkProvenance value,
+          $Res Function(UpdateArtworkProvenance) then) =
       _$UpdateArtworkProvenanceCopyWithImpl<$Res, UpdateArtworkProvenance>;
 }
 
 /// @nodoc
-class _$UpdateArtworkProvenanceCopyWithImpl<$Res, $Val extends UpdateArtworkProvenance>
+class _$UpdateArtworkProvenanceCopyWithImpl<$Res,
+        $Val extends UpdateArtworkProvenance>
     implements $UpdateArtworkProvenanceCopyWith<$Res> {
   _$UpdateArtworkProvenanceCopyWithImpl(this._value, this._then);
 
@@ -82,7 +85,8 @@ class _$UpdateArtworkProvenanceCopyWithImpl<$Res, $Val extends UpdateArtworkProv
 /// @nodoc
 abstract class _$$UpdateArtworkProvenanceStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkProvenanceStartImplCopyWith(
-          _$UpdateArtworkProvenanceStartImpl value, $Res Function(_$UpdateArtworkProvenanceStartImpl) then) =
+          _$UpdateArtworkProvenanceStartImpl value,
+          $Res Function(_$UpdateArtworkProvenanceStartImpl) then) =
       __$$UpdateArtworkProvenanceStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newProvenance, String artworkId});
@@ -90,10 +94,12 @@ abstract class _$$UpdateArtworkProvenanceStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkProvenanceStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res, _$UpdateArtworkProvenanceStartImpl>
+    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res,
+        _$UpdateArtworkProvenanceStartImpl>
     implements _$$UpdateArtworkProvenanceStartImplCopyWith<$Res> {
   __$$UpdateArtworkProvenanceStartImplCopyWithImpl(
-      _$UpdateArtworkProvenanceStartImpl _value, $Res Function(_$UpdateArtworkProvenanceStartImpl) _then)
+      _$UpdateArtworkProvenanceStartImpl _value,
+      $Res Function(_$UpdateArtworkProvenanceStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -117,8 +123,10 @@ class __$$UpdateArtworkProvenanceStartImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkProvenanceStartImpl implements UpdateArtworkProvenanceStart {
-  const _$UpdateArtworkProvenanceStartImpl({required this.newProvenance, required this.artworkId});
+class _$UpdateArtworkProvenanceStartImpl
+    implements UpdateArtworkProvenanceStart {
+  const _$UpdateArtworkProvenanceStartImpl(
+      {required this.newProvenance, required this.artworkId});
 
   @override
   final String newProvenance;
@@ -135,8 +143,10 @@ class _$UpdateArtworkProvenanceStartImpl implements UpdateArtworkProvenanceStart
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkProvenanceStartImpl &&
-            (identical(other.newProvenance, newProvenance) || other.newProvenance == newProvenance) &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
+            (identical(other.newProvenance, newProvenance) ||
+                other.newProvenance == newProvenance) &&
+            (identical(other.artworkId, artworkId) ||
+                other.artworkId == artworkId));
   }
 
   @override
@@ -145,8 +155,10 @@ class _$UpdateArtworkProvenanceStartImpl implements UpdateArtworkProvenanceStart
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkProvenanceStartImplCopyWith<_$UpdateArtworkProvenanceStartImpl> get copyWith =>
-      __$$UpdateArtworkProvenanceStartImplCopyWithImpl<_$UpdateArtworkProvenanceStartImpl>(this, _$identity);
+  _$$UpdateArtworkProvenanceStartImplCopyWith<
+          _$UpdateArtworkProvenanceStartImpl>
+      get copyWith => __$$UpdateArtworkProvenanceStartImplCopyWithImpl<
+          _$UpdateArtworkProvenanceStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -186,7 +198,8 @@ class _$UpdateArtworkProvenanceStartImpl implements UpdateArtworkProvenanceStart
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkProvenanceStart value) $default, {
-    required TResult Function(UpdateArtworkProvenanceSuccessful value) successful,
+    required TResult Function(UpdateArtworkProvenanceSuccessful value)
+        successful,
     required TResult Function(UpdateArtworkProvenanceError value) error,
   }) {
     return $default(this);
@@ -218,20 +231,23 @@ class _$UpdateArtworkProvenanceStartImpl implements UpdateArtworkProvenanceStart
 }
 
 abstract class UpdateArtworkProvenanceStart implements UpdateArtworkProvenance {
-  const factory UpdateArtworkProvenanceStart({required final String newProvenance, required final String artworkId}) =
-      _$UpdateArtworkProvenanceStartImpl;
+  const factory UpdateArtworkProvenanceStart(
+      {required final String newProvenance,
+      required final String artworkId}) = _$UpdateArtworkProvenanceStartImpl;
 
   String get newProvenance;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkProvenanceStartImplCopyWith<_$UpdateArtworkProvenanceStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkProvenanceStartImplCopyWith<
+          _$UpdateArtworkProvenanceStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkProvenanceSuccessfulImplCopyWith(
-          _$UpdateArtworkProvenanceSuccessfulImpl value, $Res Function(_$UpdateArtworkProvenanceSuccessfulImpl) then) =
+          _$UpdateArtworkProvenanceSuccessfulImpl value,
+          $Res Function(_$UpdateArtworkProvenanceSuccessfulImpl) then) =
       __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newProvenance});
@@ -239,10 +255,12 @@ abstract class _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res, _$UpdateArtworkProvenanceSuccessfulImpl>
+    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res,
+        _$UpdateArtworkProvenanceSuccessfulImpl>
     implements _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkProvenanceSuccessfulImpl _value, $Res Function(_$UpdateArtworkProvenanceSuccessfulImpl) _then)
+      _$UpdateArtworkProvenanceSuccessfulImpl _value,
+      $Res Function(_$UpdateArtworkProvenanceSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +279,8 @@ class __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkProvenanceSuccessfulImpl implements UpdateArtworkProvenanceSuccessful {
+class _$UpdateArtworkProvenanceSuccessfulImpl
+    implements UpdateArtworkProvenanceSuccessful {
   const _$UpdateArtworkProvenanceSuccessfulImpl(this.newProvenance);
 
   @override
@@ -277,7 +296,8 @@ class _$UpdateArtworkProvenanceSuccessfulImpl implements UpdateArtworkProvenance
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkProvenanceSuccessfulImpl &&
-            (identical(other.newProvenance, newProvenance) || other.newProvenance == newProvenance));
+            (identical(other.newProvenance, newProvenance) ||
+                other.newProvenance == newProvenance));
   }
 
   @override
@@ -286,8 +306,10 @@ class _$UpdateArtworkProvenanceSuccessfulImpl implements UpdateArtworkProvenance
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<_$UpdateArtworkProvenanceSuccessfulImpl> get copyWith =>
-      __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl<_$UpdateArtworkProvenanceSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<
+          _$UpdateArtworkProvenanceSuccessfulImpl>
+      get copyWith => __$$UpdateArtworkProvenanceSuccessfulImplCopyWithImpl<
+          _$UpdateArtworkProvenanceSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -327,7 +349,8 @@ class _$UpdateArtworkProvenanceSuccessfulImpl implements UpdateArtworkProvenance
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkProvenanceStart value) $default, {
-    required TResult Function(UpdateArtworkProvenanceSuccessful value) successful,
+    required TResult Function(UpdateArtworkProvenanceSuccessful value)
+        successful,
     required TResult Function(UpdateArtworkProvenanceError value) error,
   }) {
     return successful(this);
@@ -358,19 +381,23 @@ class _$UpdateArtworkProvenanceSuccessfulImpl implements UpdateArtworkProvenance
   }
 }
 
-abstract class UpdateArtworkProvenanceSuccessful implements UpdateArtworkProvenance {
-  const factory UpdateArtworkProvenanceSuccessful(final String newProvenance) = _$UpdateArtworkProvenanceSuccessfulImpl;
+abstract class UpdateArtworkProvenanceSuccessful
+    implements UpdateArtworkProvenance {
+  const factory UpdateArtworkProvenanceSuccessful(final String newProvenance) =
+      _$UpdateArtworkProvenanceSuccessfulImpl;
 
   String get newProvenance;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<_$UpdateArtworkProvenanceSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkProvenanceSuccessfulImplCopyWith<
+          _$UpdateArtworkProvenanceSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkProvenanceErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkProvenanceErrorImplCopyWith(
-          _$UpdateArtworkProvenanceErrorImpl value, $Res Function(_$UpdateArtworkProvenanceErrorImpl) then) =
+          _$UpdateArtworkProvenanceErrorImpl value,
+          $Res Function(_$UpdateArtworkProvenanceErrorImpl) then) =
       __$$UpdateArtworkProvenanceErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +405,12 @@ abstract class _$$UpdateArtworkProvenanceErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkProvenanceErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res, _$UpdateArtworkProvenanceErrorImpl>
+    extends _$UpdateArtworkProvenanceCopyWithImpl<$Res,
+        _$UpdateArtworkProvenanceErrorImpl>
     implements _$$UpdateArtworkProvenanceErrorImplCopyWith<$Res> {
   __$$UpdateArtworkProvenanceErrorImplCopyWithImpl(
-      _$UpdateArtworkProvenanceErrorImpl _value, $Res Function(_$UpdateArtworkProvenanceErrorImpl) _then)
+      _$UpdateArtworkProvenanceErrorImpl _value,
+      $Res Function(_$UpdateArtworkProvenanceErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -402,7 +431,8 @@ class __$$UpdateArtworkProvenanceErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkProvenanceErrorImpl implements UpdateArtworkProvenanceError {
+class _$UpdateArtworkProvenanceErrorImpl
+    implements UpdateArtworkProvenanceError {
   const _$UpdateArtworkProvenanceErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -421,17 +451,21 @@ class _$UpdateArtworkProvenanceErrorImpl implements UpdateArtworkProvenanceError
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkProvenanceErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkProvenanceErrorImplCopyWith<_$UpdateArtworkProvenanceErrorImpl> get copyWith =>
-      __$$UpdateArtworkProvenanceErrorImplCopyWithImpl<_$UpdateArtworkProvenanceErrorImpl>(this, _$identity);
+  _$$UpdateArtworkProvenanceErrorImplCopyWith<
+          _$UpdateArtworkProvenanceErrorImpl>
+      get copyWith => __$$UpdateArtworkProvenanceErrorImplCopyWithImpl<
+          _$UpdateArtworkProvenanceErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -471,7 +505,8 @@ class _$UpdateArtworkProvenanceErrorImpl implements UpdateArtworkProvenanceError
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtworkProvenanceStart value) $default, {
-    required TResult Function(UpdateArtworkProvenanceSuccessful value) successful,
+    required TResult Function(UpdateArtworkProvenanceSuccessful value)
+        successful,
     required TResult Function(UpdateArtworkProvenanceError value) error,
   }) {
     return error(this);
@@ -502,13 +537,16 @@ class _$UpdateArtworkProvenanceErrorImpl implements UpdateArtworkProvenanceError
   }
 }
 
-abstract class UpdateArtworkProvenanceError implements UpdateArtworkProvenance, ErrorAction {
-  const factory UpdateArtworkProvenanceError(final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkProvenanceError
+    implements UpdateArtworkProvenance, ErrorAction {
+  const factory UpdateArtworkProvenanceError(
+          final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkProvenanceErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkProvenanceErrorImplCopyWith<_$UpdateArtworkProvenanceErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkProvenanceErrorImplCopyWith<
+          _$UpdateArtworkProvenanceErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

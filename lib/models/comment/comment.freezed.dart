@@ -34,13 +34,21 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res, Comment>;
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
-  $Res call({String uid, String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser});
+  $Res call(
+      {String uid,
+      String text,
+      DateTime createdAt,
+      String idUser,
+      String firstNameUser,
+      String lastNameUser});
 }
 
 /// @nodoc
-class _$CommentCopyWithImpl<$Res, $Val extends Comment> implements $CommentCopyWith<$Res> {
+class _$CommentCopyWithImpl<$Res, $Val extends Comment>
+    implements $CommentCopyWith<$Res> {
   _$CommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -89,17 +97,27 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment> implements $CommentCopyW
 
 /// @nodoc
 abstract class _$$Comment$ImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$$Comment$ImplCopyWith(_$Comment$Impl value, $Res Function(_$Comment$Impl) then) =
+  factory _$$Comment$ImplCopyWith(
+          _$Comment$Impl value, $Res Function(_$Comment$Impl) then) =
       __$$Comment$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String text, DateTime createdAt, String idUser, String firstNameUser, String lastNameUser});
+  $Res call(
+      {String uid,
+      String text,
+      DateTime createdAt,
+      String idUser,
+      String firstNameUser,
+      String lastNameUser});
 }
 
 /// @nodoc
-class __$$Comment$ImplCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res, _$Comment$Impl>
+class __$$Comment$ImplCopyWithImpl<$Res>
+    extends _$CommentCopyWithImpl<$Res, _$Comment$Impl>
     implements _$$Comment$ImplCopyWith<$Res> {
-  __$$Comment$ImplCopyWithImpl(_$Comment$Impl _value, $Res Function(_$Comment$Impl) _then) : super(_value, _then);
+  __$$Comment$ImplCopyWithImpl(
+      _$Comment$Impl _value, $Res Function(_$Comment$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -151,7 +169,8 @@ class _$Comment$Impl implements Comment$ {
       required this.firstNameUser,
       required this.lastNameUser});
 
-  factory _$Comment$Impl.fromJson(Map<String, dynamic> json) => _$$Comment$ImplFromJson(json);
+  factory _$Comment$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$Comment$ImplFromJson(json);
 
   @override
   final String uid;
@@ -178,15 +197,19 @@ class _$Comment$Impl implements Comment$ {
             other is _$Comment$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.idUser, idUser) || other.idUser == idUser) &&
-            (identical(other.firstNameUser, firstNameUser) || other.firstNameUser == firstNameUser) &&
-            (identical(other.lastNameUser, lastNameUser) || other.lastNameUser == lastNameUser));
+            (identical(other.firstNameUser, firstNameUser) ||
+                other.firstNameUser == firstNameUser) &&
+            (identical(other.lastNameUser, lastNameUser) ||
+                other.lastNameUser == lastNameUser));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, text, createdAt, idUser, firstNameUser, lastNameUser);
+  int get hashCode => Object.hash(
+      runtimeType, uid, text, createdAt, idUser, firstNameUser, lastNameUser);
 
   @JsonKey(ignore: true)
   @override
@@ -211,7 +234,8 @@ abstract class Comment$ implements Comment {
       required final String firstNameUser,
       required final String lastNameUser}) = _$Comment$Impl;
 
-  factory Comment$.fromJson(Map<String, dynamic> json) = _$Comment$Impl.fromJson;
+  factory Comment$.fromJson(Map<String, dynamic> json) =
+      _$Comment$Impl.fromJson;
 
   @override
   String get uid;
@@ -227,5 +251,6 @@ abstract class Comment$ implements Comment {
   String get lastNameUser;
   @override
   @JsonKey(ignore: true)
-  _$$Comment$ImplCopyWith<_$Comment$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$Comment$ImplCopyWith<_$Comment$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

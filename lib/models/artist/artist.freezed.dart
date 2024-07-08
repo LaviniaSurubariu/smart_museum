@@ -35,7 +35,8 @@ mixin _$Artist {
 
 /// @nodoc
 abstract class $ArtistCopyWith<$Res> {
-  factory $ArtistCopyWith(Artist value, $Res Function(Artist) then) = _$ArtistCopyWithImpl<$Res, Artist>;
+  factory $ArtistCopyWith(Artist value, $Res Function(Artist) then) =
+      _$ArtistCopyWithImpl<$Res, Artist>;
   @useResult
   $Res call(
       {String uid,
@@ -48,7 +49,8 @@ abstract class $ArtistCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ArtistCopyWithImpl<$Res, $Val extends Artist> implements $ArtistCopyWith<$Res> {
+class _$ArtistCopyWithImpl<$Res, $Val extends Artist>
+    implements $ArtistCopyWith<$Res> {
   _$ArtistCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -102,7 +104,8 @@ class _$ArtistCopyWithImpl<$Res, $Val extends Artist> implements $ArtistCopyWith
 
 /// @nodoc
 abstract class _$$Artist$ImplCopyWith<$Res> implements $ArtistCopyWith<$Res> {
-  factory _$$Artist$ImplCopyWith(_$Artist$Impl value, $Res Function(_$Artist$Impl) then) =
+  factory _$$Artist$ImplCopyWith(
+          _$Artist$Impl value, $Res Function(_$Artist$Impl) then) =
       __$$Artist$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -117,9 +120,12 @@ abstract class _$$Artist$ImplCopyWith<$Res> implements $ArtistCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Artist$ImplCopyWithImpl<$Res> extends _$ArtistCopyWithImpl<$Res, _$Artist$Impl>
+class __$$Artist$ImplCopyWithImpl<$Res>
+    extends _$ArtistCopyWithImpl<$Res, _$Artist$Impl>
     implements _$$Artist$ImplCopyWith<$Res> {
-  __$$Artist$ImplCopyWithImpl(_$Artist$Impl _value, $Res Function(_$Artist$Impl) _then) : super(_value, _then);
+  __$$Artist$ImplCopyWithImpl(
+      _$Artist$Impl _value, $Res Function(_$Artist$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -177,7 +183,8 @@ class _$Artist$Impl implements Artist$ {
       required this.deathDate,
       required this.description});
 
-  factory _$Artist$Impl.fromJson(Map<String, dynamic> json) => _$$Artist$ImplFromJson(json);
+  factory _$Artist$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$Artist$ImplFromJson(json);
 
   @override
   final String uid;
@@ -205,22 +212,30 @@ class _$Artist$Impl implements Artist$ {
         (other.runtimeType == runtimeType &&
             other is _$Artist$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.firstName, firstName) || other.firstName == firstName) &&
-            (identical(other.lastName, lastName) || other.lastName == lastName) &&
-            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
-            (identical(other.birthdate, birthdate) || other.birthdate == birthdate) &&
-            (identical(other.deathDate, deathDate) || other.deathDate == deathDate) &&
-            (identical(other.description, description) || other.description == description));
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl) &&
+            (identical(other.birthdate, birthdate) ||
+                other.birthdate == birthdate) &&
+            (identical(other.deathDate, deathDate) ||
+                other.deathDate == deathDate) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, firstName, lastName, pictureUrl, birthdate, deathDate, description);
+  int get hashCode => Object.hash(runtimeType, uid, firstName, lastName,
+      pictureUrl, birthdate, deathDate, description);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Artist$ImplCopyWith<_$Artist$Impl> get copyWith => __$$Artist$ImplCopyWithImpl<_$Artist$Impl>(this, _$identity);
+  _$$Artist$ImplCopyWith<_$Artist$Impl> get copyWith =>
+      __$$Artist$ImplCopyWithImpl<_$Artist$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -258,5 +273,6 @@ abstract class Artist$ implements Artist {
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$Artist$ImplCopyWith<_$Artist$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$Artist$ImplCopyWith<_$Artist$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

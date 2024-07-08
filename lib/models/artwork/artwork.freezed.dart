@@ -43,7 +43,8 @@ mixin _$Artwork {
 
 /// @nodoc
 abstract class $ArtworkCopyWith<$Res> {
-  factory $ArtworkCopyWith(Artwork value, $Res Function(Artwork) then) = _$ArtworkCopyWithImpl<$Res, Artwork>;
+  factory $ArtworkCopyWith(Artwork value, $Res Function(Artwork) then) =
+      _$ArtworkCopyWithImpl<$Res, Artwork>;
   @useResult
   $Res call(
       {String uid,
@@ -64,7 +65,8 @@ abstract class $ArtworkCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork> implements $ArtworkCopyWith<$Res> {
+class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork>
+    implements $ArtworkCopyWith<$Res> {
   _$ArtworkCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -158,7 +160,8 @@ class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork> implements $ArtworkCopyW
 
 /// @nodoc
 abstract class _$$Artwork$ImplCopyWith<$Res> implements $ArtworkCopyWith<$Res> {
-  factory _$$Artwork$ImplCopyWith(_$Artwork$Impl value, $Res Function(_$Artwork$Impl) then) =
+  factory _$$Artwork$ImplCopyWith(
+          _$Artwork$Impl value, $Res Function(_$Artwork$Impl) then) =
       __$$Artwork$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -181,9 +184,12 @@ abstract class _$$Artwork$ImplCopyWith<$Res> implements $ArtworkCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Artwork$ImplCopyWithImpl<$Res> extends _$ArtworkCopyWithImpl<$Res, _$Artwork$Impl>
+class __$$Artwork$ImplCopyWithImpl<$Res>
+    extends _$ArtworkCopyWithImpl<$Res, _$Artwork$Impl>
     implements _$$Artwork$ImplCopyWith<$Res> {
-  __$$Artwork$ImplCopyWithImpl(_$Artwork$Impl _value, $Res Function(_$Artwork$Impl) _then) : super(_value, _then);
+  __$$Artwork$ImplCopyWithImpl(
+      _$Artwork$Impl _value, $Res Function(_$Artwork$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -289,7 +295,8 @@ class _$Artwork$Impl implements Artwork$ {
       required this.originalTitle,
       required this.description});
 
-  factory _$Artwork$Impl.fromJson(Map<String, dynamic> json) => _$$Artwork$ImplFromJson(json);
+  factory _$Artwork$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$Artwork$ImplFromJson(json);
 
   @override
   final String uid;
@@ -334,19 +341,30 @@ class _$Artwork$Impl implements Artwork$ {
             other is _$Artwork$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.artistFirstName, artistFirstName) || other.artistFirstName == artistFirstName) &&
-            (identical(other.artistLastName, artistLastName) || other.artistLastName == artistLastName) &&
-            (identical(other.artistUid, artistUid) || other.artistUid == artistUid) &&
-            (identical(other.startCreationYear, startCreationYear) || other.startCreationYear == startCreationYear) &&
-            (identical(other.endCreationYear, endCreationYear) || other.endCreationYear == endCreationYear) &&
-            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
-            (identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl) &&
-            (identical(other.qrCodeUrl, qrCodeUrl) || other.qrCodeUrl == qrCodeUrl) &&
+            (identical(other.artistFirstName, artistFirstName) ||
+                other.artistFirstName == artistFirstName) &&
+            (identical(other.artistLastName, artistLastName) ||
+                other.artistLastName == artistLastName) &&
+            (identical(other.artistUid, artistUid) ||
+                other.artistUid == artistUid) &&
+            (identical(other.startCreationYear, startCreationYear) ||
+                other.startCreationYear == startCreationYear) &&
+            (identical(other.endCreationYear, endCreationYear) ||
+                other.endCreationYear == endCreationYear) &&
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl) &&
+            (identical(other.audioUrl, audioUrl) ||
+                other.audioUrl == audioUrl) &&
+            (identical(other.qrCodeUrl, qrCodeUrl) ||
+                other.qrCodeUrl == qrCodeUrl) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.style, style) || other.style == style) &&
-            (identical(other.provenance, provenance) || other.provenance == provenance) &&
-            (identical(other.originalTitle, originalTitle) || other.originalTitle == originalTitle) &&
-            (identical(other.description, description) || other.description == description));
+            (identical(other.provenance, provenance) ||
+                other.provenance == provenance) &&
+            (identical(other.originalTitle, originalTitle) ||
+                other.originalTitle == originalTitle) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
@@ -401,7 +419,8 @@ abstract class Artwork$ implements Artwork {
       required final String originalTitle,
       required final String description}) = _$Artwork$Impl;
 
-  factory Artwork$.fromJson(Map<String, dynamic> json) = _$Artwork$Impl.fromJson;
+  factory Artwork$.fromJson(Map<String, dynamic> json) =
+      _$Artwork$Impl.fromJson;
 
   @override
   String get uid;
@@ -435,5 +454,6 @@ abstract class Artwork$ implements Artwork {
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$Artwork$ImplCopyWith<_$Artwork$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$Artwork$ImplCopyWith<_$Artwork$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

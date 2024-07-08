@@ -22,11 +22,13 @@ import '../actions/admin_actions/update_artwork_type/update_artwork_type.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_end_subscription_date/get_end_subscription_date.dart';
 import '../actions/get_number_of_added_artists/get_number_of_added_artists.dart';
 import '../actions/get_number_of_added_artworks/get_number_of_added_artworks.dart';
 import '../actions/get_number_of_favourites_artworks/get_number_of_favourites_artworks.dart';
 import '../actions/get_number_of_messages/get_number_of_messages.dart';
 import '../actions/get_number_of_registered_users/get_number_of_registered_users.dart';
+import '../actions/get_start_subscription_date/get_start_subscription_date.dart';
 import '../actions/get_top_artists/get_top_artists.dart';
 import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/set/set.dart';
@@ -113,6 +115,11 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetNumberOfAddedArtistsSuccessful>(_getNumberOfAddedArtistsSuccessful).call,
     TypedReducer<AppState, GetNumberOfFavouritesArtworksSuccessful>(_getNumberOfFavouritesArtworksSuccessful).call,
     TypedReducer<AppState, GetNumberOfMessagesSuccessful>(_getNumberOfMessagesSuccessful).call,
+    TypedReducer<AppState, GetStartSubscriptionDateSuccessful>(_getStartSubscriptionDateSuccessful).call,
+    TypedReducer<AppState, GetStartSubscriptionDateStart>(_getStartSubscriptionDateStart).call,
+    TypedReducer<AppState, GetEndSubscriptionDateSuccessful>(_getEndSubscriptionDateSuccessful).call,
+    TypedReducer<AppState, GetEndSubscriptionDateStart>(_getEndSubscriptionDateStart).call,
+    TypedReducer<AppState, SetRouteSubscriptionIndex>(_setRouteSubscriptionIndex).call,
   ])(state, action);
 }
 
@@ -412,4 +419,24 @@ AppState _getNumberOfFavouritesArtworksSuccessful(AppState state, GetNumberOfFav
 
 AppState _getNumberOfMessagesSuccessful(AppState state, GetNumberOfMessagesSuccessful action) {
   return state.copyWith(numberOfMessages: action.numberOfMessages);
+}
+
+AppState _getStartSubscriptionDateSuccessful(AppState state, GetStartSubscriptionDateSuccessful action) {
+  return state.copyWith(startSubscriptionDate: action.startSubscriptionDate);
+}
+
+AppState _getEndSubscriptionDateSuccessful(AppState state, GetEndSubscriptionDateSuccessful action) {
+  return state.copyWith(endSubscriptionDate: action.endSubscriptionDate);
+}
+
+AppState _getStartSubscriptionDateStart(AppState state, GetStartSubscriptionDateStart action) {
+  return state.copyWith(startSubscriptionDate: null);
+}
+
+AppState _getEndSubscriptionDateStart(AppState state, GetEndSubscriptionDateStart action) {
+  return state.copyWith(endSubscriptionDate: null);
+}
+
+AppState _setRouteSubscriptionIndex(AppState state, SetRouteSubscriptionIndex action) {
+  return state.copyWith(routeSubscriptionIndex: action.routeSubscriptionIndex);
 }

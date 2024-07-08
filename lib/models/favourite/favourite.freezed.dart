@@ -29,19 +29,27 @@ mixin _$Favourite {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavouriteCopyWith<Favourite> get copyWith => throw _privateConstructorUsedError;
+  $FavouriteCopyWith<Favourite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FavouriteCopyWith<$Res> {
-  factory $FavouriteCopyWith(Favourite value, $Res Function(Favourite) then) = _$FavouriteCopyWithImpl<$Res, Favourite>;
+  factory $FavouriteCopyWith(Favourite value, $Res Function(Favourite) then) =
+      _$FavouriteCopyWithImpl<$Res, Favourite>;
   @useResult
   $Res call(
-      {String uid, String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName});
+      {String uid,
+      String userId,
+      String artworkId,
+      String artworkTitle,
+      String artworkPictureUrl,
+      String artistName});
 }
 
 /// @nodoc
-class _$FavouriteCopyWithImpl<$Res, $Val extends Favourite> implements $FavouriteCopyWith<$Res> {
+class _$FavouriteCopyWithImpl<$Res, $Val extends Favourite>
+    implements $FavouriteCopyWith<$Res> {
   _$FavouriteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -89,19 +97,29 @@ class _$FavouriteCopyWithImpl<$Res, $Val extends Favourite> implements $Favourit
 }
 
 /// @nodoc
-abstract class _$$Favourite$ImplCopyWith<$Res> implements $FavouriteCopyWith<$Res> {
-  factory _$$Favourite$ImplCopyWith(_$Favourite$Impl value, $Res Function(_$Favourite$Impl) then) =
+abstract class _$$Favourite$ImplCopyWith<$Res>
+    implements $FavouriteCopyWith<$Res> {
+  factory _$$Favourite$ImplCopyWith(
+          _$Favourite$Impl value, $Res Function(_$Favourite$Impl) then) =
       __$$Favourite$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String uid, String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName});
+      {String uid,
+      String userId,
+      String artworkId,
+      String artworkTitle,
+      String artworkPictureUrl,
+      String artistName});
 }
 
 /// @nodoc
-class __$$Favourite$ImplCopyWithImpl<$Res> extends _$FavouriteCopyWithImpl<$Res, _$Favourite$Impl>
+class __$$Favourite$ImplCopyWithImpl<$Res>
+    extends _$FavouriteCopyWithImpl<$Res, _$Favourite$Impl>
     implements _$$Favourite$ImplCopyWith<$Res> {
-  __$$Favourite$ImplCopyWithImpl(_$Favourite$Impl _value, $Res Function(_$Favourite$Impl) _then) : super(_value, _then);
+  __$$Favourite$ImplCopyWithImpl(
+      _$Favourite$Impl _value, $Res Function(_$Favourite$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -153,7 +171,8 @@ class _$Favourite$Impl implements Favourite$ {
       required this.artworkPictureUrl,
       required this.artistName});
 
-  factory _$Favourite$Impl.fromJson(Map<String, dynamic> json) => _$$Favourite$ImplFromJson(json);
+  factory _$Favourite$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$Favourite$ImplFromJson(json);
 
   @override
   final String uid;
@@ -180,15 +199,20 @@ class _$Favourite$Impl implements Favourite$ {
             other is _$Favourite$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId) &&
-            (identical(other.artworkTitle, artworkTitle) || other.artworkTitle == artworkTitle) &&
-            (identical(other.artworkPictureUrl, artworkPictureUrl) || other.artworkPictureUrl == artworkPictureUrl) &&
-            (identical(other.artistName, artistName) || other.artistName == artistName));
+            (identical(other.artworkId, artworkId) ||
+                other.artworkId == artworkId) &&
+            (identical(other.artworkTitle, artworkTitle) ||
+                other.artworkTitle == artworkTitle) &&
+            (identical(other.artworkPictureUrl, artworkPictureUrl) ||
+                other.artworkPictureUrl == artworkPictureUrl) &&
+            (identical(other.artistName, artistName) ||
+                other.artistName == artistName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
+  int get hashCode => Object.hash(runtimeType, uid, userId, artworkId,
+      artworkTitle, artworkPictureUrl, artistName);
 
   @JsonKey(ignore: true)
   @override
@@ -213,7 +237,8 @@ abstract class Favourite$ implements Favourite {
       required final String artworkPictureUrl,
       required final String artistName}) = _$Favourite$Impl;
 
-  factory Favourite$.fromJson(Map<String, dynamic> json) = _$Favourite$Impl.fromJson;
+  factory Favourite$.fromJson(Map<String, dynamic> json) =
+      _$Favourite$Impl.fromJson;
 
   @override
   String get uid;
@@ -229,5 +254,6 @@ abstract class Favourite$ implements Favourite {
   String get artistName;
   @override
   @JsonKey(ignore: true)
-  _$$Favourite$ImplCopyWith<_$Favourite$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$Favourite$ImplCopyWith<_$Favourite$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

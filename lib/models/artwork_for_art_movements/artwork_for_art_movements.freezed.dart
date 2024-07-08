@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ArtworkForArtMovements _$ArtworkForArtMovementsFromJson(Map<String, dynamic> json) {
+ArtworkForArtMovements _$ArtworkForArtMovementsFromJson(
+    Map<String, dynamic> json) {
   return ArtworkForArtMovements$.fromJson(json);
 }
 
@@ -26,19 +27,22 @@ mixin _$ArtworkForArtMovements {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtworkForArtMovementsCopyWith<ArtworkForArtMovements> get copyWith => throw _privateConstructorUsedError;
+  $ArtworkForArtMovementsCopyWith<ArtworkForArtMovements> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ArtworkForArtMovementsCopyWith<$Res> {
-  factory $ArtworkForArtMovementsCopyWith(ArtworkForArtMovements value, $Res Function(ArtworkForArtMovements) then) =
+  factory $ArtworkForArtMovementsCopyWith(ArtworkForArtMovements value,
+          $Res Function(ArtworkForArtMovements) then) =
       _$ArtworkForArtMovementsCopyWithImpl<$Res, ArtworkForArtMovements>;
   @useResult
   $Res call({String uid, String pictureUrl, String style});
 }
 
 /// @nodoc
-class _$ArtworkForArtMovementsCopyWithImpl<$Res, $Val extends ArtworkForArtMovements>
+class _$ArtworkForArtMovementsCopyWithImpl<$Res,
+        $Val extends ArtworkForArtMovements>
     implements $ArtworkForArtMovementsCopyWith<$Res> {
   _$ArtworkForArtMovementsCopyWithImpl(this._value, this._then);
 
@@ -72,9 +76,11 @@ class _$ArtworkForArtMovementsCopyWithImpl<$Res, $Val extends ArtworkForArtMovem
 }
 
 /// @nodoc
-abstract class _$$ArtworkForArtMovements$ImplCopyWith<$Res> implements $ArtworkForArtMovementsCopyWith<$Res> {
+abstract class _$$ArtworkForArtMovements$ImplCopyWith<$Res>
+    implements $ArtworkForArtMovementsCopyWith<$Res> {
   factory _$$ArtworkForArtMovements$ImplCopyWith(
-          _$ArtworkForArtMovements$Impl value, $Res Function(_$ArtworkForArtMovements$Impl) then) =
+          _$ArtworkForArtMovements$Impl value,
+          $Res Function(_$ArtworkForArtMovements$Impl) then) =
       __$$ArtworkForArtMovements$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -83,10 +89,12 @@ abstract class _$$ArtworkForArtMovements$ImplCopyWith<$Res> implements $ArtworkF
 
 /// @nodoc
 class __$$ArtworkForArtMovements$ImplCopyWithImpl<$Res>
-    extends _$ArtworkForArtMovementsCopyWithImpl<$Res, _$ArtworkForArtMovements$Impl>
+    extends _$ArtworkForArtMovementsCopyWithImpl<$Res,
+        _$ArtworkForArtMovements$Impl>
     implements _$$ArtworkForArtMovements$ImplCopyWith<$Res> {
   __$$ArtworkForArtMovements$ImplCopyWithImpl(
-      _$ArtworkForArtMovements$Impl _value, $Res Function(_$ArtworkForArtMovements$Impl) _then)
+      _$ArtworkForArtMovements$Impl _value,
+      $Res Function(_$ArtworkForArtMovements$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +124,8 @@ class __$$ArtworkForArtMovements$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ArtworkForArtMovements$Impl implements ArtworkForArtMovements$ {
-  const _$ArtworkForArtMovements$Impl({required this.uid, required this.pictureUrl, required this.style});
+  const _$ArtworkForArtMovements$Impl(
+      {required this.uid, required this.pictureUrl, required this.style});
 
   factory _$ArtworkForArtMovements$Impl.fromJson(Map<String, dynamic> json) =>
       _$$ArtworkForArtMovements$ImplFromJson(json);
@@ -139,7 +148,8 @@ class _$ArtworkForArtMovements$Impl implements ArtworkForArtMovements$ {
         (other.runtimeType == runtimeType &&
             other is _$ArtworkForArtMovements$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl) &&
             (identical(other.style, style) || other.style == style));
   }
 
@@ -150,8 +160,9 @@ class _$ArtworkForArtMovements$Impl implements ArtworkForArtMovements$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArtworkForArtMovements$ImplCopyWith<_$ArtworkForArtMovements$Impl> get copyWith =>
-      __$$ArtworkForArtMovements$ImplCopyWithImpl<_$ArtworkForArtMovements$Impl>(this, _$identity);
+  _$$ArtworkForArtMovements$ImplCopyWith<_$ArtworkForArtMovements$Impl>
+      get copyWith => __$$ArtworkForArtMovements$ImplCopyWithImpl<
+          _$ArtworkForArtMovements$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -167,7 +178,8 @@ abstract class ArtworkForArtMovements$ implements ArtworkForArtMovements {
       required final String pictureUrl,
       required final String style}) = _$ArtworkForArtMovements$Impl;
 
-  factory ArtworkForArtMovements$.fromJson(Map<String, dynamic> json) = _$ArtworkForArtMovements$Impl.fromJson;
+  factory ArtworkForArtMovements$.fromJson(Map<String, dynamic> json) =
+      _$ArtworkForArtMovements$Impl.fromJson;
 
   @override
   String get uid;
@@ -177,6 +189,6 @@ abstract class ArtworkForArtMovements$ implements ArtworkForArtMovements {
   String get style;
   @override
   @JsonKey(ignore: true)
-  _$$ArtworkForArtMovements$ImplCopyWith<_$ArtworkForArtMovements$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ArtworkForArtMovements$ImplCopyWith<_$ArtworkForArtMovements$Impl>
+      get copyWith => throw _privateConstructorUsedError;
 }

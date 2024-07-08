@@ -41,3 +41,8 @@ class SetRouteAdminArtworkIndex with _$SetRouteAdminArtworkIndex implements AppA
 class SetRouteAdminArtistIndex with _$SetRouteAdminArtistIndex implements AppAction {
   const factory SetRouteAdminArtistIndex(int routeAdminArtistIndex) = SetRouteAdminArtistIndex$;
 }
+
+@freezed
+class SetRouteSubscriptionIndex with _$SetRouteSubscriptionIndex implements AppAction {
+  const factory SetRouteSubscriptionIndex(int routeSubscriptionIndex) = SetRouteSubscriptionIndex$;
+}

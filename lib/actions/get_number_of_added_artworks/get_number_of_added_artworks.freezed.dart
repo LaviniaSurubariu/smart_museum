@@ -41,7 +41,8 @@ mixin _$GetNumberOfAddedArtworks {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtworksStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtworksSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtworksSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtworksError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,13 +65,14 @@ mixin _$GetNumberOfAddedArtworks {
 
 /// @nodoc
 abstract class $GetNumberOfAddedArtworksCopyWith<$Res> {
-  factory $GetNumberOfAddedArtworksCopyWith(
-          GetNumberOfAddedArtworks value, $Res Function(GetNumberOfAddedArtworks) then) =
+  factory $GetNumberOfAddedArtworksCopyWith(GetNumberOfAddedArtworks value,
+          $Res Function(GetNumberOfAddedArtworks) then) =
       _$GetNumberOfAddedArtworksCopyWithImpl<$Res, GetNumberOfAddedArtworks>;
 }
 
 /// @nodoc
-class _$GetNumberOfAddedArtworksCopyWithImpl<$Res, $Val extends GetNumberOfAddedArtworks>
+class _$GetNumberOfAddedArtworksCopyWithImpl<$Res,
+        $Val extends GetNumberOfAddedArtworks>
     implements $GetNumberOfAddedArtworksCopyWith<$Res> {
   _$GetNumberOfAddedArtworksCopyWithImpl(this._value, this._then);
 
@@ -83,22 +85,26 @@ class _$GetNumberOfAddedArtworksCopyWithImpl<$Res, $Val extends GetNumberOfAdded
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtworksStartImplCopyWith<$Res> {
   factory _$$GetNumberOfAddedArtworksStartImplCopyWith(
-          _$GetNumberOfAddedArtworksStartImpl value, $Res Function(_$GetNumberOfAddedArtworksStartImpl) then) =
+          _$GetNumberOfAddedArtworksStartImpl value,
+          $Res Function(_$GetNumberOfAddedArtworksStartImpl) then) =
       __$$GetNumberOfAddedArtworksStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetNumberOfAddedArtworksStartImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res, _$GetNumberOfAddedArtworksStartImpl>
+    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtworksStartImpl>
     implements _$$GetNumberOfAddedArtworksStartImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtworksStartImplCopyWithImpl(
-      _$GetNumberOfAddedArtworksStartImpl _value, $Res Function(_$GetNumberOfAddedArtworksStartImpl) _then)
+      _$GetNumberOfAddedArtworksStartImpl _value,
+      $Res Function(_$GetNumberOfAddedArtworksStartImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtworksStartImpl implements GetNumberOfAddedArtworksStart {
+class _$GetNumberOfAddedArtworksStartImpl
+    implements GetNumberOfAddedArtworksStart {
   const _$GetNumberOfAddedArtworksStartImpl();
 
   @override
@@ -108,7 +114,9 @@ class _$GetNumberOfAddedArtworksStartImpl implements GetNumberOfAddedArtworksSta
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetNumberOfAddedArtworksStartImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNumberOfAddedArtworksStartImpl);
   }
 
   @override
@@ -152,7 +160,8 @@ class _$GetNumberOfAddedArtworksStartImpl implements GetNumberOfAddedArtworksSta
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtworksStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtworksSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtworksSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtworksError value) error,
   }) {
     return $default(this);
@@ -183,13 +192,16 @@ class _$GetNumberOfAddedArtworksStartImpl implements GetNumberOfAddedArtworksSta
   }
 }
 
-abstract class GetNumberOfAddedArtworksStart implements GetNumberOfAddedArtworks {
-  const factory GetNumberOfAddedArtworksStart() = _$GetNumberOfAddedArtworksStartImpl;
+abstract class GetNumberOfAddedArtworksStart
+    implements GetNumberOfAddedArtworks {
+  const factory GetNumberOfAddedArtworksStart() =
+      _$GetNumberOfAddedArtworksStartImpl;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<$Res> {
-  factory _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith(_$GetNumberOfAddedArtworksSuccessfulImpl value,
+  factory _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith(
+          _$GetNumberOfAddedArtworksSuccessfulImpl value,
           $Res Function(_$GetNumberOfAddedArtworksSuccessfulImpl) then) =
       __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl<$Res>;
   @useResult
@@ -198,10 +210,12 @@ abstract class _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res, _$GetNumberOfAddedArtworksSuccessfulImpl>
+    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtworksSuccessfulImpl>
     implements _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl(
-      _$GetNumberOfAddedArtworksSuccessfulImpl _value, $Res Function(_$GetNumberOfAddedArtworksSuccessfulImpl) _then)
+      _$GetNumberOfAddedArtworksSuccessfulImpl _value,
+      $Res Function(_$GetNumberOfAddedArtworksSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -220,7 +234,8 @@ class __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtworksSuccessfulImpl implements GetNumberOfAddedArtworksSuccessful {
+class _$GetNumberOfAddedArtworksSuccessfulImpl
+    implements GetNumberOfAddedArtworksSuccessful {
   const _$GetNumberOfAddedArtworksSuccessfulImpl(this.numberOfAddedArtworks);
 
   @override
@@ -246,9 +261,10 @@ class _$GetNumberOfAddedArtworksSuccessfulImpl implements GetNumberOfAddedArtwor
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<_$GetNumberOfAddedArtworksSuccessfulImpl> get copyWith =>
-      __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl<_$GetNumberOfAddedArtworksSuccessfulImpl>(
-          this, _$identity);
+  _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<
+          _$GetNumberOfAddedArtworksSuccessfulImpl>
+      get copyWith => __$$GetNumberOfAddedArtworksSuccessfulImplCopyWithImpl<
+          _$GetNumberOfAddedArtworksSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -288,7 +304,8 @@ class _$GetNumberOfAddedArtworksSuccessfulImpl implements GetNumberOfAddedArtwor
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtworksStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtworksSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtworksSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtworksError value) error,
   }) {
     return successful(this);
@@ -319,20 +336,24 @@ class _$GetNumberOfAddedArtworksSuccessfulImpl implements GetNumberOfAddedArtwor
   }
 }
 
-abstract class GetNumberOfAddedArtworksSuccessful implements GetNumberOfAddedArtworks {
-  const factory GetNumberOfAddedArtworksSuccessful(final int numberOfAddedArtworks) =
+abstract class GetNumberOfAddedArtworksSuccessful
+    implements GetNumberOfAddedArtworks {
+  const factory GetNumberOfAddedArtworksSuccessful(
+          final int numberOfAddedArtworks) =
       _$GetNumberOfAddedArtworksSuccessfulImpl;
 
   int get numberOfAddedArtworks;
   @JsonKey(ignore: true)
-  _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<_$GetNumberOfAddedArtworksSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfAddedArtworksSuccessfulImplCopyWith<
+          _$GetNumberOfAddedArtworksSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfAddedArtworksErrorImplCopyWith<$Res> {
   factory _$$GetNumberOfAddedArtworksErrorImplCopyWith(
-          _$GetNumberOfAddedArtworksErrorImpl value, $Res Function(_$GetNumberOfAddedArtworksErrorImpl) then) =
+          _$GetNumberOfAddedArtworksErrorImpl value,
+          $Res Function(_$GetNumberOfAddedArtworksErrorImpl) then) =
       __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -340,10 +361,12 @@ abstract class _$$GetNumberOfAddedArtworksErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl<$Res>
-    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res, _$GetNumberOfAddedArtworksErrorImpl>
+    extends _$GetNumberOfAddedArtworksCopyWithImpl<$Res,
+        _$GetNumberOfAddedArtworksErrorImpl>
     implements _$$GetNumberOfAddedArtworksErrorImplCopyWith<$Res> {
   __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl(
-      _$GetNumberOfAddedArtworksErrorImpl _value, $Res Function(_$GetNumberOfAddedArtworksErrorImpl) _then)
+      _$GetNumberOfAddedArtworksErrorImpl _value,
+      $Res Function(_$GetNumberOfAddedArtworksErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -364,7 +387,8 @@ class __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfAddedArtworksErrorImpl implements GetNumberOfAddedArtworksError {
+class _$GetNumberOfAddedArtworksErrorImpl
+    implements GetNumberOfAddedArtworksError {
   const _$GetNumberOfAddedArtworksErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -383,17 +407,21 @@ class _$GetNumberOfAddedArtworksErrorImpl implements GetNumberOfAddedArtworksErr
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfAddedArtworksErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfAddedArtworksErrorImplCopyWith<_$GetNumberOfAddedArtworksErrorImpl> get copyWith =>
-      __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl<_$GetNumberOfAddedArtworksErrorImpl>(this, _$identity);
+  _$$GetNumberOfAddedArtworksErrorImplCopyWith<
+          _$GetNumberOfAddedArtworksErrorImpl>
+      get copyWith => __$$GetNumberOfAddedArtworksErrorImplCopyWithImpl<
+          _$GetNumberOfAddedArtworksErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -433,7 +461,8 @@ class _$GetNumberOfAddedArtworksErrorImpl implements GetNumberOfAddedArtworksErr
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfAddedArtworksStart value) $default, {
-    required TResult Function(GetNumberOfAddedArtworksSuccessful value) successful,
+    required TResult Function(GetNumberOfAddedArtworksSuccessful value)
+        successful,
     required TResult Function(GetNumberOfAddedArtworksError value) error,
   }) {
     return error(this);
@@ -464,13 +493,16 @@ class _$GetNumberOfAddedArtworksErrorImpl implements GetNumberOfAddedArtworksErr
   }
 }
 
-abstract class GetNumberOfAddedArtworksError implements GetNumberOfAddedArtworks, ErrorAction {
-  const factory GetNumberOfAddedArtworksError(final Object error, final StackTrace stackTrace) =
+abstract class GetNumberOfAddedArtworksError
+    implements GetNumberOfAddedArtworks, ErrorAction {
+  const factory GetNumberOfAddedArtworksError(
+          final Object error, final StackTrace stackTrace) =
       _$GetNumberOfAddedArtworksErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetNumberOfAddedArtworksErrorImplCopyWith<_$GetNumberOfAddedArtworksErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfAddedArtworksErrorImplCopyWith<
+          _$GetNumberOfAddedArtworksErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

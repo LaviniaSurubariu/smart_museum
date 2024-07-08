@@ -19,21 +19,25 @@ mixin _$GetAllStyles {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksWithAllStyles)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -64,12 +68,14 @@ mixin _$GetAllStyles {
 
 /// @nodoc
 abstract class $GetAllStylesCopyWith<$Res> {
-  factory $GetAllStylesCopyWith(GetAllStyles value, $Res Function(GetAllStyles) then) =
+  factory $GetAllStylesCopyWith(
+          GetAllStyles value, $Res Function(GetAllStyles) then) =
       _$GetAllStylesCopyWithImpl<$Res, GetAllStyles>;
 }
 
 /// @nodoc
-class _$GetAllStylesCopyWithImpl<$Res, $Val extends GetAllStyles> implements $GetAllStylesCopyWith<$Res> {
+class _$GetAllStylesCopyWithImpl<$Res, $Val extends GetAllStyles>
+    implements $GetAllStylesCopyWith<$Res> {
   _$GetAllStylesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -80,14 +86,17 @@ class _$GetAllStylesCopyWithImpl<$Res, $Val extends GetAllStyles> implements $Ge
 
 /// @nodoc
 abstract class _$$GetAllStylesStartImplCopyWith<$Res> {
-  factory _$$GetAllStylesStartImplCopyWith(_$GetAllStylesStartImpl value, $Res Function(_$GetAllStylesStartImpl) then) =
+  factory _$$GetAllStylesStartImplCopyWith(_$GetAllStylesStartImpl value,
+          $Res Function(_$GetAllStylesStartImpl) then) =
       __$$GetAllStylesStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllStylesStartImplCopyWithImpl<$Res> extends _$GetAllStylesCopyWithImpl<$Res, _$GetAllStylesStartImpl>
+class __$$GetAllStylesStartImplCopyWithImpl<$Res>
+    extends _$GetAllStylesCopyWithImpl<$Res, _$GetAllStylesStartImpl>
     implements _$$GetAllStylesStartImplCopyWith<$Res> {
-  __$$GetAllStylesStartImplCopyWithImpl(_$GetAllStylesStartImpl _value, $Res Function(_$GetAllStylesStartImpl) _then)
+  __$$GetAllStylesStartImplCopyWithImpl(_$GetAllStylesStartImpl _value,
+      $Res Function(_$GetAllStylesStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -103,7 +112,8 @@ class _$GetAllStylesStartImpl implements GetAllStylesStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetAllStylesStartImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAllStylesStartImpl);
   }
 
   @override
@@ -113,7 +123,9 @@ class _$GetAllStylesStartImpl implements GetAllStylesStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksWithAllStyles)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -123,7 +135,8 @@ class _$GetAllStylesStartImpl implements GetAllStylesStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return $default?.call();
@@ -133,7 +146,8 @@ class _$GetAllStylesStartImpl implements GetAllStylesStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -185,7 +199,8 @@ abstract class GetAllStylesStart implements GetAllStyles {
 /// @nodoc
 abstract class _$$GetAllStylesSuccessfulImplCopyWith<$Res> {
   factory _$$GetAllStylesSuccessfulImplCopyWith(
-          _$GetAllStylesSuccessfulImpl value, $Res Function(_$GetAllStylesSuccessfulImpl) then) =
+          _$GetAllStylesSuccessfulImpl value,
+          $Res Function(_$GetAllStylesSuccessfulImpl) then) =
       __$$GetAllStylesSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ArtworkForArtMovements> artworksWithAllStyles});
@@ -196,7 +211,8 @@ class __$$GetAllStylesSuccessfulImplCopyWithImpl<$Res>
     extends _$GetAllStylesCopyWithImpl<$Res, _$GetAllStylesSuccessfulImpl>
     implements _$$GetAllStylesSuccessfulImplCopyWith<$Res> {
   __$$GetAllStylesSuccessfulImplCopyWithImpl(
-      _$GetAllStylesSuccessfulImpl _value, $Res Function(_$GetAllStylesSuccessfulImpl) _then)
+      _$GetAllStylesSuccessfulImpl _value,
+      $Res Function(_$GetAllStylesSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -216,13 +232,15 @@ class __$$GetAllStylesSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAllStylesSuccessfulImpl implements GetAllStylesSuccessful {
-  const _$GetAllStylesSuccessfulImpl({required final List<ArtworkForArtMovements> artworksWithAllStyles})
+  const _$GetAllStylesSuccessfulImpl(
+      {required final List<ArtworkForArtMovements> artworksWithAllStyles})
       : _artworksWithAllStyles = artworksWithAllStyles;
 
   final List<ArtworkForArtMovements> _artworksWithAllStyles;
   @override
   List<ArtworkForArtMovements> get artworksWithAllStyles {
-    if (_artworksWithAllStyles is EqualUnmodifiableListView) return _artworksWithAllStyles;
+    if (_artworksWithAllStyles is EqualUnmodifiableListView)
+      return _artworksWithAllStyles;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_artworksWithAllStyles);
   }
@@ -237,23 +255,28 @@ class _$GetAllStylesSuccessfulImpl implements GetAllStylesSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllStylesSuccessfulImpl &&
-            const DeepCollectionEquality().equals(other._artworksWithAllStyles, _artworksWithAllStyles));
+            const DeepCollectionEquality()
+                .equals(other._artworksWithAllStyles, _artworksWithAllStyles));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_artworksWithAllStyles));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_artworksWithAllStyles));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAllStylesSuccessfulImplCopyWith<_$GetAllStylesSuccessfulImpl> get copyWith =>
-      __$$GetAllStylesSuccessfulImplCopyWithImpl<_$GetAllStylesSuccessfulImpl>(this, _$identity);
+  _$$GetAllStylesSuccessfulImplCopyWith<_$GetAllStylesSuccessfulImpl>
+      get copyWith => __$$GetAllStylesSuccessfulImplCopyWithImpl<
+          _$GetAllStylesSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksWithAllStyles)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return successful(artworksWithAllStyles);
@@ -263,7 +286,8 @@ class _$GetAllStylesSuccessfulImpl implements GetAllStylesSuccessful {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return successful?.call(artworksWithAllStyles);
@@ -273,7 +297,8 @@ class _$GetAllStylesSuccessfulImpl implements GetAllStylesSuccessful {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -319,27 +344,31 @@ class _$GetAllStylesSuccessfulImpl implements GetAllStylesSuccessful {
 }
 
 abstract class GetAllStylesSuccessful implements GetAllStyles {
-  const factory GetAllStylesSuccessful({required final List<ArtworkForArtMovements> artworksWithAllStyles}) =
+  const factory GetAllStylesSuccessful(
+          {required final List<ArtworkForArtMovements> artworksWithAllStyles}) =
       _$GetAllStylesSuccessfulImpl;
 
   List<ArtworkForArtMovements> get artworksWithAllStyles;
   @JsonKey(ignore: true)
-  _$$GetAllStylesSuccessfulImplCopyWith<_$GetAllStylesSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetAllStylesSuccessfulImplCopyWith<_$GetAllStylesSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetAllStylesErrorImplCopyWith<$Res> {
-  factory _$$GetAllStylesErrorImplCopyWith(_$GetAllStylesErrorImpl value, $Res Function(_$GetAllStylesErrorImpl) then) =
+  factory _$$GetAllStylesErrorImplCopyWith(_$GetAllStylesErrorImpl value,
+          $Res Function(_$GetAllStylesErrorImpl) then) =
       __$$GetAllStylesErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetAllStylesErrorImplCopyWithImpl<$Res> extends _$GetAllStylesCopyWithImpl<$Res, _$GetAllStylesErrorImpl>
+class __$$GetAllStylesErrorImplCopyWithImpl<$Res>
+    extends _$GetAllStylesCopyWithImpl<$Res, _$GetAllStylesErrorImpl>
     implements _$$GetAllStylesErrorImplCopyWith<$Res> {
-  __$$GetAllStylesErrorImplCopyWithImpl(_$GetAllStylesErrorImpl _value, $Res Function(_$GetAllStylesErrorImpl) _then)
+  __$$GetAllStylesErrorImplCopyWithImpl(_$GetAllStylesErrorImpl _value,
+      $Res Function(_$GetAllStylesErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,23 +408,28 @@ class _$GetAllStylesErrorImpl implements GetAllStylesError {
         (other.runtimeType == runtimeType &&
             other is _$GetAllStylesErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAllStylesErrorImplCopyWith<_$GetAllStylesErrorImpl> get copyWith =>
-      __$$GetAllStylesErrorImplCopyWithImpl<_$GetAllStylesErrorImpl>(this, _$identity);
+      __$$GetAllStylesErrorImplCopyWithImpl<_$GetAllStylesErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles) successful,
+    required TResult Function(
+            List<ArtworkForArtMovements> artworksWithAllStyles)
+        successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -405,7 +439,8 @@ class _$GetAllStylesErrorImpl implements GetAllStylesError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult? Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return error?.call(this.error, stackTrace);
@@ -415,7 +450,8 @@ class _$GetAllStylesErrorImpl implements GetAllStylesError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)? successful,
+    TResult Function(List<ArtworkForArtMovements> artworksWithAllStyles)?
+        successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -461,10 +497,13 @@ class _$GetAllStylesErrorImpl implements GetAllStylesError {
 }
 
 abstract class GetAllStylesError implements GetAllStyles, ErrorAction {
-  const factory GetAllStylesError(final Object error, final StackTrace stackTrace) = _$GetAllStylesErrorImpl;
+  const factory GetAllStylesError(
+          final Object error, final StackTrace stackTrace) =
+      _$GetAllStylesErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetAllStylesErrorImplCopyWith<_$GetAllStylesErrorImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$GetAllStylesErrorImplCopyWith<_$GetAllStylesErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

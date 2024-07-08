@@ -25,19 +25,22 @@ mixin _$ArtworkWithoutQrCode {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtworkWithoutQrCodeCopyWith<ArtworkWithoutQrCode> get copyWith => throw _privateConstructorUsedError;
+  $ArtworkWithoutQrCodeCopyWith<ArtworkWithoutQrCode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ArtworkWithoutQrCodeCopyWith<$Res> {
-  factory $ArtworkWithoutQrCodeCopyWith(ArtworkWithoutQrCode value, $Res Function(ArtworkWithoutQrCode) then) =
+  factory $ArtworkWithoutQrCodeCopyWith(ArtworkWithoutQrCode value,
+          $Res Function(ArtworkWithoutQrCode) then) =
       _$ArtworkWithoutQrCodeCopyWithImpl<$Res, ArtworkWithoutQrCode>;
   @useResult
   $Res call({String id, String title});
 }
 
 /// @nodoc
-class _$ArtworkWithoutQrCodeCopyWithImpl<$Res, $Val extends ArtworkWithoutQrCode>
+class _$ArtworkWithoutQrCodeCopyWithImpl<$Res,
+        $Val extends ArtworkWithoutQrCode>
     implements $ArtworkWithoutQrCodeCopyWith<$Res> {
   _$ArtworkWithoutQrCodeCopyWithImpl(this._value, this._then);
 
@@ -66,9 +69,11 @@ class _$ArtworkWithoutQrCodeCopyWithImpl<$Res, $Val extends ArtworkWithoutQrCode
 }
 
 /// @nodoc
-abstract class _$$ArtworkWithoutQrCode$ImplCopyWith<$Res> implements $ArtworkWithoutQrCodeCopyWith<$Res> {
+abstract class _$$ArtworkWithoutQrCode$ImplCopyWith<$Res>
+    implements $ArtworkWithoutQrCodeCopyWith<$Res> {
   factory _$$ArtworkWithoutQrCode$ImplCopyWith(
-          _$ArtworkWithoutQrCode$Impl value, $Res Function(_$ArtworkWithoutQrCode$Impl) then) =
+          _$ArtworkWithoutQrCode$Impl value,
+          $Res Function(_$ArtworkWithoutQrCode$Impl) then) =
       __$$ArtworkWithoutQrCode$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -77,10 +82,11 @@ abstract class _$$ArtworkWithoutQrCode$ImplCopyWith<$Res> implements $ArtworkWit
 
 /// @nodoc
 class __$$ArtworkWithoutQrCode$ImplCopyWithImpl<$Res>
-    extends _$ArtworkWithoutQrCodeCopyWithImpl<$Res, _$ArtworkWithoutQrCode$Impl>
+    extends _$ArtworkWithoutQrCodeCopyWithImpl<$Res,
+        _$ArtworkWithoutQrCode$Impl>
     implements _$$ArtworkWithoutQrCode$ImplCopyWith<$Res> {
-  __$$ArtworkWithoutQrCode$ImplCopyWithImpl(
-      _$ArtworkWithoutQrCode$Impl _value, $Res Function(_$ArtworkWithoutQrCode$Impl) _then)
+  __$$ArtworkWithoutQrCode$ImplCopyWithImpl(_$ArtworkWithoutQrCode$Impl _value,
+      $Res Function(_$ArtworkWithoutQrCode$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +113,8 @@ class __$$ArtworkWithoutQrCode$ImplCopyWithImpl<$Res>
 class _$ArtworkWithoutQrCode$Impl implements ArtworkWithoutQrCode$ {
   const _$ArtworkWithoutQrCode$Impl({required this.id, required this.title});
 
-  factory _$ArtworkWithoutQrCode$Impl.fromJson(Map<String, dynamic> json) => _$$ArtworkWithoutQrCode$ImplFromJson(json);
+  factory _$ArtworkWithoutQrCode$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$ArtworkWithoutQrCode$ImplFromJson(json);
 
   @override
   final String id;
@@ -135,8 +142,9 @@ class _$ArtworkWithoutQrCode$Impl implements ArtworkWithoutQrCode$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArtworkWithoutQrCode$ImplCopyWith<_$ArtworkWithoutQrCode$Impl> get copyWith =>
-      __$$ArtworkWithoutQrCode$ImplCopyWithImpl<_$ArtworkWithoutQrCode$Impl>(this, _$identity);
+  _$$ArtworkWithoutQrCode$ImplCopyWith<_$ArtworkWithoutQrCode$Impl>
+      get copyWith => __$$ArtworkWithoutQrCode$ImplCopyWithImpl<
+          _$ArtworkWithoutQrCode$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -147,10 +155,12 @@ class _$ArtworkWithoutQrCode$Impl implements ArtworkWithoutQrCode$ {
 }
 
 abstract class ArtworkWithoutQrCode$ implements ArtworkWithoutQrCode {
-  const factory ArtworkWithoutQrCode$({required final String id, required final String title}) =
-      _$ArtworkWithoutQrCode$Impl;
+  const factory ArtworkWithoutQrCode$(
+      {required final String id,
+      required final String title}) = _$ArtworkWithoutQrCode$Impl;
 
-  factory ArtworkWithoutQrCode$.fromJson(Map<String, dynamic> json) = _$ArtworkWithoutQrCode$Impl.fromJson;
+  factory ArtworkWithoutQrCode$.fromJson(Map<String, dynamic> json) =
+      _$ArtworkWithoutQrCode$Impl.fromJson;
 
   @override
   String get id;
@@ -158,5 +168,6 @@ abstract class ArtworkWithoutQrCode$ implements ArtworkWithoutQrCode {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$ArtworkWithoutQrCode$ImplCopyWith<_$ArtworkWithoutQrCode$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$ArtworkWithoutQrCode$ImplCopyWith<_$ArtworkWithoutQrCode$Impl>
+      get copyWith => throw _privateConstructorUsedError;
 }

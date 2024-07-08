@@ -42,6 +42,9 @@ class AppState with _$AppState {
     int? numberOfAddedArtists,
     int? numberOfFavouritesArtworks,
     int? numberOfMessages,
+    DateTime? startSubscriptionDate,
+    DateTime? endSubscriptionDate,
+    int? routeSubscriptionIndex,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

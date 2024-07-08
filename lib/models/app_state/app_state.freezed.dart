@@ -21,8 +21,10 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
-  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode => throw _privateConstructorUsedError;
-  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode => throw _privateConstructorUsedError;
+  List<ArtworkWithoutQrCode>? get artworksWithoutQrCode =>
+      throw _privateConstructorUsedError;
+  ArtworkWithoutQrCode? get selectedArtworkWithoutQrCode =>
+      throw _privateConstructorUsedError;
   Artwork? get scannedArtwork => throw _privateConstructorUsedError;
   Artwork? get selectedArtwork => throw _privateConstructorUsedError;
   Artist? get selectedArtist => throw _privateConstructorUsedError;
@@ -33,11 +35,14 @@ mixin _$AppState {
   List<Artwork>? get artworks => throw _privateConstructorUsedError;
   List<Artist>? get artists => throw _privateConstructorUsedError;
   List<Comment>? get comments => throw _privateConstructorUsedError;
-  List<ArtworkForArtMovements>? get artworksForArtMovements => throw _privateConstructorUsedError;
+  List<ArtworkForArtMovements>? get artworksForArtMovements =>
+      throw _privateConstructorUsedError;
   List<Artist>? get topArtists => throw _privateConstructorUsedError;
   List<ArtworkForTop>? get topArtworks => throw _privateConstructorUsedError;
-  List<ArtworkForArtMovements>? get artworksWithAllStyles => throw _privateConstructorUsedError;
-  List<ArtworkByStyle>? get artworksByStyle => throw _privateConstructorUsedError;
+  List<ArtworkForArtMovements>? get artworksWithAllStyles =>
+      throw _privateConstructorUsedError;
+  List<ArtworkByStyle>? get artworksByStyle =>
+      throw _privateConstructorUsedError;
   String? get selectedStyle => throw _privateConstructorUsedError;
   int? get routeAdminArtworkIndex => throw _privateConstructorUsedError;
   int? get routeAdminArtistIndex => throw _privateConstructorUsedError;
@@ -46,15 +51,20 @@ mixin _$AppState {
   int? get numberOfAddedArtists => throw _privateConstructorUsedError;
   int? get numberOfFavouritesArtworks => throw _privateConstructorUsedError;
   int? get numberOfMessages => throw _privateConstructorUsedError;
+  DateTime? get startSubscriptionDate => throw _privateConstructorUsedError;
+  DateTime? get endSubscriptionDate => throw _privateConstructorUsedError;
+  int? get routeSubscriptionIndex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
+      _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call(
       {AppUser? user,
@@ -82,7 +92,10 @@ abstract class $AppStateCopyWith<$Res> {
       int? numberOfAddedArtworks,
       int? numberOfAddedArtists,
       int? numberOfFavouritesArtworks,
-      int? numberOfMessages});
+      int? numberOfMessages,
+      DateTime? startSubscriptionDate,
+      DateTime? endSubscriptionDate,
+      int? routeSubscriptionIndex});
 
   $AppUserCopyWith<$Res>? get user;
   $ArtworkWithoutQrCodeCopyWith<$Res>? get selectedArtworkWithoutQrCode;
@@ -92,7 +105,8 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -129,6 +143,9 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? numberOfAddedArtists = freezed,
     Object? numberOfFavouritesArtworks = freezed,
     Object? numberOfMessages = freezed,
+    Object? startSubscriptionDate = freezed,
+    Object? endSubscriptionDate = freezed,
+    Object? routeSubscriptionIndex = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -235,6 +252,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.numberOfMessages
           : numberOfMessages // ignore: cast_nullable_to_non_nullable
               as int?,
+      startSubscriptionDate: freezed == startSubscriptionDate
+          ? _value.startSubscriptionDate
+          : startSubscriptionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endSubscriptionDate: freezed == endSubscriptionDate
+          ? _value.endSubscriptionDate
+          : endSubscriptionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      routeSubscriptionIndex: freezed == routeSubscriptionIndex
+          ? _value.routeSubscriptionIndex
+          : routeSubscriptionIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -257,8 +286,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return null;
     }
 
-    return $ArtworkWithoutQrCodeCopyWith<$Res>(_value.selectedArtworkWithoutQrCode!, (value) {
-      return _then(_value.copyWith(selectedArtworkWithoutQrCode: value) as $Val);
+    return $ArtworkWithoutQrCodeCopyWith<$Res>(
+        _value.selectedArtworkWithoutQrCode!, (value) {
+      return _then(
+          _value.copyWith(selectedArtworkWithoutQrCode: value) as $Val);
     });
   }
 
@@ -300,8 +331,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
 }
 
 /// @nodoc
-abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$ImplCopyWith(_$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
+abstract class _$$AppState$ImplCopyWith<$Res>
+    implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$ImplCopyWith(
+          _$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -331,7 +364,10 @@ abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res>
       int? numberOfAddedArtworks,
       int? numberOfAddedArtists,
       int? numberOfFavouritesArtworks,
-      int? numberOfMessages});
+      int? numberOfMessages,
+      DateTime? startSubscriptionDate,
+      DateTime? endSubscriptionDate,
+      int? routeSubscriptionIndex});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -346,9 +382,12 @@ abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
+class __$$AppState$ImplCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
     implements _$$AppState$ImplCopyWith<$Res> {
-  __$$AppState$ImplCopyWithImpl(_$AppState$Impl _value, $Res Function(_$AppState$Impl) _then) : super(_value, _then);
+  __$$AppState$ImplCopyWithImpl(
+      _$AppState$Impl _value, $Res Function(_$AppState$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -379,6 +418,9 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
     Object? numberOfAddedArtists = freezed,
     Object? numberOfFavouritesArtworks = freezed,
     Object? numberOfMessages = freezed,
+    Object? startSubscriptionDate = freezed,
+    Object? endSubscriptionDate = freezed,
+    Object? routeSubscriptionIndex = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -485,6 +527,18 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
           ? _value.numberOfMessages
           : numberOfMessages // ignore: cast_nullable_to_non_nullable
               as int?,
+      startSubscriptionDate: freezed == startSubscriptionDate
+          ? _value.startSubscriptionDate
+          : startSubscriptionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endSubscriptionDate: freezed == endSubscriptionDate
+          ? _value.endSubscriptionDate
+          : endSubscriptionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      routeSubscriptionIndex: freezed == routeSubscriptionIndex
+          ? _value.routeSubscriptionIndex
+          : routeSubscriptionIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -518,7 +572,10 @@ class _$AppState$Impl implements AppState$ {
       this.numberOfAddedArtworks,
       this.numberOfAddedArtists,
       this.numberOfFavouritesArtworks,
-      this.numberOfMessages})
+      this.numberOfMessages,
+      this.startSubscriptionDate,
+      this.endSubscriptionDate,
+      this.routeSubscriptionIndex})
       : _artworksWithoutQrCode = artworksWithoutQrCode,
         _favourites = favourites,
         _artworks = artworks,
@@ -530,7 +587,8 @@ class _$AppState$Impl implements AppState$ {
         _artworksWithAllStyles = artworksWithAllStyles,
         _artworksByStyle = artworksByStyle;
 
-  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) => _$$AppState$ImplFromJson(json);
+  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$AppState$ImplFromJson(json);
 
   @override
   final AppUser? user;
@@ -539,7 +597,8 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkWithoutQrCode>? get artworksWithoutQrCode {
     final value = _artworksWithoutQrCode;
     if (value == null) return null;
-    if (_artworksWithoutQrCode is EqualUnmodifiableListView) return _artworksWithoutQrCode;
+    if (_artworksWithoutQrCode is EqualUnmodifiableListView)
+      return _artworksWithoutQrCode;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -603,7 +662,8 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkForArtMovements>? get artworksForArtMovements {
     final value = _artworksForArtMovements;
     if (value == null) return null;
-    if (_artworksForArtMovements is EqualUnmodifiableListView) return _artworksForArtMovements;
+    if (_artworksForArtMovements is EqualUnmodifiableListView)
+      return _artworksForArtMovements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -633,7 +693,8 @@ class _$AppState$Impl implements AppState$ {
   List<ArtworkForArtMovements>? get artworksWithAllStyles {
     final value = _artworksWithAllStyles;
     if (value == null) return null;
-    if (_artworksWithAllStyles is EqualUnmodifiableListView) return _artworksWithAllStyles;
+    if (_artworksWithAllStyles is EqualUnmodifiableListView)
+      return _artworksWithAllStyles;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -664,10 +725,16 @@ class _$AppState$Impl implements AppState$ {
   final int? numberOfFavouritesArtworks;
   @override
   final int? numberOfMessages;
+  @override
+  final DateTime? startSubscriptionDate;
+  @override
+  final DateTime? endSubscriptionDate;
+  @override
+  final int? routeSubscriptionIndex;
 
   @override
   String toString() {
-    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle, routeAdminArtworkIndex: $routeAdminArtworkIndex, routeAdminArtistIndex: $routeAdminArtistIndex, numberOfRegisteredUsers: $numberOfRegisteredUsers, numberOfAddedArtworks: $numberOfAddedArtworks, numberOfAddedArtists: $numberOfAddedArtists, numberOfFavouritesArtworks: $numberOfFavouritesArtworks, numberOfMessages: $numberOfMessages)';
+    return 'AppState(user: $user, artworksWithoutQrCode: $artworksWithoutQrCode, selectedArtworkWithoutQrCode: $selectedArtworkWithoutQrCode, scannedArtwork: $scannedArtwork, selectedArtwork: $selectedArtwork, selectedArtist: $selectedArtist, isFavourite: $isFavourite, favourites: $favourites, routeArtworkIndex: $routeArtworkIndex, routeArtistIndex: $routeArtistIndex, artworks: $artworks, artists: $artists, comments: $comments, artworksForArtMovements: $artworksForArtMovements, topArtists: $topArtists, topArtworks: $topArtworks, artworksWithAllStyles: $artworksWithAllStyles, artworksByStyle: $artworksByStyle, selectedStyle: $selectedStyle, routeAdminArtworkIndex: $routeAdminArtworkIndex, routeAdminArtistIndex: $routeAdminArtistIndex, numberOfRegisteredUsers: $numberOfRegisteredUsers, numberOfAddedArtworks: $numberOfAddedArtworks, numberOfAddedArtists: $numberOfAddedArtists, numberOfFavouritesArtworks: $numberOfFavouritesArtworks, numberOfMessages: $numberOfMessages, startSubscriptionDate: $startSubscriptionDate, endSubscriptionDate: $endSubscriptionDate, routeSubscriptionIndex: $routeSubscriptionIndex)';
   }
 
   @override
@@ -676,38 +743,63 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
-            const DeepCollectionEquality().equals(other._artworksWithoutQrCode, _artworksWithoutQrCode) &&
-            (identical(other.selectedArtworkWithoutQrCode, selectedArtworkWithoutQrCode) ||
-                other.selectedArtworkWithoutQrCode == selectedArtworkWithoutQrCode) &&
-            (identical(other.scannedArtwork, scannedArtwork) || other.scannedArtwork == scannedArtwork) &&
-            (identical(other.selectedArtwork, selectedArtwork) || other.selectedArtwork == selectedArtwork) &&
-            (identical(other.selectedArtist, selectedArtist) || other.selectedArtist == selectedArtist) &&
-            (identical(other.isFavourite, isFavourite) || other.isFavourite == isFavourite) &&
-            const DeepCollectionEquality().equals(other._favourites, _favourites) &&
-            (identical(other.routeArtworkIndex, routeArtworkIndex) || other.routeArtworkIndex == routeArtworkIndex) &&
-            (identical(other.routeArtistIndex, routeArtistIndex) || other.routeArtistIndex == routeArtistIndex) &&
+            const DeepCollectionEquality()
+                .equals(other._artworksWithoutQrCode, _artworksWithoutQrCode) &&
+            (identical(other.selectedArtworkWithoutQrCode,
+                    selectedArtworkWithoutQrCode) ||
+                other.selectedArtworkWithoutQrCode ==
+                    selectedArtworkWithoutQrCode) &&
+            (identical(other.scannedArtwork, scannedArtwork) ||
+                other.scannedArtwork == scannedArtwork) &&
+            (identical(other.selectedArtwork, selectedArtwork) ||
+                other.selectedArtwork == selectedArtwork) &&
+            (identical(other.selectedArtist, selectedArtist) ||
+                other.selectedArtist == selectedArtist) &&
+            (identical(other.isFavourite, isFavourite) ||
+                other.isFavourite == isFavourite) &&
+            const DeepCollectionEquality()
+                .equals(other._favourites, _favourites) &&
+            (identical(other.routeArtworkIndex, routeArtworkIndex) ||
+                other.routeArtworkIndex == routeArtworkIndex) &&
+            (identical(other.routeArtistIndex, routeArtistIndex) ||
+                other.routeArtistIndex == routeArtistIndex) &&
             const DeepCollectionEquality().equals(other._artworks, _artworks) &&
             const DeepCollectionEquality().equals(other._artists, _artists) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
-            const DeepCollectionEquality().equals(other._artworksForArtMovements, _artworksForArtMovements) &&
-            const DeepCollectionEquality().equals(other._topArtists, _topArtists) &&
-            const DeepCollectionEquality().equals(other._topArtworks, _topArtworks) &&
-            const DeepCollectionEquality().equals(other._artworksWithAllStyles, _artworksWithAllStyles) &&
-            const DeepCollectionEquality().equals(other._artworksByStyle, _artworksByStyle) &&
-            (identical(other.selectedStyle, selectedStyle) || other.selectedStyle == selectedStyle) &&
+            const DeepCollectionEquality().equals(
+                other._artworksForArtMovements, _artworksForArtMovements) &&
+            const DeepCollectionEquality()
+                .equals(other._topArtists, _topArtists) &&
+            const DeepCollectionEquality()
+                .equals(other._topArtworks, _topArtworks) &&
+            const DeepCollectionEquality()
+                .equals(other._artworksWithAllStyles, _artworksWithAllStyles) &&
+            const DeepCollectionEquality()
+                .equals(other._artworksByStyle, _artworksByStyle) &&
+            (identical(other.selectedStyle, selectedStyle) ||
+                other.selectedStyle == selectedStyle) &&
             (identical(other.routeAdminArtworkIndex, routeAdminArtworkIndex) ||
                 other.routeAdminArtworkIndex == routeAdminArtworkIndex) &&
             (identical(other.routeAdminArtistIndex, routeAdminArtistIndex) ||
                 other.routeAdminArtistIndex == routeAdminArtistIndex) &&
-            (identical(other.numberOfRegisteredUsers, numberOfRegisteredUsers) ||
+            (identical(
+                    other.numberOfRegisteredUsers, numberOfRegisteredUsers) ||
                 other.numberOfRegisteredUsers == numberOfRegisteredUsers) &&
             (identical(other.numberOfAddedArtworks, numberOfAddedArtworks) ||
                 other.numberOfAddedArtworks == numberOfAddedArtworks) &&
             (identical(other.numberOfAddedArtists, numberOfAddedArtists) ||
                 other.numberOfAddedArtists == numberOfAddedArtists) &&
             (identical(other.numberOfFavouritesArtworks, numberOfFavouritesArtworks) ||
-                other.numberOfFavouritesArtworks == numberOfFavouritesArtworks) &&
-            (identical(other.numberOfMessages, numberOfMessages) || other.numberOfMessages == numberOfMessages));
+                other.numberOfFavouritesArtworks ==
+                    numberOfFavouritesArtworks) &&
+            (identical(other.numberOfMessages, numberOfMessages) ||
+                other.numberOfMessages == numberOfMessages) &&
+            (identical(other.startSubscriptionDate, startSubscriptionDate) ||
+                other.startSubscriptionDate == startSubscriptionDate) &&
+            (identical(other.endSubscriptionDate, endSubscriptionDate) ||
+                other.endSubscriptionDate == endSubscriptionDate) &&
+            (identical(other.routeSubscriptionIndex, routeSubscriptionIndex) ||
+                other.routeSubscriptionIndex == routeSubscriptionIndex));
   }
 
   @JsonKey(ignore: true)
@@ -739,7 +831,10 @@ class _$AppState$Impl implements AppState$ {
         numberOfAddedArtworks,
         numberOfAddedArtists,
         numberOfFavouritesArtworks,
-        numberOfMessages
+        numberOfMessages,
+        startSubscriptionDate,
+        endSubscriptionDate,
+        routeSubscriptionIndex
       ]);
 
   @JsonKey(ignore: true)
@@ -783,9 +878,13 @@ abstract class AppState$ implements AppState {
       final int? numberOfAddedArtworks,
       final int? numberOfAddedArtists,
       final int? numberOfFavouritesArtworks,
-      final int? numberOfMessages}) = _$AppState$Impl;
+      final int? numberOfMessages,
+      final DateTime? startSubscriptionDate,
+      final DateTime? endSubscriptionDate,
+      final int? routeSubscriptionIndex}) = _$AppState$Impl;
 
-  factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
+  factory AppState$.fromJson(Map<String, dynamic> json) =
+      _$AppState$Impl.fromJson;
 
   @override
   AppUser? get user;
@@ -840,6 +939,13 @@ abstract class AppState$ implements AppState {
   @override
   int? get numberOfMessages;
   @override
+  DateTime? get startSubscriptionDate;
+  @override
+  DateTime? get endSubscriptionDate;
+  @override
+  int? get routeSubscriptionIndex;
+  @override
   @JsonKey(ignore: true)
-  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

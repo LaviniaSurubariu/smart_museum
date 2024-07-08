@@ -64,7 +64,8 @@ mixin _$GetNumberOfMessages {
 
 /// @nodoc
 abstract class $GetNumberOfMessagesCopyWith<$Res> {
-  factory $GetNumberOfMessagesCopyWith(GetNumberOfMessages value, $Res Function(GetNumberOfMessages) then) =
+  factory $GetNumberOfMessagesCopyWith(
+          GetNumberOfMessages value, $Res Function(GetNumberOfMessages) then) =
       _$GetNumberOfMessagesCopyWithImpl<$Res, GetNumberOfMessages>;
 }
 
@@ -82,16 +83,19 @@ class _$GetNumberOfMessagesCopyWithImpl<$Res, $Val extends GetNumberOfMessages>
 /// @nodoc
 abstract class _$$GetNumberOfMessagesStartImplCopyWith<$Res> {
   factory _$$GetNumberOfMessagesStartImplCopyWith(
-          _$GetNumberOfMessagesStartImpl value, $Res Function(_$GetNumberOfMessagesStartImpl) then) =
+          _$GetNumberOfMessagesStartImpl value,
+          $Res Function(_$GetNumberOfMessagesStartImpl) then) =
       __$$GetNumberOfMessagesStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetNumberOfMessagesStartImplCopyWithImpl<$Res>
-    extends _$GetNumberOfMessagesCopyWithImpl<$Res, _$GetNumberOfMessagesStartImpl>
+    extends _$GetNumberOfMessagesCopyWithImpl<$Res,
+        _$GetNumberOfMessagesStartImpl>
     implements _$$GetNumberOfMessagesStartImplCopyWith<$Res> {
   __$$GetNumberOfMessagesStartImplCopyWithImpl(
-      _$GetNumberOfMessagesStartImpl _value, $Res Function(_$GetNumberOfMessagesStartImpl) _then)
+      _$GetNumberOfMessagesStartImpl _value,
+      $Res Function(_$GetNumberOfMessagesStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -107,7 +111,9 @@ class _$GetNumberOfMessagesStartImpl implements GetNumberOfMessagesStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetNumberOfMessagesStartImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNumberOfMessagesStartImpl);
   }
 
   @override
@@ -189,7 +195,8 @@ abstract class GetNumberOfMessagesStart implements GetNumberOfMessages {
 /// @nodoc
 abstract class _$$GetNumberOfMessagesSuccessfulImplCopyWith<$Res> {
   factory _$$GetNumberOfMessagesSuccessfulImplCopyWith(
-          _$GetNumberOfMessagesSuccessfulImpl value, $Res Function(_$GetNumberOfMessagesSuccessfulImpl) then) =
+          _$GetNumberOfMessagesSuccessfulImpl value,
+          $Res Function(_$GetNumberOfMessagesSuccessfulImpl) then) =
       __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int numberOfMessages});
@@ -197,10 +204,12 @@ abstract class _$$GetNumberOfMessagesSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetNumberOfMessagesCopyWithImpl<$Res, _$GetNumberOfMessagesSuccessfulImpl>
+    extends _$GetNumberOfMessagesCopyWithImpl<$Res,
+        _$GetNumberOfMessagesSuccessfulImpl>
     implements _$$GetNumberOfMessagesSuccessfulImplCopyWith<$Res> {
   __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl(
-      _$GetNumberOfMessagesSuccessfulImpl _value, $Res Function(_$GetNumberOfMessagesSuccessfulImpl) _then)
+      _$GetNumberOfMessagesSuccessfulImpl _value,
+      $Res Function(_$GetNumberOfMessagesSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -219,7 +228,8 @@ class __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfMessagesSuccessfulImpl implements GetNumberOfMessagesSuccessful {
+class _$GetNumberOfMessagesSuccessfulImpl
+    implements GetNumberOfMessagesSuccessful {
   const _$GetNumberOfMessagesSuccessfulImpl(this.numberOfMessages);
 
   @override
@@ -235,7 +245,8 @@ class _$GetNumberOfMessagesSuccessfulImpl implements GetNumberOfMessagesSuccessf
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfMessagesSuccessfulImpl &&
-            (identical(other.numberOfMessages, numberOfMessages) || other.numberOfMessages == numberOfMessages));
+            (identical(other.numberOfMessages, numberOfMessages) ||
+                other.numberOfMessages == numberOfMessages));
   }
 
   @override
@@ -244,8 +255,10 @@ class _$GetNumberOfMessagesSuccessfulImpl implements GetNumberOfMessagesSuccessf
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfMessagesSuccessfulImplCopyWith<_$GetNumberOfMessagesSuccessfulImpl> get copyWith =>
-      __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl<_$GetNumberOfMessagesSuccessfulImpl>(this, _$identity);
+  _$$GetNumberOfMessagesSuccessfulImplCopyWith<
+          _$GetNumberOfMessagesSuccessfulImpl>
+      get copyWith => __$$GetNumberOfMessagesSuccessfulImplCopyWithImpl<
+          _$GetNumberOfMessagesSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -317,18 +330,21 @@ class _$GetNumberOfMessagesSuccessfulImpl implements GetNumberOfMessagesSuccessf
 }
 
 abstract class GetNumberOfMessagesSuccessful implements GetNumberOfMessages {
-  const factory GetNumberOfMessagesSuccessful(final int numberOfMessages) = _$GetNumberOfMessagesSuccessfulImpl;
+  const factory GetNumberOfMessagesSuccessful(final int numberOfMessages) =
+      _$GetNumberOfMessagesSuccessfulImpl;
 
   int get numberOfMessages;
   @JsonKey(ignore: true)
-  _$$GetNumberOfMessagesSuccessfulImplCopyWith<_$GetNumberOfMessagesSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfMessagesSuccessfulImplCopyWith<
+          _$GetNumberOfMessagesSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfMessagesErrorImplCopyWith<$Res> {
   factory _$$GetNumberOfMessagesErrorImplCopyWith(
-          _$GetNumberOfMessagesErrorImpl value, $Res Function(_$GetNumberOfMessagesErrorImpl) then) =
+          _$GetNumberOfMessagesErrorImpl value,
+          $Res Function(_$GetNumberOfMessagesErrorImpl) then) =
       __$$GetNumberOfMessagesErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -336,10 +352,12 @@ abstract class _$$GetNumberOfMessagesErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfMessagesErrorImplCopyWithImpl<$Res>
-    extends _$GetNumberOfMessagesCopyWithImpl<$Res, _$GetNumberOfMessagesErrorImpl>
+    extends _$GetNumberOfMessagesCopyWithImpl<$Res,
+        _$GetNumberOfMessagesErrorImpl>
     implements _$$GetNumberOfMessagesErrorImplCopyWith<$Res> {
   __$$GetNumberOfMessagesErrorImplCopyWithImpl(
-      _$GetNumberOfMessagesErrorImpl _value, $Res Function(_$GetNumberOfMessagesErrorImpl) _then)
+      _$GetNumberOfMessagesErrorImpl _value,
+      $Res Function(_$GetNumberOfMessagesErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,17 +397,20 @@ class _$GetNumberOfMessagesErrorImpl implements GetNumberOfMessagesError {
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfMessagesErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfMessagesErrorImplCopyWith<_$GetNumberOfMessagesErrorImpl> get copyWith =>
-      __$$GetNumberOfMessagesErrorImplCopyWithImpl<_$GetNumberOfMessagesErrorImpl>(this, _$identity);
+  _$$GetNumberOfMessagesErrorImplCopyWith<_$GetNumberOfMessagesErrorImpl>
+      get copyWith => __$$GetNumberOfMessagesErrorImplCopyWithImpl<
+          _$GetNumberOfMessagesErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -460,13 +481,15 @@ class _$GetNumberOfMessagesErrorImpl implements GetNumberOfMessagesError {
   }
 }
 
-abstract class GetNumberOfMessagesError implements GetNumberOfMessages, ErrorAction {
-  const factory GetNumberOfMessagesError(final Object error, final StackTrace stackTrace) =
+abstract class GetNumberOfMessagesError
+    implements GetNumberOfMessages, ErrorAction {
+  const factory GetNumberOfMessagesError(
+          final Object error, final StackTrace stackTrace) =
       _$GetNumberOfMessagesErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetNumberOfMessagesErrorImplCopyWith<_$GetNumberOfMessagesErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetNumberOfMessagesErrorImplCopyWith<_$GetNumberOfMessagesErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

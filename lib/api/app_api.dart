@@ -711,4 +711,33 @@ class AppApi {
     final QuerySnapshot<Map<String, dynamic>> query = await _firestore.collection('comments').get();
     return query.docs.length;
   }
+
+  Future<DateTime> getUserStartSubscriptionDate({required String userId}) async {
+    final QuerySnapshot<Map<String, dynamic>> query =
+        await FirebaseFirestore.instance.collection('users').where('uid', isEqualTo: userId).get();
+    if (query.docs.isNotEmpty) {
+      final DocumentSnapshot<Map<String, dynamic>> doc = query.docs.first;
+      final Map<String, dynamic>? data = doc.data();
+      if (data != null && data.containsKey('startSubscriptionDate')) {
+        final Timestamp timestamp = data['startSubscriptionDate'] as Timestamp;
+        return timestamp.toDate();
+      }
+    }
+    return DateTime.now();
+  }
+
+  Future<DateTime> getUserEndSubscriptionDate({required String userId}) async {
+    final QuerySnapshot<Map<String, dynamic>> query =
+        await FirebaseFirestore.instance.collection('users').where('uid', isEqualTo: userId).get();
+
+    if (query.docs.isNotEmpty) {
+      final DocumentSnapshot<Map<String, dynamic>> doc = query.docs.first;
+      final Map<String, dynamic>? data = doc.data();
+      if (data != null && data.containsKey('endSubscriptionDate')) {
+        final Timestamp timestamp = data['endSubscriptionDate'] as Timestamp;
+        return timestamp.toDate();
+      }
+    }
+    return DateTime.now();
+  }
 }

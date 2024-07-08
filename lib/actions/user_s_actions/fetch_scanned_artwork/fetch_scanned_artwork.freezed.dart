@@ -64,7 +64,8 @@ mixin _$FetchScannedArtwork {
 
 /// @nodoc
 abstract class $FetchScannedArtworkCopyWith<$Res> {
-  factory $FetchScannedArtworkCopyWith(FetchScannedArtwork value, $Res Function(FetchScannedArtwork) then) =
+  factory $FetchScannedArtworkCopyWith(
+          FetchScannedArtwork value, $Res Function(FetchScannedArtwork) then) =
       _$FetchScannedArtworkCopyWithImpl<$Res, FetchScannedArtwork>;
 }
 
@@ -82,7 +83,8 @@ class _$FetchScannedArtworkCopyWithImpl<$Res, $Val extends FetchScannedArtwork>
 /// @nodoc
 abstract class _$$FetchScannedArtworkStartImplCopyWith<$Res> {
   factory _$$FetchScannedArtworkStartImplCopyWith(
-          _$FetchScannedArtworkStartImpl value, $Res Function(_$FetchScannedArtworkStartImpl) then) =
+          _$FetchScannedArtworkStartImpl value,
+          $Res Function(_$FetchScannedArtworkStartImpl) then) =
       __$$FetchScannedArtworkStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String artworkId});
@@ -90,10 +92,12 @@ abstract class _$$FetchScannedArtworkStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchScannedArtworkStartImplCopyWithImpl<$Res>
-    extends _$FetchScannedArtworkCopyWithImpl<$Res, _$FetchScannedArtworkStartImpl>
+    extends _$FetchScannedArtworkCopyWithImpl<$Res,
+        _$FetchScannedArtworkStartImpl>
     implements _$$FetchScannedArtworkStartImplCopyWith<$Res> {
   __$$FetchScannedArtworkStartImplCopyWithImpl(
-      _$FetchScannedArtworkStartImpl _value, $Res Function(_$FetchScannedArtworkStartImpl) _then)
+      _$FetchScannedArtworkStartImpl _value,
+      $Res Function(_$FetchScannedArtworkStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +132,8 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchScannedArtworkStartImpl &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) ||
+                other.artworkId == artworkId));
   }
 
   @override
@@ -137,8 +142,9 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchScannedArtworkStartImplCopyWith<_$FetchScannedArtworkStartImpl> get copyWith =>
-      __$$FetchScannedArtworkStartImplCopyWithImpl<_$FetchScannedArtworkStartImpl>(this, _$identity);
+  _$$FetchScannedArtworkStartImplCopyWith<_$FetchScannedArtworkStartImpl>
+      get copyWith => __$$FetchScannedArtworkStartImplCopyWithImpl<
+          _$FetchScannedArtworkStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -210,18 +216,20 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
 }
 
 abstract class FetchScannedArtworkStart implements FetchScannedArtwork {
-  const factory FetchScannedArtworkStart({required final String artworkId}) = _$FetchScannedArtworkStartImpl;
+  const factory FetchScannedArtworkStart({required final String artworkId}) =
+      _$FetchScannedArtworkStartImpl;
 
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$FetchScannedArtworkStartImplCopyWith<_$FetchScannedArtworkStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchScannedArtworkStartImplCopyWith<_$FetchScannedArtworkStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FetchScannedArtworkSuccessfulImplCopyWith<$Res> {
   factory _$$FetchScannedArtworkSuccessfulImplCopyWith(
-          _$FetchScannedArtworkSuccessfulImpl value, $Res Function(_$FetchScannedArtworkSuccessfulImpl) then) =
+          _$FetchScannedArtworkSuccessfulImpl value,
+          $Res Function(_$FetchScannedArtworkSuccessfulImpl) then) =
       __$$FetchScannedArtworkSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Artwork scannedArtwork});
@@ -231,10 +239,12 @@ abstract class _$$FetchScannedArtworkSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchScannedArtworkSuccessfulImplCopyWithImpl<$Res>
-    extends _$FetchScannedArtworkCopyWithImpl<$Res, _$FetchScannedArtworkSuccessfulImpl>
+    extends _$FetchScannedArtworkCopyWithImpl<$Res,
+        _$FetchScannedArtworkSuccessfulImpl>
     implements _$$FetchScannedArtworkSuccessfulImplCopyWith<$Res> {
   __$$FetchScannedArtworkSuccessfulImplCopyWithImpl(
-      _$FetchScannedArtworkSuccessfulImpl _value, $Res Function(_$FetchScannedArtworkSuccessfulImpl) _then)
+      _$FetchScannedArtworkSuccessfulImpl _value,
+      $Res Function(_$FetchScannedArtworkSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +271,8 @@ class __$$FetchScannedArtworkSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessful {
+class _$FetchScannedArtworkSuccessfulImpl
+    implements FetchScannedArtworkSuccessful {
   const _$FetchScannedArtworkSuccessfulImpl(this.scannedArtwork);
 
   @override
@@ -277,7 +288,8 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchScannedArtworkSuccessfulImpl &&
-            (identical(other.scannedArtwork, scannedArtwork) || other.scannedArtwork == scannedArtwork));
+            (identical(other.scannedArtwork, scannedArtwork) ||
+                other.scannedArtwork == scannedArtwork));
   }
 
   @override
@@ -286,8 +298,10 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchScannedArtworkSuccessfulImplCopyWith<_$FetchScannedArtworkSuccessfulImpl> get copyWith =>
-      __$$FetchScannedArtworkSuccessfulImplCopyWithImpl<_$FetchScannedArtworkSuccessfulImpl>(this, _$identity);
+  _$$FetchScannedArtworkSuccessfulImplCopyWith<
+          _$FetchScannedArtworkSuccessfulImpl>
+      get copyWith => __$$FetchScannedArtworkSuccessfulImplCopyWithImpl<
+          _$FetchScannedArtworkSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -359,18 +373,21 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
 }
 
 abstract class FetchScannedArtworkSuccessful implements FetchScannedArtwork {
-  const factory FetchScannedArtworkSuccessful(final Artwork scannedArtwork) = _$FetchScannedArtworkSuccessfulImpl;
+  const factory FetchScannedArtworkSuccessful(final Artwork scannedArtwork) =
+      _$FetchScannedArtworkSuccessfulImpl;
 
   Artwork get scannedArtwork;
   @JsonKey(ignore: true)
-  _$$FetchScannedArtworkSuccessfulImplCopyWith<_$FetchScannedArtworkSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchScannedArtworkSuccessfulImplCopyWith<
+          _$FetchScannedArtworkSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FetchScannedArtworkErrorImplCopyWith<$Res> {
   factory _$$FetchScannedArtworkErrorImplCopyWith(
-          _$FetchScannedArtworkErrorImpl value, $Res Function(_$FetchScannedArtworkErrorImpl) then) =
+          _$FetchScannedArtworkErrorImpl value,
+          $Res Function(_$FetchScannedArtworkErrorImpl) then) =
       __$$FetchScannedArtworkErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +395,12 @@ abstract class _$$FetchScannedArtworkErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchScannedArtworkErrorImplCopyWithImpl<$Res>
-    extends _$FetchScannedArtworkCopyWithImpl<$Res, _$FetchScannedArtworkErrorImpl>
+    extends _$FetchScannedArtworkCopyWithImpl<$Res,
+        _$FetchScannedArtworkErrorImpl>
     implements _$$FetchScannedArtworkErrorImplCopyWith<$Res> {
   __$$FetchScannedArtworkErrorImplCopyWithImpl(
-      _$FetchScannedArtworkErrorImpl _value, $Res Function(_$FetchScannedArtworkErrorImpl) _then)
+      _$FetchScannedArtworkErrorImpl _value,
+      $Res Function(_$FetchScannedArtworkErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,17 +440,20 @@ class _$FetchScannedArtworkErrorImpl implements FetchScannedArtworkError {
         (other.runtimeType == runtimeType &&
             other is _$FetchScannedArtworkErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchScannedArtworkErrorImplCopyWith<_$FetchScannedArtworkErrorImpl> get copyWith =>
-      __$$FetchScannedArtworkErrorImplCopyWithImpl<_$FetchScannedArtworkErrorImpl>(this, _$identity);
+  _$$FetchScannedArtworkErrorImplCopyWith<_$FetchScannedArtworkErrorImpl>
+      get copyWith => __$$FetchScannedArtworkErrorImplCopyWithImpl<
+          _$FetchScannedArtworkErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,13 +524,15 @@ class _$FetchScannedArtworkErrorImpl implements FetchScannedArtworkError {
   }
 }
 
-abstract class FetchScannedArtworkError implements FetchScannedArtwork, ErrorAction {
-  const factory FetchScannedArtworkError(final Object error, final StackTrace stackTrace) =
+abstract class FetchScannedArtworkError
+    implements FetchScannedArtwork, ErrorAction {
+  const factory FetchScannedArtworkError(
+          final Object error, final StackTrace stackTrace) =
       _$FetchScannedArtworkErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$FetchScannedArtworkErrorImplCopyWith<_$FetchScannedArtworkErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchScannedArtworkErrorImplCopyWith<_$FetchScannedArtworkErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -64,12 +64,14 @@ mixin _$UpdateArtistDeathDate {
 
 /// @nodoc
 abstract class $UpdateArtistDeathDateCopyWith<$Res> {
-  factory $UpdateArtistDeathDateCopyWith(UpdateArtistDeathDate value, $Res Function(UpdateArtistDeathDate) then) =
+  factory $UpdateArtistDeathDateCopyWith(UpdateArtistDeathDate value,
+          $Res Function(UpdateArtistDeathDate) then) =
       _$UpdateArtistDeathDateCopyWithImpl<$Res, UpdateArtistDeathDate>;
 }
 
 /// @nodoc
-class _$UpdateArtistDeathDateCopyWithImpl<$Res, $Val extends UpdateArtistDeathDate>
+class _$UpdateArtistDeathDateCopyWithImpl<$Res,
+        $Val extends UpdateArtistDeathDate>
     implements $UpdateArtistDeathDateCopyWith<$Res> {
   _$UpdateArtistDeathDateCopyWithImpl(this._value, this._then);
 
@@ -82,7 +84,8 @@ class _$UpdateArtistDeathDateCopyWithImpl<$Res, $Val extends UpdateArtistDeathDa
 /// @nodoc
 abstract class _$$UpdateArtistDeathDateStartImplCopyWith<$Res> {
   factory _$$UpdateArtistDeathDateStartImplCopyWith(
-          _$UpdateArtistDeathDateStartImpl value, $Res Function(_$UpdateArtistDeathDateStartImpl) then) =
+          _$UpdateArtistDeathDateStartImpl value,
+          $Res Function(_$UpdateArtistDeathDateStartImpl) then) =
       __$$UpdateArtistDeathDateStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime? newDeathDate, String artistId});
@@ -90,10 +93,12 @@ abstract class _$$UpdateArtistDeathDateStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDeathDateStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDeathDateCopyWithImpl<$Res, _$UpdateArtistDeathDateStartImpl>
+    extends _$UpdateArtistDeathDateCopyWithImpl<$Res,
+        _$UpdateArtistDeathDateStartImpl>
     implements _$$UpdateArtistDeathDateStartImplCopyWith<$Res> {
   __$$UpdateArtistDeathDateStartImplCopyWithImpl(
-      _$UpdateArtistDeathDateStartImpl _value, $Res Function(_$UpdateArtistDeathDateStartImpl) _then)
+      _$UpdateArtistDeathDateStartImpl _value,
+      $Res Function(_$UpdateArtistDeathDateStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +123,8 @@ class __$$UpdateArtistDeathDateStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtistDeathDateStartImpl implements UpdateArtistDeathDateStart {
-  const _$UpdateArtistDeathDateStartImpl({required this.newDeathDate, required this.artistId});
+  const _$UpdateArtistDeathDateStartImpl(
+      {required this.newDeathDate, required this.artistId});
 
   @override
   final DateTime? newDeathDate;
@@ -135,8 +141,10 @@ class _$UpdateArtistDeathDateStartImpl implements UpdateArtistDeathDateStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDeathDateStartImpl &&
-            (identical(other.newDeathDate, newDeathDate) || other.newDeathDate == newDeathDate) &&
-            (identical(other.artistId, artistId) || other.artistId == artistId));
+            (identical(other.newDeathDate, newDeathDate) ||
+                other.newDeathDate == newDeathDate) &&
+            (identical(other.artistId, artistId) ||
+                other.artistId == artistId));
   }
 
   @override
@@ -145,8 +153,9 @@ class _$UpdateArtistDeathDateStartImpl implements UpdateArtistDeathDateStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDeathDateStartImplCopyWith<_$UpdateArtistDeathDateStartImpl> get copyWith =>
-      __$$UpdateArtistDeathDateStartImplCopyWithImpl<_$UpdateArtistDeathDateStartImpl>(this, _$identity);
+  _$$UpdateArtistDeathDateStartImplCopyWith<_$UpdateArtistDeathDateStartImpl>
+      get copyWith => __$$UpdateArtistDeathDateStartImplCopyWithImpl<
+          _$UpdateArtistDeathDateStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,20 +227,22 @@ class _$UpdateArtistDeathDateStartImpl implements UpdateArtistDeathDateStart {
 }
 
 abstract class UpdateArtistDeathDateStart implements UpdateArtistDeathDate {
-  const factory UpdateArtistDeathDateStart({required final DateTime? newDeathDate, required final String artistId}) =
-      _$UpdateArtistDeathDateStartImpl;
+  const factory UpdateArtistDeathDateStart(
+      {required final DateTime? newDeathDate,
+      required final String artistId}) = _$UpdateArtistDeathDateStartImpl;
 
   DateTime? get newDeathDate;
   String get artistId;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDeathDateStartImplCopyWith<_$UpdateArtistDeathDateStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistDeathDateStartImplCopyWith<_$UpdateArtistDeathDateStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistDeathDateSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtistDeathDateSuccessfulImplCopyWith(
-          _$UpdateArtistDeathDateSuccessfulImpl value, $Res Function(_$UpdateArtistDeathDateSuccessfulImpl) then) =
+          _$UpdateArtistDeathDateSuccessfulImpl value,
+          $Res Function(_$UpdateArtistDeathDateSuccessfulImpl) then) =
       __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime? newDeathDate});
@@ -239,10 +250,12 @@ abstract class _$$UpdateArtistDeathDateSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDeathDateCopyWithImpl<$Res, _$UpdateArtistDeathDateSuccessfulImpl>
+    extends _$UpdateArtistDeathDateCopyWithImpl<$Res,
+        _$UpdateArtistDeathDateSuccessfulImpl>
     implements _$$UpdateArtistDeathDateSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl(
-      _$UpdateArtistDeathDateSuccessfulImpl _value, $Res Function(_$UpdateArtistDeathDateSuccessfulImpl) _then)
+      _$UpdateArtistDeathDateSuccessfulImpl _value,
+      $Res Function(_$UpdateArtistDeathDateSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +274,8 @@ class __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistDeathDateSuccessfulImpl implements UpdateArtistDeathDateSuccessful {
+class _$UpdateArtistDeathDateSuccessfulImpl
+    implements UpdateArtistDeathDateSuccessful {
   const _$UpdateArtistDeathDateSuccessfulImpl(this.newDeathDate);
 
   @override
@@ -277,7 +291,8 @@ class _$UpdateArtistDeathDateSuccessfulImpl implements UpdateArtistDeathDateSucc
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDeathDateSuccessfulImpl &&
-            (identical(other.newDeathDate, newDeathDate) || other.newDeathDate == newDeathDate));
+            (identical(other.newDeathDate, newDeathDate) ||
+                other.newDeathDate == newDeathDate));
   }
 
   @override
@@ -286,8 +301,10 @@ class _$UpdateArtistDeathDateSuccessfulImpl implements UpdateArtistDeathDateSucc
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDeathDateSuccessfulImplCopyWith<_$UpdateArtistDeathDateSuccessfulImpl> get copyWith =>
-      __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl<_$UpdateArtistDeathDateSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtistDeathDateSuccessfulImplCopyWith<
+          _$UpdateArtistDeathDateSuccessfulImpl>
+      get copyWith => __$$UpdateArtistDeathDateSuccessfulImplCopyWithImpl<
+          _$UpdateArtistDeathDateSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -358,19 +375,23 @@ class _$UpdateArtistDeathDateSuccessfulImpl implements UpdateArtistDeathDateSucc
   }
 }
 
-abstract class UpdateArtistDeathDateSuccessful implements UpdateArtistDeathDate {
-  const factory UpdateArtistDeathDateSuccessful(final DateTime? newDeathDate) = _$UpdateArtistDeathDateSuccessfulImpl;
+abstract class UpdateArtistDeathDateSuccessful
+    implements UpdateArtistDeathDate {
+  const factory UpdateArtistDeathDateSuccessful(final DateTime? newDeathDate) =
+      _$UpdateArtistDeathDateSuccessfulImpl;
 
   DateTime? get newDeathDate;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDeathDateSuccessfulImplCopyWith<_$UpdateArtistDeathDateSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistDeathDateSuccessfulImplCopyWith<
+          _$UpdateArtistDeathDateSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistDeathDateErrorImplCopyWith<$Res> {
   factory _$$UpdateArtistDeathDateErrorImplCopyWith(
-          _$UpdateArtistDeathDateErrorImpl value, $Res Function(_$UpdateArtistDeathDateErrorImpl) then) =
+          _$UpdateArtistDeathDateErrorImpl value,
+          $Res Function(_$UpdateArtistDeathDateErrorImpl) then) =
       __$$UpdateArtistDeathDateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +399,12 @@ abstract class _$$UpdateArtistDeathDateErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDeathDateErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDeathDateCopyWithImpl<$Res, _$UpdateArtistDeathDateErrorImpl>
+    extends _$UpdateArtistDeathDateCopyWithImpl<$Res,
+        _$UpdateArtistDeathDateErrorImpl>
     implements _$$UpdateArtistDeathDateErrorImplCopyWith<$Res> {
   __$$UpdateArtistDeathDateErrorImplCopyWithImpl(
-      _$UpdateArtistDeathDateErrorImpl _value, $Res Function(_$UpdateArtistDeathDateErrorImpl) _then)
+      _$UpdateArtistDeathDateErrorImpl _value,
+      $Res Function(_$UpdateArtistDeathDateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,17 +444,20 @@ class _$UpdateArtistDeathDateErrorImpl implements UpdateArtistDeathDateError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDeathDateErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDeathDateErrorImplCopyWith<_$UpdateArtistDeathDateErrorImpl> get copyWith =>
-      __$$UpdateArtistDeathDateErrorImplCopyWithImpl<_$UpdateArtistDeathDateErrorImpl>(this, _$identity);
+  _$$UpdateArtistDeathDateErrorImplCopyWith<_$UpdateArtistDeathDateErrorImpl>
+      get copyWith => __$$UpdateArtistDeathDateErrorImplCopyWithImpl<
+          _$UpdateArtistDeathDateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,13 +528,15 @@ class _$UpdateArtistDeathDateErrorImpl implements UpdateArtistDeathDateError {
   }
 }
 
-abstract class UpdateArtistDeathDateError implements UpdateArtistDeathDate, ErrorAction {
-  const factory UpdateArtistDeathDateError(final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtistDeathDateError
+    implements UpdateArtistDeathDate, ErrorAction {
+  const factory UpdateArtistDeathDateError(
+          final Object error, final StackTrace stackTrace) =
       _$UpdateArtistDeathDateErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDeathDateErrorImplCopyWith<_$UpdateArtistDeathDateErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtistDeathDateErrorImplCopyWith<_$UpdateArtistDeathDateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

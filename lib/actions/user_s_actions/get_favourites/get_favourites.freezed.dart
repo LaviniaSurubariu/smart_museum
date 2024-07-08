@@ -64,12 +64,14 @@ mixin _$GetFavourites {
 
 /// @nodoc
 abstract class $GetFavouritesCopyWith<$Res> {
-  factory $GetFavouritesCopyWith(GetFavourites value, $Res Function(GetFavourites) then) =
+  factory $GetFavouritesCopyWith(
+          GetFavourites value, $Res Function(GetFavourites) then) =
       _$GetFavouritesCopyWithImpl<$Res, GetFavourites>;
 }
 
 /// @nodoc
-class _$GetFavouritesCopyWithImpl<$Res, $Val extends GetFavourites> implements $GetFavouritesCopyWith<$Res> {
+class _$GetFavouritesCopyWithImpl<$Res, $Val extends GetFavourites>
+    implements $GetFavouritesCopyWith<$Res> {
   _$GetFavouritesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -80,17 +82,19 @@ class _$GetFavouritesCopyWithImpl<$Res, $Val extends GetFavourites> implements $
 
 /// @nodoc
 abstract class _$$GetFavouritesStartImplCopyWith<$Res> {
-  factory _$$GetFavouritesStartImplCopyWith(
-          _$GetFavouritesStartImpl value, $Res Function(_$GetFavouritesStartImpl) then) =
+  factory _$$GetFavouritesStartImplCopyWith(_$GetFavouritesStartImpl value,
+          $Res Function(_$GetFavouritesStartImpl) then) =
       __$$GetFavouritesStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$GetFavouritesStartImplCopyWithImpl<$Res> extends _$GetFavouritesCopyWithImpl<$Res, _$GetFavouritesStartImpl>
+class __$$GetFavouritesStartImplCopyWithImpl<$Res>
+    extends _$GetFavouritesCopyWithImpl<$Res, _$GetFavouritesStartImpl>
     implements _$$GetFavouritesStartImplCopyWith<$Res> {
-  __$$GetFavouritesStartImplCopyWithImpl(_$GetFavouritesStartImpl _value, $Res Function(_$GetFavouritesStartImpl) _then)
+  __$$GetFavouritesStartImplCopyWithImpl(_$GetFavouritesStartImpl _value,
+      $Res Function(_$GetFavouritesStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,7 +139,8 @@ class _$GetFavouritesStartImpl implements GetFavouritesStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetFavouritesStartImplCopyWith<_$GetFavouritesStartImpl> get copyWith =>
-      __$$GetFavouritesStartImplCopyWithImpl<_$GetFavouritesStartImpl>(this, _$identity);
+      __$$GetFavouritesStartImplCopyWithImpl<_$GetFavouritesStartImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -207,17 +212,20 @@ class _$GetFavouritesStartImpl implements GetFavouritesStart {
 }
 
 abstract class GetFavouritesStart implements GetFavourites {
-  const factory GetFavouritesStart({required final String userId}) = _$GetFavouritesStartImpl;
+  const factory GetFavouritesStart({required final String userId}) =
+      _$GetFavouritesStartImpl;
 
   String get userId;
   @JsonKey(ignore: true)
-  _$$GetFavouritesStartImplCopyWith<_$GetFavouritesStartImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$GetFavouritesStartImplCopyWith<_$GetFavouritesStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetFavouritesSuccessfulImplCopyWith<$Res> {
   factory _$$GetFavouritesSuccessfulImplCopyWith(
-          _$GetFavouritesSuccessfulImpl value, $Res Function(_$GetFavouritesSuccessfulImpl) then) =
+          _$GetFavouritesSuccessfulImpl value,
+          $Res Function(_$GetFavouritesSuccessfulImpl) then) =
       __$$GetFavouritesSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Favourite> favourites});
@@ -228,7 +236,8 @@ class __$$GetFavouritesSuccessfulImplCopyWithImpl<$Res>
     extends _$GetFavouritesCopyWithImpl<$Res, _$GetFavouritesSuccessfulImpl>
     implements _$$GetFavouritesSuccessfulImplCopyWith<$Res> {
   __$$GetFavouritesSuccessfulImplCopyWithImpl(
-      _$GetFavouritesSuccessfulImpl _value, $Res Function(_$GetFavouritesSuccessfulImpl) _then)
+      _$GetFavouritesSuccessfulImpl _value,
+      $Res Function(_$GetFavouritesSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -248,7 +257,8 @@ class __$$GetFavouritesSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetFavouritesSuccessfulImpl implements GetFavouritesSuccessful {
-  const _$GetFavouritesSuccessfulImpl(final List<Favourite> favourites) : _favourites = favourites;
+  const _$GetFavouritesSuccessfulImpl(final List<Favourite> favourites)
+      : _favourites = favourites;
 
   final List<Favourite> _favourites;
   @override
@@ -268,17 +278,20 @@ class _$GetFavouritesSuccessfulImpl implements GetFavouritesSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetFavouritesSuccessfulImpl &&
-            const DeepCollectionEquality().equals(other._favourites, _favourites));
+            const DeepCollectionEquality()
+                .equals(other._favourites, _favourites));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_favourites));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_favourites));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetFavouritesSuccessfulImplCopyWith<_$GetFavouritesSuccessfulImpl> get copyWith =>
-      __$$GetFavouritesSuccessfulImplCopyWithImpl<_$GetFavouritesSuccessfulImpl>(this, _$identity);
+  _$$GetFavouritesSuccessfulImplCopyWith<_$GetFavouritesSuccessfulImpl>
+      get copyWith => __$$GetFavouritesSuccessfulImplCopyWithImpl<
+          _$GetFavouritesSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -350,27 +363,30 @@ class _$GetFavouritesSuccessfulImpl implements GetFavouritesSuccessful {
 }
 
 abstract class GetFavouritesSuccessful implements GetFavourites {
-  const factory GetFavouritesSuccessful(final List<Favourite> favourites) = _$GetFavouritesSuccessfulImpl;
+  const factory GetFavouritesSuccessful(final List<Favourite> favourites) =
+      _$GetFavouritesSuccessfulImpl;
 
   List<Favourite> get favourites;
   @JsonKey(ignore: true)
-  _$$GetFavouritesSuccessfulImplCopyWith<_$GetFavouritesSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetFavouritesSuccessfulImplCopyWith<_$GetFavouritesSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetFavouritesErrorImplCopyWith<$Res> {
-  factory _$$GetFavouritesErrorImplCopyWith(
-          _$GetFavouritesErrorImpl value, $Res Function(_$GetFavouritesErrorImpl) then) =
+  factory _$$GetFavouritesErrorImplCopyWith(_$GetFavouritesErrorImpl value,
+          $Res Function(_$GetFavouritesErrorImpl) then) =
       __$$GetFavouritesErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetFavouritesErrorImplCopyWithImpl<$Res> extends _$GetFavouritesCopyWithImpl<$Res, _$GetFavouritesErrorImpl>
+class __$$GetFavouritesErrorImplCopyWithImpl<$Res>
+    extends _$GetFavouritesCopyWithImpl<$Res, _$GetFavouritesErrorImpl>
     implements _$$GetFavouritesErrorImplCopyWith<$Res> {
-  __$$GetFavouritesErrorImplCopyWithImpl(_$GetFavouritesErrorImpl _value, $Res Function(_$GetFavouritesErrorImpl) _then)
+  __$$GetFavouritesErrorImplCopyWithImpl(_$GetFavouritesErrorImpl _value,
+      $Res Function(_$GetFavouritesErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -410,17 +426,20 @@ class _$GetFavouritesErrorImpl implements GetFavouritesError {
         (other.runtimeType == runtimeType &&
             other is _$GetFavouritesErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetFavouritesErrorImplCopyWith<_$GetFavouritesErrorImpl> get copyWith =>
-      __$$GetFavouritesErrorImplCopyWithImpl<_$GetFavouritesErrorImpl>(this, _$identity);
+      __$$GetFavouritesErrorImplCopyWithImpl<_$GetFavouritesErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -492,10 +511,13 @@ class _$GetFavouritesErrorImpl implements GetFavouritesError {
 }
 
 abstract class GetFavouritesError implements GetFavourites, ErrorAction {
-  const factory GetFavouritesError(final Object error, final StackTrace stackTrace) = _$GetFavouritesErrorImpl;
+  const factory GetFavouritesError(
+          final Object error, final StackTrace stackTrace) =
+      _$GetFavouritesErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetFavouritesErrorImplCopyWith<_$GetFavouritesErrorImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$GetFavouritesErrorImplCopyWith<_$GetFavouritesErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

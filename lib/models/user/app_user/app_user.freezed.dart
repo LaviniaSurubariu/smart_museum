@@ -36,7 +36,8 @@ mixin _$AppUser {
 
 /// @nodoc
 abstract class $AppUserCopyWith<$Res> {
-  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res, AppUser>;
+  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
+      _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
   $Res call(
       {String uid,
@@ -50,7 +51,8 @@ abstract class $AppUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyWith<$Res> {
+class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
+    implements $AppUserCopyWith<$Res> {
   _$AppUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -109,7 +111,8 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyW
 
 /// @nodoc
 abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
-  factory _$$AppUser$ImplCopyWith(_$AppUser$Impl value, $Res Function(_$AppUser$Impl) then) =
+  factory _$$AppUser$ImplCopyWith(
+          _$AppUser$Impl value, $Res Function(_$AppUser$Impl) then) =
       __$$AppUser$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -125,9 +128,12 @@ abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppUser$ImplCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUser$Impl>
+class __$$AppUser$ImplCopyWithImpl<$Res>
+    extends _$AppUserCopyWithImpl<$Res, _$AppUser$Impl>
     implements _$$AppUser$ImplCopyWith<$Res> {
-  __$$AppUser$ImplCopyWithImpl(_$AppUser$Impl _value, $Res Function(_$AppUser$Impl) _then) : super(_value, _then);
+  __$$AppUser$ImplCopyWithImpl(
+      _$AppUser$Impl _value, $Res Function(_$AppUser$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -191,7 +197,8 @@ class _$AppUser$Impl implements AppUser$ {
       this.pictureUrl,
       required this.hasSubscription});
 
-  factory _$AppUser$Impl.fromJson(Map<String, dynamic> json) => _$$AppUser$ImplFromJson(json);
+  factory _$AppUser$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$AppUser$ImplFromJson(json);
 
   @override
   final String uid;
@@ -222,18 +229,23 @@ class _$AppUser$Impl implements AppUser$ {
             other is _$AppUser$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.firstName, firstName) || other.firstName == firstName) &&
-            (identical(other.lastName, lastName) || other.lastName == lastName) &&
-            (identical(other.creationTime, creationTime) || other.creationTime == creationTime) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.creationTime, creationTime) ||
+                other.creationTime == creationTime) &&
             (identical(other.role, role) || other.role == role) &&
-            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
-            (identical(other.hasSubscription, hasSubscription) || other.hasSubscription == hasSubscription));
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl) &&
+            (identical(other.hasSubscription, hasSubscription) ||
+                other.hasSubscription == hasSubscription));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, uid, email, firstName, lastName, creationTime, role, pictureUrl, hasSubscription);
+  int get hashCode => Object.hash(runtimeType, uid, email, firstName, lastName,
+      creationTime, role, pictureUrl, hasSubscription);
 
   @JsonKey(ignore: true)
   @override
@@ -260,7 +272,8 @@ abstract class AppUser$ implements AppUser {
       final String? pictureUrl,
       required final bool hasSubscription}) = _$AppUser$Impl;
 
-  factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$Impl.fromJson;
+  factory AppUser$.fromJson(Map<String, dynamic> json) =
+      _$AppUser$Impl.fromJson;
 
   @override
   String get uid;
@@ -280,5 +293,6 @@ abstract class AppUser$ implements AppUser {
   bool get hasSubscription;
   @override
   @JsonKey(ignore: true)
-  _$$AppUser$ImplCopyWith<_$AppUser$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$AppUser$ImplCopyWith<_$AppUser$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

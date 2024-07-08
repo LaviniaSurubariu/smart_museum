@@ -25,11 +25,13 @@ import '../actions/app_action.dart';
 import '../actions/get_artists/get_artists.dart';
 import '../actions/get_artworks/get_artworks.dart';
 import '../actions/get_comments/get_comments.dart';
+import '../actions/get_end_subscription_date/get_end_subscription_date.dart';
 import '../actions/get_number_of_added_artists/get_number_of_added_artists.dart';
 import '../actions/get_number_of_added_artworks/get_number_of_added_artworks.dart';
 import '../actions/get_number_of_favourites_artworks/get_number_of_favourites_artworks.dart';
 import '../actions/get_number_of_messages/get_number_of_messages.dart';
 import '../actions/get_number_of_registered_users/get_number_of_registered_users.dart';
+import '../actions/get_start_subscription_date/get_start_subscription_date.dart';
 import '../actions/get_top_artists/get_top_artists.dart';
 import '../actions/get_top_artworks/get_top_artworks.dart';
 import '../actions/user_s_actions/add_favourite/add_favourite.dart';
@@ -117,6 +119,8 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetNumberOfAddedArtistsStart>(_getNumberOfAddedArtistsStart).call,
       TypedEpic<AppState, GetNumberOfFavouritesArtworksStart>(_getNumberOfFavouritesArtworksStart).call,
       TypedEpic<AppState, GetNumberOfMessagesStart>(_getNumberOfMessagesStart).call,
+      TypedEpic<AppState, GetStartSubscriptionDateStart>(_getStartSubscriptionDateStart).call,
+      TypedEpic<AppState, GetEndSubscriptionDateStart>(_getEndSubscriptionDateStart).call,
     ])(actions, store);
   }
 
@@ -682,6 +686,33 @@ class AppEpics extends EpicClass<AppState> {
           })
           .map((int numberOfMessages) => GetNumberOfMessages.successful(numberOfMessages))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetNumberOfMessages.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getStartSubscriptionDateStart(
+      Stream<GetStartSubscriptionDateStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetStartSubscriptionDateStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getUserStartSubscriptionDate(userId: action.userId);
+          })
+          .map((DateTime startSubscriptionDate) => GetStartSubscriptionDate.successful(startSubscriptionDate))
+          .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => GetStartSubscriptionDate.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getEndSubscriptionDateStart(
+      Stream<GetEndSubscriptionDateStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetEndSubscriptionDateStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return appApi.getUserEndSubscriptionDate(userId: action.userId);
+          })
+          .map((DateTime endSubscriptionDate) => GetEndSubscriptionDate.successful(endSubscriptionDate))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetEndSubscriptionDate.error(error, stackTrace));
     });
   }
 }

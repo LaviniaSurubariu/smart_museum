@@ -64,7 +64,8 @@ mixin _$UpdateArtworkTitle {
 
 /// @nodoc
 abstract class $UpdateArtworkTitleCopyWith<$Res> {
-  factory $UpdateArtworkTitleCopyWith(UpdateArtworkTitle value, $Res Function(UpdateArtworkTitle) then) =
+  factory $UpdateArtworkTitleCopyWith(
+          UpdateArtworkTitle value, $Res Function(UpdateArtworkTitle) then) =
       _$UpdateArtworkTitleCopyWithImpl<$Res, UpdateArtworkTitle>;
 }
 
@@ -82,7 +83,8 @@ class _$UpdateArtworkTitleCopyWithImpl<$Res, $Val extends UpdateArtworkTitle>
 /// @nodoc
 abstract class _$$UpdateArtworkTitleStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkTitleStartImplCopyWith(
-          _$UpdateArtworkTitleStartImpl value, $Res Function(_$UpdateArtworkTitleStartImpl) then) =
+          _$UpdateArtworkTitleStartImpl value,
+          $Res Function(_$UpdateArtworkTitleStartImpl) then) =
       __$$UpdateArtworkTitleStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newTitle, String artworkId});
@@ -90,10 +92,12 @@ abstract class _$$UpdateArtworkTitleStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkTitleStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkTitleCopyWithImpl<$Res, _$UpdateArtworkTitleStartImpl>
+    extends _$UpdateArtworkTitleCopyWithImpl<$Res,
+        _$UpdateArtworkTitleStartImpl>
     implements _$$UpdateArtworkTitleStartImplCopyWith<$Res> {
   __$$UpdateArtworkTitleStartImplCopyWithImpl(
-      _$UpdateArtworkTitleStartImpl _value, $Res Function(_$UpdateArtworkTitleStartImpl) _then)
+      _$UpdateArtworkTitleStartImpl _value,
+      $Res Function(_$UpdateArtworkTitleStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +122,8 @@ class __$$UpdateArtworkTitleStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtworkTitleStartImpl implements UpdateArtworkTitleStart {
-  const _$UpdateArtworkTitleStartImpl({required this.newTitle, required this.artworkId});
+  const _$UpdateArtworkTitleStartImpl(
+      {required this.newTitle, required this.artworkId});
 
   @override
   final String newTitle;
@@ -135,8 +140,10 @@ class _$UpdateArtworkTitleStartImpl implements UpdateArtworkTitleStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkTitleStartImpl &&
-            (identical(other.newTitle, newTitle) || other.newTitle == newTitle) &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
+            (identical(other.newTitle, newTitle) ||
+                other.newTitle == newTitle) &&
+            (identical(other.artworkId, artworkId) ||
+                other.artworkId == artworkId));
   }
 
   @override
@@ -145,8 +152,9 @@ class _$UpdateArtworkTitleStartImpl implements UpdateArtworkTitleStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkTitleStartImplCopyWith<_$UpdateArtworkTitleStartImpl> get copyWith =>
-      __$$UpdateArtworkTitleStartImplCopyWithImpl<_$UpdateArtworkTitleStartImpl>(this, _$identity);
+  _$$UpdateArtworkTitleStartImplCopyWith<_$UpdateArtworkTitleStartImpl>
+      get copyWith => __$$UpdateArtworkTitleStartImplCopyWithImpl<
+          _$UpdateArtworkTitleStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,20 +226,22 @@ class _$UpdateArtworkTitleStartImpl implements UpdateArtworkTitleStart {
 }
 
 abstract class UpdateArtworkTitleStart implements UpdateArtworkTitle {
-  const factory UpdateArtworkTitleStart({required final String newTitle, required final String artworkId}) =
-      _$UpdateArtworkTitleStartImpl;
+  const factory UpdateArtworkTitleStart(
+      {required final String newTitle,
+      required final String artworkId}) = _$UpdateArtworkTitleStartImpl;
 
   String get newTitle;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkTitleStartImplCopyWith<_$UpdateArtworkTitleStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkTitleStartImplCopyWith<_$UpdateArtworkTitleStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkTitleSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkTitleSuccessfulImplCopyWith(
-          _$UpdateArtworkTitleSuccessfulImpl value, $Res Function(_$UpdateArtworkTitleSuccessfulImpl) then) =
+          _$UpdateArtworkTitleSuccessfulImpl value,
+          $Res Function(_$UpdateArtworkTitleSuccessfulImpl) then) =
       __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newTitle});
@@ -239,10 +249,12 @@ abstract class _$$UpdateArtworkTitleSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkTitleCopyWithImpl<$Res, _$UpdateArtworkTitleSuccessfulImpl>
+    extends _$UpdateArtworkTitleCopyWithImpl<$Res,
+        _$UpdateArtworkTitleSuccessfulImpl>
     implements _$$UpdateArtworkTitleSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkTitleSuccessfulImpl _value, $Res Function(_$UpdateArtworkTitleSuccessfulImpl) _then)
+      _$UpdateArtworkTitleSuccessfulImpl _value,
+      $Res Function(_$UpdateArtworkTitleSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +273,8 @@ class __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkTitleSuccessfulImpl implements UpdateArtworkTitleSuccessful {
+class _$UpdateArtworkTitleSuccessfulImpl
+    implements UpdateArtworkTitleSuccessful {
   const _$UpdateArtworkTitleSuccessfulImpl(this.newTitle);
 
   @override
@@ -277,7 +290,8 @@ class _$UpdateArtworkTitleSuccessfulImpl implements UpdateArtworkTitleSuccessful
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkTitleSuccessfulImpl &&
-            (identical(other.newTitle, newTitle) || other.newTitle == newTitle));
+            (identical(other.newTitle, newTitle) ||
+                other.newTitle == newTitle));
   }
 
   @override
@@ -286,8 +300,10 @@ class _$UpdateArtworkTitleSuccessfulImpl implements UpdateArtworkTitleSuccessful
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkTitleSuccessfulImplCopyWith<_$UpdateArtworkTitleSuccessfulImpl> get copyWith =>
-      __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl<_$UpdateArtworkTitleSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkTitleSuccessfulImplCopyWith<
+          _$UpdateArtworkTitleSuccessfulImpl>
+      get copyWith => __$$UpdateArtworkTitleSuccessfulImplCopyWithImpl<
+          _$UpdateArtworkTitleSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -359,18 +375,21 @@ class _$UpdateArtworkTitleSuccessfulImpl implements UpdateArtworkTitleSuccessful
 }
 
 abstract class UpdateArtworkTitleSuccessful implements UpdateArtworkTitle {
-  const factory UpdateArtworkTitleSuccessful(final String newTitle) = _$UpdateArtworkTitleSuccessfulImpl;
+  const factory UpdateArtworkTitleSuccessful(final String newTitle) =
+      _$UpdateArtworkTitleSuccessfulImpl;
 
   String get newTitle;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkTitleSuccessfulImplCopyWith<_$UpdateArtworkTitleSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkTitleSuccessfulImplCopyWith<
+          _$UpdateArtworkTitleSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkTitleErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkTitleErrorImplCopyWith(
-          _$UpdateArtworkTitleErrorImpl value, $Res Function(_$UpdateArtworkTitleErrorImpl) then) =
+          _$UpdateArtworkTitleErrorImpl value,
+          $Res Function(_$UpdateArtworkTitleErrorImpl) then) =
       __$$UpdateArtworkTitleErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -378,10 +397,12 @@ abstract class _$$UpdateArtworkTitleErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkTitleErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkTitleCopyWithImpl<$Res, _$UpdateArtworkTitleErrorImpl>
+    extends _$UpdateArtworkTitleCopyWithImpl<$Res,
+        _$UpdateArtworkTitleErrorImpl>
     implements _$$UpdateArtworkTitleErrorImplCopyWith<$Res> {
   __$$UpdateArtworkTitleErrorImplCopyWithImpl(
-      _$UpdateArtworkTitleErrorImpl _value, $Res Function(_$UpdateArtworkTitleErrorImpl) _then)
+      _$UpdateArtworkTitleErrorImpl _value,
+      $Res Function(_$UpdateArtworkTitleErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -421,17 +442,20 @@ class _$UpdateArtworkTitleErrorImpl implements UpdateArtworkTitleError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkTitleErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkTitleErrorImplCopyWith<_$UpdateArtworkTitleErrorImpl> get copyWith =>
-      __$$UpdateArtworkTitleErrorImplCopyWithImpl<_$UpdateArtworkTitleErrorImpl>(this, _$identity);
+  _$$UpdateArtworkTitleErrorImplCopyWith<_$UpdateArtworkTitleErrorImpl>
+      get copyWith => __$$UpdateArtworkTitleErrorImplCopyWithImpl<
+          _$UpdateArtworkTitleErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,13 +526,15 @@ class _$UpdateArtworkTitleErrorImpl implements UpdateArtworkTitleError {
   }
 }
 
-abstract class UpdateArtworkTitleError implements UpdateArtworkTitle, ErrorAction {
-  const factory UpdateArtworkTitleError(final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkTitleError
+    implements UpdateArtworkTitle, ErrorAction {
+  const factory UpdateArtworkTitleError(
+          final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkTitleErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkTitleErrorImplCopyWith<_$UpdateArtworkTitleErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateArtworkTitleErrorImplCopyWith<_$UpdateArtworkTitleErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

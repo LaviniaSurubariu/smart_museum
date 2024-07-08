@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/extensions.dart';
+
 class SubscriptionPage extends StatefulWidget {
   const SubscriptionPage({super.key});
 
@@ -16,7 +18,16 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/profilePage');
+            switch (context.store.state.routeSubscriptionIndex) {
+              case 0:
+                Navigator.pushReplacementNamed(context, '/profilePage');
+
+              case 1:
+                Navigator.pushReplacementNamed(context, '/infoSubscriptionPage');
+
+              default:
+                Navigator.pushReplacementNamed(context, '/profilePage');
+            }
           },
         ),
         title: const Text(''),

@@ -28,19 +28,27 @@ mixin _$ArtworkByStyle {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtworkByStyleCopyWith<ArtworkByStyle> get copyWith => throw _privateConstructorUsedError;
+  $ArtworkByStyleCopyWith<ArtworkByStyle> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ArtworkByStyleCopyWith<$Res> {
-  factory $ArtworkByStyleCopyWith(ArtworkByStyle value, $Res Function(ArtworkByStyle) then) =
+  factory $ArtworkByStyleCopyWith(
+          ArtworkByStyle value, $Res Function(ArtworkByStyle) then) =
       _$ArtworkByStyleCopyWithImpl<$Res, ArtworkByStyle>;
   @useResult
-  $Res call({String uid, String title, String pictureUrl, String artistFirstName, String artistLastName});
+  $Res call(
+      {String uid,
+      String title,
+      String pictureUrl,
+      String artistFirstName,
+      String artistLastName});
 }
 
 /// @nodoc
-class _$ArtworkByStyleCopyWithImpl<$Res, $Val extends ArtworkByStyle> implements $ArtworkByStyleCopyWith<$Res> {
+class _$ArtworkByStyleCopyWithImpl<$Res, $Val extends ArtworkByStyle>
+    implements $ArtworkByStyleCopyWith<$Res> {
   _$ArtworkByStyleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -83,18 +91,27 @@ class _$ArtworkByStyleCopyWithImpl<$Res, $Val extends ArtworkByStyle> implements
 }
 
 /// @nodoc
-abstract class _$$ArtworkByStyle$ImplCopyWith<$Res> implements $ArtworkByStyleCopyWith<$Res> {
-  factory _$$ArtworkByStyle$ImplCopyWith(_$ArtworkByStyle$Impl value, $Res Function(_$ArtworkByStyle$Impl) then) =
+abstract class _$$ArtworkByStyle$ImplCopyWith<$Res>
+    implements $ArtworkByStyleCopyWith<$Res> {
+  factory _$$ArtworkByStyle$ImplCopyWith(_$ArtworkByStyle$Impl value,
+          $Res Function(_$ArtworkByStyle$Impl) then) =
       __$$ArtworkByStyle$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String title, String pictureUrl, String artistFirstName, String artistLastName});
+  $Res call(
+      {String uid,
+      String title,
+      String pictureUrl,
+      String artistFirstName,
+      String artistLastName});
 }
 
 /// @nodoc
-class __$$ArtworkByStyle$ImplCopyWithImpl<$Res> extends _$ArtworkByStyleCopyWithImpl<$Res, _$ArtworkByStyle$Impl>
+class __$$ArtworkByStyle$ImplCopyWithImpl<$Res>
+    extends _$ArtworkByStyleCopyWithImpl<$Res, _$ArtworkByStyle$Impl>
     implements _$$ArtworkByStyle$ImplCopyWith<$Res> {
-  __$$ArtworkByStyle$ImplCopyWithImpl(_$ArtworkByStyle$Impl _value, $Res Function(_$ArtworkByStyle$Impl) _then)
+  __$$ArtworkByStyle$ImplCopyWithImpl(
+      _$ArtworkByStyle$Impl _value, $Res Function(_$ArtworkByStyle$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +158,8 @@ class _$ArtworkByStyle$Impl implements ArtworkByStyle$ {
       required this.artistFirstName,
       required this.artistLastName});
 
-  factory _$ArtworkByStyle$Impl.fromJson(Map<String, dynamic> json) => _$$ArtworkByStyle$ImplFromJson(json);
+  factory _$ArtworkByStyle$Impl.fromJson(Map<String, dynamic> json) =>
+      _$$ArtworkByStyle$ImplFromJson(json);
 
   @override
   final String uid;
@@ -166,20 +184,25 @@ class _$ArtworkByStyle$Impl implements ArtworkByStyle$ {
             other is _$ArtworkByStyle$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
-            (identical(other.artistFirstName, artistFirstName) || other.artistFirstName == artistFirstName) &&
-            (identical(other.artistLastName, artistLastName) || other.artistLastName == artistLastName));
+            (identical(other.pictureUrl, pictureUrl) ||
+                other.pictureUrl == pictureUrl) &&
+            (identical(other.artistFirstName, artistFirstName) ||
+                other.artistFirstName == artistFirstName) &&
+            (identical(other.artistLastName, artistLastName) ||
+                other.artistLastName == artistLastName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, title, pictureUrl, artistFirstName, artistLastName);
+  int get hashCode => Object.hash(
+      runtimeType, uid, title, pictureUrl, artistFirstName, artistLastName);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ArtworkByStyle$ImplCopyWith<_$ArtworkByStyle$Impl> get copyWith =>
-      __$$ArtworkByStyle$ImplCopyWithImpl<_$ArtworkByStyle$Impl>(this, _$identity);
+      __$$ArtworkByStyle$ImplCopyWithImpl<_$ArtworkByStyle$Impl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -197,7 +220,8 @@ abstract class ArtworkByStyle$ implements ArtworkByStyle {
       required final String artistFirstName,
       required final String artistLastName}) = _$ArtworkByStyle$Impl;
 
-  factory ArtworkByStyle$.fromJson(Map<String, dynamic> json) = _$ArtworkByStyle$Impl.fromJson;
+  factory ArtworkByStyle$.fromJson(Map<String, dynamic> json) =
+      _$ArtworkByStyle$Impl.fromJson;
 
   @override
   String get uid;
@@ -211,5 +235,6 @@ abstract class ArtworkByStyle$ implements ArtworkByStyle {
   String get artistLastName;
   @override
   @JsonKey(ignore: true)
-  _$$ArtworkByStyle$ImplCopyWith<_$ArtworkByStyle$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$ArtworkByStyle$ImplCopyWith<_$ArtworkByStyle$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
