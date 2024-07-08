@@ -64,8 +64,7 @@ mixin _$FetchSelectedArtist {
 
 /// @nodoc
 abstract class $FetchSelectedArtistCopyWith<$Res> {
-  factory $FetchSelectedArtistCopyWith(
-          FetchSelectedArtist value, $Res Function(FetchSelectedArtist) then) =
+  factory $FetchSelectedArtistCopyWith(FetchSelectedArtist value, $Res Function(FetchSelectedArtist) then) =
       _$FetchSelectedArtistCopyWithImpl<$Res, FetchSelectedArtist>;
 }
 
@@ -83,8 +82,7 @@ class _$FetchSelectedArtistCopyWithImpl<$Res, $Val extends FetchSelectedArtist>
 /// @nodoc
 abstract class _$$FetchSelectedArtistStartImplCopyWith<$Res> {
   factory _$$FetchSelectedArtistStartImplCopyWith(
-          _$FetchSelectedArtistStartImpl value,
-          $Res Function(_$FetchSelectedArtistStartImpl) then) =
+          _$FetchSelectedArtistStartImpl value, $Res Function(_$FetchSelectedArtistStartImpl) then) =
       __$$FetchSelectedArtistStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String artistId});
@@ -92,12 +90,10 @@ abstract class _$$FetchSelectedArtistStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchSelectedArtistStartImplCopyWithImpl<$Res>
-    extends _$FetchSelectedArtistCopyWithImpl<$Res,
-        _$FetchSelectedArtistStartImpl>
+    extends _$FetchSelectedArtistCopyWithImpl<$Res, _$FetchSelectedArtistStartImpl>
     implements _$$FetchSelectedArtistStartImplCopyWith<$Res> {
   __$$FetchSelectedArtistStartImplCopyWithImpl(
-      _$FetchSelectedArtistStartImpl _value,
-      $Res Function(_$FetchSelectedArtistStartImpl) _then)
+      _$FetchSelectedArtistStartImpl _value, $Res Function(_$FetchSelectedArtistStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,8 +128,7 @@ class _$FetchSelectedArtistStartImpl implements FetchSelectedArtistStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchSelectedArtistStartImpl &&
-            (identical(other.artistId, artistId) ||
-                other.artistId == artistId));
+            (identical(other.artistId, artistId) || other.artistId == artistId));
   }
 
   @override
@@ -142,9 +137,8 @@ class _$FetchSelectedArtistStartImpl implements FetchSelectedArtistStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchSelectedArtistStartImplCopyWith<_$FetchSelectedArtistStartImpl>
-      get copyWith => __$$FetchSelectedArtistStartImplCopyWithImpl<
-          _$FetchSelectedArtistStartImpl>(this, _$identity);
+  _$$FetchSelectedArtistStartImplCopyWith<_$FetchSelectedArtistStartImpl> get copyWith =>
+      __$$FetchSelectedArtistStartImplCopyWithImpl<_$FetchSelectedArtistStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -216,20 +210,18 @@ class _$FetchSelectedArtistStartImpl implements FetchSelectedArtistStart {
 }
 
 abstract class FetchSelectedArtistStart implements FetchSelectedArtist {
-  const factory FetchSelectedArtistStart({required final String artistId}) =
-      _$FetchSelectedArtistStartImpl;
+  const factory FetchSelectedArtistStart({required final String artistId}) = _$FetchSelectedArtistStartImpl;
 
   String get artistId;
   @JsonKey(ignore: true)
-  _$$FetchSelectedArtistStartImplCopyWith<_$FetchSelectedArtistStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FetchSelectedArtistStartImplCopyWith<_$FetchSelectedArtistStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FetchSelectedArtistSuccessfulImplCopyWith<$Res> {
   factory _$$FetchSelectedArtistSuccessfulImplCopyWith(
-          _$FetchSelectedArtistSuccessfulImpl value,
-          $Res Function(_$FetchSelectedArtistSuccessfulImpl) then) =
+          _$FetchSelectedArtistSuccessfulImpl value, $Res Function(_$FetchSelectedArtistSuccessfulImpl) then) =
       __$$FetchSelectedArtistSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Artist selectedArtist});
@@ -239,12 +231,10 @@ abstract class _$$FetchSelectedArtistSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchSelectedArtistSuccessfulImplCopyWithImpl<$Res>
-    extends _$FetchSelectedArtistCopyWithImpl<$Res,
-        _$FetchSelectedArtistSuccessfulImpl>
+    extends _$FetchSelectedArtistCopyWithImpl<$Res, _$FetchSelectedArtistSuccessfulImpl>
     implements _$$FetchSelectedArtistSuccessfulImplCopyWith<$Res> {
   __$$FetchSelectedArtistSuccessfulImplCopyWithImpl(
-      _$FetchSelectedArtistSuccessfulImpl _value,
-      $Res Function(_$FetchSelectedArtistSuccessfulImpl) _then)
+      _$FetchSelectedArtistSuccessfulImpl _value, $Res Function(_$FetchSelectedArtistSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -271,8 +261,7 @@ class __$$FetchSelectedArtistSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchSelectedArtistSuccessfulImpl
-    implements FetchSelectedArtistSuccessful {
+class _$FetchSelectedArtistSuccessfulImpl implements FetchSelectedArtistSuccessful {
   const _$FetchSelectedArtistSuccessfulImpl(this.selectedArtist);
 
   @override
@@ -288,8 +277,7 @@ class _$FetchSelectedArtistSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchSelectedArtistSuccessfulImpl &&
-            (identical(other.selectedArtist, selectedArtist) ||
-                other.selectedArtist == selectedArtist));
+            (identical(other.selectedArtist, selectedArtist) || other.selectedArtist == selectedArtist));
   }
 
   @override
@@ -298,10 +286,8 @@ class _$FetchSelectedArtistSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchSelectedArtistSuccessfulImplCopyWith<
-          _$FetchSelectedArtistSuccessfulImpl>
-      get copyWith => __$$FetchSelectedArtistSuccessfulImplCopyWithImpl<
-          _$FetchSelectedArtistSuccessfulImpl>(this, _$identity);
+  _$$FetchSelectedArtistSuccessfulImplCopyWith<_$FetchSelectedArtistSuccessfulImpl> get copyWith =>
+      __$$FetchSelectedArtistSuccessfulImplCopyWithImpl<_$FetchSelectedArtistSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -373,21 +359,18 @@ class _$FetchSelectedArtistSuccessfulImpl
 }
 
 abstract class FetchSelectedArtistSuccessful implements FetchSelectedArtist {
-  const factory FetchSelectedArtistSuccessful(final Artist selectedArtist) =
-      _$FetchSelectedArtistSuccessfulImpl;
+  const factory FetchSelectedArtistSuccessful(final Artist selectedArtist) = _$FetchSelectedArtistSuccessfulImpl;
 
   Artist get selectedArtist;
   @JsonKey(ignore: true)
-  _$$FetchSelectedArtistSuccessfulImplCopyWith<
-          _$FetchSelectedArtistSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FetchSelectedArtistSuccessfulImplCopyWith<_$FetchSelectedArtistSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FetchSelectedArtistErrorImplCopyWith<$Res> {
   factory _$$FetchSelectedArtistErrorImplCopyWith(
-          _$FetchSelectedArtistErrorImpl value,
-          $Res Function(_$FetchSelectedArtistErrorImpl) then) =
+          _$FetchSelectedArtistErrorImpl value, $Res Function(_$FetchSelectedArtistErrorImpl) then) =
       __$$FetchSelectedArtistErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -395,12 +378,10 @@ abstract class _$$FetchSelectedArtistErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchSelectedArtistErrorImplCopyWithImpl<$Res>
-    extends _$FetchSelectedArtistCopyWithImpl<$Res,
-        _$FetchSelectedArtistErrorImpl>
+    extends _$FetchSelectedArtistCopyWithImpl<$Res, _$FetchSelectedArtistErrorImpl>
     implements _$$FetchSelectedArtistErrorImplCopyWith<$Res> {
   __$$FetchSelectedArtistErrorImplCopyWithImpl(
-      _$FetchSelectedArtistErrorImpl _value,
-      $Res Function(_$FetchSelectedArtistErrorImpl) _then)
+      _$FetchSelectedArtistErrorImpl _value, $Res Function(_$FetchSelectedArtistErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -440,20 +421,17 @@ class _$FetchSelectedArtistErrorImpl implements FetchSelectedArtistError {
         (other.runtimeType == runtimeType &&
             other is _$FetchSelectedArtistErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchSelectedArtistErrorImplCopyWith<_$FetchSelectedArtistErrorImpl>
-      get copyWith => __$$FetchSelectedArtistErrorImplCopyWithImpl<
-          _$FetchSelectedArtistErrorImpl>(this, _$identity);
+  _$$FetchSelectedArtistErrorImplCopyWith<_$FetchSelectedArtistErrorImpl> get copyWith =>
+      __$$FetchSelectedArtistErrorImplCopyWithImpl<_$FetchSelectedArtistErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -524,15 +502,13 @@ class _$FetchSelectedArtistErrorImpl implements FetchSelectedArtistError {
   }
 }
 
-abstract class FetchSelectedArtistError
-    implements FetchSelectedArtist, ErrorAction {
-  const factory FetchSelectedArtistError(
-          final Object error, final StackTrace stackTrace) =
+abstract class FetchSelectedArtistError implements FetchSelectedArtist, ErrorAction {
+  const factory FetchSelectedArtistError(final Object error, final StackTrace stackTrace) =
       _$FetchSelectedArtistErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$FetchSelectedArtistErrorImplCopyWith<_$FetchSelectedArtistErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FetchSelectedArtistErrorImplCopyWith<_$FetchSelectedArtistErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

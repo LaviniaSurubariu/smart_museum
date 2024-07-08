@@ -64,14 +64,12 @@ mixin _$UpdateArtistBirthdate {
 
 /// @nodoc
 abstract class $UpdateArtistBirthdateCopyWith<$Res> {
-  factory $UpdateArtistBirthdateCopyWith(UpdateArtistBirthdate value,
-          $Res Function(UpdateArtistBirthdate) then) =
+  factory $UpdateArtistBirthdateCopyWith(UpdateArtistBirthdate value, $Res Function(UpdateArtistBirthdate) then) =
       _$UpdateArtistBirthdateCopyWithImpl<$Res, UpdateArtistBirthdate>;
 }
 
 /// @nodoc
-class _$UpdateArtistBirthdateCopyWithImpl<$Res,
-        $Val extends UpdateArtistBirthdate>
+class _$UpdateArtistBirthdateCopyWithImpl<$Res, $Val extends UpdateArtistBirthdate>
     implements $UpdateArtistBirthdateCopyWith<$Res> {
   _$UpdateArtistBirthdateCopyWithImpl(this._value, this._then);
 
@@ -84,8 +82,7 @@ class _$UpdateArtistBirthdateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$UpdateArtistBirthdateStartImplCopyWith<$Res> {
   factory _$$UpdateArtistBirthdateStartImplCopyWith(
-          _$UpdateArtistBirthdateStartImpl value,
-          $Res Function(_$UpdateArtistBirthdateStartImpl) then) =
+          _$UpdateArtistBirthdateStartImpl value, $Res Function(_$UpdateArtistBirthdateStartImpl) then) =
       __$$UpdateArtistBirthdateStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime? newBirthdate, String artistId});
@@ -93,12 +90,10 @@ abstract class _$$UpdateArtistBirthdateStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistBirthdateStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtistBirthdateCopyWithImpl<$Res,
-        _$UpdateArtistBirthdateStartImpl>
+    extends _$UpdateArtistBirthdateCopyWithImpl<$Res, _$UpdateArtistBirthdateStartImpl>
     implements _$$UpdateArtistBirthdateStartImplCopyWith<$Res> {
   __$$UpdateArtistBirthdateStartImplCopyWithImpl(
-      _$UpdateArtistBirthdateStartImpl _value,
-      $Res Function(_$UpdateArtistBirthdateStartImpl) _then)
+      _$UpdateArtistBirthdateStartImpl _value, $Res Function(_$UpdateArtistBirthdateStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,8 +118,7 @@ class __$$UpdateArtistBirthdateStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtistBirthdateStartImpl implements UpdateArtistBirthdateStart {
-  const _$UpdateArtistBirthdateStartImpl(
-      {required this.newBirthdate, required this.artistId});
+  const _$UpdateArtistBirthdateStartImpl({required this.newBirthdate, required this.artistId});
 
   @override
   final DateTime? newBirthdate;
@@ -141,10 +135,8 @@ class _$UpdateArtistBirthdateStartImpl implements UpdateArtistBirthdateStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistBirthdateStartImpl &&
-            (identical(other.newBirthdate, newBirthdate) ||
-                other.newBirthdate == newBirthdate) &&
-            (identical(other.artistId, artistId) ||
-                other.artistId == artistId));
+            (identical(other.newBirthdate, newBirthdate) || other.newBirthdate == newBirthdate) &&
+            (identical(other.artistId, artistId) || other.artistId == artistId));
   }
 
   @override
@@ -153,9 +145,8 @@ class _$UpdateArtistBirthdateStartImpl implements UpdateArtistBirthdateStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistBirthdateStartImplCopyWith<_$UpdateArtistBirthdateStartImpl>
-      get copyWith => __$$UpdateArtistBirthdateStartImplCopyWithImpl<
-          _$UpdateArtistBirthdateStartImpl>(this, _$identity);
+  _$$UpdateArtistBirthdateStartImplCopyWith<_$UpdateArtistBirthdateStartImpl> get copyWith =>
+      __$$UpdateArtistBirthdateStartImplCopyWithImpl<_$UpdateArtistBirthdateStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -227,22 +218,20 @@ class _$UpdateArtistBirthdateStartImpl implements UpdateArtistBirthdateStart {
 }
 
 abstract class UpdateArtistBirthdateStart implements UpdateArtistBirthdate {
-  const factory UpdateArtistBirthdateStart(
-      {required final DateTime? newBirthdate,
-      required final String artistId}) = _$UpdateArtistBirthdateStartImpl;
+  const factory UpdateArtistBirthdateStart({required final DateTime? newBirthdate, required final String artistId}) =
+      _$UpdateArtistBirthdateStartImpl;
 
   DateTime? get newBirthdate;
   String get artistId;
   @JsonKey(ignore: true)
-  _$$UpdateArtistBirthdateStartImplCopyWith<_$UpdateArtistBirthdateStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistBirthdateStartImplCopyWith<_$UpdateArtistBirthdateStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistBirthdateSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtistBirthdateSuccessfulImplCopyWith(
-          _$UpdateArtistBirthdateSuccessfulImpl value,
-          $Res Function(_$UpdateArtistBirthdateSuccessfulImpl) then) =
+          _$UpdateArtistBirthdateSuccessfulImpl value, $Res Function(_$UpdateArtistBirthdateSuccessfulImpl) then) =
       __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime? newBirthdate});
@@ -250,12 +239,10 @@ abstract class _$$UpdateArtistBirthdateSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtistBirthdateCopyWithImpl<$Res,
-        _$UpdateArtistBirthdateSuccessfulImpl>
+    extends _$UpdateArtistBirthdateCopyWithImpl<$Res, _$UpdateArtistBirthdateSuccessfulImpl>
     implements _$$UpdateArtistBirthdateSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl(
-      _$UpdateArtistBirthdateSuccessfulImpl _value,
-      $Res Function(_$UpdateArtistBirthdateSuccessfulImpl) _then)
+      _$UpdateArtistBirthdateSuccessfulImpl _value, $Res Function(_$UpdateArtistBirthdateSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -274,8 +261,7 @@ class __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistBirthdateSuccessfulImpl
-    implements UpdateArtistBirthdateSuccessful {
+class _$UpdateArtistBirthdateSuccessfulImpl implements UpdateArtistBirthdateSuccessful {
   const _$UpdateArtistBirthdateSuccessfulImpl(this.newBirthdate);
 
   @override
@@ -291,8 +277,7 @@ class _$UpdateArtistBirthdateSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistBirthdateSuccessfulImpl &&
-            (identical(other.newBirthdate, newBirthdate) ||
-                other.newBirthdate == newBirthdate));
+            (identical(other.newBirthdate, newBirthdate) || other.newBirthdate == newBirthdate));
   }
 
   @override
@@ -301,10 +286,8 @@ class _$UpdateArtistBirthdateSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistBirthdateSuccessfulImplCopyWith<
-          _$UpdateArtistBirthdateSuccessfulImpl>
-      get copyWith => __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl<
-          _$UpdateArtistBirthdateSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtistBirthdateSuccessfulImplCopyWith<_$UpdateArtistBirthdateSuccessfulImpl> get copyWith =>
+      __$$UpdateArtistBirthdateSuccessfulImplCopyWithImpl<_$UpdateArtistBirthdateSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -375,23 +358,19 @@ class _$UpdateArtistBirthdateSuccessfulImpl
   }
 }
 
-abstract class UpdateArtistBirthdateSuccessful
-    implements UpdateArtistBirthdate {
-  const factory UpdateArtistBirthdateSuccessful(final DateTime? newBirthdate) =
-      _$UpdateArtistBirthdateSuccessfulImpl;
+abstract class UpdateArtistBirthdateSuccessful implements UpdateArtistBirthdate {
+  const factory UpdateArtistBirthdateSuccessful(final DateTime? newBirthdate) = _$UpdateArtistBirthdateSuccessfulImpl;
 
   DateTime? get newBirthdate;
   @JsonKey(ignore: true)
-  _$$UpdateArtistBirthdateSuccessfulImplCopyWith<
-          _$UpdateArtistBirthdateSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistBirthdateSuccessfulImplCopyWith<_$UpdateArtistBirthdateSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistBirthdateErrorImplCopyWith<$Res> {
   factory _$$UpdateArtistBirthdateErrorImplCopyWith(
-          _$UpdateArtistBirthdateErrorImpl value,
-          $Res Function(_$UpdateArtistBirthdateErrorImpl) then) =
+          _$UpdateArtistBirthdateErrorImpl value, $Res Function(_$UpdateArtistBirthdateErrorImpl) then) =
       __$$UpdateArtistBirthdateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -399,12 +378,10 @@ abstract class _$$UpdateArtistBirthdateErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistBirthdateErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtistBirthdateCopyWithImpl<$Res,
-        _$UpdateArtistBirthdateErrorImpl>
+    extends _$UpdateArtistBirthdateCopyWithImpl<$Res, _$UpdateArtistBirthdateErrorImpl>
     implements _$$UpdateArtistBirthdateErrorImplCopyWith<$Res> {
   __$$UpdateArtistBirthdateErrorImplCopyWithImpl(
-      _$UpdateArtistBirthdateErrorImpl _value,
-      $Res Function(_$UpdateArtistBirthdateErrorImpl) _then)
+      _$UpdateArtistBirthdateErrorImpl _value, $Res Function(_$UpdateArtistBirthdateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -444,20 +421,17 @@ class _$UpdateArtistBirthdateErrorImpl implements UpdateArtistBirthdateError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistBirthdateErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistBirthdateErrorImplCopyWith<_$UpdateArtistBirthdateErrorImpl>
-      get copyWith => __$$UpdateArtistBirthdateErrorImplCopyWithImpl<
-          _$UpdateArtistBirthdateErrorImpl>(this, _$identity);
+  _$$UpdateArtistBirthdateErrorImplCopyWith<_$UpdateArtistBirthdateErrorImpl> get copyWith =>
+      __$$UpdateArtistBirthdateErrorImplCopyWithImpl<_$UpdateArtistBirthdateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -528,15 +502,13 @@ class _$UpdateArtistBirthdateErrorImpl implements UpdateArtistBirthdateError {
   }
 }
 
-abstract class UpdateArtistBirthdateError
-    implements UpdateArtistBirthdate, ErrorAction {
-  const factory UpdateArtistBirthdateError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtistBirthdateError implements UpdateArtistBirthdate, ErrorAction {
+  const factory UpdateArtistBirthdateError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtistBirthdateErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtistBirthdateErrorImplCopyWith<_$UpdateArtistBirthdateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistBirthdateErrorImplCopyWith<_$UpdateArtistBirthdateErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

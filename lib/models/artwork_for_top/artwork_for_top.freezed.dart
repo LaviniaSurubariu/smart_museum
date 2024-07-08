@@ -26,22 +26,19 @@ mixin _$ArtworkForTop {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtworkForTopCopyWith<ArtworkForTop> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ArtworkForTopCopyWith<ArtworkForTop> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ArtworkForTopCopyWith<$Res> {
-  factory $ArtworkForTopCopyWith(
-          ArtworkForTop value, $Res Function(ArtworkForTop) then) =
+  factory $ArtworkForTopCopyWith(ArtworkForTop value, $Res Function(ArtworkForTop) then) =
       _$ArtworkForTopCopyWithImpl<$Res, ArtworkForTop>;
   @useResult
   $Res call({String uid, String pictureUrl, String title});
 }
 
 /// @nodoc
-class _$ArtworkForTopCopyWithImpl<$Res, $Val extends ArtworkForTop>
-    implements $ArtworkForTopCopyWith<$Res> {
+class _$ArtworkForTopCopyWithImpl<$Res, $Val extends ArtworkForTop> implements $ArtworkForTopCopyWith<$Res> {
   _$ArtworkForTopCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -74,10 +71,8 @@ class _$ArtworkForTopCopyWithImpl<$Res, $Val extends ArtworkForTop>
 }
 
 /// @nodoc
-abstract class _$$ArtworkForTop$ImplCopyWith<$Res>
-    implements $ArtworkForTopCopyWith<$Res> {
-  factory _$$ArtworkForTop$ImplCopyWith(_$ArtworkForTop$Impl value,
-          $Res Function(_$ArtworkForTop$Impl) then) =
+abstract class _$$ArtworkForTop$ImplCopyWith<$Res> implements $ArtworkForTopCopyWith<$Res> {
+  factory _$$ArtworkForTop$ImplCopyWith(_$ArtworkForTop$Impl value, $Res Function(_$ArtworkForTop$Impl) then) =
       __$$ArtworkForTop$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -85,11 +80,9 @@ abstract class _$$ArtworkForTop$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ArtworkForTop$ImplCopyWithImpl<$Res>
-    extends _$ArtworkForTopCopyWithImpl<$Res, _$ArtworkForTop$Impl>
+class __$$ArtworkForTop$ImplCopyWithImpl<$Res> extends _$ArtworkForTopCopyWithImpl<$Res, _$ArtworkForTop$Impl>
     implements _$$ArtworkForTop$ImplCopyWith<$Res> {
-  __$$ArtworkForTop$ImplCopyWithImpl(
-      _$ArtworkForTop$Impl _value, $Res Function(_$ArtworkForTop$Impl) _then)
+  __$$ArtworkForTop$ImplCopyWithImpl(_$ArtworkForTop$Impl _value, $Res Function(_$ArtworkForTop$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,11 +112,9 @@ class __$$ArtworkForTop$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ArtworkForTop$Impl implements ArtworkForTop$ {
-  const _$ArtworkForTop$Impl(
-      {required this.uid, required this.pictureUrl, required this.title});
+  const _$ArtworkForTop$Impl({required this.uid, required this.pictureUrl, required this.title});
 
-  factory _$ArtworkForTop$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$ArtworkForTop$ImplFromJson(json);
+  factory _$ArtworkForTop$Impl.fromJson(Map<String, dynamic> json) => _$$ArtworkForTop$ImplFromJson(json);
 
   @override
   final String uid;
@@ -143,8 +134,7 @@ class _$ArtworkForTop$Impl implements ArtworkForTop$ {
         (other.runtimeType == runtimeType &&
             other is _$ArtworkForTop$Impl &&
             (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.pictureUrl, pictureUrl) ||
-                other.pictureUrl == pictureUrl) &&
+            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
             (identical(other.title, title) || other.title == title));
   }
 
@@ -156,8 +146,7 @@ class _$ArtworkForTop$Impl implements ArtworkForTop$ {
   @override
   @pragma('vm:prefer-inline')
   _$$ArtworkForTop$ImplCopyWith<_$ArtworkForTop$Impl> get copyWith =>
-      __$$ArtworkForTop$ImplCopyWithImpl<_$ArtworkForTop$Impl>(
-          this, _$identity);
+      __$$ArtworkForTop$ImplCopyWithImpl<_$ArtworkForTop$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -173,8 +162,7 @@ abstract class ArtworkForTop$ implements ArtworkForTop {
       required final String pictureUrl,
       required final String title}) = _$ArtworkForTop$Impl;
 
-  factory ArtworkForTop$.fromJson(Map<String, dynamic> json) =
-      _$ArtworkForTop$Impl.fromJson;
+  factory ArtworkForTop$.fromJson(Map<String, dynamic> json) = _$ArtworkForTop$Impl.fromJson;
 
   @override
   String get uid;
@@ -184,6 +172,5 @@ abstract class ArtworkForTop$ implements ArtworkForTop {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$ArtworkForTop$ImplCopyWith<_$ArtworkForTop$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ArtworkForTop$ImplCopyWith<_$ArtworkForTop$Impl> get copyWith => throw _privateConstructorUsedError;
 }

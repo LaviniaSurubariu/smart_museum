@@ -9,8 +9,8 @@ class CustomAlertDialogOneButton extends StatelessWidget {
     required this.iconData,
     required this.iconColor,
     required this.onButtonPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String title;
   final String content;
   final String buttonText;

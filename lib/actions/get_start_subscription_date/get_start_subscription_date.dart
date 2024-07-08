@@ -8,9 +8,9 @@ part 'get_start_subscription_date.freezed.dart';
 class GetStartSubscriptionDate with _$GetStartSubscriptionDate implements AppAction {
   const factory GetStartSubscriptionDate({required String userId}) = GetStartSubscriptionDateStart;
 
-  const factory GetStartSubscriptionDate.successful(DateTime startSubscriptionDate) = GetStartSubscriptionDateSuccessful;
+  const factory GetStartSubscriptionDate.successful(DateTime startSubscriptionDate) =
+      GetStartSubscriptionDateSuccessful;
 
   @Implements<ErrorAction>()
   const factory GetStartSubscriptionDate.error(Object error, StackTrace stackTrace) = GetStartSubscriptionDateError;
 }
-

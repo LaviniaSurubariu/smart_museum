@@ -18,8 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AddFavourite {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -27,8 +26,8 @@ mixin _$AddFavourite {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult? Function(
+            String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -36,8 +35,7 @@ mixin _$AddFavourite {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -70,14 +68,12 @@ mixin _$AddFavourite {
 
 /// @nodoc
 abstract class $AddFavouriteCopyWith<$Res> {
-  factory $AddFavouriteCopyWith(
-          AddFavourite value, $Res Function(AddFavourite) then) =
+  factory $AddFavouriteCopyWith(AddFavourite value, $Res Function(AddFavourite) then) =
       _$AddFavouriteCopyWithImpl<$Res, AddFavourite>;
 }
 
 /// @nodoc
-class _$AddFavouriteCopyWithImpl<$Res, $Val extends AddFavourite>
-    implements $AddFavouriteCopyWith<$Res> {
+class _$AddFavouriteCopyWithImpl<$Res, $Val extends AddFavourite> implements $AddFavouriteCopyWith<$Res> {
   _$AddFavouriteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -88,24 +84,16 @@ class _$AddFavouriteCopyWithImpl<$Res, $Val extends AddFavourite>
 
 /// @nodoc
 abstract class _$$AddFavouriteStartImplCopyWith<$Res> {
-  factory _$$AddFavouriteStartImplCopyWith(_$AddFavouriteStartImpl value,
-          $Res Function(_$AddFavouriteStartImpl) then) =
+  factory _$$AddFavouriteStartImplCopyWith(_$AddFavouriteStartImpl value, $Res Function(_$AddFavouriteStartImpl) then) =
       __$$AddFavouriteStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String userId,
-      String artworkId,
-      String artworkTitle,
-      String artworkPictureUrl,
-      String artistName});
+  $Res call({String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName});
 }
 
 /// @nodoc
-class __$$AddFavouriteStartImplCopyWithImpl<$Res>
-    extends _$AddFavouriteCopyWithImpl<$Res, _$AddFavouriteStartImpl>
+class __$$AddFavouriteStartImplCopyWithImpl<$Res> extends _$AddFavouriteCopyWithImpl<$Res, _$AddFavouriteStartImpl>
     implements _$$AddFavouriteStartImplCopyWith<$Res> {
-  __$$AddFavouriteStartImplCopyWithImpl(_$AddFavouriteStartImpl _value,
-      $Res Function(_$AddFavouriteStartImpl) _then)
+  __$$AddFavouriteStartImplCopyWithImpl(_$AddFavouriteStartImpl _value, $Res Function(_$AddFavouriteStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -174,66 +162,55 @@ class _$AddFavouriteStartImpl implements AddFavouriteStart {
         (other.runtimeType == runtimeType &&
             other is _$AddFavouriteStartImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId) &&
-            (identical(other.artworkTitle, artworkTitle) ||
-                other.artworkTitle == artworkTitle) &&
-            (identical(other.artworkPictureUrl, artworkPictureUrl) ||
-                other.artworkPictureUrl == artworkPictureUrl) &&
-            (identical(other.artistName, artistName) ||
-                other.artistName == artistName));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId) &&
+            (identical(other.artworkTitle, artworkTitle) || other.artworkTitle == artworkTitle) &&
+            (identical(other.artworkPictureUrl, artworkPictureUrl) || other.artworkPictureUrl == artworkPictureUrl) &&
+            (identical(other.artistName, artistName) || other.artistName == artistName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userId, artworkId, artworkTitle,
-      artworkPictureUrl, artistName);
+  int get hashCode => Object.hash(runtimeType, userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddFavouriteStartImplCopyWith<_$AddFavouriteStartImpl> get copyWith =>
-      __$$AddFavouriteStartImplCopyWithImpl<_$AddFavouriteStartImpl>(
-          this, _$identity);
+      __$$AddFavouriteStartImplCopyWithImpl<_$AddFavouriteStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(
-        userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
+    return $default(userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult? Function(
+            String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(
-        userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
+    return $default?.call(userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(
-          userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
+      return $default(userId, artworkId, artworkTitle, artworkPictureUrl, artistName);
     }
     return orElse();
   }
@@ -287,15 +264,13 @@ abstract class AddFavouriteStart implements AddFavourite {
   String get artworkPictureUrl;
   String get artistName;
   @JsonKey(ignore: true)
-  _$$AddFavouriteStartImplCopyWith<_$AddFavouriteStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddFavouriteStartImplCopyWith<_$AddFavouriteStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddFavouriteSuccessfulImplCopyWith<$Res> {
   factory _$$AddFavouriteSuccessfulImplCopyWith(
-          _$AddFavouriteSuccessfulImpl value,
-          $Res Function(_$AddFavouriteSuccessfulImpl) then) =
+          _$AddFavouriteSuccessfulImpl value, $Res Function(_$AddFavouriteSuccessfulImpl) then) =
       __$$AddFavouriteSuccessfulImplCopyWithImpl<$Res>;
 }
 
@@ -304,8 +279,7 @@ class __$$AddFavouriteSuccessfulImplCopyWithImpl<$Res>
     extends _$AddFavouriteCopyWithImpl<$Res, _$AddFavouriteSuccessfulImpl>
     implements _$$AddFavouriteSuccessfulImplCopyWith<$Res> {
   __$$AddFavouriteSuccessfulImplCopyWithImpl(
-      _$AddFavouriteSuccessfulImpl _value,
-      $Res Function(_$AddFavouriteSuccessfulImpl) _then)
+      _$AddFavouriteSuccessfulImpl _value, $Res Function(_$AddFavouriteSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -321,9 +295,7 @@ class _$AddFavouriteSuccessfulImpl implements AddFavouriteSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddFavouriteSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AddFavouriteSuccessfulImpl);
   }
 
   @override
@@ -332,8 +304,7 @@ class _$AddFavouriteSuccessfulImpl implements AddFavouriteSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -344,8 +315,8 @@ class _$AddFavouriteSuccessfulImpl implements AddFavouriteSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult? Function(
+            String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -356,8 +327,7 @@ class _$AddFavouriteSuccessfulImpl implements AddFavouriteSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -410,19 +380,16 @@ abstract class AddFavouriteSuccessful implements AddFavourite {
 
 /// @nodoc
 abstract class _$$AddFavouriteErrorImplCopyWith<$Res> {
-  factory _$$AddFavouriteErrorImplCopyWith(_$AddFavouriteErrorImpl value,
-          $Res Function(_$AddFavouriteErrorImpl) then) =
+  factory _$$AddFavouriteErrorImplCopyWith(_$AddFavouriteErrorImpl value, $Res Function(_$AddFavouriteErrorImpl) then) =
       __$$AddFavouriteErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddFavouriteErrorImplCopyWithImpl<$Res>
-    extends _$AddFavouriteCopyWithImpl<$Res, _$AddFavouriteErrorImpl>
+class __$$AddFavouriteErrorImplCopyWithImpl<$Res> extends _$AddFavouriteCopyWithImpl<$Res, _$AddFavouriteErrorImpl>
     implements _$$AddFavouriteErrorImplCopyWith<$Res> {
-  __$$AddFavouriteErrorImplCopyWithImpl(_$AddFavouriteErrorImpl _value,
-      $Res Function(_$AddFavouriteErrorImpl) _then)
+  __$$AddFavouriteErrorImplCopyWithImpl(_$AddFavouriteErrorImpl _value, $Res Function(_$AddFavouriteErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -462,26 +429,22 @@ class _$AddFavouriteErrorImpl implements AddFavouriteError {
         (other.runtimeType == runtimeType &&
             other is _$AddFavouriteErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddFavouriteErrorImplCopyWith<_$AddFavouriteErrorImpl> get copyWith =>
-      __$$AddFavouriteErrorImplCopyWithImpl<_$AddFavouriteErrorImpl>(
-          this, _$identity);
+      __$$AddFavouriteErrorImplCopyWithImpl<_$AddFavouriteErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)
         $default, {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -492,8 +455,8 @@ class _$AddFavouriteErrorImpl implements AddFavouriteError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult? Function(
+            String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -504,8 +467,7 @@ class _$AddFavouriteErrorImpl implements AddFavouriteError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String userId, String artworkId, String artworkTitle,
-            String artworkPictureUrl, String artistName)?
+    TResult Function(String userId, String artworkId, String artworkTitle, String artworkPictureUrl, String artistName)?
         $default, {
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -553,13 +515,10 @@ class _$AddFavouriteErrorImpl implements AddFavouriteError {
 }
 
 abstract class AddFavouriteError implements AddFavourite, ErrorAction {
-  const factory AddFavouriteError(
-          final Object error, final StackTrace stackTrace) =
-      _$AddFavouriteErrorImpl;
+  const factory AddFavouriteError(final Object error, final StackTrace stackTrace) = _$AddFavouriteErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddFavouriteErrorImplCopyWith<_$AddFavouriteErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddFavouriteErrorImplCopyWith<_$AddFavouriteErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

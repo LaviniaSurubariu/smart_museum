@@ -11,7 +11,7 @@ import '../../actions/user_s_actions/signout/sign_out.dart';
 import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
 import '../utils/custom_alert_dialog_two_buttons.dart';
-import '../utils/custom_buttom_navigation_bar.dart';
+import '../utils/custom_bottom_navigation_bar.dart';
 import '../utils/custom_drawer.dart';
 import '../utils/extensions.dart';
 import '../utils/profile_menu_widget.dart';

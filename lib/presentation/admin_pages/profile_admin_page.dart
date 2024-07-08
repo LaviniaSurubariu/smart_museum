@@ -14,7 +14,7 @@ import '../../models/user/app_user/app_user.dart';
 import '../containers/app_user_container.dart';
 import '../utils/custom_admin_drawer.dart';
 import '../utils/custom_alert_dialog_two_buttons.dart';
-import '../utils/custom_buttom_navigation_bar_admin.dart';
+import '../utils/custom_bottom_navigation_bar_admin.dart';
 import '../utils/extensions.dart';
 import '../utils/profile_menu_widget.dart';
 

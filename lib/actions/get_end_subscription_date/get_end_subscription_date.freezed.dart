@@ -41,8 +41,7 @@ mixin _$GetEndSubscriptionDate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetEndSubscriptionDateStart value) $default, {
-    required TResult Function(GetEndSubscriptionDateSuccessful value)
-        successful,
+    required TResult Function(GetEndSubscriptionDateSuccessful value) successful,
     required TResult Function(GetEndSubscriptionDateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,14 +64,12 @@ mixin _$GetEndSubscriptionDate {
 
 /// @nodoc
 abstract class $GetEndSubscriptionDateCopyWith<$Res> {
-  factory $GetEndSubscriptionDateCopyWith(GetEndSubscriptionDate value,
-          $Res Function(GetEndSubscriptionDate) then) =
+  factory $GetEndSubscriptionDateCopyWith(GetEndSubscriptionDate value, $Res Function(GetEndSubscriptionDate) then) =
       _$GetEndSubscriptionDateCopyWithImpl<$Res, GetEndSubscriptionDate>;
 }
 
 /// @nodoc
-class _$GetEndSubscriptionDateCopyWithImpl<$Res,
-        $Val extends GetEndSubscriptionDate>
+class _$GetEndSubscriptionDateCopyWithImpl<$Res, $Val extends GetEndSubscriptionDate>
     implements $GetEndSubscriptionDateCopyWith<$Res> {
   _$GetEndSubscriptionDateCopyWithImpl(this._value, this._then);
 
@@ -85,8 +82,7 @@ class _$GetEndSubscriptionDateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$GetEndSubscriptionDateStartImplCopyWith<$Res> {
   factory _$$GetEndSubscriptionDateStartImplCopyWith(
-          _$GetEndSubscriptionDateStartImpl value,
-          $Res Function(_$GetEndSubscriptionDateStartImpl) then) =
+          _$GetEndSubscriptionDateStartImpl value, $Res Function(_$GetEndSubscriptionDateStartImpl) then) =
       __$$GetEndSubscriptionDateStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userId});
@@ -94,12 +90,10 @@ abstract class _$$GetEndSubscriptionDateStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetEndSubscriptionDateStartImplCopyWithImpl<$Res>
-    extends _$GetEndSubscriptionDateCopyWithImpl<$Res,
-        _$GetEndSubscriptionDateStartImpl>
+    extends _$GetEndSubscriptionDateCopyWithImpl<$Res, _$GetEndSubscriptionDateStartImpl>
     implements _$$GetEndSubscriptionDateStartImplCopyWith<$Res> {
   __$$GetEndSubscriptionDateStartImplCopyWithImpl(
-      _$GetEndSubscriptionDateStartImpl _value,
-      $Res Function(_$GetEndSubscriptionDateStartImpl) _then)
+      _$GetEndSubscriptionDateStartImpl _value, $Res Function(_$GetEndSubscriptionDateStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,9 +137,8 @@ class _$GetEndSubscriptionDateStartImpl implements GetEndSubscriptionDateStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetEndSubscriptionDateStartImplCopyWith<_$GetEndSubscriptionDateStartImpl>
-      get copyWith => __$$GetEndSubscriptionDateStartImplCopyWithImpl<
-          _$GetEndSubscriptionDateStartImpl>(this, _$identity);
+  _$$GetEndSubscriptionDateStartImplCopyWith<_$GetEndSubscriptionDateStartImpl> get copyWith =>
+      __$$GetEndSubscriptionDateStartImplCopyWithImpl<_$GetEndSubscriptionDateStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -185,8 +178,7 @@ class _$GetEndSubscriptionDateStartImpl implements GetEndSubscriptionDateStart {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetEndSubscriptionDateStart value) $default, {
-    required TResult Function(GetEndSubscriptionDateSuccessful value)
-        successful,
+    required TResult Function(GetEndSubscriptionDateSuccessful value) successful,
     required TResult Function(GetEndSubscriptionDateError value) error,
   }) {
     return $default(this);
@@ -218,20 +210,18 @@ class _$GetEndSubscriptionDateStartImpl implements GetEndSubscriptionDateStart {
 }
 
 abstract class GetEndSubscriptionDateStart implements GetEndSubscriptionDate {
-  const factory GetEndSubscriptionDateStart({required final String userId}) =
-      _$GetEndSubscriptionDateStartImpl;
+  const factory GetEndSubscriptionDateStart({required final String userId}) = _$GetEndSubscriptionDateStartImpl;
 
   String get userId;
   @JsonKey(ignore: true)
-  _$$GetEndSubscriptionDateStartImplCopyWith<_$GetEndSubscriptionDateStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetEndSubscriptionDateStartImplCopyWith<_$GetEndSubscriptionDateStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetEndSubscriptionDateSuccessfulImplCopyWith<$Res> {
   factory _$$GetEndSubscriptionDateSuccessfulImplCopyWith(
-          _$GetEndSubscriptionDateSuccessfulImpl value,
-          $Res Function(_$GetEndSubscriptionDateSuccessfulImpl) then) =
+          _$GetEndSubscriptionDateSuccessfulImpl value, $Res Function(_$GetEndSubscriptionDateSuccessfulImpl) then) =
       __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime endSubscriptionDate});
@@ -239,12 +229,10 @@ abstract class _$$GetEndSubscriptionDateSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetEndSubscriptionDateCopyWithImpl<$Res,
-        _$GetEndSubscriptionDateSuccessfulImpl>
+    extends _$GetEndSubscriptionDateCopyWithImpl<$Res, _$GetEndSubscriptionDateSuccessfulImpl>
     implements _$$GetEndSubscriptionDateSuccessfulImplCopyWith<$Res> {
   __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl(
-      _$GetEndSubscriptionDateSuccessfulImpl _value,
-      $Res Function(_$GetEndSubscriptionDateSuccessfulImpl) _then)
+      _$GetEndSubscriptionDateSuccessfulImpl _value, $Res Function(_$GetEndSubscriptionDateSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -263,8 +251,7 @@ class __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetEndSubscriptionDateSuccessfulImpl
-    implements GetEndSubscriptionDateSuccessful {
+class _$GetEndSubscriptionDateSuccessfulImpl implements GetEndSubscriptionDateSuccessful {
   const _$GetEndSubscriptionDateSuccessfulImpl(this.endSubscriptionDate);
 
   @override
@@ -290,10 +277,8 @@ class _$GetEndSubscriptionDateSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetEndSubscriptionDateSuccessfulImplCopyWith<
-          _$GetEndSubscriptionDateSuccessfulImpl>
-      get copyWith => __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl<
-          _$GetEndSubscriptionDateSuccessfulImpl>(this, _$identity);
+  _$$GetEndSubscriptionDateSuccessfulImplCopyWith<_$GetEndSubscriptionDateSuccessfulImpl> get copyWith =>
+      __$$GetEndSubscriptionDateSuccessfulImplCopyWithImpl<_$GetEndSubscriptionDateSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -333,8 +318,7 @@ class _$GetEndSubscriptionDateSuccessfulImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetEndSubscriptionDateStart value) $default, {
-    required TResult Function(GetEndSubscriptionDateSuccessful value)
-        successful,
+    required TResult Function(GetEndSubscriptionDateSuccessful value) successful,
     required TResult Function(GetEndSubscriptionDateError value) error,
   }) {
     return successful(this);
@@ -365,24 +349,20 @@ class _$GetEndSubscriptionDateSuccessfulImpl
   }
 }
 
-abstract class GetEndSubscriptionDateSuccessful
-    implements GetEndSubscriptionDate {
-  const factory GetEndSubscriptionDateSuccessful(
-          final DateTime endSubscriptionDate) =
+abstract class GetEndSubscriptionDateSuccessful implements GetEndSubscriptionDate {
+  const factory GetEndSubscriptionDateSuccessful(final DateTime endSubscriptionDate) =
       _$GetEndSubscriptionDateSuccessfulImpl;
 
   DateTime get endSubscriptionDate;
   @JsonKey(ignore: true)
-  _$$GetEndSubscriptionDateSuccessfulImplCopyWith<
-          _$GetEndSubscriptionDateSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetEndSubscriptionDateSuccessfulImplCopyWith<_$GetEndSubscriptionDateSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetEndSubscriptionDateErrorImplCopyWith<$Res> {
   factory _$$GetEndSubscriptionDateErrorImplCopyWith(
-          _$GetEndSubscriptionDateErrorImpl value,
-          $Res Function(_$GetEndSubscriptionDateErrorImpl) then) =
+          _$GetEndSubscriptionDateErrorImpl value, $Res Function(_$GetEndSubscriptionDateErrorImpl) then) =
       __$$GetEndSubscriptionDateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -390,12 +370,10 @@ abstract class _$$GetEndSubscriptionDateErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetEndSubscriptionDateErrorImplCopyWithImpl<$Res>
-    extends _$GetEndSubscriptionDateCopyWithImpl<$Res,
-        _$GetEndSubscriptionDateErrorImpl>
+    extends _$GetEndSubscriptionDateCopyWithImpl<$Res, _$GetEndSubscriptionDateErrorImpl>
     implements _$$GetEndSubscriptionDateErrorImplCopyWith<$Res> {
   __$$GetEndSubscriptionDateErrorImplCopyWithImpl(
-      _$GetEndSubscriptionDateErrorImpl _value,
-      $Res Function(_$GetEndSubscriptionDateErrorImpl) _then)
+      _$GetEndSubscriptionDateErrorImpl _value, $Res Function(_$GetEndSubscriptionDateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -435,20 +413,17 @@ class _$GetEndSubscriptionDateErrorImpl implements GetEndSubscriptionDateError {
         (other.runtimeType == runtimeType &&
             other is _$GetEndSubscriptionDateErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetEndSubscriptionDateErrorImplCopyWith<_$GetEndSubscriptionDateErrorImpl>
-      get copyWith => __$$GetEndSubscriptionDateErrorImplCopyWithImpl<
-          _$GetEndSubscriptionDateErrorImpl>(this, _$identity);
+  _$$GetEndSubscriptionDateErrorImplCopyWith<_$GetEndSubscriptionDateErrorImpl> get copyWith =>
+      __$$GetEndSubscriptionDateErrorImplCopyWithImpl<_$GetEndSubscriptionDateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -488,8 +463,7 @@ class _$GetEndSubscriptionDateErrorImpl implements GetEndSubscriptionDateError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetEndSubscriptionDateStart value) $default, {
-    required TResult Function(GetEndSubscriptionDateSuccessful value)
-        successful,
+    required TResult Function(GetEndSubscriptionDateSuccessful value) successful,
     required TResult Function(GetEndSubscriptionDateError value) error,
   }) {
     return error(this);
@@ -520,15 +494,13 @@ class _$GetEndSubscriptionDateErrorImpl implements GetEndSubscriptionDateError {
   }
 }
 
-abstract class GetEndSubscriptionDateError
-    implements GetEndSubscriptionDate, ErrorAction {
-  const factory GetEndSubscriptionDateError(
-          final Object error, final StackTrace stackTrace) =
+abstract class GetEndSubscriptionDateError implements GetEndSubscriptionDate, ErrorAction {
+  const factory GetEndSubscriptionDateError(final Object error, final StackTrace stackTrace) =
       _$GetEndSubscriptionDateErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetEndSubscriptionDateErrorImplCopyWith<_$GetEndSubscriptionDateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetEndSubscriptionDateErrorImplCopyWith<_$GetEndSubscriptionDateErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

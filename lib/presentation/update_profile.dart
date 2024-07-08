@@ -204,7 +204,6 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
 
                         const SizedBox(height: 80),
 
-                        // -- Created Date and Delete Button
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[

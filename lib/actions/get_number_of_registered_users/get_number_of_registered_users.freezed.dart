@@ -41,8 +41,7 @@ mixin _$GetNumberOfRegisteredUsers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfRegisteredUsersStart value) $default, {
-    required TResult Function(GetNumberOfRegisteredUsersSuccessful value)
-        successful,
+    required TResult Function(GetNumberOfRegisteredUsersSuccessful value) successful,
     required TResult Function(GetNumberOfRegisteredUsersError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,15 +64,13 @@ mixin _$GetNumberOfRegisteredUsers {
 
 /// @nodoc
 abstract class $GetNumberOfRegisteredUsersCopyWith<$Res> {
-  factory $GetNumberOfRegisteredUsersCopyWith(GetNumberOfRegisteredUsers value,
-          $Res Function(GetNumberOfRegisteredUsers) then) =
-      _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
-          GetNumberOfRegisteredUsers>;
+  factory $GetNumberOfRegisteredUsersCopyWith(
+          GetNumberOfRegisteredUsers value, $Res Function(GetNumberOfRegisteredUsers) then) =
+      _$GetNumberOfRegisteredUsersCopyWithImpl<$Res, GetNumberOfRegisteredUsers>;
 }
 
 /// @nodoc
-class _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
-        $Val extends GetNumberOfRegisteredUsers>
+class _$GetNumberOfRegisteredUsersCopyWithImpl<$Res, $Val extends GetNumberOfRegisteredUsers>
     implements $GetNumberOfRegisteredUsersCopyWith<$Res> {
   _$GetNumberOfRegisteredUsersCopyWithImpl(this._value, this._then);
 
@@ -86,26 +83,22 @@ class _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$GetNumberOfRegisteredUsersStartImplCopyWith<$Res> {
   factory _$$GetNumberOfRegisteredUsersStartImplCopyWith(
-          _$GetNumberOfRegisteredUsersStartImpl value,
-          $Res Function(_$GetNumberOfRegisteredUsersStartImpl) then) =
+          _$GetNumberOfRegisteredUsersStartImpl value, $Res Function(_$GetNumberOfRegisteredUsersStartImpl) then) =
       __$$GetNumberOfRegisteredUsersStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetNumberOfRegisteredUsersStartImplCopyWithImpl<$Res>
-    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
-        _$GetNumberOfRegisteredUsersStartImpl>
+    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res, _$GetNumberOfRegisteredUsersStartImpl>
     implements _$$GetNumberOfRegisteredUsersStartImplCopyWith<$Res> {
   __$$GetNumberOfRegisteredUsersStartImplCopyWithImpl(
-      _$GetNumberOfRegisteredUsersStartImpl _value,
-      $Res Function(_$GetNumberOfRegisteredUsersStartImpl) _then)
+      _$GetNumberOfRegisteredUsersStartImpl _value, $Res Function(_$GetNumberOfRegisteredUsersStartImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetNumberOfRegisteredUsersStartImpl
-    implements GetNumberOfRegisteredUsersStart {
+class _$GetNumberOfRegisteredUsersStartImpl implements GetNumberOfRegisteredUsersStart {
   const _$GetNumberOfRegisteredUsersStartImpl();
 
   @override
@@ -116,8 +109,7 @@ class _$GetNumberOfRegisteredUsersStartImpl
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetNumberOfRegisteredUsersStartImpl);
+        (other.runtimeType == runtimeType && other is _$GetNumberOfRegisteredUsersStartImpl);
   }
 
   @override
@@ -161,8 +153,7 @@ class _$GetNumberOfRegisteredUsersStartImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfRegisteredUsersStart value) $default, {
-    required TResult Function(GetNumberOfRegisteredUsersSuccessful value)
-        successful,
+    required TResult Function(GetNumberOfRegisteredUsersSuccessful value) successful,
     required TResult Function(GetNumberOfRegisteredUsersError value) error,
   }) {
     return $default(this);
@@ -193,16 +184,13 @@ class _$GetNumberOfRegisteredUsersStartImpl
   }
 }
 
-abstract class GetNumberOfRegisteredUsersStart
-    implements GetNumberOfRegisteredUsers {
-  const factory GetNumberOfRegisteredUsersStart() =
-      _$GetNumberOfRegisteredUsersStartImpl;
+abstract class GetNumberOfRegisteredUsersStart implements GetNumberOfRegisteredUsers {
+  const factory GetNumberOfRegisteredUsersStart() = _$GetNumberOfRegisteredUsersStartImpl;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<$Res> {
-  factory _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith(
-          _$GetNumberOfRegisteredUsersSuccessfulImpl value,
+  factory _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith(_$GetNumberOfRegisteredUsersSuccessfulImpl value,
           $Res Function(_$GetNumberOfRegisteredUsersSuccessfulImpl) then) =
       __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl<$Res>;
   @useResult
@@ -211,11 +199,9 @@ abstract class _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
-        _$GetNumberOfRegisteredUsersSuccessfulImpl>
+    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res, _$GetNumberOfRegisteredUsersSuccessfulImpl>
     implements _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<$Res> {
-  __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl(
-      _$GetNumberOfRegisteredUsersSuccessfulImpl _value,
+  __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl(_$GetNumberOfRegisteredUsersSuccessfulImpl _value,
       $Res Function(_$GetNumberOfRegisteredUsersSuccessfulImpl) _then)
       : super(_value, _then);
 
@@ -235,10 +221,8 @@ class __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfRegisteredUsersSuccessfulImpl
-    implements GetNumberOfRegisteredUsersSuccessful {
-  const _$GetNumberOfRegisteredUsersSuccessfulImpl(
-      this.numberOfRegisteredUsers);
+class _$GetNumberOfRegisteredUsersSuccessfulImpl implements GetNumberOfRegisteredUsersSuccessful {
+  const _$GetNumberOfRegisteredUsersSuccessfulImpl(this.numberOfRegisteredUsers);
 
   @override
   final int numberOfRegisteredUsers;
@@ -253,8 +237,7 @@ class _$GetNumberOfRegisteredUsersSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfRegisteredUsersSuccessfulImpl &&
-            (identical(
-                    other.numberOfRegisteredUsers, numberOfRegisteredUsers) ||
+            (identical(other.numberOfRegisteredUsers, numberOfRegisteredUsers) ||
                 other.numberOfRegisteredUsers == numberOfRegisteredUsers));
   }
 
@@ -264,10 +247,9 @@ class _$GetNumberOfRegisteredUsersSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<
-          _$GetNumberOfRegisteredUsersSuccessfulImpl>
-      get copyWith => __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl<
-          _$GetNumberOfRegisteredUsersSuccessfulImpl>(this, _$identity);
+  _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<_$GetNumberOfRegisteredUsersSuccessfulImpl> get copyWith =>
+      __$$GetNumberOfRegisteredUsersSuccessfulImplCopyWithImpl<_$GetNumberOfRegisteredUsersSuccessfulImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,8 +289,7 @@ class _$GetNumberOfRegisteredUsersSuccessfulImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfRegisteredUsersStart value) $default, {
-    required TResult Function(GetNumberOfRegisteredUsersSuccessful value)
-        successful,
+    required TResult Function(GetNumberOfRegisteredUsersSuccessful value) successful,
     required TResult Function(GetNumberOfRegisteredUsersError value) error,
   }) {
     return successful(this);
@@ -339,24 +320,20 @@ class _$GetNumberOfRegisteredUsersSuccessfulImpl
   }
 }
 
-abstract class GetNumberOfRegisteredUsersSuccessful
-    implements GetNumberOfRegisteredUsers {
-  const factory GetNumberOfRegisteredUsersSuccessful(
-          final int numberOfRegisteredUsers) =
+abstract class GetNumberOfRegisteredUsersSuccessful implements GetNumberOfRegisteredUsers {
+  const factory GetNumberOfRegisteredUsersSuccessful(final int numberOfRegisteredUsers) =
       _$GetNumberOfRegisteredUsersSuccessfulImpl;
 
   int get numberOfRegisteredUsers;
   @JsonKey(ignore: true)
-  _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<
-          _$GetNumberOfRegisteredUsersSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetNumberOfRegisteredUsersSuccessfulImplCopyWith<_$GetNumberOfRegisteredUsersSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetNumberOfRegisteredUsersErrorImplCopyWith<$Res> {
   factory _$$GetNumberOfRegisteredUsersErrorImplCopyWith(
-          _$GetNumberOfRegisteredUsersErrorImpl value,
-          $Res Function(_$GetNumberOfRegisteredUsersErrorImpl) then) =
+          _$GetNumberOfRegisteredUsersErrorImpl value, $Res Function(_$GetNumberOfRegisteredUsersErrorImpl) then) =
       __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -364,12 +341,10 @@ abstract class _$$GetNumberOfRegisteredUsersErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl<$Res>
-    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res,
-        _$GetNumberOfRegisteredUsersErrorImpl>
+    extends _$GetNumberOfRegisteredUsersCopyWithImpl<$Res, _$GetNumberOfRegisteredUsersErrorImpl>
     implements _$$GetNumberOfRegisteredUsersErrorImplCopyWith<$Res> {
   __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl(
-      _$GetNumberOfRegisteredUsersErrorImpl _value,
-      $Res Function(_$GetNumberOfRegisteredUsersErrorImpl) _then)
+      _$GetNumberOfRegisteredUsersErrorImpl _value, $Res Function(_$GetNumberOfRegisteredUsersErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -390,8 +365,7 @@ class __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetNumberOfRegisteredUsersErrorImpl
-    implements GetNumberOfRegisteredUsersError {
+class _$GetNumberOfRegisteredUsersErrorImpl implements GetNumberOfRegisteredUsersError {
   const _$GetNumberOfRegisteredUsersErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -410,21 +384,17 @@ class _$GetNumberOfRegisteredUsersErrorImpl
         (other.runtimeType == runtimeType &&
             other is _$GetNumberOfRegisteredUsersErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetNumberOfRegisteredUsersErrorImplCopyWith<
-          _$GetNumberOfRegisteredUsersErrorImpl>
-      get copyWith => __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl<
-          _$GetNumberOfRegisteredUsersErrorImpl>(this, _$identity);
+  _$$GetNumberOfRegisteredUsersErrorImplCopyWith<_$GetNumberOfRegisteredUsersErrorImpl> get copyWith =>
+      __$$GetNumberOfRegisteredUsersErrorImplCopyWithImpl<_$GetNumberOfRegisteredUsersErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -464,8 +434,7 @@ class _$GetNumberOfRegisteredUsersErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetNumberOfRegisteredUsersStart value) $default, {
-    required TResult Function(GetNumberOfRegisteredUsersSuccessful value)
-        successful,
+    required TResult Function(GetNumberOfRegisteredUsersSuccessful value) successful,
     required TResult Function(GetNumberOfRegisteredUsersError value) error,
   }) {
     return error(this);
@@ -496,16 +465,13 @@ class _$GetNumberOfRegisteredUsersErrorImpl
   }
 }
 
-abstract class GetNumberOfRegisteredUsersError
-    implements GetNumberOfRegisteredUsers, ErrorAction {
-  const factory GetNumberOfRegisteredUsersError(
-          final Object error, final StackTrace stackTrace) =
+abstract class GetNumberOfRegisteredUsersError implements GetNumberOfRegisteredUsers, ErrorAction {
+  const factory GetNumberOfRegisteredUsersError(final Object error, final StackTrace stackTrace) =
       _$GetNumberOfRegisteredUsersErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetNumberOfRegisteredUsersErrorImplCopyWith<
-          _$GetNumberOfRegisteredUsersErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetNumberOfRegisteredUsersErrorImplCopyWith<_$GetNumberOfRegisteredUsersErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

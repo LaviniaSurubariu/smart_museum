@@ -64,14 +64,12 @@ mixin _$ChangePassword {
 
 /// @nodoc
 abstract class $ChangePasswordCopyWith<$Res> {
-  factory $ChangePasswordCopyWith(
-          ChangePassword value, $Res Function(ChangePassword) then) =
+  factory $ChangePasswordCopyWith(ChangePassword value, $Res Function(ChangePassword) then) =
       _$ChangePasswordCopyWithImpl<$Res, ChangePassword>;
 }
 
 /// @nodoc
-class _$ChangePasswordCopyWithImpl<$Res, $Val extends ChangePassword>
-    implements $ChangePasswordCopyWith<$Res> {
+class _$ChangePasswordCopyWithImpl<$Res, $Val extends ChangePassword> implements $ChangePasswordCopyWith<$Res> {
   _$ChangePasswordCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$ChangePasswordCopyWithImpl<$Res, $Val extends ChangePassword>
 
 /// @nodoc
 abstract class _$$ChangePasswordStartImplCopyWith<$Res> {
-  factory _$$ChangePasswordStartImplCopyWith(_$ChangePasswordStartImpl value,
-          $Res Function(_$ChangePasswordStartImpl) then) =
+  factory _$$ChangePasswordStartImplCopyWith(
+          _$ChangePasswordStartImpl value, $Res Function(_$ChangePasswordStartImpl) then) =
       __$$ChangePasswordStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newPass, ActionResult result});
@@ -93,8 +91,8 @@ abstract class _$$ChangePasswordStartImplCopyWith<$Res> {
 class __$$ChangePasswordStartImplCopyWithImpl<$Res>
     extends _$ChangePasswordCopyWithImpl<$Res, _$ChangePasswordStartImpl>
     implements _$$ChangePasswordStartImplCopyWith<$Res> {
-  __$$ChangePasswordStartImplCopyWithImpl(_$ChangePasswordStartImpl _value,
-      $Res Function(_$ChangePasswordStartImpl) _then)
+  __$$ChangePasswordStartImplCopyWithImpl(
+      _$ChangePasswordStartImpl _value, $Res Function(_$ChangePasswordStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,8 +117,7 @@ class __$$ChangePasswordStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangePasswordStartImpl implements ChangePasswordStart {
-  const _$ChangePasswordStartImpl(
-      {required this.newPass, required this.result});
+  const _$ChangePasswordStartImpl({required this.newPass, required this.result});
 
   @override
   final String newPass;
@@ -148,8 +145,7 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
   @override
   @pragma('vm:prefer-inline')
   _$$ChangePasswordStartImplCopyWith<_$ChangePasswordStartImpl> get copyWith =>
-      __$$ChangePasswordStartImplCopyWithImpl<_$ChangePasswordStartImpl>(
-          this, _$identity);
+      __$$ChangePasswordStartImplCopyWithImpl<_$ChangePasswordStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -221,22 +217,19 @@ class _$ChangePasswordStartImpl implements ChangePasswordStart {
 }
 
 abstract class ChangePasswordStart implements ChangePassword {
-  const factory ChangePasswordStart(
-      {required final String newPass,
-      required final ActionResult result}) = _$ChangePasswordStartImpl;
+  const factory ChangePasswordStart({required final String newPass, required final ActionResult result}) =
+      _$ChangePasswordStartImpl;
 
   String get newPass;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$ChangePasswordStartImplCopyWith<_$ChangePasswordStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChangePasswordStartImplCopyWith<_$ChangePasswordStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ChangePasswordSuccessfulImplCopyWith<$Res> {
   factory _$$ChangePasswordSuccessfulImplCopyWith(
-          _$ChangePasswordSuccessfulImpl value,
-          $Res Function(_$ChangePasswordSuccessfulImpl) then) =
+          _$ChangePasswordSuccessfulImpl value, $Res Function(_$ChangePasswordSuccessfulImpl) then) =
       __$$ChangePasswordSuccessfulImplCopyWithImpl<$Res>;
 }
 
@@ -245,8 +238,7 @@ class __$$ChangePasswordSuccessfulImplCopyWithImpl<$Res>
     extends _$ChangePasswordCopyWithImpl<$Res, _$ChangePasswordSuccessfulImpl>
     implements _$$ChangePasswordSuccessfulImplCopyWith<$Res> {
   __$$ChangePasswordSuccessfulImplCopyWithImpl(
-      _$ChangePasswordSuccessfulImpl _value,
-      $Res Function(_$ChangePasswordSuccessfulImpl) _then)
+      _$ChangePasswordSuccessfulImpl _value, $Res Function(_$ChangePasswordSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -262,9 +254,7 @@ class _$ChangePasswordSuccessfulImpl implements ChangePasswordSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChangePasswordSuccessfulImpl);
   }
 
   @override
@@ -345,8 +335,8 @@ abstract class ChangePasswordSuccessful implements ChangePassword {
 
 /// @nodoc
 abstract class _$$ChangePasswordErrorImplCopyWith<$Res> {
-  factory _$$ChangePasswordErrorImplCopyWith(_$ChangePasswordErrorImpl value,
-          $Res Function(_$ChangePasswordErrorImpl) then) =
+  factory _$$ChangePasswordErrorImplCopyWith(
+          _$ChangePasswordErrorImpl value, $Res Function(_$ChangePasswordErrorImpl) then) =
       __$$ChangePasswordErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -356,8 +346,8 @@ abstract class _$$ChangePasswordErrorImplCopyWith<$Res> {
 class __$$ChangePasswordErrorImplCopyWithImpl<$Res>
     extends _$ChangePasswordCopyWithImpl<$Res, _$ChangePasswordErrorImpl>
     implements _$$ChangePasswordErrorImplCopyWith<$Res> {
-  __$$ChangePasswordErrorImplCopyWithImpl(_$ChangePasswordErrorImpl _value,
-      $Res Function(_$ChangePasswordErrorImpl) _then)
+  __$$ChangePasswordErrorImplCopyWithImpl(
+      _$ChangePasswordErrorImpl _value, $Res Function(_$ChangePasswordErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -397,20 +387,17 @@ class _$ChangePasswordErrorImpl implements ChangePasswordError {
         (other.runtimeType == runtimeType &&
             other is _$ChangePasswordErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangePasswordErrorImplCopyWith<_$ChangePasswordErrorImpl> get copyWith =>
-      __$$ChangePasswordErrorImplCopyWithImpl<_$ChangePasswordErrorImpl>(
-          this, _$identity);
+      __$$ChangePasswordErrorImplCopyWithImpl<_$ChangePasswordErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -482,13 +469,10 @@ class _$ChangePasswordErrorImpl implements ChangePasswordError {
 }
 
 abstract class ChangePasswordError implements ChangePassword, ErrorAction {
-  const factory ChangePasswordError(
-          final Object error, final StackTrace stackTrace) =
-      _$ChangePasswordErrorImpl;
+  const factory ChangePasswordError(final Object error, final StackTrace stackTrace) = _$ChangePasswordErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$ChangePasswordErrorImplCopyWith<_$ChangePasswordErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChangePasswordErrorImplCopyWith<_$ChangePasswordErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

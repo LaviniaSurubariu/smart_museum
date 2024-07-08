@@ -14,7 +14,7 @@ import '../../models/artwork_for_top/artwork_for_top.dart';
 import '../containers/top_artists_container.dart';
 import '../containers/top_artworks_container.dart';
 import '../utils/custom_admin_drawer.dart';
-import '../utils/custom_buttom_navigation_bar_admin.dart';
+import '../utils/custom_bottom_navigation_bar_admin.dart';
 import '../utils/extensions.dart';
 
 class AdminScreenPage extends StatefulWidget {

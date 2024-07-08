@@ -6,16 +6,13 @@ part of 'artwork_for_top.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ArtworkForTop$Impl _$$ArtworkForTop$ImplFromJson(Map<String, dynamic> json) =>
-    _$ArtworkForTop$Impl(
+_$ArtworkForTop$Impl _$$ArtworkForTop$ImplFromJson(Map<String, dynamic> json) => _$ArtworkForTop$Impl(
       uid: json['uid'] as String,
       pictureUrl: json['pictureUrl'] as String,
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$ArtworkForTop$ImplToJson(
-        _$ArtworkForTop$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$ArtworkForTop$ImplToJson(_$ArtworkForTop$Impl instance) => <String, dynamic>{
       'uid': instance.uid,
       'pictureUrl': instance.pictureUrl,
       'title': instance.title,

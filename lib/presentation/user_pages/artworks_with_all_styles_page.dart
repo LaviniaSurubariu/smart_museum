@@ -7,8 +7,8 @@ import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_s
 import '../../actions/user_s_actions/get_by_style/get_by_style.dart';
 import '../../models/artwork_for_art_movements/artwork_for_art_movements.dart';
 import '../containers/artworks_with_all_styles_container.dart';
-import '../utils/list_artwork_widget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class ArtworksWithAllStylesPage extends StatefulWidget {
   const ArtworksWithAllStylesPage({super.key});

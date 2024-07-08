@@ -11,8 +11,8 @@ import '../../actions/user_s_actions/is_artwork_favourite/is_artwork_favourite.d
 import '../../models/app_state/app_state.dart';
 import '../../models/favourite/favourite.dart';
 import '../containers/favourites_container.dart';
-import '../utils/list_artwork_widget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({super.key});

@@ -18,27 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ChangeName {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult? Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -70,14 +64,12 @@ mixin _$ChangeName {
 
 /// @nodoc
 abstract class $ChangeNameCopyWith<$Res> {
-  factory $ChangeNameCopyWith(
-          ChangeName value, $Res Function(ChangeName) then) =
+  factory $ChangeNameCopyWith(ChangeName value, $Res Function(ChangeName) then) =
       _$ChangeNameCopyWithImpl<$Res, ChangeName>;
 }
 
 /// @nodoc
-class _$ChangeNameCopyWithImpl<$Res, $Val extends ChangeName>
-    implements $ChangeNameCopyWith<$Res> {
+class _$ChangeNameCopyWithImpl<$Res, $Val extends ChangeName> implements $ChangeNameCopyWith<$Res> {
   _$ChangeNameCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -88,19 +80,16 @@ class _$ChangeNameCopyWithImpl<$Res, $Val extends ChangeName>
 
 /// @nodoc
 abstract class _$$ChangeNameStartImplCopyWith<$Res> {
-  factory _$$ChangeNameStartImplCopyWith(_$ChangeNameStartImpl value,
-          $Res Function(_$ChangeNameStartImpl) then) =
+  factory _$$ChangeNameStartImplCopyWith(_$ChangeNameStartImpl value, $Res Function(_$ChangeNameStartImpl) then) =
       __$$ChangeNameStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newFirstName, String newLastName, ActionResult result});
 }
 
 /// @nodoc
-class __$$ChangeNameStartImplCopyWithImpl<$Res>
-    extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameStartImpl>
+class __$$ChangeNameStartImplCopyWithImpl<$Res> extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameStartImpl>
     implements _$$ChangeNameStartImplCopyWith<$Res> {
-  __$$ChangeNameStartImplCopyWithImpl(
-      _$ChangeNameStartImpl _value, $Res Function(_$ChangeNameStartImpl) _then)
+  __$$ChangeNameStartImplCopyWithImpl(_$ChangeNameStartImpl _value, $Res Function(_$ChangeNameStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -130,10 +119,7 @@ class __$$ChangeNameStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeNameStartImpl implements ChangeNameStart {
-  const _$ChangeNameStartImpl(
-      {required this.newFirstName,
-      required this.newLastName,
-      required this.result});
+  const _$ChangeNameStartImpl({required this.newFirstName, required this.newLastName, required this.result});
 
   @override
   final String newFirstName;
@@ -152,30 +138,24 @@ class _$ChangeNameStartImpl implements ChangeNameStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeNameStartImpl &&
-            (identical(other.newFirstName, newFirstName) ||
-                other.newFirstName == newFirstName) &&
-            (identical(other.newLastName, newLastName) ||
-                other.newLastName == newLastName) &&
+            (identical(other.newFirstName, newFirstName) || other.newFirstName == newFirstName) &&
+            (identical(other.newLastName, newLastName) || other.newLastName == newLastName) &&
             (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, newFirstName, newLastName, result);
+  int get hashCode => Object.hash(runtimeType, newFirstName, newLastName, result);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeNameStartImplCopyWith<_$ChangeNameStartImpl> get copyWith =>
-      __$$ChangeNameStartImplCopyWithImpl<_$ChangeNameStartImpl>(
-          this, _$identity);
+      __$$ChangeNameStartImplCopyWithImpl<_$ChangeNameStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -185,9 +165,7 @@ class _$ChangeNameStartImpl implements ChangeNameStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult? Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -197,9 +175,7 @@ class _$ChangeNameStartImpl implements ChangeNameStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -255,14 +231,13 @@ abstract class ChangeNameStart implements ChangeName {
   String get newLastName;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$ChangeNameStartImplCopyWith<_$ChangeNameStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChangeNameStartImplCopyWith<_$ChangeNameStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ChangeNameSuccessfulImplCopyWith<$Res> {
-  factory _$$ChangeNameSuccessfulImplCopyWith(_$ChangeNameSuccessfulImpl value,
-          $Res Function(_$ChangeNameSuccessfulImpl) then) =
+  factory _$$ChangeNameSuccessfulImplCopyWith(
+          _$ChangeNameSuccessfulImpl value, $Res Function(_$ChangeNameSuccessfulImpl) then) =
       __$$ChangeNameSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
@@ -271,11 +246,10 @@ abstract class _$$ChangeNameSuccessfulImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ChangeNameSuccessfulImplCopyWithImpl<$Res>
-    extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameSuccessfulImpl>
+class __$$ChangeNameSuccessfulImplCopyWithImpl<$Res> extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameSuccessfulImpl>
     implements _$$ChangeNameSuccessfulImplCopyWith<$Res> {
-  __$$ChangeNameSuccessfulImplCopyWithImpl(_$ChangeNameSuccessfulImpl _value,
-      $Res Function(_$ChangeNameSuccessfulImpl) _then)
+  __$$ChangeNameSuccessfulImplCopyWithImpl(
+      _$ChangeNameSuccessfulImpl _value, $Res Function(_$ChangeNameSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -327,17 +301,13 @@ class _$ChangeNameSuccessfulImpl implements ChangeNameSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeNameSuccessfulImplCopyWith<_$ChangeNameSuccessfulImpl>
-      get copyWith =>
-          __$$ChangeNameSuccessfulImplCopyWithImpl<_$ChangeNameSuccessfulImpl>(
-              this, _$identity);
+  _$$ChangeNameSuccessfulImplCopyWith<_$ChangeNameSuccessfulImpl> get copyWith =>
+      __$$ChangeNameSuccessfulImplCopyWithImpl<_$ChangeNameSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -347,9 +317,7 @@ class _$ChangeNameSuccessfulImpl implements ChangeNameSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult? Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -359,9 +327,7 @@ class _$ChangeNameSuccessfulImpl implements ChangeNameSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -408,30 +374,25 @@ class _$ChangeNameSuccessfulImpl implements ChangeNameSuccessful {
 }
 
 abstract class ChangeNameSuccessful implements ChangeName {
-  const factory ChangeNameSuccessful(final AppUser user) =
-      _$ChangeNameSuccessfulImpl;
+  const factory ChangeNameSuccessful(final AppUser user) = _$ChangeNameSuccessfulImpl;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$ChangeNameSuccessfulImplCopyWith<_$ChangeNameSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ChangeNameSuccessfulImplCopyWith<_$ChangeNameSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ChangeNameErrorImplCopyWith<$Res> {
-  factory _$$ChangeNameErrorImplCopyWith(_$ChangeNameErrorImpl value,
-          $Res Function(_$ChangeNameErrorImpl) then) =
+  factory _$$ChangeNameErrorImplCopyWith(_$ChangeNameErrorImpl value, $Res Function(_$ChangeNameErrorImpl) then) =
       __$$ChangeNameErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$ChangeNameErrorImplCopyWithImpl<$Res>
-    extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameErrorImpl>
+class __$$ChangeNameErrorImplCopyWithImpl<$Res> extends _$ChangeNameCopyWithImpl<$Res, _$ChangeNameErrorImpl>
     implements _$$ChangeNameErrorImplCopyWith<$Res> {
-  __$$ChangeNameErrorImplCopyWithImpl(
-      _$ChangeNameErrorImpl _value, $Res Function(_$ChangeNameErrorImpl) _then)
+  __$$ChangeNameErrorImplCopyWithImpl(_$ChangeNameErrorImpl _value, $Res Function(_$ChangeNameErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -471,27 +432,22 @@ class _$ChangeNameErrorImpl implements ChangeNameError {
         (other.runtimeType == runtimeType &&
             other is _$ChangeNameErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeNameErrorImplCopyWith<_$ChangeNameErrorImpl> get copyWith =>
-      __$$ChangeNameErrorImplCopyWithImpl<_$ChangeNameErrorImpl>(
-          this, _$identity);
+      __$$ChangeNameErrorImplCopyWithImpl<_$ChangeNameErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -501,9 +457,7 @@ class _$ChangeNameErrorImpl implements ChangeNameError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult? Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -513,9 +467,7 @@ class _$ChangeNameErrorImpl implements ChangeNameError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String newFirstName, String newLastName, ActionResult result)?
-        $default, {
+    TResult Function(String newFirstName, String newLastName, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -562,12 +514,10 @@ class _$ChangeNameErrorImpl implements ChangeNameError {
 }
 
 abstract class ChangeNameError implements ChangeName, ErrorAction {
-  const factory ChangeNameError(
-      final Object error, final StackTrace stackTrace) = _$ChangeNameErrorImpl;
+  const factory ChangeNameError(final Object error, final StackTrace stackTrace) = _$ChangeNameErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$ChangeNameErrorImplCopyWith<_$ChangeNameErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChangeNameErrorImplCopyWith<_$ChangeNameErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

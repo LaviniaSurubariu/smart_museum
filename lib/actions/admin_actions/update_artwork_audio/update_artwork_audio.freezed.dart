@@ -18,27 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UpdateArtworkAudio {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl) $default, {
     required TResult Function(String newAudioPath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newAudioPath, String artworkId,
-            String artworkTitle, String oldAudioUrl)?
-        $default, {
+    TResult? Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult? Function(String newAudioPath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)?
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult Function(String newAudioPath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -70,8 +64,7 @@ mixin _$UpdateArtworkAudio {
 
 /// @nodoc
 abstract class $UpdateArtworkAudioCopyWith<$Res> {
-  factory $UpdateArtworkAudioCopyWith(
-          UpdateArtworkAudio value, $Res Function(UpdateArtworkAudio) then) =
+  factory $UpdateArtworkAudioCopyWith(UpdateArtworkAudio value, $Res Function(UpdateArtworkAudio) then) =
       _$UpdateArtworkAudioCopyWithImpl<$Res, UpdateArtworkAudio>;
 }
 
@@ -89,25 +82,18 @@ class _$UpdateArtworkAudioCopyWithImpl<$Res, $Val extends UpdateArtworkAudio>
 /// @nodoc
 abstract class _$$UpdateArtworkAudioStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkAudioStartImplCopyWith(
-          _$UpdateArtworkAudioStartImpl value,
-          $Res Function(_$UpdateArtworkAudioStartImpl) then) =
+          _$UpdateArtworkAudioStartImpl value, $Res Function(_$UpdateArtworkAudioStartImpl) then) =
       __$$UpdateArtworkAudioStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String newAudioPath,
-      String artworkId,
-      String artworkTitle,
-      String oldAudioUrl});
+  $Res call({String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl});
 }
 
 /// @nodoc
 class __$$UpdateArtworkAudioStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkAudioCopyWithImpl<$Res,
-        _$UpdateArtworkAudioStartImpl>
+    extends _$UpdateArtworkAudioCopyWithImpl<$Res, _$UpdateArtworkAudioStartImpl>
     implements _$$UpdateArtworkAudioStartImplCopyWith<$Res> {
   __$$UpdateArtworkAudioStartImplCopyWithImpl(
-      _$UpdateArtworkAudioStartImpl _value,
-      $Res Function(_$UpdateArtworkAudioStartImpl) _then)
+      _$UpdateArtworkAudioStartImpl _value, $Res Function(_$UpdateArtworkAudioStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,10 +129,7 @@ class __$$UpdateArtworkAudioStartImplCopyWithImpl<$Res>
 
 class _$UpdateArtworkAudioStartImpl implements UpdateArtworkAudioStart {
   const _$UpdateArtworkAudioStartImpl(
-      {required this.newAudioPath,
-      required this.artworkId,
-      required this.artworkTitle,
-      required this.oldAudioUrl});
+      {required this.newAudioPath, required this.artworkId, required this.artworkTitle, required this.oldAudioUrl});
 
   @override
   final String newAudioPath;
@@ -167,33 +150,25 @@ class _$UpdateArtworkAudioStartImpl implements UpdateArtworkAudioStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkAudioStartImpl &&
-            (identical(other.newAudioPath, newAudioPath) ||
-                other.newAudioPath == newAudioPath) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId) &&
-            (identical(other.artworkTitle, artworkTitle) ||
-                other.artworkTitle == artworkTitle) &&
-            (identical(other.oldAudioUrl, oldAudioUrl) ||
-                other.oldAudioUrl == oldAudioUrl));
+            (identical(other.newAudioPath, newAudioPath) || other.newAudioPath == newAudioPath) &&
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId) &&
+            (identical(other.artworkTitle, artworkTitle) || other.artworkTitle == artworkTitle) &&
+            (identical(other.oldAudioUrl, oldAudioUrl) || other.oldAudioUrl == oldAudioUrl));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, newAudioPath, artworkId, artworkTitle, oldAudioUrl);
+  int get hashCode => Object.hash(runtimeType, newAudioPath, artworkId, artworkTitle, oldAudioUrl);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkAudioStartImplCopyWith<_$UpdateArtworkAudioStartImpl>
-      get copyWith => __$$UpdateArtworkAudioStartImplCopyWithImpl<
-          _$UpdateArtworkAudioStartImpl>(this, _$identity);
+  _$$UpdateArtworkAudioStartImplCopyWith<_$UpdateArtworkAudioStartImpl> get copyWith =>
+      __$$UpdateArtworkAudioStartImplCopyWithImpl<_$UpdateArtworkAudioStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl) $default, {
     required TResult Function(String newAudioPath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -203,9 +178,7 @@ class _$UpdateArtworkAudioStartImpl implements UpdateArtworkAudioStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newAudioPath, String artworkId,
-            String artworkTitle, String oldAudioUrl)?
-        $default, {
+    TResult? Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult? Function(String newAudioPath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -215,9 +188,7 @@ class _$UpdateArtworkAudioStartImpl implements UpdateArtworkAudioStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)?
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult Function(String newAudioPath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -275,15 +246,14 @@ abstract class UpdateArtworkAudioStart implements UpdateArtworkAudio {
   String get artworkTitle;
   String get oldAudioUrl;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkAudioStartImplCopyWith<_$UpdateArtworkAudioStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkAudioStartImplCopyWith<_$UpdateArtworkAudioStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkAudioSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkAudioSuccessfulImplCopyWith(
-          _$UpdateArtworkAudioSuccessfulImpl value,
-          $Res Function(_$UpdateArtworkAudioSuccessfulImpl) then) =
+          _$UpdateArtworkAudioSuccessfulImpl value, $Res Function(_$UpdateArtworkAudioSuccessfulImpl) then) =
       __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newAudioPath});
@@ -291,12 +261,10 @@ abstract class _$$UpdateArtworkAudioSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkAudioCopyWithImpl<$Res,
-        _$UpdateArtworkAudioSuccessfulImpl>
+    extends _$UpdateArtworkAudioCopyWithImpl<$Res, _$UpdateArtworkAudioSuccessfulImpl>
     implements _$$UpdateArtworkAudioSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkAudioSuccessfulImpl _value,
-      $Res Function(_$UpdateArtworkAudioSuccessfulImpl) _then)
+      _$UpdateArtworkAudioSuccessfulImpl _value, $Res Function(_$UpdateArtworkAudioSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -315,8 +283,7 @@ class __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkAudioSuccessfulImpl
-    implements UpdateArtworkAudioSuccessful {
+class _$UpdateArtworkAudioSuccessfulImpl implements UpdateArtworkAudioSuccessful {
   const _$UpdateArtworkAudioSuccessfulImpl(this.newAudioPath);
 
   @override
@@ -332,8 +299,7 @@ class _$UpdateArtworkAudioSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkAudioSuccessfulImpl &&
-            (identical(other.newAudioPath, newAudioPath) ||
-                other.newAudioPath == newAudioPath));
+            (identical(other.newAudioPath, newAudioPath) || other.newAudioPath == newAudioPath));
   }
 
   @override
@@ -342,17 +308,13 @@ class _$UpdateArtworkAudioSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkAudioSuccessfulImplCopyWith<
-          _$UpdateArtworkAudioSuccessfulImpl>
-      get copyWith => __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl<
-          _$UpdateArtworkAudioSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkAudioSuccessfulImplCopyWith<_$UpdateArtworkAudioSuccessfulImpl> get copyWith =>
+      __$$UpdateArtworkAudioSuccessfulImplCopyWithImpl<_$UpdateArtworkAudioSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl) $default, {
     required TResult Function(String newAudioPath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -362,9 +324,7 @@ class _$UpdateArtworkAudioSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newAudioPath, String artworkId,
-            String artworkTitle, String oldAudioUrl)?
-        $default, {
+    TResult? Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult? Function(String newAudioPath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -374,9 +334,7 @@ class _$UpdateArtworkAudioSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)?
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult Function(String newAudioPath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -423,21 +381,18 @@ class _$UpdateArtworkAudioSuccessfulImpl
 }
 
 abstract class UpdateArtworkAudioSuccessful implements UpdateArtworkAudio {
-  const factory UpdateArtworkAudioSuccessful(final String newAudioPath) =
-      _$UpdateArtworkAudioSuccessfulImpl;
+  const factory UpdateArtworkAudioSuccessful(final String newAudioPath) = _$UpdateArtworkAudioSuccessfulImpl;
 
   String get newAudioPath;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkAudioSuccessfulImplCopyWith<
-          _$UpdateArtworkAudioSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkAudioSuccessfulImplCopyWith<_$UpdateArtworkAudioSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkAudioErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkAudioErrorImplCopyWith(
-          _$UpdateArtworkAudioErrorImpl value,
-          $Res Function(_$UpdateArtworkAudioErrorImpl) then) =
+          _$UpdateArtworkAudioErrorImpl value, $Res Function(_$UpdateArtworkAudioErrorImpl) then) =
       __$$UpdateArtworkAudioErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -445,12 +400,10 @@ abstract class _$$UpdateArtworkAudioErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkAudioErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkAudioCopyWithImpl<$Res,
-        _$UpdateArtworkAudioErrorImpl>
+    extends _$UpdateArtworkAudioCopyWithImpl<$Res, _$UpdateArtworkAudioErrorImpl>
     implements _$$UpdateArtworkAudioErrorImplCopyWith<$Res> {
   __$$UpdateArtworkAudioErrorImplCopyWithImpl(
-      _$UpdateArtworkAudioErrorImpl _value,
-      $Res Function(_$UpdateArtworkAudioErrorImpl) _then)
+      _$UpdateArtworkAudioErrorImpl _value, $Res Function(_$UpdateArtworkAudioErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -490,27 +443,22 @@ class _$UpdateArtworkAudioErrorImpl implements UpdateArtworkAudioError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkAudioErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkAudioErrorImplCopyWith<_$UpdateArtworkAudioErrorImpl>
-      get copyWith => __$$UpdateArtworkAudioErrorImplCopyWithImpl<
-          _$UpdateArtworkAudioErrorImpl>(this, _$identity);
+  _$$UpdateArtworkAudioErrorImplCopyWith<_$UpdateArtworkAudioErrorImpl> get copyWith =>
+      __$$UpdateArtworkAudioErrorImplCopyWithImpl<_$UpdateArtworkAudioErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl) $default, {
     required TResult Function(String newAudioPath) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -520,9 +468,7 @@ class _$UpdateArtworkAudioErrorImpl implements UpdateArtworkAudioError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String newAudioPath, String artworkId,
-            String artworkTitle, String oldAudioUrl)?
-        $default, {
+    TResult? Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult? Function(String newAudioPath)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -532,9 +478,7 @@ class _$UpdateArtworkAudioErrorImpl implements UpdateArtworkAudioError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String newAudioPath, String artworkId, String artworkTitle,
-            String oldAudioUrl)?
-        $default, {
+    TResult Function(String newAudioPath, String artworkId, String artworkTitle, String oldAudioUrl)? $default, {
     TResult Function(String newAudioPath)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -580,15 +524,13 @@ class _$UpdateArtworkAudioErrorImpl implements UpdateArtworkAudioError {
   }
 }
 
-abstract class UpdateArtworkAudioError
-    implements UpdateArtworkAudio, ErrorAction {
-  const factory UpdateArtworkAudioError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkAudioError implements UpdateArtworkAudio, ErrorAction {
+  const factory UpdateArtworkAudioError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkAudioErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkAudioErrorImplCopyWith<_$UpdateArtworkAudioErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkAudioErrorImplCopyWith<_$UpdateArtworkAudioErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

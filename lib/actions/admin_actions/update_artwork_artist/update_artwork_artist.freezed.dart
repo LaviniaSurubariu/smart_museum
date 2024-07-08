@@ -64,8 +64,7 @@ mixin _$UpdateArtworkArtist {
 
 /// @nodoc
 abstract class $UpdateArtworkArtistCopyWith<$Res> {
-  factory $UpdateArtworkArtistCopyWith(
-          UpdateArtworkArtist value, $Res Function(UpdateArtworkArtist) then) =
+  factory $UpdateArtworkArtistCopyWith(UpdateArtworkArtist value, $Res Function(UpdateArtworkArtist) then) =
       _$UpdateArtworkArtistCopyWithImpl<$Res, UpdateArtworkArtist>;
 }
 
@@ -83,8 +82,7 @@ class _$UpdateArtworkArtistCopyWithImpl<$Res, $Val extends UpdateArtworkArtist>
 /// @nodoc
 abstract class _$$UpdateArtworkArtistStartImplCopyWith<$Res> {
   factory _$$UpdateArtworkArtistStartImplCopyWith(
-          _$UpdateArtworkArtistStartImpl value,
-          $Res Function(_$UpdateArtworkArtistStartImpl) then) =
+          _$UpdateArtworkArtistStartImpl value, $Res Function(_$UpdateArtworkArtistStartImpl) then) =
       __$$UpdateArtworkArtistStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ArtistForFetch artist, String artworkId});
@@ -92,12 +90,10 @@ abstract class _$$UpdateArtworkArtistStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkArtistStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkArtistCopyWithImpl<$Res,
-        _$UpdateArtworkArtistStartImpl>
+    extends _$UpdateArtworkArtistCopyWithImpl<$Res, _$UpdateArtworkArtistStartImpl>
     implements _$$UpdateArtworkArtistStartImplCopyWith<$Res> {
   __$$UpdateArtworkArtistStartImplCopyWithImpl(
-      _$UpdateArtworkArtistStartImpl _value,
-      $Res Function(_$UpdateArtworkArtistStartImpl) _then)
+      _$UpdateArtworkArtistStartImpl _value, $Res Function(_$UpdateArtworkArtistStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,8 +118,7 @@ class __$$UpdateArtworkArtistStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateArtworkArtistStartImpl implements UpdateArtworkArtistStart {
-  const _$UpdateArtworkArtistStartImpl(
-      {required this.artist, required this.artworkId});
+  const _$UpdateArtworkArtistStartImpl({required this.artist, required this.artworkId});
 
   @override
   final ArtistForFetch artist;
@@ -141,8 +136,7 @@ class _$UpdateArtworkArtistStartImpl implements UpdateArtworkArtistStart {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkArtistStartImpl &&
             (identical(other.artist, artist) || other.artist == artist) &&
-            (identical(other.artworkId, artworkId) ||
-                other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
   }
 
   @override
@@ -151,9 +145,8 @@ class _$UpdateArtworkArtistStartImpl implements UpdateArtworkArtistStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkArtistStartImplCopyWith<_$UpdateArtworkArtistStartImpl>
-      get copyWith => __$$UpdateArtworkArtistStartImplCopyWithImpl<
-          _$UpdateArtworkArtistStartImpl>(this, _$identity);
+  _$$UpdateArtworkArtistStartImplCopyWith<_$UpdateArtworkArtistStartImpl> get copyWith =>
+      __$$UpdateArtworkArtistStartImplCopyWithImpl<_$UpdateArtworkArtistStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -225,22 +218,20 @@ class _$UpdateArtworkArtistStartImpl implements UpdateArtworkArtistStart {
 }
 
 abstract class UpdateArtworkArtistStart implements UpdateArtworkArtist {
-  const factory UpdateArtworkArtistStart(
-      {required final ArtistForFetch artist,
-      required final String artworkId}) = _$UpdateArtworkArtistStartImpl;
+  const factory UpdateArtworkArtistStart({required final ArtistForFetch artist, required final String artworkId}) =
+      _$UpdateArtworkArtistStartImpl;
 
   ArtistForFetch get artist;
   String get artworkId;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkArtistStartImplCopyWith<_$UpdateArtworkArtistStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkArtistStartImplCopyWith<_$UpdateArtworkArtistStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkArtistSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtworkArtistSuccessfulImplCopyWith(
-          _$UpdateArtworkArtistSuccessfulImpl value,
-          $Res Function(_$UpdateArtworkArtistSuccessfulImpl) then) =
+          _$UpdateArtworkArtistSuccessfulImpl value, $Res Function(_$UpdateArtworkArtistSuccessfulImpl) then) =
       __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ArtistForFetch artist});
@@ -248,12 +239,10 @@ abstract class _$$UpdateArtworkArtistSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkArtistCopyWithImpl<$Res,
-        _$UpdateArtworkArtistSuccessfulImpl>
+    extends _$UpdateArtworkArtistCopyWithImpl<$Res, _$UpdateArtworkArtistSuccessfulImpl>
     implements _$$UpdateArtworkArtistSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl(
-      _$UpdateArtworkArtistSuccessfulImpl _value,
-      $Res Function(_$UpdateArtworkArtistSuccessfulImpl) _then)
+      _$UpdateArtworkArtistSuccessfulImpl _value, $Res Function(_$UpdateArtworkArtistSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -272,8 +261,7 @@ class __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtworkArtistSuccessfulImpl
-    implements UpdateArtworkArtistSuccessful {
+class _$UpdateArtworkArtistSuccessfulImpl implements UpdateArtworkArtistSuccessful {
   const _$UpdateArtworkArtistSuccessfulImpl(this.artist);
 
   @override
@@ -298,10 +286,8 @@ class _$UpdateArtworkArtistSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkArtistSuccessfulImplCopyWith<
-          _$UpdateArtworkArtistSuccessfulImpl>
-      get copyWith => __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl<
-          _$UpdateArtworkArtistSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtworkArtistSuccessfulImplCopyWith<_$UpdateArtworkArtistSuccessfulImpl> get copyWith =>
+      __$$UpdateArtworkArtistSuccessfulImplCopyWithImpl<_$UpdateArtworkArtistSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -373,21 +359,18 @@ class _$UpdateArtworkArtistSuccessfulImpl
 }
 
 abstract class UpdateArtworkArtistSuccessful implements UpdateArtworkArtist {
-  const factory UpdateArtworkArtistSuccessful(final ArtistForFetch artist) =
-      _$UpdateArtworkArtistSuccessfulImpl;
+  const factory UpdateArtworkArtistSuccessful(final ArtistForFetch artist) = _$UpdateArtworkArtistSuccessfulImpl;
 
   ArtistForFetch get artist;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkArtistSuccessfulImplCopyWith<
-          _$UpdateArtworkArtistSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkArtistSuccessfulImplCopyWith<_$UpdateArtworkArtistSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtworkArtistErrorImplCopyWith<$Res> {
   factory _$$UpdateArtworkArtistErrorImplCopyWith(
-          _$UpdateArtworkArtistErrorImpl value,
-          $Res Function(_$UpdateArtworkArtistErrorImpl) then) =
+          _$UpdateArtworkArtistErrorImpl value, $Res Function(_$UpdateArtworkArtistErrorImpl) then) =
       __$$UpdateArtworkArtistErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -395,12 +378,10 @@ abstract class _$$UpdateArtworkArtistErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtworkArtistErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtworkArtistCopyWithImpl<$Res,
-        _$UpdateArtworkArtistErrorImpl>
+    extends _$UpdateArtworkArtistCopyWithImpl<$Res, _$UpdateArtworkArtistErrorImpl>
     implements _$$UpdateArtworkArtistErrorImplCopyWith<$Res> {
   __$$UpdateArtworkArtistErrorImplCopyWithImpl(
-      _$UpdateArtworkArtistErrorImpl _value,
-      $Res Function(_$UpdateArtworkArtistErrorImpl) _then)
+      _$UpdateArtworkArtistErrorImpl _value, $Res Function(_$UpdateArtworkArtistErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -440,20 +421,17 @@ class _$UpdateArtworkArtistErrorImpl implements UpdateArtworkArtistError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtworkArtistErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtworkArtistErrorImplCopyWith<_$UpdateArtworkArtistErrorImpl>
-      get copyWith => __$$UpdateArtworkArtistErrorImplCopyWithImpl<
-          _$UpdateArtworkArtistErrorImpl>(this, _$identity);
+  _$$UpdateArtworkArtistErrorImplCopyWith<_$UpdateArtworkArtistErrorImpl> get copyWith =>
+      __$$UpdateArtworkArtistErrorImplCopyWithImpl<_$UpdateArtworkArtistErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -524,15 +502,13 @@ class _$UpdateArtworkArtistErrorImpl implements UpdateArtworkArtistError {
   }
 }
 
-abstract class UpdateArtworkArtistError
-    implements UpdateArtworkArtist, ErrorAction {
-  const factory UpdateArtworkArtistError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtworkArtistError implements UpdateArtworkArtist, ErrorAction {
+  const factory UpdateArtworkArtistError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtworkArtistErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtworkArtistErrorImplCopyWith<_$UpdateArtworkArtistErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtworkArtistErrorImplCopyWith<_$UpdateArtworkArtistErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -64,14 +64,12 @@ mixin _$DeleteUser {
 
 /// @nodoc
 abstract class $DeleteUserCopyWith<$Res> {
-  factory $DeleteUserCopyWith(
-          DeleteUser value, $Res Function(DeleteUser) then) =
+  factory $DeleteUserCopyWith(DeleteUser value, $Res Function(DeleteUser) then) =
       _$DeleteUserCopyWithImpl<$Res, DeleteUser>;
 }
 
 /// @nodoc
-class _$DeleteUserCopyWithImpl<$Res, $Val extends DeleteUser>
-    implements $DeleteUserCopyWith<$Res> {
+class _$DeleteUserCopyWithImpl<$Res, $Val extends DeleteUser> implements $DeleteUserCopyWith<$Res> {
   _$DeleteUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$DeleteUserCopyWithImpl<$Res, $Val extends DeleteUser>
 
 /// @nodoc
 abstract class _$$DeleteUserStartImplCopyWith<$Res> {
-  factory _$$DeleteUserStartImplCopyWith(_$DeleteUserStartImpl value,
-          $Res Function(_$DeleteUserStartImpl) then) =
+  factory _$$DeleteUserStartImplCopyWith(_$DeleteUserStartImpl value, $Res Function(_$DeleteUserStartImpl) then) =
       __$$DeleteUserStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeleteUserStartImplCopyWithImpl<$Res>
-    extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserStartImpl>
+class __$$DeleteUserStartImplCopyWithImpl<$Res> extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserStartImpl>
     implements _$$DeleteUserStartImplCopyWith<$Res> {
-  __$$DeleteUserStartImplCopyWithImpl(
-      _$DeleteUserStartImpl _value, $Res Function(_$DeleteUserStartImpl) _then)
+  __$$DeleteUserStartImplCopyWithImpl(_$DeleteUserStartImpl _value, $Res Function(_$DeleteUserStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$DeleteUserStartImpl implements DeleteUserStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DeleteUserStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$DeleteUserStartImpl);
   }
 
   @override
@@ -190,17 +184,16 @@ abstract class DeleteUserStart implements DeleteUser {
 
 /// @nodoc
 abstract class _$$DeleteUserSuccessfulImplCopyWith<$Res> {
-  factory _$$DeleteUserSuccessfulImplCopyWith(_$DeleteUserSuccessfulImpl value,
-          $Res Function(_$DeleteUserSuccessfulImpl) then) =
+  factory _$$DeleteUserSuccessfulImplCopyWith(
+          _$DeleteUserSuccessfulImpl value, $Res Function(_$DeleteUserSuccessfulImpl) then) =
       __$$DeleteUserSuccessfulImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DeleteUserSuccessfulImplCopyWithImpl<$Res>
-    extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserSuccessfulImpl>
+class __$$DeleteUserSuccessfulImplCopyWithImpl<$Res> extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserSuccessfulImpl>
     implements _$$DeleteUserSuccessfulImplCopyWith<$Res> {
-  __$$DeleteUserSuccessfulImplCopyWithImpl(_$DeleteUserSuccessfulImpl _value,
-      $Res Function(_$DeleteUserSuccessfulImpl) _then)
+  __$$DeleteUserSuccessfulImplCopyWithImpl(
+      _$DeleteUserSuccessfulImpl _value, $Res Function(_$DeleteUserSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -216,9 +209,7 @@ class _$DeleteUserSuccessfulImpl implements DeleteUserSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteUserSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$DeleteUserSuccessfulImpl);
   }
 
   @override
@@ -299,19 +290,16 @@ abstract class DeleteUserSuccessful implements DeleteUser {
 
 /// @nodoc
 abstract class _$$DeleteUserErrorImplCopyWith<$Res> {
-  factory _$$DeleteUserErrorImplCopyWith(_$DeleteUserErrorImpl value,
-          $Res Function(_$DeleteUserErrorImpl) then) =
+  factory _$$DeleteUserErrorImplCopyWith(_$DeleteUserErrorImpl value, $Res Function(_$DeleteUserErrorImpl) then) =
       __$$DeleteUserErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$DeleteUserErrorImplCopyWithImpl<$Res>
-    extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserErrorImpl>
+class __$$DeleteUserErrorImplCopyWithImpl<$Res> extends _$DeleteUserCopyWithImpl<$Res, _$DeleteUserErrorImpl>
     implements _$$DeleteUserErrorImplCopyWith<$Res> {
-  __$$DeleteUserErrorImplCopyWithImpl(
-      _$DeleteUserErrorImpl _value, $Res Function(_$DeleteUserErrorImpl) _then)
+  __$$DeleteUserErrorImplCopyWithImpl(_$DeleteUserErrorImpl _value, $Res Function(_$DeleteUserErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -351,20 +339,17 @@ class _$DeleteUserErrorImpl implements DeleteUserError {
         (other.runtimeType == runtimeType &&
             other is _$DeleteUserErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteUserErrorImplCopyWith<_$DeleteUserErrorImpl> get copyWith =>
-      __$$DeleteUserErrorImplCopyWithImpl<_$DeleteUserErrorImpl>(
-          this, _$identity);
+      __$$DeleteUserErrorImplCopyWithImpl<_$DeleteUserErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -436,12 +421,10 @@ class _$DeleteUserErrorImpl implements DeleteUserError {
 }
 
 abstract class DeleteUserError implements DeleteUser, ErrorAction {
-  const factory DeleteUserError(
-      final Object error, final StackTrace stackTrace) = _$DeleteUserErrorImpl;
+  const factory DeleteUserError(final Object error, final StackTrace stackTrace) = _$DeleteUserErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$DeleteUserErrorImplCopyWith<_$DeleteUserErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteUserErrorImplCopyWith<_$DeleteUserErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -65,13 +65,10 @@ class _AppFeedbackPageState extends State<AppFeedbackPage> {
                                   'smartmuseumemailservice@gmail.com',
                                 ],
                                 subject: 'Feedback on Smart Museum App',
-
                               );
 
-                              final OpenMailAppResult result =
-                              await OpenMailApp.composeNewEmailInMailApp(
-                                  nativePickerTitle: 'Select email app to compose',
-                                  emailContent: email);
+                              final OpenMailAppResult result = await OpenMailApp.composeNewEmailInMailApp(
+                                  nativePickerTitle: 'Select email app to compose', emailContent: email);
                               if (!result.didOpen && !result.canOpen) {
                                 showNoMailAppsDialog(context);
                               } else if (!result.didOpen && result.canOpen) {
@@ -122,5 +119,4 @@ class _AppFeedbackPageState extends State<AppFeedbackPage> {
       },
     );
   }
-
 }

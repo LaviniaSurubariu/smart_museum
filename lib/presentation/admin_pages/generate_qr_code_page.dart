@@ -111,7 +111,6 @@ class _GenerateQrCodePageState extends State<GenerateQrCodePage> {
       });
 
       await ImageGallerySaver.saveImage(pngBytes, quality: 100, name: '${qrDataTitle}_qr');
-
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('QR code saved to gallery!')));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to save QR code: $e')));

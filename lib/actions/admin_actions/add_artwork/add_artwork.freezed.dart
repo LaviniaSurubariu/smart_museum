@@ -109,14 +109,12 @@ mixin _$AddArtwork {
 
 /// @nodoc
 abstract class $AddArtworkCopyWith<$Res> {
-  factory $AddArtworkCopyWith(
-          AddArtwork value, $Res Function(AddArtwork) then) =
+  factory $AddArtworkCopyWith(AddArtwork value, $Res Function(AddArtwork) then) =
       _$AddArtworkCopyWithImpl<$Res, AddArtwork>;
 }
 
 /// @nodoc
-class _$AddArtworkCopyWithImpl<$Res, $Val extends AddArtwork>
-    implements $AddArtworkCopyWith<$Res> {
+class _$AddArtworkCopyWithImpl<$Res, $Val extends AddArtwork> implements $AddArtworkCopyWith<$Res> {
   _$AddArtworkCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -127,8 +125,7 @@ class _$AddArtworkCopyWithImpl<$Res, $Val extends AddArtwork>
 
 /// @nodoc
 abstract class _$$AddArtworkStartImplCopyWith<$Res> {
-  factory _$$AddArtworkStartImplCopyWith(_$AddArtworkStartImpl value,
-          $Res Function(_$AddArtworkStartImpl) then) =
+  factory _$$AddArtworkStartImplCopyWith(_$AddArtworkStartImpl value, $Res Function(_$AddArtworkStartImpl) then) =
       __$$AddArtworkStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
@@ -149,11 +146,9 @@ abstract class _$$AddArtworkStartImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AddArtworkStartImplCopyWithImpl<$Res>
-    extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkStartImpl>
+class __$$AddArtworkStartImplCopyWithImpl<$Res> extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkStartImpl>
     implements _$$AddArtworkStartImplCopyWith<$Res> {
-  __$$AddArtworkStartImplCopyWithImpl(
-      _$AddArtworkStartImpl _value, $Res Function(_$AddArtworkStartImpl) _then)
+  __$$AddArtworkStartImplCopyWithImpl(_$AddArtworkStartImpl _value, $Res Function(_$AddArtworkStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -294,55 +289,30 @@ class _$AddArtworkStartImpl implements AddArtworkStart {
         (other.runtimeType == runtimeType &&
             other is _$AddArtworkStartImpl &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.artistFirstName, artistFirstName) ||
-                other.artistFirstName == artistFirstName) &&
-            (identical(other.artistLastName, artistLastName) ||
-                other.artistLastName == artistLastName) &&
-            (identical(other.artistUid, artistUid) ||
-                other.artistUid == artistUid) &&
-            (identical(other.startCreationYear, startCreationYear) ||
-                other.startCreationYear == startCreationYear) &&
-            (identical(other.endCreationYear, endCreationYear) ||
-                other.endCreationYear == endCreationYear) &&
-            (identical(other.picturePath, picturePath) ||
-                other.picturePath == picturePath) &&
-            (identical(other.audioPath, audioPath) ||
-                other.audioPath == audioPath) &&
+            (identical(other.artistFirstName, artistFirstName) || other.artistFirstName == artistFirstName) &&
+            (identical(other.artistLastName, artistLastName) || other.artistLastName == artistLastName) &&
+            (identical(other.artistUid, artistUid) || other.artistUid == artistUid) &&
+            (identical(other.startCreationYear, startCreationYear) || other.startCreationYear == startCreationYear) &&
+            (identical(other.endCreationYear, endCreationYear) || other.endCreationYear == endCreationYear) &&
+            (identical(other.picturePath, picturePath) || other.picturePath == picturePath) &&
+            (identical(other.audioPath, audioPath) || other.audioPath == audioPath) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.style, style) || other.style == style) &&
-            (identical(other.provenance, provenance) ||
-                other.provenance == provenance) &&
-            (identical(other.originalTitle, originalTitle) ||
-                other.originalTitle == originalTitle) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.provenance, provenance) || other.provenance == provenance) &&
+            (identical(other.originalTitle, originalTitle) || other.originalTitle == originalTitle) &&
+            (identical(other.description, description) || other.description == description) &&
             (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      title,
-      artistFirstName,
-      artistLastName,
-      artistUid,
-      startCreationYear,
-      endCreationYear,
-      picturePath,
-      audioPath,
-      type,
-      style,
-      provenance,
-      originalTitle,
-      description,
-      result);
+  int get hashCode => Object.hash(runtimeType, title, artistFirstName, artistLastName, artistUid, startCreationYear,
+      endCreationYear, picturePath, audioPath, type, style, provenance, originalTitle, description, result);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddArtworkStartImplCopyWith<_$AddArtworkStartImpl> get copyWith =>
-      __$$AddArtworkStartImplCopyWithImpl<_$AddArtworkStartImpl>(
-          this, _$identity);
+      __$$AddArtworkStartImplCopyWithImpl<_$AddArtworkStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -366,21 +336,8 @@ class _$AddArtworkStartImpl implements AddArtworkStart {
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(
-        title,
-        artistFirstName,
-        artistLastName,
-        artistUid,
-        startCreationYear,
-        endCreationYear,
-        picturePath,
-        audioPath,
-        type,
-        style,
-        provenance,
-        originalTitle,
-        description,
-        result);
+    return $default(title, artistFirstName, artistLastName, artistUid, startCreationYear, endCreationYear, picturePath,
+        audioPath, type, style, provenance, originalTitle, description, result);
   }
 
   @override
@@ -405,21 +362,8 @@ class _$AddArtworkStartImpl implements AddArtworkStart {
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(
-        title,
-        artistFirstName,
-        artistLastName,
-        artistUid,
-        startCreationYear,
-        endCreationYear,
-        picturePath,
-        audioPath,
-        type,
-        style,
-        provenance,
-        originalTitle,
-        description,
-        result);
+    return $default?.call(title, artistFirstName, artistLastName, artistUid, startCreationYear, endCreationYear,
+        picturePath, audioPath, type, style, provenance, originalTitle, description, result);
   }
 
   @override
@@ -446,21 +390,8 @@ class _$AddArtworkStartImpl implements AddArtworkStart {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(
-          title,
-          artistFirstName,
-          artistLastName,
-          artistUid,
-          startCreationYear,
-          endCreationYear,
-          picturePath,
-          audioPath,
-          type,
-          style,
-          provenance,
-          originalTitle,
-          description,
-          result);
+      return $default(title, artistFirstName, artistLastName, artistUid, startCreationYear, endCreationYear,
+          picturePath, audioPath, type, style, provenance, originalTitle, description, result);
     }
     return orElse();
   }
@@ -532,23 +463,21 @@ abstract class AddArtworkStart implements AddArtwork {
   String get description;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$AddArtworkStartImplCopyWith<_$AddArtworkStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddArtworkStartImplCopyWith<_$AddArtworkStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddArtworkSuccessfulImplCopyWith<$Res> {
-  factory _$$AddArtworkSuccessfulImplCopyWith(_$AddArtworkSuccessfulImpl value,
-          $Res Function(_$AddArtworkSuccessfulImpl) then) =
+  factory _$$AddArtworkSuccessfulImplCopyWith(
+          _$AddArtworkSuccessfulImpl value, $Res Function(_$AddArtworkSuccessfulImpl) then) =
       __$$AddArtworkSuccessfulImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddArtworkSuccessfulImplCopyWithImpl<$Res>
-    extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkSuccessfulImpl>
+class __$$AddArtworkSuccessfulImplCopyWithImpl<$Res> extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkSuccessfulImpl>
     implements _$$AddArtworkSuccessfulImplCopyWith<$Res> {
-  __$$AddArtworkSuccessfulImplCopyWithImpl(_$AddArtworkSuccessfulImpl _value,
-      $Res Function(_$AddArtworkSuccessfulImpl) _then)
+  __$$AddArtworkSuccessfulImplCopyWithImpl(
+      _$AddArtworkSuccessfulImpl _value, $Res Function(_$AddArtworkSuccessfulImpl) _then)
       : super(_value, _then);
 }
 
@@ -564,9 +493,7 @@ class _$AddArtworkSuccessfulImpl implements AddArtworkSuccessful {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddArtworkSuccessfulImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AddArtworkSuccessfulImpl);
   }
 
   @override
@@ -692,19 +619,16 @@ abstract class AddArtworkSuccessful implements AddArtwork {
 
 /// @nodoc
 abstract class _$$AddArtworkErrorImplCopyWith<$Res> {
-  factory _$$AddArtworkErrorImplCopyWith(_$AddArtworkErrorImpl value,
-          $Res Function(_$AddArtworkErrorImpl) then) =
+  factory _$$AddArtworkErrorImplCopyWith(_$AddArtworkErrorImpl value, $Res Function(_$AddArtworkErrorImpl) then) =
       __$$AddArtworkErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddArtworkErrorImplCopyWithImpl<$Res>
-    extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkErrorImpl>
+class __$$AddArtworkErrorImplCopyWithImpl<$Res> extends _$AddArtworkCopyWithImpl<$Res, _$AddArtworkErrorImpl>
     implements _$$AddArtworkErrorImplCopyWith<$Res> {
-  __$$AddArtworkErrorImplCopyWithImpl(
-      _$AddArtworkErrorImpl _value, $Res Function(_$AddArtworkErrorImpl) _then)
+  __$$AddArtworkErrorImplCopyWithImpl(_$AddArtworkErrorImpl _value, $Res Function(_$AddArtworkErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -744,20 +668,17 @@ class _$AddArtworkErrorImpl implements AddArtworkError {
         (other.runtimeType == runtimeType &&
             other is _$AddArtworkErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddArtworkErrorImplCopyWith<_$AddArtworkErrorImpl> get copyWith =>
-      __$$AddArtworkErrorImplCopyWithImpl<_$AddArtworkErrorImpl>(
-          this, _$identity);
+      __$$AddArtworkErrorImplCopyWithImpl<_$AddArtworkErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -874,12 +795,10 @@ class _$AddArtworkErrorImpl implements AddArtworkError {
 }
 
 abstract class AddArtworkError implements AddArtwork, ErrorAction {
-  const factory AddArtworkError(
-      final Object error, final StackTrace stackTrace) = _$AddArtworkErrorImpl;
+  const factory AddArtworkError(final Object error, final StackTrace stackTrace) = _$AddArtworkErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddArtworkErrorImplCopyWith<_$AddArtworkErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddArtworkErrorImplCopyWith<_$AddArtworkErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

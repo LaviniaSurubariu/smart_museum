@@ -41,8 +41,7 @@ mixin _$UpdateArtistDescription {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtistDescriptionStart value) $default, {
-    required TResult Function(UpdateArtistDescriptionSuccessful value)
-        successful,
+    required TResult Function(UpdateArtistDescriptionSuccessful value) successful,
     required TResult Function(UpdateArtistDescriptionError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,14 +64,12 @@ mixin _$UpdateArtistDescription {
 
 /// @nodoc
 abstract class $UpdateArtistDescriptionCopyWith<$Res> {
-  factory $UpdateArtistDescriptionCopyWith(UpdateArtistDescription value,
-          $Res Function(UpdateArtistDescription) then) =
+  factory $UpdateArtistDescriptionCopyWith(UpdateArtistDescription value, $Res Function(UpdateArtistDescription) then) =
       _$UpdateArtistDescriptionCopyWithImpl<$Res, UpdateArtistDescription>;
 }
 
 /// @nodoc
-class _$UpdateArtistDescriptionCopyWithImpl<$Res,
-        $Val extends UpdateArtistDescription>
+class _$UpdateArtistDescriptionCopyWithImpl<$Res, $Val extends UpdateArtistDescription>
     implements $UpdateArtistDescriptionCopyWith<$Res> {
   _$UpdateArtistDescriptionCopyWithImpl(this._value, this._then);
 
@@ -85,8 +82,7 @@ class _$UpdateArtistDescriptionCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$UpdateArtistDescriptionStartImplCopyWith<$Res> {
   factory _$$UpdateArtistDescriptionStartImplCopyWith(
-          _$UpdateArtistDescriptionStartImpl value,
-          $Res Function(_$UpdateArtistDescriptionStartImpl) then) =
+          _$UpdateArtistDescriptionStartImpl value, $Res Function(_$UpdateArtistDescriptionStartImpl) then) =
       __$$UpdateArtistDescriptionStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newDescription, String artistId});
@@ -94,12 +90,10 @@ abstract class _$$UpdateArtistDescriptionStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDescriptionStartImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDescriptionCopyWithImpl<$Res,
-        _$UpdateArtistDescriptionStartImpl>
+    extends _$UpdateArtistDescriptionCopyWithImpl<$Res, _$UpdateArtistDescriptionStartImpl>
     implements _$$UpdateArtistDescriptionStartImplCopyWith<$Res> {
   __$$UpdateArtistDescriptionStartImplCopyWithImpl(
-      _$UpdateArtistDescriptionStartImpl _value,
-      $Res Function(_$UpdateArtistDescriptionStartImpl) _then)
+      _$UpdateArtistDescriptionStartImpl _value, $Res Function(_$UpdateArtistDescriptionStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,10 +117,8 @@ class __$$UpdateArtistDescriptionStartImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistDescriptionStartImpl
-    implements UpdateArtistDescriptionStart {
-  const _$UpdateArtistDescriptionStartImpl(
-      {required this.newDescription, required this.artistId});
+class _$UpdateArtistDescriptionStartImpl implements UpdateArtistDescriptionStart {
+  const _$UpdateArtistDescriptionStartImpl({required this.newDescription, required this.artistId});
 
   @override
   final String newDescription;
@@ -143,10 +135,8 @@ class _$UpdateArtistDescriptionStartImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDescriptionStartImpl &&
-            (identical(other.newDescription, newDescription) ||
-                other.newDescription == newDescription) &&
-            (identical(other.artistId, artistId) ||
-                other.artistId == artistId));
+            (identical(other.newDescription, newDescription) || other.newDescription == newDescription) &&
+            (identical(other.artistId, artistId) || other.artistId == artistId));
   }
 
   @override
@@ -155,10 +145,8 @@ class _$UpdateArtistDescriptionStartImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDescriptionStartImplCopyWith<
-          _$UpdateArtistDescriptionStartImpl>
-      get copyWith => __$$UpdateArtistDescriptionStartImplCopyWithImpl<
-          _$UpdateArtistDescriptionStartImpl>(this, _$identity);
+  _$$UpdateArtistDescriptionStartImplCopyWith<_$UpdateArtistDescriptionStartImpl> get copyWith =>
+      __$$UpdateArtistDescriptionStartImplCopyWithImpl<_$UpdateArtistDescriptionStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -198,8 +186,7 @@ class _$UpdateArtistDescriptionStartImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtistDescriptionStart value) $default, {
-    required TResult Function(UpdateArtistDescriptionSuccessful value)
-        successful,
+    required TResult Function(UpdateArtistDescriptionSuccessful value) successful,
     required TResult Function(UpdateArtistDescriptionError value) error,
   }) {
     return $default(this);
@@ -231,23 +218,20 @@ class _$UpdateArtistDescriptionStartImpl
 }
 
 abstract class UpdateArtistDescriptionStart implements UpdateArtistDescription {
-  const factory UpdateArtistDescriptionStart(
-      {required final String newDescription,
-      required final String artistId}) = _$UpdateArtistDescriptionStartImpl;
+  const factory UpdateArtistDescriptionStart({required final String newDescription, required final String artistId}) =
+      _$UpdateArtistDescriptionStartImpl;
 
   String get newDescription;
   String get artistId;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDescriptionStartImplCopyWith<
-          _$UpdateArtistDescriptionStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistDescriptionStartImplCopyWith<_$UpdateArtistDescriptionStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistDescriptionSuccessfulImplCopyWith<$Res> {
   factory _$$UpdateArtistDescriptionSuccessfulImplCopyWith(
-          _$UpdateArtistDescriptionSuccessfulImpl value,
-          $Res Function(_$UpdateArtistDescriptionSuccessfulImpl) then) =
+          _$UpdateArtistDescriptionSuccessfulImpl value, $Res Function(_$UpdateArtistDescriptionSuccessfulImpl) then) =
       __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String newDescription});
@@ -255,12 +239,10 @@ abstract class _$$UpdateArtistDescriptionSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDescriptionCopyWithImpl<$Res,
-        _$UpdateArtistDescriptionSuccessfulImpl>
+    extends _$UpdateArtistDescriptionCopyWithImpl<$Res, _$UpdateArtistDescriptionSuccessfulImpl>
     implements _$$UpdateArtistDescriptionSuccessfulImplCopyWith<$Res> {
   __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl(
-      _$UpdateArtistDescriptionSuccessfulImpl _value,
-      $Res Function(_$UpdateArtistDescriptionSuccessfulImpl) _then)
+      _$UpdateArtistDescriptionSuccessfulImpl _value, $Res Function(_$UpdateArtistDescriptionSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -279,8 +261,7 @@ class __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistDescriptionSuccessfulImpl
-    implements UpdateArtistDescriptionSuccessful {
+class _$UpdateArtistDescriptionSuccessfulImpl implements UpdateArtistDescriptionSuccessful {
   const _$UpdateArtistDescriptionSuccessfulImpl(this.newDescription);
 
   @override
@@ -296,8 +277,7 @@ class _$UpdateArtistDescriptionSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDescriptionSuccessfulImpl &&
-            (identical(other.newDescription, newDescription) ||
-                other.newDescription == newDescription));
+            (identical(other.newDescription, newDescription) || other.newDescription == newDescription));
   }
 
   @override
@@ -306,10 +286,8 @@ class _$UpdateArtistDescriptionSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDescriptionSuccessfulImplCopyWith<
-          _$UpdateArtistDescriptionSuccessfulImpl>
-      get copyWith => __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl<
-          _$UpdateArtistDescriptionSuccessfulImpl>(this, _$identity);
+  _$$UpdateArtistDescriptionSuccessfulImplCopyWith<_$UpdateArtistDescriptionSuccessfulImpl> get copyWith =>
+      __$$UpdateArtistDescriptionSuccessfulImplCopyWithImpl<_$UpdateArtistDescriptionSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,8 +327,7 @@ class _$UpdateArtistDescriptionSuccessfulImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtistDescriptionStart value) $default, {
-    required TResult Function(UpdateArtistDescriptionSuccessful value)
-        successful,
+    required TResult Function(UpdateArtistDescriptionSuccessful value) successful,
     required TResult Function(UpdateArtistDescriptionError value) error,
   }) {
     return successful(this);
@@ -381,23 +358,20 @@ class _$UpdateArtistDescriptionSuccessfulImpl
   }
 }
 
-abstract class UpdateArtistDescriptionSuccessful
-    implements UpdateArtistDescription {
+abstract class UpdateArtistDescriptionSuccessful implements UpdateArtistDescription {
   const factory UpdateArtistDescriptionSuccessful(final String newDescription) =
       _$UpdateArtistDescriptionSuccessfulImpl;
 
   String get newDescription;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDescriptionSuccessfulImplCopyWith<
-          _$UpdateArtistDescriptionSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistDescriptionSuccessfulImplCopyWith<_$UpdateArtistDescriptionSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateArtistDescriptionErrorImplCopyWith<$Res> {
   factory _$$UpdateArtistDescriptionErrorImplCopyWith(
-          _$UpdateArtistDescriptionErrorImpl value,
-          $Res Function(_$UpdateArtistDescriptionErrorImpl) then) =
+          _$UpdateArtistDescriptionErrorImpl value, $Res Function(_$UpdateArtistDescriptionErrorImpl) then) =
       __$$UpdateArtistDescriptionErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -405,12 +379,10 @@ abstract class _$$UpdateArtistDescriptionErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateArtistDescriptionErrorImplCopyWithImpl<$Res>
-    extends _$UpdateArtistDescriptionCopyWithImpl<$Res,
-        _$UpdateArtistDescriptionErrorImpl>
+    extends _$UpdateArtistDescriptionCopyWithImpl<$Res, _$UpdateArtistDescriptionErrorImpl>
     implements _$$UpdateArtistDescriptionErrorImplCopyWith<$Res> {
   __$$UpdateArtistDescriptionErrorImplCopyWithImpl(
-      _$UpdateArtistDescriptionErrorImpl _value,
-      $Res Function(_$UpdateArtistDescriptionErrorImpl) _then)
+      _$UpdateArtistDescriptionErrorImpl _value, $Res Function(_$UpdateArtistDescriptionErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -431,8 +403,7 @@ class __$$UpdateArtistDescriptionErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateArtistDescriptionErrorImpl
-    implements UpdateArtistDescriptionError {
+class _$UpdateArtistDescriptionErrorImpl implements UpdateArtistDescriptionError {
   const _$UpdateArtistDescriptionErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -451,21 +422,17 @@ class _$UpdateArtistDescriptionErrorImpl
         (other.runtimeType == runtimeType &&
             other is _$UpdateArtistDescriptionErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateArtistDescriptionErrorImplCopyWith<
-          _$UpdateArtistDescriptionErrorImpl>
-      get copyWith => __$$UpdateArtistDescriptionErrorImplCopyWithImpl<
-          _$UpdateArtistDescriptionErrorImpl>(this, _$identity);
+  _$$UpdateArtistDescriptionErrorImplCopyWith<_$UpdateArtistDescriptionErrorImpl> get copyWith =>
+      __$$UpdateArtistDescriptionErrorImplCopyWithImpl<_$UpdateArtistDescriptionErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -505,8 +472,7 @@ class _$UpdateArtistDescriptionErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(UpdateArtistDescriptionStart value) $default, {
-    required TResult Function(UpdateArtistDescriptionSuccessful value)
-        successful,
+    required TResult Function(UpdateArtistDescriptionSuccessful value) successful,
     required TResult Function(UpdateArtistDescriptionError value) error,
   }) {
     return error(this);
@@ -537,16 +503,13 @@ class _$UpdateArtistDescriptionErrorImpl
   }
 }
 
-abstract class UpdateArtistDescriptionError
-    implements UpdateArtistDescription, ErrorAction {
-  const factory UpdateArtistDescriptionError(
-          final Object error, final StackTrace stackTrace) =
+abstract class UpdateArtistDescriptionError implements UpdateArtistDescription, ErrorAction {
+  const factory UpdateArtistDescriptionError(final Object error, final StackTrace stackTrace) =
       _$UpdateArtistDescriptionErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateArtistDescriptionErrorImplCopyWith<
-          _$UpdateArtistDescriptionErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateArtistDescriptionErrorImplCopyWith<_$UpdateArtistDescriptionErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

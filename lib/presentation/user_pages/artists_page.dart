@@ -10,8 +10,8 @@ import '../../actions/user_s_actions/get_artworks_with_style/get_artworks_with_s
 import '../../models/app_state/app_state.dart';
 import '../../models/artist/artist.dart';
 import '../containers/artists_container.dart';
-import '../utils/list_artwork_widget.dart';
 import '../utils/extensions.dart';
+import '../utils/list_artwork_widget.dart';
 
 class ArtistsPage extends StatefulWidget {
   const ArtistsPage({super.key});

@@ -64,14 +64,12 @@ mixin _$BuySubscription {
 
 /// @nodoc
 abstract class $BuySubscriptionCopyWith<$Res> {
-  factory $BuySubscriptionCopyWith(
-          BuySubscription value, $Res Function(BuySubscription) then) =
+  factory $BuySubscriptionCopyWith(BuySubscription value, $Res Function(BuySubscription) then) =
       _$BuySubscriptionCopyWithImpl<$Res, BuySubscription>;
 }
 
 /// @nodoc
-class _$BuySubscriptionCopyWithImpl<$Res, $Val extends BuySubscription>
-    implements $BuySubscriptionCopyWith<$Res> {
+class _$BuySubscriptionCopyWithImpl<$Res, $Val extends BuySubscription> implements $BuySubscriptionCopyWith<$Res> {
   _$BuySubscriptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$BuySubscriptionCopyWithImpl<$Res, $Val extends BuySubscription>
 
 /// @nodoc
 abstract class _$$BuySubscriptionStartImplCopyWith<$Res> {
-  factory _$$BuySubscriptionStartImplCopyWith(_$BuySubscriptionStartImpl value,
-          $Res Function(_$BuySubscriptionStartImpl) then) =
+  factory _$$BuySubscriptionStartImplCopyWith(
+          _$BuySubscriptionStartImpl value, $Res Function(_$BuySubscriptionStartImpl) then) =
       __$$BuySubscriptionStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String duration, ActionResult result});
@@ -93,8 +91,8 @@ abstract class _$$BuySubscriptionStartImplCopyWith<$Res> {
 class __$$BuySubscriptionStartImplCopyWithImpl<$Res>
     extends _$BuySubscriptionCopyWithImpl<$Res, _$BuySubscriptionStartImpl>
     implements _$$BuySubscriptionStartImplCopyWith<$Res> {
-  __$$BuySubscriptionStartImplCopyWithImpl(_$BuySubscriptionStartImpl _value,
-      $Res Function(_$BuySubscriptionStartImpl) _then)
+  __$$BuySubscriptionStartImplCopyWithImpl(
+      _$BuySubscriptionStartImpl _value, $Res Function(_$BuySubscriptionStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,8 +117,7 @@ class __$$BuySubscriptionStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BuySubscriptionStartImpl implements BuySubscriptionStart {
-  const _$BuySubscriptionStartImpl(
-      {required this.duration, required this.result});
+  const _$BuySubscriptionStartImpl({required this.duration, required this.result});
 
   @override
   final String duration;
@@ -137,8 +134,7 @@ class _$BuySubscriptionStartImpl implements BuySubscriptionStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BuySubscriptionStartImpl &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
+            (identical(other.duration, duration) || other.duration == duration) &&
             (identical(other.result, result) || other.result == result));
   }
 
@@ -148,10 +144,8 @@ class _$BuySubscriptionStartImpl implements BuySubscriptionStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BuySubscriptionStartImplCopyWith<_$BuySubscriptionStartImpl>
-      get copyWith =>
-          __$$BuySubscriptionStartImplCopyWithImpl<_$BuySubscriptionStartImpl>(
-              this, _$identity);
+  _$$BuySubscriptionStartImplCopyWith<_$BuySubscriptionStartImpl> get copyWith =>
+      __$$BuySubscriptionStartImplCopyWithImpl<_$BuySubscriptionStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,22 +217,19 @@ class _$BuySubscriptionStartImpl implements BuySubscriptionStart {
 }
 
 abstract class BuySubscriptionStart implements BuySubscription {
-  const factory BuySubscriptionStart(
-      {required final String duration,
-      required final ActionResult result}) = _$BuySubscriptionStartImpl;
+  const factory BuySubscriptionStart({required final String duration, required final ActionResult result}) =
+      _$BuySubscriptionStartImpl;
 
   String get duration;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$BuySubscriptionStartImplCopyWith<_$BuySubscriptionStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$BuySubscriptionStartImplCopyWith<_$BuySubscriptionStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$BuySubscriptionSuccessfulImplCopyWith<$Res> {
   factory _$$BuySubscriptionSuccessfulImplCopyWith(
-          _$BuySubscriptionSuccessfulImpl value,
-          $Res Function(_$BuySubscriptionSuccessfulImpl) then) =
+          _$BuySubscriptionSuccessfulImpl value, $Res Function(_$BuySubscriptionSuccessfulImpl) then) =
       __$$BuySubscriptionSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
@@ -251,8 +242,7 @@ class __$$BuySubscriptionSuccessfulImplCopyWithImpl<$Res>
     extends _$BuySubscriptionCopyWithImpl<$Res, _$BuySubscriptionSuccessfulImpl>
     implements _$$BuySubscriptionSuccessfulImplCopyWith<$Res> {
   __$$BuySubscriptionSuccessfulImplCopyWithImpl(
-      _$BuySubscriptionSuccessfulImpl _value,
-      $Res Function(_$BuySubscriptionSuccessfulImpl) _then)
+      _$BuySubscriptionSuccessfulImpl _value, $Res Function(_$BuySubscriptionSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -304,9 +294,8 @@ class _$BuySubscriptionSuccessfulImpl implements BuySubscriptionSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BuySubscriptionSuccessfulImplCopyWith<_$BuySubscriptionSuccessfulImpl>
-      get copyWith => __$$BuySubscriptionSuccessfulImplCopyWithImpl<
-          _$BuySubscriptionSuccessfulImpl>(this, _$identity);
+  _$$BuySubscriptionSuccessfulImplCopyWith<_$BuySubscriptionSuccessfulImpl> get copyWith =>
+      __$$BuySubscriptionSuccessfulImplCopyWithImpl<_$BuySubscriptionSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -378,19 +367,18 @@ class _$BuySubscriptionSuccessfulImpl implements BuySubscriptionSuccessful {
 }
 
 abstract class BuySubscriptionSuccessful implements BuySubscription {
-  const factory BuySubscriptionSuccessful(final AppUser user) =
-      _$BuySubscriptionSuccessfulImpl;
+  const factory BuySubscriptionSuccessful(final AppUser user) = _$BuySubscriptionSuccessfulImpl;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$BuySubscriptionSuccessfulImplCopyWith<_$BuySubscriptionSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$BuySubscriptionSuccessfulImplCopyWith<_$BuySubscriptionSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$BuySubscriptionErrorImplCopyWith<$Res> {
-  factory _$$BuySubscriptionErrorImplCopyWith(_$BuySubscriptionErrorImpl value,
-          $Res Function(_$BuySubscriptionErrorImpl) then) =
+  factory _$$BuySubscriptionErrorImplCopyWith(
+          _$BuySubscriptionErrorImpl value, $Res Function(_$BuySubscriptionErrorImpl) then) =
       __$$BuySubscriptionErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -400,8 +388,8 @@ abstract class _$$BuySubscriptionErrorImplCopyWith<$Res> {
 class __$$BuySubscriptionErrorImplCopyWithImpl<$Res>
     extends _$BuySubscriptionCopyWithImpl<$Res, _$BuySubscriptionErrorImpl>
     implements _$$BuySubscriptionErrorImplCopyWith<$Res> {
-  __$$BuySubscriptionErrorImplCopyWithImpl(_$BuySubscriptionErrorImpl _value,
-      $Res Function(_$BuySubscriptionErrorImpl) _then)
+  __$$BuySubscriptionErrorImplCopyWithImpl(
+      _$BuySubscriptionErrorImpl _value, $Res Function(_$BuySubscriptionErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -441,21 +429,17 @@ class _$BuySubscriptionErrorImpl implements BuySubscriptionError {
         (other.runtimeType == runtimeType &&
             other is _$BuySubscriptionErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BuySubscriptionErrorImplCopyWith<_$BuySubscriptionErrorImpl>
-      get copyWith =>
-          __$$BuySubscriptionErrorImplCopyWithImpl<_$BuySubscriptionErrorImpl>(
-              this, _$identity);
+  _$$BuySubscriptionErrorImplCopyWith<_$BuySubscriptionErrorImpl> get copyWith =>
+      __$$BuySubscriptionErrorImplCopyWithImpl<_$BuySubscriptionErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -527,13 +511,10 @@ class _$BuySubscriptionErrorImpl implements BuySubscriptionError {
 }
 
 abstract class BuySubscriptionError implements BuySubscription, ErrorAction {
-  const factory BuySubscriptionError(
-          final Object error, final StackTrace stackTrace) =
-      _$BuySubscriptionErrorImpl;
+  const factory BuySubscriptionError(final Object error, final StackTrace stackTrace) = _$BuySubscriptionErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$BuySubscriptionErrorImplCopyWith<_$BuySubscriptionErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$BuySubscriptionErrorImplCopyWith<_$BuySubscriptionErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }
