@@ -126,12 +126,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     icon: Icons.payment,
                     onPress: () {},
                   ),
-                  ProfileMenuWidget(title: 'Aplication Feedback', icon: Icons.feedback_outlined, onPress: () {
+                  ProfileMenuWidget(title: 'Application Feedback', icon: Icons.feedback_outlined, onPress: () {
                     Navigator.pushReplacementNamed(context, '/appFeedbackPage');
                   }),
                   const Divider(),
                   const SizedBox(height: 10),
-                  ProfileMenuWidget(title: 'Info', icon: LineAwesomeIcons.info, onPress: () {}),
+                  ProfileMenuWidget(title: 'Info', icon: LineAwesomeIcons.info, onPress: () {
+                    Navigator.pushReplacementNamed(context, '/userInfoPage');
+                  }),
                   ProfileMenuWidget(
                     title: 'Logout',
                     icon: LineAwesomeIcons.alternate_sign_out,
