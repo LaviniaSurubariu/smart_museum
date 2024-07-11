@@ -236,7 +236,6 @@ class _AddArtistPageState extends State<AddArtistPage> {
       birthdateController.text = formattedDate;
       formKey.currentState!.validate();
     }
-
   }
 
   Future<void> _selectDeathDate(BuildContext context) async {
@@ -250,12 +249,10 @@ class _AddArtistPageState extends State<AddArtistPage> {
       final String formattedDate = DateFormat('yyyy-MM-dd').format(picked);
       deathDateController.text = formattedDate;
       formKey.currentState!.validate();
-
     }
   }
 
   void _onAddArtistResult(AppAction action) {
-
     if (action is AddArtistSuccessful) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,

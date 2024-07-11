@@ -98,7 +98,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                     return const Center(child: Text('No artworks found.'));
                   }
                   return SizedBox(
-                    height: 120,
+                    height: 160,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: artworks.length,
@@ -116,7 +116,9 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                       fit: BoxFit.fitHeight,
                                     ),
                                   ),
-                                  Text(artwork.title),
+                                  SizedBox(
+                                      width: 120,
+                                      child: Text(artwork.title, softWrap: true, textAlign: TextAlign.center)),
                                 ],
                               ),
                               onTap: () async {

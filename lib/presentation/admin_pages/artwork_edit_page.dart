@@ -1073,7 +1073,7 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
       } else {
         endCreationYearFormKey.currentState!.validate();
       }
-      selectedYear= null;
+      selectedYear = null;
     }
   }
 }

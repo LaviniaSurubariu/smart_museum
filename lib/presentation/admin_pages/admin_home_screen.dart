@@ -94,7 +94,7 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                     return const Center(child: Text('No artworks found.'));
                   }
                   return SizedBox(
-                    height: 120,
+                    height: 160,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: artworks.length,
@@ -112,7 +112,13 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                                       fit: BoxFit.fitHeight,
                                     ),
                                   ),
-                                  Text(artwork.title),
+                                  SizedBox(
+                                      width: 120,
+                                      child: Text(
+                                        artwork.title,
+                                        softWrap: true,
+                                        textAlign: TextAlign.center,
+                                      )),
                                 ],
                               ),
                               onTap: () async {
@@ -165,7 +171,7 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                     return const Center(child: Text('No artists found.'));
                   }
                   return SizedBox(
-                    height: 120,
+                    height: 160,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: artists.length,
@@ -183,7 +189,13 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                                       fit: BoxFit.fitHeight,
                                     ),
                                   ),
-                                  Text('${artist.firstName} ${artist.lastName}'),
+                                  SizedBox(
+                                      width: 120,
+                                      child: Text(
+                                        '${artist.firstName} ${artist.lastName}',
+                                        softWrap: true,
+                                        textAlign: TextAlign.center,
+                                      )),
                                 ],
                               ),
                               onTap: () async {

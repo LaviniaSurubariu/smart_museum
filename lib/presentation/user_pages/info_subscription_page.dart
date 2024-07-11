@@ -109,7 +109,6 @@ class _InfoSubscriptionPageState extends State<InfoSubscriptionPage> {
                                           Icons.celebration_rounded,
                                           color: Colors.purple,
                                         ),
-
                                       ),
                                     ],
                                   )
