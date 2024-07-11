@@ -220,6 +220,9 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                         }
                         return null;
                       },
+                      onChanged: (String value) {
+                        formKey.currentState!.validate();
+                      },
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
@@ -373,12 +376,8 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
       setState(() {
         selectedYear = pickedYear;
         controller.text = pickedYear.toString();
-      });
-    }
-
-    if (pickedYear != null && pickedYear != selectedYear) {
-      setState(() {
-        selectedYear = pickedYear;
+        formKey.currentState!.validate();
+        selectedYear = null;
       });
     }
   }
@@ -390,6 +389,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
 
     if (result != null) {
       audioPathController.text = result.files.single.path ?? '';
+      formKey.currentState!.validate();
     }
   }
 
@@ -399,6 +399,7 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
 
     if (file != null) {
       imagePathController.text = file.path;
+      formKey.currentState!.validate();
     }
   }
 

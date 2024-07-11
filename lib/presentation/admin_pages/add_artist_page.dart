@@ -115,6 +115,7 @@ class _AddArtistPageState extends State<AddArtistPage> {
 
                         if (file != null) {
                           imagePathController.text = file.path;
+                          formKey.currentState!.validate();
                         }
                       },
                       validator: (String? value) {
@@ -141,6 +142,12 @@ class _AddArtistPageState extends State<AddArtistPage> {
                           },
                         ),
                       ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Enter a valid birthdate.';
+                        }
+                        return null;
+                      },
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
@@ -159,6 +166,12 @@ class _AddArtistPageState extends State<AddArtistPage> {
                           },
                         ),
                       ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Enter a valid death date.';
+                        }
+                        return null;
+                      },
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
@@ -221,7 +234,9 @@ class _AddArtistPageState extends State<AddArtistPage> {
     if (picked != null) {
       final formattedDate = DateFormat('yyyy-MM-dd').format(picked);
       birthdateController.text = formattedDate;
+      formKey.currentState!.validate();
     }
+
   }
 
   Future<void> _selectDeathDate(BuildContext context) async {
@@ -234,10 +249,13 @@ class _AddArtistPageState extends State<AddArtistPage> {
     if (picked != null) {
       final String formattedDate = DateFormat('yyyy-MM-dd').format(picked);
       deathDateController.text = formattedDate;
+      formKey.currentState!.validate();
+
     }
   }
 
   void _onAddArtistResult(AppAction action) {
+
     if (action is AddArtistSuccessful) {
       showDialog<CustomAlertDialogTwoButtons>(
         context: context,
