@@ -97,12 +97,19 @@ class _InfoSubscriptionPageState extends State<InfoSubscriptionPage> {
                                   Column(
                                     children: <Widget>[
                                       const SizedBox(height: 16),
-                                      Text(
-                                        'You have a $subscriptionDays day subscription starting from $formattedStartDate',
-                                        style: const TextStyle(
-                                          fontSize: 16,
+                                      ListTile(
+                                        title: Text(
+                                          'You have a $subscriptionDays day subscription starting from $formattedStartDate',
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                          ),
+                                          textAlign: TextAlign.center,
                                         ),
-                                        textAlign: TextAlign.center,
+                                        leading: const Icon(
+                                          Icons.celebration_rounded,
+                                          color: Colors.purple,
+                                        ),
+
                                       ),
                                     ],
                                   )
