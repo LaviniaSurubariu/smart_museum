@@ -34,12 +34,21 @@ class ArtworksWithoutQRCodePage extends StatelessWidget {
             itemCount: artworks.length,
             itemBuilder: (BuildContext context, int index) {
               final ArtworkWithoutQrCode artwork = artworks[index];
-              return ListTile(
-                title: Text(artwork.title),
-                onTap: () {
-                  context.dispatch(SetSelectedArtworkWithoutQrCode(artwork));
-                  Navigator.pushReplacementNamed(context, '/generateQrCodePage');
-                },
+              return Column(
+                children: [
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const Divider(),
+                  ListTile(
+                    title: Text(artwork.title),
+                    onTap: () {
+                      context.dispatch(SetSelectedArtworkWithoutQrCode(artwork));
+                      Navigator.pushReplacementNamed(context, '/generateQrCodePage');
+                    },
+                    leading: const Icon(LineAwesomeIcons.qrcode),
+                  ),
+                ],
               );
             },
           );
