@@ -20,7 +20,6 @@ class QrCodePage extends StatefulWidget {
 class _QrCodePageState extends State<QrCodePage> {
   late MobileScannerController cameraController;
   String artworkId = '';
-  List<Barcode> barcodes = <Barcode>[];
 
   @override
   void initState() {
@@ -30,6 +29,7 @@ class _QrCodePageState extends State<QrCodePage> {
 
   @override
   void dispose() {
+    cameraController.stop();
     cameraController.dispose();
     super.dispose();
   }
@@ -43,30 +43,12 @@ class _QrCodePageState extends State<QrCodePage> {
           MobileScanner(
             controller: cameraController,
             onDetect: (BarcodeCapture capture) async {
-              barcodes = capture.barcodes;
-              try {
-                for (final Barcode barcode in barcodes) {
+              final List<Barcode> barcodes = capture.barcodes;
+              for (final Barcode barcode in barcodes) {
+                if (barcode.rawValue!.contains('https://')) {
                   artworkId = barcode.rawValue!.split('https://')[1];
-                  context.dispatch(FetchScannedArtwork(artworkId: artworkId, result: _onResult));
                 }
-              } catch (e) {
-                showModalBottomSheet<void>(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const SizedBox(
-                      height: 120,
-                      width: double.infinity,
-                      child: Center(
-                        child: Text(
-                          'Artwork not found',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    );
-                  },
-                );
-                barcodes.clear();
+                context.dispatch(FetchScannedArtwork(artworkId: artworkId, result: _onResult));
               }
               await Future<void>.delayed(const Duration(milliseconds: 500), () => null);
             },
@@ -114,62 +96,65 @@ class _QrCodePageState extends State<QrCodePage> {
           );
         },
       );
-      barcodes.clear();
     }
     if (action is FetchScannedArtworkSuccessful) {
-      showModalBottomSheet<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return GestureDetector(
-            child: SizedBox(
-              height: 120,
-              child: Center(
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      width: 120,
-                      height: 120,
-                      child: Image.network(context.store.state.scannedArtwork!.pictureUrl, fit: BoxFit.cover),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                const SizedBox(height: 30),
-                                Text(
-                                  context.store.state.scannedArtwork!.title,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                                Text(
-                                  '${context.store.state.scannedArtwork!.artistFirstName} ${context.store.state.scannedArtwork!.artistLastName}',
-                                  style: const TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                            const Icon(Icons.arrow_forward_ios),
-                          ],
+      {
+        showModalBottomSheet<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return GestureDetector(
+              child: SizedBox(
+                height: 120,
+                child: Center(
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        width: 120,
+                        height: 120,
+                        child: Image.network(context.store.state.scannedArtwork!.pictureUrl, fit: BoxFit.cover),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  const SizedBox(height: 30),
+                                  Text(
+                                    context.store.state.scannedArtwork!.title,
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                  Text(
+                                    '${context.store.state.scannedArtwork!.artistFirstName} ${context.store.state.scannedArtwork!.artistLastName}',
+                                    style: const TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                              const Icon(Icons.arrow_forward_ios),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            onTap: () {
-              context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
-              context.dispatch(IsArtworkFavourite(
-                  userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
-              context.dispatch(const SetRouteArtworkIndex(0));
-              Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
-            },
-          );
-        },
-      );
-      barcodes.clear();
+              onTap: () {
+                context.dispatch(SetSelectedArtwork(context.store.state.scannedArtwork!));
+                context.dispatch(IsArtworkFavourite(
+                    userId: context.store.state.user!.uid, artworkId: context.store.state.scannedArtwork!.uid));
+                context.dispatch(const SetRouteArtworkIndex(0));
+                while (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                }
+                Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
+              },
+            );
+          },
+        );
+      }
     }
   }
 }
