@@ -276,7 +276,8 @@ class AppEpics extends EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => appApi.fetchArtwork(id: action.artworkId))
           .map<AppAction>((Artwork scannedArtwork) => FetchScannedArtwork.successful(scannedArtwork))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => FetchScannedArtwork.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => FetchScannedArtwork.error(error, stackTrace))
+          .doOnData(action.result);
     });
   }
 

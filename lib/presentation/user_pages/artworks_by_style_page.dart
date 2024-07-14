@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
+import '../../actions/app_action.dart';
 import '../../actions/set/set.dart';
 import '../../actions/user_s_actions/fetch_scanned_artwork/fetch_scanned_artwork.dart';
 import '../../actions/user_s_actions/get_all_styles/get_all_styles.dart';
@@ -58,7 +59,7 @@ class _ArtworksByStylePageState extends State<ArtworksByStylePage> {
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
                             await store.dispatch(
                                 IsArtworkFavourite(userId: context.store.state.user!.uid, artworkId: artwork.uid));
-                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid, result: _onResult));
 
                             await store.dispatch(const SetRouteArtworkIndex(3));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
@@ -74,4 +75,6 @@ class _ArtworksByStylePageState extends State<ArtworksByStylePage> {
       },
     );
   }
+
+  void _onResult(AppAction action) {}
 }

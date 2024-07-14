@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
+import '../../actions/app_action.dart';
 import '../../actions/get_top_artists/get_top_artists.dart';
 import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
@@ -64,7 +65,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
                               userId: store.state.user!.uid,
                               artworkId: favourite.artworkId,
                             ));
-                            await store.dispatch(FetchScannedArtwork(artworkId: favourite.artworkId));
+                            await store
+                                .dispatch(FetchScannedArtwork(artworkId: favourite.artworkId, result: _onResult));
                             store.dispatch(const SetRouteArtworkIndex(1));
                             Navigator.pushReplacementNamed(context, '/artworkDetailsPage');
                           },
@@ -79,4 +81,6 @@ class _FavouritesPageState extends State<FavouritesPage> {
       },
     );
   }
+
+  void _onResult(AppAction action) {}
 }

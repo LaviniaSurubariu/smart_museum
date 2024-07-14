@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
+import '../../actions/app_action.dart';
 import '../../actions/get_top_artists/get_top_artists.dart';
 import '../../actions/get_top_artworks/get_top_artworks.dart';
 import '../../actions/set/set.dart';
@@ -57,7 +58,7 @@ class _ArtworksListAdminPageState extends State<ArtworksListAdminPage> {
                           title: artwork.title,
                           onPress: () async {
                             final Store<AppState> store = StoreProvider.of<AppState>(context);
-                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+                            await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid, result: _onResult));
                             await store.dispatch(const SetRouteAdminArtworkIndex(0));
                             Navigator.pushReplacementNamed(context, '/artworkEditPage');
                           },
@@ -72,4 +73,6 @@ class _ArtworksListAdminPageState extends State<ArtworksListAdminPage> {
       },
     );
   }
+
+  void _onResult(AppAction action) {}
 }

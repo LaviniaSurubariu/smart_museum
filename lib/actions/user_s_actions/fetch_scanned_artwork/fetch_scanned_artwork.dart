@@ -7,7 +7,10 @@ part 'fetch_scanned_artwork.freezed.dart';
 
 @freezed
 class FetchScannedArtwork with _$FetchScannedArtwork implements AppAction {
-  const factory FetchScannedArtwork({required String artworkId}) = FetchScannedArtworkStart;
+  const factory FetchScannedArtwork({
+    required String artworkId,
+    required ActionResult result,
+  }) = FetchScannedArtworkStart;
 
   const factory FetchScannedArtwork.successful(Artwork scannedArtwork) = FetchScannedArtworkSuccessful;
 

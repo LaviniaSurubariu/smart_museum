@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
 import '../../actions/admin_actions/get_list_artworks_without_qr_code/get_list_artworks_without_qr_code.dart';
+import '../../actions/app_action.dart';
 import '../../actions/get_artists/get_artists.dart';
 import '../../actions/get_artworks/get_artworks.dart';
 import '../../actions/set/set.dart';
@@ -123,7 +124,7 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
                               ),
                               onTap: () async {
                                 final Store<AppState> store = StoreProvider.of<AppState>(context);
-                                await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid));
+                                await store.dispatch(FetchScannedArtwork(artworkId: artwork.uid, result: _onResult));
                                 await store.dispatch(const SetRouteAdminArtworkIndex(1));
                                 Navigator.pushReplacementNamed(context, '/artworkEditPage');
                               },
@@ -225,4 +226,6 @@ class _AdminScreenPageState extends State<AdminScreenPage> {
       ),
     );
   }
+
+  void _onResult(AppAction action) {}
 }

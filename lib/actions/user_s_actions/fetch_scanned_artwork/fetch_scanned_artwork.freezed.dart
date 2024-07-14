@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FetchScannedArtwork {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String artworkId) $default, {
+    TResult Function(String artworkId, ActionResult result) $default, {
     required TResult Function(Artwork scannedArtwork) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String artworkId)? $default, {
+    TResult? Function(String artworkId, ActionResult result)? $default, {
     TResult? Function(Artwork scannedArtwork)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String artworkId)? $default, {
+    TResult Function(String artworkId, ActionResult result)? $default, {
     TResult Function(Artwork scannedArtwork)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -85,7 +85,7 @@ abstract class _$$FetchScannedArtworkStartImplCopyWith<$Res> {
           _$FetchScannedArtworkStartImpl value, $Res Function(_$FetchScannedArtworkStartImpl) then) =
       __$$FetchScannedArtworkStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String artworkId});
+  $Res call({String artworkId, ActionResult result});
 }
 
 /// @nodoc
@@ -100,12 +100,17 @@ class __$$FetchScannedArtworkStartImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? artworkId = null,
+    Object? result = null,
   }) {
     return _then(_$FetchScannedArtworkStartImpl(
       artworkId: null == artworkId
           ? _value.artworkId
           : artworkId // ignore: cast_nullable_to_non_nullable
               as String,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
     ));
   }
 }
@@ -113,14 +118,16 @@ class __$$FetchScannedArtworkStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
-  const _$FetchScannedArtworkStartImpl({required this.artworkId});
+  const _$FetchScannedArtworkStartImpl({required this.artworkId, required this.result});
 
   @override
   final String artworkId;
+  @override
+  final ActionResult result;
 
   @override
   String toString() {
-    return 'FetchScannedArtwork(artworkId: $artworkId)';
+    return 'FetchScannedArtwork(artworkId: $artworkId, result: $result)';
   }
 
   @override
@@ -128,11 +135,12 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchScannedArtworkStartImpl &&
-            (identical(other.artworkId, artworkId) || other.artworkId == artworkId));
+            (identical(other.artworkId, artworkId) || other.artworkId == artworkId) &&
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, artworkId);
+  int get hashCode => Object.hash(runtimeType, artworkId, result);
 
   @JsonKey(ignore: true)
   @override
@@ -143,33 +151,33 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String artworkId) $default, {
+    TResult Function(String artworkId, ActionResult result) $default, {
     required TResult Function(Artwork scannedArtwork) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(artworkId);
+    return $default(artworkId, result);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String artworkId)? $default, {
+    TResult? Function(String artworkId, ActionResult result)? $default, {
     TResult? Function(Artwork scannedArtwork)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(artworkId);
+    return $default?.call(artworkId, result);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String artworkId)? $default, {
+    TResult Function(String artworkId, ActionResult result)? $default, {
     TResult Function(Artwork scannedArtwork)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(artworkId);
+      return $default(artworkId, result);
     }
     return orElse();
   }
@@ -210,9 +218,11 @@ class _$FetchScannedArtworkStartImpl implements FetchScannedArtworkStart {
 }
 
 abstract class FetchScannedArtworkStart implements FetchScannedArtwork {
-  const factory FetchScannedArtworkStart({required final String artworkId}) = _$FetchScannedArtworkStartImpl;
+  const factory FetchScannedArtworkStart({required final String artworkId, required final ActionResult result}) =
+      _$FetchScannedArtworkStartImpl;
 
   String get artworkId;
+  ActionResult get result;
   @JsonKey(ignore: true)
   _$$FetchScannedArtworkStartImplCopyWith<_$FetchScannedArtworkStartImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -292,7 +302,7 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String artworkId) $default, {
+    TResult Function(String artworkId, ActionResult result) $default, {
     required TResult Function(Artwork scannedArtwork) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -302,7 +312,7 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String artworkId)? $default, {
+    TResult? Function(String artworkId, ActionResult result)? $default, {
     TResult? Function(Artwork scannedArtwork)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -312,7 +322,7 @@ class _$FetchScannedArtworkSuccessfulImpl implements FetchScannedArtworkSuccessf
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String artworkId)? $default, {
+    TResult Function(String artworkId, ActionResult result)? $default, {
     TResult Function(Artwork scannedArtwork)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -436,7 +446,7 @@ class _$FetchScannedArtworkErrorImpl implements FetchScannedArtworkError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String artworkId) $default, {
+    TResult Function(String artworkId, ActionResult result) $default, {
     required TResult Function(Artwork scannedArtwork) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -446,7 +456,7 @@ class _$FetchScannedArtworkErrorImpl implements FetchScannedArtworkError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String artworkId)? $default, {
+    TResult? Function(String artworkId, ActionResult result)? $default, {
     TResult? Function(Artwork scannedArtwork)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -456,7 +466,7 @@ class _$FetchScannedArtworkErrorImpl implements FetchScannedArtworkError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String artworkId)? $default, {
+    TResult Function(String artworkId, ActionResult result)? $default, {
     TResult Function(Artwork scannedArtwork)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
