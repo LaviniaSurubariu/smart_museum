@@ -77,7 +77,6 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
   late AudioPlayer _audioPlayer;
   double _currentPosition = 0;
   double _totalDuration = 0;
-  int? selectedYear;
   late Future<void> _fetchArtworkFuture;
 
   String _formatDuration(Duration duration) {
@@ -645,15 +644,15 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                   key: startCreationYearFormKey,
                                   child: TextFormField(
                                     controller: startCreationYearController,
-                                    readOnly: true,
+                                    keyboardType: TextInputType.number,
                                     validator: (String? value) {
-                                      if (value == null || value.isEmpty) {
+                                      if (value == null ||
+                                          value.isEmpty ||
+                                          value.length > 4 ||
+                                          int.parse(value) > DateTime.now().year) {
                                         return 'Enter a valid year.';
                                       }
                                       return null;
-                                    },
-                                    onTap: () {
-                                      _selectYear(context, startCreationYearController);
                                     },
                                     decoration: const InputDecoration(
                                         border: OutlineInputBorder(),
@@ -738,15 +737,20 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
                                   key: endCreationYearFormKey,
                                   child: TextFormField(
                                     controller: endCreationYearController,
-                                    readOnly: true,
+                                    keyboardType: TextInputType.number,
                                     validator: (String? value) {
-                                      if (value == null || value.isEmpty) {
+                                      if (value == null ||
+                                          value.isEmpty ||
+                                          value.length > 4 ||
+                                          int.parse(value) > DateTime.now().year) {
                                         return 'Enter a valid year.';
+                                      } else if (int.parse(value) < selectedArtwork.startCreationYear) {
+                                        return 'The value cannot be less than the start year.';
                                       }
                                       return null;
                                     },
-                                    onTap: () {
-                                      _selectYear(context, endCreationYearController);
+                                    onChanged: (String value) {
+                                      endCreationYearFormKey.currentState!.validate();
                                     },
                                     decoration: const InputDecoration(
                                         border: OutlineInputBorder(),
@@ -1032,48 +1036,5 @@ class _ArtworkEditPageState extends State<ArtworkEditPage> {
         artistFormKey.currentState!.validate();
       }
     });
-  }
-
-  Future<void> _selectYear(BuildContext context, TextEditingController controller) async {
-    String validate = '';
-    if (controller == startCreationYearController) {
-      validate = 'start';
-    } else {
-      validate = 'end';
-    }
-    final int? pickedYear = await showDialog<int>(
-      context: context,
-      builder: (BuildContext context) {
-        int? tempSelectedYear = selectedYear;
-
-        return AlertDialog(
-          title: const Text('Select Year'),
-          content: SizedBox(
-            height: 200.0,
-            width: 300.0,
-            child: YearPicker(
-              firstDate: DateTime(1000),
-              lastDate: DateTime.now(),
-              selectedDate: tempSelectedYear != null ? DateTime(tempSelectedYear) : DateTime.now(),
-              onChanged: (DateTime dateTime) {
-                tempSelectedYear = dateTime.year;
-                Navigator.pop(context, tempSelectedYear);
-              },
-            ),
-          ),
-        );
-      },
-    );
-
-    if (pickedYear != null && pickedYear != selectedYear) {
-      selectedYear = pickedYear;
-      controller.text = pickedYear.toString();
-      if (validate == 'start') {
-        startCreationYearFormKey.currentState!.validate();
-      } else {
-        endCreationYearFormKey.currentState!.validate();
-      }
-      selectedYear = null;
-    }
   }
 }

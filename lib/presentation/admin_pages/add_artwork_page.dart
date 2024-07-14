@@ -36,7 +36,6 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
   final TextEditingController audioPathController = TextEditingController();
   List<ArtistForFetch> artistSuggestions = <ArtistForFetch>[];
   ArtistForFetch? selectedArtist;
-  int? selectedYear;
 
   @override
   void dispose() {
@@ -158,9 +157,12 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: startCreationYearController,
-                      readOnly: true,
+                      keyboardType: TextInputType.number,
                       validator: (String? value) {
-                        if (value == null || value.isEmpty) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.length > 4 ||
+                            int.parse(value) > DateTime.now().year) {
                           return 'Enter a valid year.';
                         }
                         return null;
@@ -168,24 +170,27 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
                       onChanged: (String value) {
                         formKey.currentState!.validate();
                       },
-                      onTap: () => _selectYear(context, startCreationYearController),
                       decoration: const InputDecoration(
                           label: Text('Start creation year'), prefixIcon: Icon(Icons.calendar_month)),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: endCreationYearController,
-                      readOnly: true,
+                      keyboardType: TextInputType.number,
                       validator: (String? value) {
-                        if (value == null || value.isEmpty) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.length > 4 ||
+                            int.parse(value) > DateTime.now().year) {
                           return 'Enter a valid year.';
+                        } else if (int.parse(value) < int.parse(startCreationYearController.text)) {
+                          return 'The value cannot be less than the start year.';
                         }
                         return null;
                       },
                       onChanged: (String value) {
                         formKey.currentState!.validate();
                       },
-                      onTap: () => _selectYear(context, endCreationYearController),
                       decoration: const InputDecoration(
                           label: Text('End creation year'), prefixIcon: Icon(Icons.calendar_month)),
                     ),
@@ -345,41 +350,6 @@ class _AddArtworkPageState extends State<AddArtworkPage> {
         ),
       ),
     );
-  }
-
-  Future<void> _selectYear(BuildContext context, TextEditingController controller) async {
-    final int? pickedYear = await showDialog<int>(
-      context: context,
-      builder: (BuildContext context) {
-        int? tempSelectedYear = selectedYear;
-
-        return AlertDialog(
-          title: const Text('Select Year'),
-          content: SizedBox(
-            height: 200.0,
-            width: 300.0,
-            child: YearPicker(
-              firstDate: DateTime(1000),
-              lastDate: DateTime.now(),
-              selectedDate: tempSelectedYear != null ? DateTime(tempSelectedYear) : DateTime.now(),
-              onChanged: (DateTime dateTime) {
-                tempSelectedYear = dateTime.year;
-                Navigator.pop(context, tempSelectedYear);
-              },
-            ),
-          ),
-        );
-      },
-    );
-
-    if (pickedYear != null && pickedYear != selectedYear) {
-      setState(() {
-        selectedYear = pickedYear;
-        controller.text = pickedYear.toString();
-        formKey.currentState!.validate();
-        selectedYear = null;
-      });
-    }
   }
 
   Future<void> _pickAudio() async {
